@@ -1,0 +1,92 @@
+object
+  position: relative
+  z-index: 10
+#match-list
+  position: fixed
+  width: 100%
+  bottom: 0
+  z-index: 990
+  -webkit-transition: bottom 300ms
+  -moz-transition: bottom 300ms
+  -ms-transition: bottom 300ms
+  -o-transition: bottom 300ms
+  transition: bottom 300ms
+  .hiding
+    display: none
+  .showing
+    display: block
+  &.offscreen
+    bottom: -103px
+    .hiding
+      display: block
+    .showing
+      display: none
+  a
+    color: white
+    text-decoration: none
+  .match-title
+    @include IGNGradientHeader
+    padding: $spacing/2 37px
+    > span
+      color: white
+      font-weight: bold
+      font-size: $medium-text
+      margin: 0 $spacing/2
+    .next
+      margin-right: $spacing * 2
+    h4
+      color: $site-red
+      font-size: $large-text
+      display: inline
+    i
+      font-size: $medium-text
+      @include IGNButtons
+      margin-top: $spacing/2
+    .hide
+      float: right
+      span
+        height: 13px
+  .es-carousel-wrapper
+    background: #222
+    .games
+      padding: $spacing/2
+      background: #444
+      li
+        float: left
+        margin: 0
+        opacity: .5
+        -webkit-transition: opacity 300ms
+        -moz-transition: opacity 300ms
+        -ms-transition: opacity 300ms
+        -o-transition: opacity 300ms
+        transition: opacity 300ms
+        font-size: 11px
+        &.playing
+          opacity: 1
+          p
+            display: block
+        &:hover
+          opacity: 1
+        p
+          display: none
+        a
+          display: block
+          background: black
+          padding: 0 $spacing/4
+          width: 246px
+          span
+            margin: 0 $spacing/2 0 0
+          .details  
+            width: 95px
+            overflow: hidden
+            position: relative
+            float: right
+            height: 79px
+            padding: 11px $spacing/2
+            p
+              margin: 0 0 $spacing/2 0
+              background: #222
+              color: $site-red
+              text-align: center
+              font-weight: bold
+              text-transform: uppercase

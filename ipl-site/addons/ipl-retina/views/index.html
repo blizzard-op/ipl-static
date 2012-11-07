@@ -1,0 +1,58 @@
+<!doctype html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to the Retina (Real-Time Node Application) Viewport</title>
+    <link href="/addons/ipl-retina/views/css/style.css" rel="stylesheet" />
+  </head>
+
+
+  <body>
+
+    <!--
+
+    <div class="starcraft-2_largePoll">
+      <div class="starcraft-2_largePoll_question">Q. Who will win todays final and go on to be champion?</div>
+      <div class="starcraft-2_largePoll_votes">358</div>
+      <div class="starcraft-2_largePoll_tile"></div>
+      <div class="starcraft-2_largePoll_bar">
+        <div class="starcraft-2_largePoll_bar_sub"></div>
+      </div>
+      <div class="starcraft-2_largePoll_baroverlay"></div>
+      <div class="starcraft-2_largePoll_player starcraft-2_largePoll_player_left">MarineKing.PRIME</div>
+      <div class="starcraft-2_largePoll_player starcraft-2_largePoll_player_right">MVP.Nestea</div>
+      <div class="starcraft-2_largePoll_percentage starcraft-2_largePoll_percentage_left">50%</div>
+      <div class="starcraft-2_largePoll_percentage starcraft-2_largePoll_percentage_right">50%</div>
+    </div>
+
+    <div class="league-of-legends_largePoll">
+    </div>
+
+    <div class="leagueoflegends_largePoll">
+      <div class="leagueoflegends_largePoll_question">This is a really good question!</div>
+      <div class="leagueoflegends_largePoll_bar">
+        <div class="leagueoflegends_largePoll_bar_sub"></div>
+      </div>
+      <div class="leagueoflegends_largePoll_baroverlay"></div>
+      <div class="leagueoflegends_largePoll_player leagueoflegends_largePoll_player_left">MarineKing.PRIME</div>
+      <div class="leagueoflegends_largePoll_player leagueoflegends_largePoll_player_right">MarineKing.PRIME</div>
+      <div class="leagueoflegends_largePoll_percentage leagueoflegends_largePoll_percentage_left">50%</div>
+      <div class="leagueoflegends_largePoll_percentage leagueoflegends_largePoll_percentage_right">50%</div>
+    </div>
+
+    -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+    <script src="/addons/ipl-retina/views/js/script.js"></script>
+    <script>
+      if(!retView) return;
+      retView.makeView("sc2_largePoll", "starcraft2_channel1");
+      retView.makeView("sc2_largePoll", "starcraft2_channel2");
+      retView.makeView("lol_largePoll", "leagueoflegends_channel1");
+      retView.makeView("lol_largePoll", "leagueoflegends_channel2");
+    </script>
+  </body>
+
+</html>

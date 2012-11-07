@@ -1,0 +1,92 @@
+<!doctype html>
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <!-- OPTIONAL IPL-TICKER CONFIG -->
+    <script>
+      var jb_localDev = true;
+      var iplTickerConfig = {
+        gameSlug: null,
+        //width: "50%", //String
+        //height: "100px", //String
+        //fontSize: "48px", //String
+        //speed: 10, //Int
+        //spacing: "300px" //String
+      };   
+    </script>
+    <!-- END TICKER CONFIG -->
+
+
+    <!-- MOCK STYLES FOR EXAMPLE PAGE -->
+
+    <style>
+      body {
+        margin:0px;
+        background-color:#666;
+      }
+
+      #header {
+        height:50px;
+        background-color:red;
+      }
+
+      #page {
+        margin:auto;
+        width:850px;
+        background-color:#ddd;
+        height:900px;
+      }
+
+      #largecol {
+        float:left;
+        width:640px;
+        height:100%;
+        background-color:#fff;
+      }
+
+      #player {
+        height:360px;
+        width:640px;
+        background-color:#000;
+      }
+
+      #iplTicker {
+        position:fixed;
+        bottom:0px;
+        left:0px;
+        z-index: 10;
+        width:100%;
+      }
+    </style>
+
+    <!-- END MOCK STYLES -->
+
+  </head>
+
+  <body>
+
+    <div id="page">
+      <div id="header"></div>
+      <div id="largecol">
+          <div id="player"></div>
+      </div>
+    </div>
+
+    <div id="iplTicker"></div>
+
+
+
+
+
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+    <script src="js/script.js"></script>
+  </body>
+
+</html>

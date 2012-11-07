@@ -1,0 +1,24 @@
+[
+  {
+    "_id":"4e4c1d336311ce455e0000f8",
+    "description":"IPL5 Asian Satellite Rebroadcast",
+    "direct_url":"http://esports.ign.com/ipl/tv/?starcraft2/live/ignproleague",
+    "display_name":"IPL",
+    "fallback":false,
+    "fallback_url":null,
+    "franchise_id":"4f0f95896311ce127a000004",
+    "franchise_slug":"starcraft-2",
+    "http_base":null,
+    "image_url":"http://static-cdn.jtvnw.net/previews/live_user_ignproleague-320x240.jpg",
+    "name":"ignproleague",
+    "position":0,
+    "prime":false,
+    "service":"justin.tv",
+    "slug":"ignproleague",
+    "status":"on air",
+    "tooltip":"Team Arena Challenge",
+    "url":"www.justin.tv/ignproleague",
+    "video_game_id":"4d911a486311ce60d100003d",
+    "viewers":1160
+  }
+]

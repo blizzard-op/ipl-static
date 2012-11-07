@@ -1,0 +1,86 @@
+/* Settings that apply to entire gallery */
+.afg-gallery {
+    margin:auto;
+}
+
+/* Effect for thumbnails in gallery */
+.afg-img {
+    margin-top:5%;
+    opacity:1;
+    filter:alpha(opacity=100);
+    -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.6);
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.6);
+}
+
+.afg-img:hover {
+    margin-top:5%;
+    opacity:0.7;
+    filter:alpha(opacity=70);
+    -moz-box-shadow: None;
+    -webkit-box-shadow: None;
+    box-shadow: None;
+}
+
+/* Gallery structure */
+.afg-table {
+    display:table !important;
+    margin:auto;
+    border:none; 
+}
+
+/* Table row */
+.afg-row {
+    display:table-row;
+}
+
+/* Individual image cell in the gallery */
+.afg-cell {
+    display:table-cell !important;
+    text-align:left;
+    vertical-align:top;
+    padding-bottom:10px;
+}
+
+/* Pagination */
+#photo-holder {
+    margin:auto;
+    border:0;
+    text-align:center;
+    font-size:0.9em; 
+}
+
+#photo-holder .jp-current {
+    border:1px solid gray;
+    background-color: black;
+    color: white;
+}
+
+/* Text decoration for pagination links */
+#photo-holder a {
+    text-decoration:none;
+    border:1px solid gray;
+    margin-right: 5px;
+    color: #1982D1;
+    padding: 0 .5em
+}
+/* Hover effect for pagination links */
+#photo-holder a:hover {
+    background:royalblue;
+    color:white;
+    text-decoration:none;
+}
+
+
+/* Photo title */
+.afg-title {
+    margin-right:5%;
+    margin-bottom:5%;
+}
+
+/* Photo Description */
+.afg-description {
+    font-size:85%;
+    margin-right:5%;
+    font-style:italic;
+}

@@ -1,0 +1,230 @@
+@import "mixins", "h5bp"
+@import "video_player"
+@import "sidebar"
+@import "layout_list"
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+body, html
+  background: #111
+  overflow: hidden
+  width: 100%
+  height: 100%
+  position: relative
+header
+  position: relative
+  @include IGNGradientHeader
+  z-index: 10
+  text-align: center
+  line-height: 34px
+  height: 34px
+  #layout-switch
+    overflow: hidden
+    padding: 0
+    a
+      div
+        float: right
+        height: 18px
+        width: 32px
+        border-width: 1px
+        margin: 8px 0 0 $spacing/2
+  .game-nav
+    float: left
+  ul
+    float: left  
+    margin: 0
+    li
+      height: 100%
+      float: left  
+      position: relative
+      margin: 0
+      border-right: $header-border
+      &.selectedTournament
+        background: $site-red
+      a
+        font-size: $small-text
+        display: block
+        padding: 0 1em
+        text-decoration: none
+        &:hover
+          color: $site-red
+  .secondary-nav
+    float: right
+    ul
+      li
+        border-left: $header-border
+  h1
+    float: left
+    margin: 0
+    padding: 0
+
+#logo
+  display: block
+  height: 34px
+  width: 50px
+  text-indent: -999em
+  padding: .1em $spacing*1.2
+  border-right: $header-border
+  background: transparent url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/IPL_logo_red_text_no_shield_white_ign_37x30.png) center center no-repeat
+
+a:link, a:visited
+  color: white
+
+.sideBarVisible
+  #main
+    width: 75%
+  aside
+    left: 75%
+#main
+  letter-spacing: -4px
+  -webkit-transition: width 300ms linear
+  -moz-transition: width 300ms linear
+  -o-transition: width 300ms linear
+  transition: width 300ms linear
+  position: absolute
+  top: 34px
+  bottom: 30px
+  width: 100%
+
+  text-align: center
+  &:after
+    content: ""
+    display: inline-block
+    height: 100%
+    vertical-align: middle
+    margin-right: -0.25em
+  #video-container
+    @include inlineBlock
+    vertical-align: middle !important
+    width: 100%
+    .player-wrapper
+      display: none
+  &.one
+    #video-container
+      padding-bottom: 6em
+      height: 100%
+      .video-1
+        max-width: 100%
+        max-height: 100%
+        display: block
+        padding-bottom: $spacing*4
+  &.two
+    #video-container
+      .video-1
+        padding-right: $spacing/2
+      .video-2
+        padding-left: $spacing/2
+      .video-1,
+      .video-2
+        max-width: 50%
+        float: left
+        display: block
+
+  &.stacked
+    bottom: 30px
+    #video-container
+      height: 100%
+      .video-1
+        padding-bottom: $spacing/2
+      .video-2
+        padding-top: $spacing/2
+      .video-1,
+      .video-2
+        height: 50%
+        display: block
+        padding-bottom: $spacing*4
+      .keep-aspect-ratio
+        height: 100%
+  &.three
+    #video-container
+      height: 100%
+      min-width: 83%
+      .video-1
+        height: 65%
+        display: block
+        padding-bottom: $spacing*4
+      .video-2,
+      .video-3
+        width: 49% !important
+        height: 35%
+        margin-right: .5%
+        margin-left: .5%
+        float: left
+        display: block
+        padding-bottom: $spacing*4
+      .keep-aspect-ratio
+        height: 100%
+  &.four
+    #video-container
+      height: 100%
+      min-width: 83%
+      .video-1
+        height: 65%
+        display: block
+        padding-bottom: $spacing*4
+      .video-2,
+      .video-3,
+      .video-4
+        width: 32.333333333333333333333333% !important
+        margin-right: .5%
+        margin-left: .5%
+        height: 35%
+        float: left
+        display: block
+        padding-bottom: $spacing*4
+      .keep-aspect-ratio
+        height: 100%
+  &.five
+    #video-container
+      height: 100%
+      min-width: 83%
+      .video-1
+        height: 65%
+        display: block
+        padding-bottom: $spacing*4
+      .video-2,
+      .video-3,
+      .video-4,
+      .video-5
+        width: 24% !important
+        height: 35%
+        margin-right: .5%
+        margin-left: .5%
+        float: left
+        display: block
+        padding-bottom: $spacing*4
+      .keep-aspect-ratio
+        height: 100%
+  .description
+    letter-spacing: .1em
+    text-align: left
+    background-color: black
+    color: white
+    padding: 1em
+    clear: both
+    border-bottom: 1px solid $site-red
+    h4
+      margin: 0
+      float: left
+      overflow: hidden
+      width: 70%
+      text-overflow: ellipsis
+      word-wrap: break-word
+      white-space: nowrap
+    select
+      float: right
+
+
+
+#iplTicker
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+.lt-ie9
+  #main
+    &.two
+      > div
+        .player-wrapper
+          max-width: 49%

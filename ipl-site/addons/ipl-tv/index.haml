@@ -1,0 +1,140 @@
+!!! 5
+<!--[if lt IE 7]> <html lang="en" class="no-js lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html lang="en" class="no-js lt-ie8 lt-ie9"> <![endif]-->
+<!--[if IE 8]>    <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+%html.no-js{ :lang => "en" }
+  <!--<![endif]-->
+  %head
+    %meta{ :charset => "utf-8" }/
+    %meta{ "http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1" }
+    %title IPL TV
+    %meta{ :name => "description", :content => "" }
+    %meta{ :name => "author", :content => "Paul Grock" }
+
+    %meta{ :name => "viewport", :content => "width=device-width" }
+    %link{:rel => "stylesheet", :href => "http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl-tv/stylesheets/style.css"}
+
+    %script{ :src => "http://media.ign.com/ev/esports/ipl-static/ipl-site/javascripts/modernizr.js"}
+
+    %link{ :rel => "shortcut icon", :type => "image/x-icon", :href =>"http://media.ignimgs.com/media/ign/favicon.ico" }
+    %link{ :rel => "apple-touch-icon-precomposed", :href =>"http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ipl-touch-icon-57x57.png", :sizes => "57x57" }
+    %link{ :rel => "apple-touch-icon-precomposed", :href =>"http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ipl-touch-icon-72x72.png", :sizes => "72x72" }
+    %link{ :rel => "apple-touch-icon-precomposed", :href =>"http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ipl-touch-icon-114x114.png", :sizes => "114x114" }
+    %link{ :rel => "apple-touch-icon-precomposed", :href =>"http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ipl-touch-icon-144x144.png", :sizes => "144x144" }
+
+  %body{:data => {:bind => "css: {sideBarVisible: sideBarVisible}"}}
+    %header.clearfix{:role =>'banner'}
+      %h1.logo
+        %a#logo{:href =>'/ipl/'} IPL - IGN Pro League
+      %nav.game-nav
+        %ul#game.game
+          %li.starcraft-2
+            %a{:href => "/ipl/starcraft-2", :target => "blank"} StarCraft II
+          %li.league-of-legends
+            %a{:href => '/ipl/league-of-legends', :target => "blank"} League of Legends
+
+      %nav.secondary-nav
+        %ul#layout-switch
+          %li 
+            %a.layout-1{:href => '#', :data => {:layout => "one", :bind => "css: {active: viewModel.layout() === 'one'}"}}
+              %div
+              %span One Up
+          %li{:data => {:bind => "visible: liveChannelsJSON().length >= 2"}}
+            %a.layout-2{:href =>'#', :data => {:layout => "two", :bind => "css: {active: viewModel.layout() === 'two'}"}}
+              %div
+              %span Side by Side
+          %li{:data => {:bind => "visible: liveChannelsJSON().length >= 2"}}
+            %a.layout-stacked{:href =>'#', :data => {:layout => "stacked", :bind => "css: {active: viewModel.layout() === 'stacked'}"}}
+              %div
+              %span Stacked
+          %li{:data => {:bind => "visible: liveChannelsJSON().length >= 3"}}
+            %a.layout-3{:href =>'#', :data => {:layout => "three", :bind => "css: {active: viewModel.layout() === 'three'}"}}
+              %div
+              %span Three
+          %li{:data => {:bind => "visible: liveChannelsJSON().length >= 4"}}
+            %a.layout-4{:href =>'#', :data => {:layout => "four", :bind => "css: {active: viewModel.layout() === 'four'}"}}
+              %div
+              %span Four
+          %li{:data => {:bind => "visible: liveChannelsJSON().length >= 5"}}
+            %a.layout-5{:href =>'#', :data => {:layout => "five", :bind => "css: {active: viewModel.layout() === 'five'}"}}
+              %div
+              %span Five
+        %ul#sidebar-controls
+          %li
+            %a.chat{:href =>"/ipl/tv", :data => {:sidebar => 'chat'}} Chat
+          %li
+            %a.schedule{:href =>'/ipl/tv', :data => {:sidebar => 'schedule'}} Schedule
+          %li
+            %a.videos{:href =>'/ipl/videos', :data => {:sidebar => 'videos'}, :target => "blank"} Videos
+          %li
+            %a.feedback{:href =>'http://ign.uservoice.com/forums/101861?lang=en&amp;referer=http%3A%2F%2Fwww.ign.com%2Fipl%2Ftv', :data => {:sidebar => "feedback"}} Feedback
+    #main{:role =>"main", :data => {:bind => "attr: {'class': viewModel.layout()} "}}
+      #video-container
+
+    %aside
+      #chat{:data => {:bind => "fadeVisible: viewModel.sideBarContent() === 'chat'"}}
+        %ul{:data => {:bind => "foreach: liveChannelsJSON"}}
+          %li
+            %a.chat{:target => "_blank", :data => {:bind => "css: {active: viewModel.chatchannel() === $data.name}, attr: {href: 'http://www.twitch.tv/chat/embed?channel=' + $data.name}, text: $data.name + ' chat'"}}
+        %iframe{:src => "http://www.twitch.tv/chat/embed?channel=ignproleague", :style => "border-width: 0", :frameborder => "0", :scrolling => "no", :data => {:bind =>"attr: {src: 'http://www.twitch.tv/chat/embed?channel=' + viewModel.chatchannel()}"}}
+      #streams{:data => {:bind => "fadeVisible: viewModel.sideBarContent() === 'layout'"}}
+        %p Choose a layout:
+        %ul#layout-switch
+          %li 
+            %a.layout-1{:href => '#', :data => {:layout => "one", :bind => "css: {active: viewModel.layout() === 'one'}"}}
+              %div
+              %span One Up
+          %li{:data => {:bind => "visible: liveChannelsJSON().length >= 2"}}
+            %a.layout-2{:href =>'#', :data => {:layout => "two", :bind => "css: {active: viewModel.layout() === 'two'}"}}
+              %div
+              %span Side by Side
+          %li{:data => {:bind => "visible: liveChannelsJSON().length >= 2"}}
+            %a.layout-stacked{:href =>'#', :data => {:layout => "stacked", :bind => "css: {active: viewModel.layout() === 'stacked'}"}}
+              %div
+              %span Stacked
+          %li{:data => {:bind => "visible: liveChannelsJSON().length >= 3"}}
+            %a.layout-3{:href =>'#', :data => {:layout => "three", :bind => "css: {active: viewModel.layout() === 'three'}"}}
+              %div
+              %span Three
+          %li{:data => {:bind => "visible: liveChannelsJSON().length >= 4"}}
+            %a.layout-4{:href =>'#', :data => {:layout => "four", :bind => "css: {active: viewModel.layout() === 'four'}"}}
+              %div
+              %span Four
+          %li{:data => {:bind => "visible: liveChannelsJSON().length >= 5"}}
+            %a.layout-5{:href =>'#', :data => {:layout => "five", :bind => "css: {active: viewModel.layout() === 'five'}"}}
+              %div
+              %span Five
+      #schedule{:data => {:bind =>"fadeVisible: sideBarContent() === 'schedule'"}}
+        %ul
+          %li
+            %a.calendar.active{:href =>"https://www.google.com/calendar/embed?src=1u5m1559a5rlih3tr8jqp4kgac%40group.calendar.google.com", :data => {:bind =>"css: {active: viewModel.calid() === '1u5m1559a5rlih3tr8jqp4kgac'}", :calid =>"1u5m1559a5rlih3tr8jqp4kgac"}}
+              SC2 Calendar
+          %li
+            %a.calendar{:href =>"https://www.google.com/calendar/embed?src=igpia9kc2fst1ijkde1avplkq0%40group.calendar.google.com", :data => {:bind =>"css: {active: viewModel.calid() === 'igpia9kc2fst1ijkde1avplkq0'}", :calid => "igpia9kc2fst1ijkde1avplkq0"}}
+              LoL Calendar
+        %iframe{:src =>"https://www.google.com/calendar/embed?showTitle=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=515&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=1u5m1559a5rlih3tr8jqp4kgac%40group.calendar.google.com&amp;color=%23691426&amp;ctz=America%2FLos_Angeles", :style => "border-width:0", :frameborder => "0", :scrolling => "no", :data => {:bind => "attr: {src: 'https://www.google.com/calendar/embed?showTitle=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=515&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=' + viewModel.calid() + '%40group.calendar.google.com&amp;color=%23691426&amp;ctz=America%2FLos_Angeles'}"}}
+
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
+    %script{:src => "http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl-tv/javascripts/libs/knockout.js"}
+    
+    -if params && params[:test]
+      %script
+        var test = "#{params[:test]}"
+        var _gaq = []
+    -else
+      %script
+        var test = false;
+        var _gaq=[['_setAccount','UA-12449618-7'],['_trackPageview']];
+        (function(d,t){
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    
+    %script{:src =>"http://media.ign.com/ev/esports/ipl-static/ipl-site/javascripts/comscore.js"}
+    %script{:src =>"http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl-tv/javascripts/model.js"}
+    %script{:src =>"http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl-tv/javascripts/plugins.js"}
+    %script{:src =>"http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl-tv/javascripts/script.js"}
+    :javascript
+      comscoreEvent.firePageView();

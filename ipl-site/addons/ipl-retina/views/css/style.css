@@ -1,0 +1,217 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	margin:0px;
+	background-color:#000;
+	color:#FFF;
+}
+
+/* STARCRAFT 2 - LARGE POLL */
+
+.starcraft-2_largePoll {
+	width:343px;
+	height:116px;
+	float:left;
+	margin:10px;
+	border:5px dashed #FFF;
+	background:url(/addons/ipl-retina/views/img/sc2_largepoll_gradientbg.png) left top no-repeat;
+	position:relative;
+}
+
+.starcraft-2_largePoll_tile {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:1;
+	background:url(/addons/ipl-retina/views/img/sc2_largepoll_tilebg.png) center top repeat-x;
+}
+
+.starcraft-2_largePoll_bar {
+	position:absolute;
+	top:47px;
+	left:13px;
+	width:317px;
+	height:28px;
+	background-color:#7e0000;
+	z-index:2;
+	opacity:0.8;
+}
+
+.starcraft-2_largePoll_bar_sub {
+	position:absolute;
+	right:0;
+	top:0;
+	height:100%;
+	width:50%;
+	background-color:#003388;
+}
+
+.starcraft-2_largePoll_question {
+	position:absolute;
+	top:4px;
+	left:10px;
+	width:323px;
+	font-size:16px;
+	text-align:center;
+	z-index:2;
+	text-shadow:5px 5px 2px rgba(0,0,0,0.5);
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	height:30px;
+}
+
+.starcraft-2_largePoll_votes {
+	position:absolute;
+	top:27px;
+	left:13px;
+	z-index:4;
+	font-size:11px;
+	opacity:.8;
+}
+
+.starcraft-2_largePoll_baroverlay {
+	position:absolute;
+	top:29px;
+	left:7px;
+	width:329px;
+	height:74px;
+	z-index:3;
+	background:url(/addons/ipl-retina/views/img/sc2_largepoll_baroverlay.png) center center no-repeat;
+}
+
+.starcraft-2_largePoll_player {
+	position:absolute;
+	bottom:0px;
+	width:120px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	font-size:13px;
+	z-index:2;
+	height:30px;
+
+	text-shadow:5px 5px 2px rgba(0,0,0,0.5);
+}
+
+.starcraft-2_largePoll_player_left {
+	left:37px;
+}
+
+.starcraft-2_largePoll_player_right {
+	right:37px;
+	text-align:right;
+}
+
+.starcraft-2_largePoll_percentage {
+	position:absolute;
+	z-index:4;
+	opacity:0.6;
+	top:52px;
+	font-size:13px;
+	font-weight:bold;
+}
+
+.starcraft-2_largePoll_percentage_left {
+	left:30px;
+}
+
+.starcraft-2_largePoll_percentage_right {
+	right:30px;
+}
+
+
+/* LEAGUE OF LEGENDS */
+
+.leagueoflegends_largePoll {
+	float:left;
+	margin:10px;
+	border:5px dashed #FFF;
+	width:227px;
+	height:117px;
+	background:url(/addons/ipl-retina/views/img/lol_largepoll_bg.png) top left no-repeat;
+	position:relative;
+}
+
+.leagueoflegends_largePoll_question {	position:absolute;
+	top:8px;
+	left:10px;
+	width:207px;
+	font-size:15px;
+	text-align:center;
+	z-index:2;
+	text-shadow:5px 5px 2px rgba(0,0,0,0.5);
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	height:30px;
+}
+
+.leagueoflegends_largePoll_player {
+	position:absolute;
+	width:120px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	font-size:13px;
+	z-index:2;
+	height:29px;
+
+	text-shadow:5px 5px 2px rgba(0,0,0,0.5);
+}
+
+.leagueoflegends_largePoll_player_left {
+	left:34px;
+	bottom:17px;
+}
+
+.leagueoflegends_largePoll_player_right {
+	right:34px;
+	bottom:0px;
+	text-align:right;
+}
+
+.leagueoflegends_largePoll_bar {
+	position:absolute;
+	left:17px;
+	top:50px;
+	width:193px;
+	height:15px;
+	background-color:#216397;
+}
+
+.leagueoflegends_largePoll_bar_sub {
+	position:absolute;
+	right:0;
+	top:0;
+	width:50%;
+	height:100%;
+	background-color:#4c0853;
+}
+
+.leagueoflegends_largePoll_baroverlay {
+	position:absolute;
+	left:17px;
+	top:50px;
+	width:193px;
+	height:15px;
+	background:url(/addons/ipl-retina/views/img/lol_largepoll_baroverlay.png) top left no-repeat;
+}
+
+.leagueoflegends_largePoll_percentage {
+	position:absolute;
+	z-index:4;
+	opacity:0.6;
+	top:49px;
+	font-size:13px;
+	font-weight:bold;
+}
+
+.leagueoflegends_largePoll_percentage_left {
+	left:25px;
+}
+
+.leagueoflegends_largePoll_percentage_right {
+	right:25px;
+}

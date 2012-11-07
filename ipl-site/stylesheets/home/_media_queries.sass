@@ -1,0 +1,332 @@
+@media screen and (max-width: 1200px)
+  header[role="banner"] 
+    .logo
+      margin-right: .5em
+  body
+    .ignFooter-column
+      width: 50%
+    .container
+      #schedule 
+        .videosContainer 
+          .matchup_game
+            bottom: .5em
+            width: 40%
+    aside
+      table
+        width: 250px
+  
+
+@media screen and (max-width: 1024px)
+  header[role=banner]
+    width: 100%
+
+  .container, #flashmessage
+    width: 100%
+    aside
+      #ignad_medrec
+        max-width: 100%
+        .sugarad
+          max-width: 100% !important
+          height: 23% !important
+          iframe
+            width: 100% !important
+            height: 100% !important
+    #schedule 
+      .videosContainer 
+        a 
+          .overlay
+            width: 30%
+          .vodText
+            width: 70%
+            p
+              padding: 0 0 0 .5em
+        article
+          ul.matchup_game
+            left: 30%
+            right: .5em
+            width: 70%
+  
+  body
+    #ignFooter-container
+      width: 100%
+    #uservoice-feedback
+      display: none
+@media screen and (max-width: 900px)
+  header[role=banner]
+    > p
+      float: right
+      margin-right: .5em
+      font-size: 15px
+    .primaryNav
+      span
+        line-height: 16px
+        width: 7em
+        padding: .5em 0
+      ul.subNav
+        > li
+          margin: 0
+          > a
+            padding: 0.3em .5em
+      form
+        input
+          &:focus
+            width: 90px
+    #avatarIcon
+      display: none
+    #liveCalendarContainer 
+      > div
+        padding-left: 0
+  .container
+    aside
+      overflow: hidden
+      table
+        width: auto
+        max-width: 100%
+    #schedule 
+      .videosContainer 
+        a
+          .vodText 
+            h4
+              display: none
+            p
+              background: $site-red
+              font-size: $medium-text
+          &:hover
+            p
+              color: black    
+        article
+          .matchup_game 
+            li
+              margin-right: .5em
+  .additionalContent
+    position: relative
+
+@media screen and (max-width: 770px)
+  header[role="banner"] 
+    > div
+      width: 100%
+    .primaryNav
+      .subNav
+        background: white
+        display: none
+        text-align: right
+        height: 2em
+        line-height: 2em
+        clear: both
+        float: none
+        margin-left: -85px
+        &.showing
+          display: block
+          position: absolute
+          right: 0
+          top: 100%
+          background-color: black
+          height: 35px
+          width: 100%
+        > li
+          width: 14%
+          text-align: center
+    #liveCalendarContainer 
+      ul
+        float: left
+    #mobileNavButton
+      display: block
+  #heroUnit
+    float: none
+    width: 100%
+  .container
+    #schedule 
+      .videosContainer 
+        a
+          .overlay
+            position: relative
+            left: 0
+            bottom: 0
+          .vodText 
+            width: 100% 
+@media screen and (max-width: 728px)
+  .leaderboard
+    display: none
+@media screen and (max-width: 690px)
+  .container 
+    #wrapper
+      .tournamentHeader
+        width: 100%
+      .tournamentInfo
+        width: 66%
+        float: left
+    #schedule 
+      .videosContainer 
+        a 
+          .vodText 
+            h4
+              padding: 0 .5em
+              &:before
+                display: none
+  header[role="banner"] 
+    #liveCalendarContainer
+      text-align: left
+      ul
+        text-align: center
+  #heroUnit 
+    #description 
+      .matchup_game
+        clear: left
+        padding: .5em 0 0
+        li
+          margin: 0 0 0 .5em
+          &:nth-of-type(1)
+            margin: 0
+  
+  #ipl4
+    width: 100%  
+    ul
+      clear: left
+    .tickets
+      position: absolute
+      top: $spacing
+      right: $spacing
+    .partners
+      display: none
+@media screen and (max-width: 500px), screen and (max-width: 960px) and (-webkit-min-device-pixel-ratio: 2)
+  header[role=banner] 
+    .logo 
+      margin: 0 0 0 .3em
+    #liveCalendarContainer
+      display: none
+    .social
+      display: none
+    .poll
+    #mobileNavButton
+      top: 25%
+    .primaryNav 
+      clear: none
+      height: 45px
+      line-height: 45px
+      ul.game 
+        float: none
+        > li
+          
+          margin-left: 1em
+          width: 50px
+          > a
+            text-indent: -999em
+            &.starcraft-2
+              > a
+                background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/sc2_logo_40x40_color.png) 5px 3px no-repeat
+            &.league-of-legends
+              > a
+                background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/lol_logo_40x40_color.png) 5px 3px no-repeat
+        .additionalContent
+          left: -100%
+      .subNav
+        padding: 0
+        > li
+          width: auto
+  .container
+    padding: 1em 0 0
+    #heroUnit 
+      ul.showHolder
+        li
+          a.overlay
+            &:before, &:after
+              margin: -10px 0 0 -10px
+            &:before
+              width: 20px
+              height: 20px
+            &:after
+              border-left-width: 10px
+              border-top-width: 7px
+              border-bottom-width: 7px
+              margin: -5px 0 0
+      #ignad_medrec
+        .sugarad
+          margin: auto
+      .mobile
+        display: none
+    #schedule
+      height: 150px
+      overflow: auto
+    .live
+      #schedule
+        height: auto
+        overflow: visible
+    #wrapper
+      > section 
+        width: 100%
+        margin-top: 1em
+        &:after
+          display: none
+        #featured
+          float: none
+          height: auto
+          width: 100%
+          padding: 1em
+          border: none
+          border-bottom: 1px solid #333
+        #headlines
+          padding: 1em
+          width: 100%
+          float: none 
+      .tournamentHeader
+        width: 100%
+      #post
+        width: 100%
+      aside, .tournamentInfo
+        width: 100%
+    #schedule
+      width: 100%
+      margin-bottom: 1em
+    .videosContainer
+      width: 100%
+      margin-bottom: 0
+      article
+        video
+          margin: 0
+  .ignFooter-content
+    .ignFooter-bottomRowCompact
+      height: auto
+@media screen and (max-width: 350px), screen and (max-width: 700px) and (-webkit-min-device-pixel-ratio: 2)
+  .container
+    #wrapper
+      #ipl4
+        header
+          float: none
+        .tickets
+          position: relative
+      .overlay
+        span
+          display: none
+    #schedule
+      .videosContainer
+        article
+          ul.matchup_game
+            display: block
+            text-align: left
+            clear: both
+            position: static
+            width: 100%
+            margin: 0
+            padding: 0
+            li
+              float: left
+              display: list-item
+              margin: $spacing/2 $spacing/2 $spacing/2 0
+              &:nth-of-type(1)
+                margin-left: .5em
+              &:nth-last-of-type(1)
+                margin-right: 0
+@media screen and (-webkit-min-device-pixel-ratio: 2)
+  header[role="banner"]
+    .primaryNav 
+      ul.game 
+        > li.starcraft-2 
+          > a
+            background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/sc2_logo_40x40_color@2x.png) center center no-repeat
+            background-size: 40px 40px
+  #ipl4
+    header
+      h2
+        a
+          background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/IPL4_logo_no_shield_144x86@2x.png) 0 0 no-repeat
+          background-size: 144px 86px

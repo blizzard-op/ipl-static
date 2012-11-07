@@ -1,0 +1,21 @@
+tr:nth-of-type(odd){
+	background: #F2F2F2;
+}
+th{
+	background: #b21b00;
+	color: white;	
+}
+td {
+	border: 1px solid #E6E6E6;
+	min-width: 130px;
+	text-align: center;
+}
+
+.paginatedList th a {
+	color: white;
+	margin: 0 10px;
+}
+
+table {
+	margin: 10px;
+}

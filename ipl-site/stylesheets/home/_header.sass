@@ -1,0 +1,128 @@
+header[role=banner]
+  > div
+    background: black
+    &.main
+      @include IGNGradientHeader
+    > div
+      margin: auto
+      @include responsiveWidth
+  &.subNavOut
+    margin-bottom: $spacing*3
+  a
+    color: white
+    text-decoration: none
+    &:hover
+      color: $site-red
+  > p
+    font-size: $medium-text     
+    position: relative
+    line-height: 25px
+    @include inlineBlock
+    span
+      text-transform: none
+  
+  .dropdown
+    position: relative
+    &:hover
+      .additionalContent
+        display: block
+  .additionalContent
+    position: absolute
+    left: 0
+    top: 100%
+    z-index: 5
+    width: 14em
+    min-width: 100%
+    background: #000
+    display: none
+    ul
+      width: 100%
+      li
+        border: none
+        text-align: left
+        float: none
+        a
+          padding: .5em $spacing
+          display: block
+          line-height: 100%
+          &:hover
+            background: $site-red
+            color: white
+    div
+      margin: 0
+      float: left
+      height: 100%
+    img 
+      height: 100%
+      float: left
+    span
+      position: absolute
+      top: 1em
+      left: 41em
+  h1
+    float: left
+    margin: 0
+    padding: 0
+    a
+      display: block
+      height: 100%
+      width: 50px
+      background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/IPL_logo_red_text_no_shield_white_ign_37x30.png) center center no-repeat
+      text-indent: -999em
+      padding: .1em $spacing*1.2
+      border-right: $header-border
+      border-left: $header-border
+  ul
+    float: right
+    height: 100%
+    li
+      margin: 0
+      border: none
+      height: 100%
+      float: left  
+      position: relative
+      &.current
+        a
+          color: $site-red
+      a
+        display: block
+        padding: 0 $spacing/2
+        position: relative
+        height: 100%
+  .primaryNav
+    height: $header-height
+    ul
+      li
+        border-right: $header-border
+        a
+          font-size: $large-text
+          text-transform: uppercase
+          line-height: $header-height
+  .subNav
+    @include responsiveWidth
+    background: black
+    margin: 0 auto
+    a
+      color: #999
+      font-weight: 700
+      padding: $spacing/2
+      @include inlineBlock
+      height: 100%
+      &:hover
+        color: $site-red
+    p
+      float: left
+      margin: 0
+      span
+        padding: $spacing/2 0
+        @include inlineBlock
+        font-weight: bold
+        color: $site-red
+    ul
+      .ignHeader
+        text-decoration: underline
+      .ipltv a
+        background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/nav/television.png) no-repeat center center
+        text-indent: -999em
+        width: 50px
+        background-size: 15px 15px

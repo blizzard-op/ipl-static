@@ -1,0 +1,44 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>IPL Bracket App</title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="css/lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/lib/modernizr-2.5.3.min.js"></script>
+  <style>
+    body{
+      height:100%;
+      margin:0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <div style="width:100%;height:100%;position:absolute;">
+    <div id="mainAppContainer" >
+
+    </div><!--mainAppContainer-->
+  </div>
+  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+  <script src="js/bracket-libs.js"></script>
+  <script src="js/IPLBracketApp.js"></script>
+  <script>$(document).ready(function(){
+    var a = new IPLBracketApp({'container':$('#mainAppContainer'), 'url':'http://esports.ign.com/brackets/face-off-2012-league-of-legends.json', 'hideSpoilers':true, 'miniMap':false, 'drawOnly':false, 'players':8});
+  })</script>
+  <!--bin/foo_bracket_demo3.json-->
+<!--http://esports.ign.com/brackets/face-off-2012-league-of-legends.json-->
+</body>
+</html>
+

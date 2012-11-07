@@ -1,0 +1,252 @@
+h1, p {
+  font-family: 'Bubblegum Sans', sans-serif;
+}
+
+table {
+  float: none !important;
+  background: #ccc;
+  margin: 0 auto;
+}
+tr:nth-of-type(odd) {
+  background: #e6e6e6;
+}
+th {
+  background: #333;
+  color: white; 
+  border: 1px solid black;
+  padding: 5px 15px;
+}
+
+table.gameList {
+  background: #fff;
+}
+table.gameList tr:nth-of-type(odd) {
+  background: #fff;
+}
+table.gameList th {
+  background: #eee;
+  color: black;
+}
+
+.hidden {
+  display: none;
+}
+.sortCell {
+	padding: 0;
+}
+.sort {
+	cursor: pointer;
+  padding: 5px 2em 5px 15px;
+	position: relative;
+  display: block;
+}
+.sort:after {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  margin-top: -3px;
+  border: 7px solid #b21b00;
+  border-right-color: transparent;
+  border-left-color: transparent;
+}
+.sort.desc:after, .preSortDesc:after {
+  content: '';
+  border-bottom-width: 0;
+}
+.sort.asc:after {
+  content: '';
+  border-top-width: 0;
+}
+.paginatedList th a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+.paginatedList{
+	clear: both;
+}
+td {
+  border: 1px solid black;
+  text-align: center;
+  padding: 2px 10px;
+}
+table input {
+  margin: .25em;
+  float: right;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.float {
+	float: left !important;
+}
+.youtubeEmbed {
+	margin-top: 100px;
+	clear: both;
+}
+.youtubeEmbed.float {
+	margin-top: 10px;
+	float: left;
+}
+.power {
+  padding: 0 1em 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #333;
+}
+
+.statPair {
+	display: inline-block;
+	min-width: 200px;
+	margin-left: 10px;
+}
+.statPair .winner {
+	font-size: 120%;
+}
+.statPair label {
+	color: #333333;
+	font-size: 85%;
+	margin: 0;
+}
+.statPair label{
+	cursor: default;
+}
+.statPair .statValue {
+	margin: 0 15px 15px 0;
+	background: #F2F2F2;
+	text-align: right;
+	padding: 5px 10px;
+}
+
+.pairGroup {
+	margin-bottom: 15px;
+}
+
+.paginatedList th a {
+	color: white;
+	margin: 0 10px;
+}
+
+table {
+	margin: 10px;
+}
+
+.rightNav {
+	position: absolute;
+	width: 350px;
+	right: 0;
+	top: 10px;
+}
+.title {
+	min-height: 20px;
+}
+.sidebar {
+	color: white;
+	width: 200px;
+	background: #B21B00;
+}
+#content {
+	margin-left: 200px;
+	width: 100%;
+}
+.container {
+	padding: 1.5em;
+}
+.crumsList li{
+	display: inline-block;
+	height: 25px;
+	padding: 7px 7px 0 7px
+}
+.crumsList li a {
+	color: white;
+	text-decoration: none;
+}
+.crumsList li a:hover {
+	text-decoration: underline;
+}
+
+.crumsList {
+	position: absolute;
+	top: -25px;
+	left: 0;
+	right: 0;
+	color: white;
+	background: rgb(178,27,0); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(178,27,0,1) 0%, rgba(132,22,0,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(178,27,0,1)), color-stop(100%,rgba(132,22,0,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  rgba(178,27,0,1) 0%,rgba(132,22,0,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  rgba(178,27,0,1) 0%,rgba(132,22,0,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  rgba(178,27,0,1) 0%,rgba(132,22,0,1) 100%); /* IE10+ */
+	background: linear-gradient(-45deg,  rgba(178,27,0,1) 0%,rgba(132,22,0,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b21b00', endColorstr='#841600',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px; 
+
+}
+.container {
+	margin-top: 35px;
+}
+
+.bingImage {
+	max-height: 75px;
+	max-width: 150px;
+}
+
+.relatedLinks {
+	margin: -5px 0 10px 0;
+}
+ul.linkList {
+	list-style: none;
+	margin: -10px 0 15px 10px;
+}
+ul.linkList li {
+	display: inline-block;
+	padding-right: 10px;
+}
+
+.raceIcon {
+	height: 15px;
+}
+.raceLogo {
+	height: 24px;
+}
+
+#statOfTheWeek {
+	margin-left: 70px;
+}
+#statOfTheWeek > img {
+	margin-bottom: 15px;
+}
+.container{
+	background: white;
+}
+
+.gameList { margin-left: 32px }
+h3.versus { margin-top: 32px; margin-bottom: 16px}
+.new { color: red}
+
+/* form section */
+form fieldset {
+  border: 1px solid #333;
+  padding: 1em;
+}
+form label {
+  display: block;
+}
+
+.chzn-select { width: 250px }
+
+#versus-select { margin-top: 16px; margin-bottom: 16px }
+
+#captionCreate { float: right; border:  solid black 1px }
+#captionCreate input { margin: 4px; float: right}
+
+p.notice { background-color: #ff9; padding: 8px }
+
+#captionTitle { background-color: #ccc; margin-bottom: 8px }
+
+#caption { }
+#caption h1 { margin-bottom: 32px}

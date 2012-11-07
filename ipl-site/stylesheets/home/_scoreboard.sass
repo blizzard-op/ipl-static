@@ -1,0 +1,65 @@
+#scores
+  background: black
+  margin-bottom: $spacing
+  font-weight: bold
+  > div
+    overflow: hidden
+    @include responsiveWidth
+    margin: 0 auto
+    padding: 1em 37px 0
+  #scoresContainer
+    font-size: 10px
+    color: #2F2F2F
+    > li
+      background: #efefef
+      margin-right: $spacing
+      > p
+        text-align: center
+        margin: 0
+    li
+      float: left
+      li
+        border-top: 1px solid #333
+        border-right: 1px solid #333
+        min-width: 75px
+        &:nth-last-of-type(1)
+          border-right: none
+        p
+          padding: 0 $spacing*2 0 $spacing
+          position: relative
+          border-top: 1px solid #e6e6e6
+          &.ready, &.finished
+            text-align: center
+            padding: $spacing/4 $spacing/2
+          &.team
+            font-weight: normal
+          &.winner
+            font-weight: bold
+      h3
+        background-color: #b5b5b3
+        text-align: center
+        font-size: 9px
+        padding: 0 $spacing
+      p
+        margin: 0
+      span
+        margin-left: 1em
+        float: right
+        position: absolute
+        right: .5em
+        top: 0
+      .spoilerScore
+        z-index: 1
+        background: #EFEFEF
+      a
+        text-align: center
+        display: block
+        background-color: #AAA
+        color: #000
+        border-top: 1px solid #e0e0e0
+        padding: $spacing/4 $spacing/2
+        &.underway        
+          background: $site-red
+          color: #ddd
+          &:hover
+            color: white

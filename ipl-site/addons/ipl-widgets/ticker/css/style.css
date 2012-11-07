@@ -1,0 +1,135 @@
+
+/* JAMES BURROUGHS 2012 Code-Foo */
+
+#ticker-bar {
+  position:relative;
+  background:url(../img/bar_tile.png) top repeat-x #000;
+  width:100%;
+  overflow:hidden;
+  height:26px;
+  border-top:1px solid #333;
+}
+
+.ticker-textSlider {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  visibility:hidden;
+  white-space:nowrap;
+  position:absolute;
+  top:0;
+  left:0;
+  height:26px;
+  line-height:24px;
+  font-size:13px;
+}
+
+#ticker-bar .ticker-textSlider {
+  visibility:visible;
+  left:100%;
+}
+
+.ticker-textBlock {
+  display:inline-block;
+  color:#FFF;
+  height:inherit;
+  padding:0 40px 0 40px;
+  text-decoration: none;
+   border-left:1px solid #161616;
+  /*text-shadow:3px 3px 3px rgba(0,0,0,0.5);*/
+}
+
+.ticker-textBlock:hover {
+  background-color:#333;
+}
+
+.ticker-textBlock span {
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.ticker-label {
+  color:red;
+  font-weight:bold;
+  margin-right:10px;
+  text-transform: uppercase;
+  /*text-shadow:3px 3px 3px rgba(0,0,0,0.5);*/
+}
+
+.ticker-label + * {
+  margin-left:0;
+}
+
+.ticker-icon {
+  background-position:left middle;
+  background-repeat: no-repeat;
+  display:inline-block;
+  height:100%;
+  position:relative;
+  top:2px;
+  margin-left:10px;
+}
+
+.ticker-icon + .ticker-team, .ticker-icon + .ticker-player {
+  margin-left:5px;
+}
+
+.ticker-terran {
+  background-image:url(../img/ico_terran.png);
+  width:16px;
+}
+
+.ticker-protoss {
+  background-image:url(../img/ico_protoss.png);
+  width:14px;
+}
+
+.ticker-zerg {
+  background-image:url(../img/ico_zerg.png);
+  width:21px;
+}
+
+.ticker-lol {
+  background-image:url(../img/ico_lol.png);
+  width:22px;
+}
+
+.ticker-sc {
+  background-image:url(../img/ico_sc.png);
+  width:22px;
+}
+
+.ticker-gray {
+  margin-right:15px;
+  margin-left:15px;
+  color:#999;
+  font-size:80%;
+  text-transform: uppercase;
+}
+
+.ticker-gray + * {
+  margin-left:0;
+}
+
+.ticker-team {
+  text-transform: uppercase;
+  font-size:80%;
+  color:#e7d76a;
+  margin-left:10px;
+}
+
+.ticker-team + .ticker-player, .ticker-player + .ticker-team {
+  margin-left:3px;
+}
+
+.ticker-score {
+  font-weight:bold;
+  font-size:120%;
+  margin-left:10px;
+  color:orange;
+}
+
+.ticker-italic {
+  font-style: italic;
+}
+
+
+

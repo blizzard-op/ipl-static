@@ -1,0 +1,203 @@
+.ui-body-c 
+  p
+    a:link, a:visited, .ui-link, .ui-link:visited
+      color: #b21b00
+      text-decoration: none
+      &.hashTag
+        color: #9a9b9d
+      &.mention
+        color: #333
+        font-weight: bold
+  
+.button 
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: 30px 30px
+
+.ipl4-starcraft-2 
+  background-image: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/sc2_logo_40x40_bw.png)
+
+.ipl4-league-of-legends 
+  background-image: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/lol_logo_40x40_bw.png)
+
+.ipl4-general 
+  background-image: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/IPL_logo_grey_no_shield_110x89.png)
+  background-size: 36.666666666667px 29.666666666667px
+
+.ipl4-cosmopolitan 
+  background-image: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/cosmopolitan_las_vegas_logo_c.png)
+
+.no-text 
+  text-indent: 100%
+  overflow: hidden
+
+.video_thumb
+  height: 70px
+  width: 90px
+  left:  0
+  bottom: 0
+
+
+.ui-header 
+  .ui-title
+    margin: .6em 1em .8em
+  [data-rel="back"]
+    top: auto
+    .ui-btn-inner
+      padding: 1em
+      .ui-icon
+        left:  50%
+        margin-left: -9px 
+.ui-footer
+  border-right: none
+  border-left: none
+  border-bottom: none
+  li
+    a
+      border-left-color: #000
+  li:nth-of-type(1)
+    a
+      border-left: none
+  .ui-btn-up-a
+    background-color: #333
+    color: white
+  .ui-btn-active
+    background-color: #000
+ 
+.ui-loader 
+  background: transparent
+  border: none
+  .ui-icon
+    background-position: 50% 50%
+    -webkit-animation: spinner 1s infinite
+    -moz-animation: spinner 1s infinite
+    -ms-animation: spinner 1s infinite
+    -o-animation: spinner 1s infinite
+    animation: spinner 1s infinite
+      
+#tweets
+  img
+    border-radius: .25em
+    margin: .5em
+  .ui-li-has-thumb
+    min-height: 64px
+    padding: 0 1em 0 70px
+  .ui-li-heading
+    margin: .5em 0
+    a
+      text-decoration: none
+  .ui-li-desc
+    white-space: normal
+    
+#maps
+  div[role="main"]
+    padding: 0
+
+#mapContainer
+  img
+    display: block
+    margin: auto
+    width: 100%
+    
+#mapNav
+  width: 97%
+  margin: auto
+  li
+    float: left
+    &:nth-last-of-type(1)
+      margin-right: 0% !important
+    &.selected
+      opacity: .6
+    a
+      display: block
+      position: relative
+      text-align: center
+      color: white
+      text-shadow: none
+      text-decoration: none
+      font-weight: normal
+      font-size: .8em
+      span
+        position: absolute
+        bottom: 0
+        left: 0em
+        right: 0em
+        background: rgba(0, 0, 0, .8)
+
+#upcoming
+  li
+    position: relative
+    &.all
+      h3
+        &:before
+          background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/sc2_logo_25x25_bw.png) 0 0 no-repeat 
+    &.starcraft-2
+      h3
+        &:before
+          background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/sc2_logo_25x25_bw.png) 0 0 no-repeat  
+    &.league-of-legends
+      h3
+        &:before
+          background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/lol_logo_25x25_bw.png) 0 0 no-repeat 
+    h3
+      text-indent: 30px
+      &:before
+        content: ''
+        position: absolute
+        height: 25px
+        width: 25px
+        left: 0%
+.gstl
+  .ui-content
+    padding: 0
+  #post
+    > p
+      padding: 0 15px
+.overview
+  .cosmo-logo
+    display: block
+    margin: 0 auto 1em
+
+@-webkit-keyframes spinner
+  0%
+    -webkit-transform: rotate(0deg)
+  50%
+    -webkit-transform: rotate(180deg)
+  100%
+    -webkit-transform: rotate(360deg)
+
+@-moz-keyframes spinner
+  0%
+    -ms-transform: rotate(0deg)
+  50%
+    -ms-transform: rotate(180deg)
+  100%
+    -ms-transform: rotate(360deg)
+
+@-ms-keyframes spinner
+  0%
+    -ms-transform: rotate(0deg)
+  50%
+    -ms-transform: rotate(180deg)
+  100%
+    -ms-transform: rotate(360deg)
+    
+@-o-keyframes spinner
+  0%
+    -ms-transform: rotate(0deg)
+  50%
+    -ms-transform: rotate(180deg)
+  100%
+    -ms-transform: rotate(360deg)
+    
+@keyframes spinner
+  0%
+    transform: rotate(0deg)
+  50%
+    transform: rotate(180deg)
+  100%
+    transform: rotate(360deg)
+
+@media screen and (-webkit-min-device-pixel-ratio: 2)
+  .ipl4-general 
+    background-image: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/IPL_logo_grey_no_shield_110x89@2x.png)

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<title>IPL Box Scores Demo</title>
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.5.1/build/cssreset/cssreset-min.css">
+</head>
+
+<body>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="http://cloud.github.com/downloads/wycats/handlebars.js/handlebars-1.0.0.beta.6.js"></script>
+	<script src ="https://raw.github.com/timrwood/moment/1.7.0/min/moment.min.js"></script>
+	
+	<div id='scores'></div>
+
+	<script id='ipl-box-scores-template' type='ipl/template'>
+		<div class="controls">
+		<div class='left-control'><img src='images/left.png' class='left-button' /></div>
+		<div class='container'>
+			<div class='box-scores'>
+				{{#each this}}
+					<div class='match'>
+						<div class='date-container'><div class='date'>{{date}}</div></div>
+						<div class='title'>{{title}}</div>
+						<div class='team-top'><div class='team-name {{{team1Class}}}'>{{username1}}</div><div class='score {{{team1Class}}}'>{{points1}}</div></div>
+						<div class='team-bottom'><div class='team-name {{{team2Class}}}'>{{username2}}</div><div class='score {{{team2Class}}}'>{{points2}}</div></div>
+						<div class='status-container'><a href='{{{url}}}' class='status-link'><div class='vod-image'><img src='images/video.png' /></div><div class='status {{{status}}}'>{{status}}</div></a></div>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+		<div class='right-control'><img src='images/right.png' class='right-button' /></div>
+	</div>
+	</script>
+	
+	<script>
+		var local = true;
+		var scoresObj = {
+			id: "ipl-box-scores-template"
+		}
+	</script>
+
+	<script src="js/scores.js"></script>
+
+</body>
+</html>

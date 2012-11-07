@@ -1,0 +1,647 @@
+jsonp({
+	  "id": null,
+    "name": "ipl5-2012-League-of-Legends",
+    "slug": "ipl5-2012-league-of-legends",
+    "kind": "ipl5-lol",
+    "firstLoserRound": 6,
+    "user_id": null,
+    "loserSpacing":140,
+    "winnerSpacing":270,
+    "labels": [
+      {
+        "x":0,
+        "y":0,
+        "html":"<h2>Bracket!<h2>"
+      }
+    ],
+    "groups": [
+      {
+        "name":"Group A",
+        "players":[
+          {
+            "id":12,
+            "name":"Meat Playground"
+          },
+          {
+            "id":13,
+            "name":"CLG.eu"
+          },
+          {
+            "name":"iCeland",
+            "id":14
+          },
+          {
+            "name":"Thailand Qualifier",
+            "id":15
+          }
+        ],
+        "advanceTo":[
+          {
+            "x":0,
+            "y":0,
+            "slot":0
+          },
+          {
+            "x":0,
+            "y":3,
+            "slot":1
+          },
+          {
+            "x":5,
+            "y":1,
+            "slot":0
+          },
+          {
+            "x":5,
+            "y":2,
+            "slot":1
+          }
+        ]
+      },
+      {
+        "name":"Group B",
+        "players":[
+          {
+            "name":"Curse.eu",
+            "id":16
+          },
+          {
+            "name":"Live Qualifier",
+            "id":17
+          },
+          {
+            "name":"Singapore Sentinels",
+            "id":18
+          },
+          {
+            "name":"NA Qualifier",
+            "id":19
+          }
+        ],
+        "advanceTo":[
+          {
+            "x":0,
+            "y":1,
+            "slot":0
+          },
+          {
+            "x":0,
+            "y":2,
+            "slot":1
+          },
+          {
+            "x":5,
+            "y":0,
+            "slot":0
+          },
+          {
+            "x":5,
+            "y":3,
+            "slot":1
+          }
+        ]
+      },
+      {
+        "name":"Group C",
+        "players":[
+          {
+            "name":"Alternate",
+            "id":12
+          },
+          {
+            "name":"World Elite",
+            "id":12
+          },
+          {
+            "name":"Curse.na",
+            "id":12
+          },
+          {
+            "name":"TSM",
+            "id":12
+          }
+        ],
+        "advanceTo":[
+          {
+            "x":0,
+            "y":2,
+            "slot":0
+          },
+          {
+            "x":0,
+            "y":1,
+            "slot":1
+          },
+          {
+            "x":5,
+            "y":3,
+            "slot":0
+          },
+          {
+            "x":5,
+            "y":0,
+            "slot":1
+          }
+        ]
+      },
+      {
+        "name":"Group D",
+        "players":[
+          {
+            "name":"Korean Qualifier",
+            "id":12
+          },
+          {
+            "name":"Dynamic",
+            "id":12
+          },
+          {
+            "name":"Taipei Assassins",
+            "id":12
+          },
+          {
+            "name":"Moscow 5",
+            "id":12
+          }
+        ],
+        "advanceTo":[
+          {
+            "x":0,
+            "y":3,
+            "slot":0
+          },
+          {
+            "x":0,
+            "y":0,
+            "slot":1
+          },
+          {
+            "x":5,
+            "y":2,
+            "slot":0
+          },
+          {
+            "x":5,
+            "y":1,
+            "slot":1
+          }
+        ]
+      }
+    ],
+    "rounds": [
+    	{
+    		"name": "Quarter Finals",
+        "position": 0,
+        "matches": [
+          {
+            "match": {
+            	"position":0,
+            	"transform":{
+            		"x":381,
+            		"y":0
+            	},
+           		"parent":[1,0],
+         			"children":[],
+         			"loserDropsTo":[6,0],
+              "locked":[true,true],
+         			"players":[
+            		{
+            			"id":12,
+            			"name":"TSM"
+            		},
+            		{
+            			"id":13,
+            			"name":"Curse"
+            		}
+            	]
+            }
+          },
+          {
+            "match": {
+            	"position":1,
+            	"transform":{
+            		"x":381,
+            		"y":112
+            	},
+           		"parent":[1,0],
+         			"children":[],
+         			"loserDropsTo":[6,1],
+              "locked":[true,true],
+         			"players":[
+            		{
+            			"id":14,
+            			"name":"CLG"
+            		},
+            		{
+            			"id":15,
+            			"name":"Dynamic"
+            		}
+            	]
+            }
+          },
+          {
+            "match": {
+            	"position":2,
+            	"transform":{
+            		"x":381,
+            		"y":222
+            	},
+           		"parent":[1,1],
+         			"children":[],
+         			"loserDropsTo":[6,2],
+              "locked":[true,true],
+         			"players":[
+            		{
+            			"id":16,
+            			"name":"M5"
+            		},
+            		{
+            			"id":17,
+            			"name":"BLACK"
+            		}
+            	]
+            }
+          },
+          {
+            "match": {
+            	"position":3,
+            	"transform":{
+            		"x":381,
+            		"y":332
+            	},
+           		"parent":[1,1],
+         			"children":[],
+         			"loserDropsTo":[6,3],
+              "locked":[true,true],
+         			"players":[
+            		{
+            			"id":18,
+            			"name":"Legion"
+            		},
+            		{
+            			"id":19,
+            			"name":"Ig"
+            		}
+            	]
+            }
+          }
+        ]
+    	},
+
+    	{
+    		"name": "Semifinals",
+        "position": 1,
+        "matches": [
+          {
+            "match": {
+            	"position":0,
+           		"parent":[2,0],
+         			"children":[[0,0],[0,1]],
+         			"loserDropsTo":[8,1],
+              "locked":[false,false],
+         			"players":[
+                null,
+                null
+            	]
+            }
+          },
+          {
+            "match": {
+            	"position":1,
+           		"parent":[2,0],
+         			"children":[[0,2],[0,3]],
+         			"loserDropsTo":[8,0],
+              "locked":[false,false],
+         			"players":[
+                null,
+                null
+            	]
+            }
+          }
+        ]
+    	},
+
+    	{
+    		"name": "Finals",
+        "position": 2,
+        "matches": [
+          {
+            "match": {
+            	"position":0,
+           		"parent":[3,0],
+         			"children":[[1,0],[1,1]],
+         			"loserDropsTo":[10,0],
+              "locked":[false,false],
+         			"players":[
+                null,
+                null
+            	]
+            }
+          }
+        ]
+    	},
+
+    	{
+    		"name": "Grand Finals",
+        "position": 3,
+        "matches": [
+          {
+            "match": {
+            	"position":0,
+           		"parent":[4,0],
+         			"children":[[2,0],[10,0]],
+         			"loserDropsTo":null,
+              "locked":[false,false],
+         			"players":[
+                null,
+                null
+            	]
+            }
+          }
+        ]
+    	},
+
+      {
+        "name": "Grand Champion",
+        "position": 4,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":null,
+              "locked":[true,false],
+              "children":[[3,0]],
+              "loserDropsTo":null,
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Losers Round 1",
+        "position": 5,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "transform":{
+                "x":221,
+                "y":474
+              },
+              "parent":[6,0],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":20,
+                  "name":"TSM EVO RIP"
+                },
+                {
+                  "id":21,
+                  "name":"CLG.EU"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "transform":{
+                "x":221,
+                "y":542
+              },
+              "parent":[6,1],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":22,
+                  "name":"Meat Playground"
+                },
+                {
+                  "id":23,
+                  "name":"Orbit"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":2,
+              "transform":{
+                "x":221,
+                "y":654
+              },
+              "parent":[6,2],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":24,
+                  "name":"Eclypsia"
+                },
+                {
+                  "id":25,
+                  "name":"World Elite"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":3,
+              "transform":{
+                "x":221,
+                "y":722
+              },
+              "parent":[6,3],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":26,
+                  "name":"ALTERNATE"
+                },
+                {
+                  "id":27,
+                  "name":"Young Based Gods"
+                }
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Losers Round 2",
+        "position": 6,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[7,0],
+              "children":[[5,0]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "parent":[7,0],
+              "children":[[5,1]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":2,
+              "parent":[7,1],
+              "children":[[5,2]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":3,
+              "parent":[7,1],
+              "children":[[5,3]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Losers Round 3",
+        "position": 7,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[8,0],
+              "children":[[6,0],[6,1]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "parent":[8,1],
+              "children":[[6,2],[6,3]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Losers Round 4",
+        "position": 8,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[9,0],
+              "children":[[7,0]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "parent":[9,0],
+              "children":[[7,1]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Losers Round 5",
+        "position": 9,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[10,0],
+              "children":[[8,0],[8,1]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Losers Finals",
+        "position": 10,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[3,0],
+              "children":[[9,0]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      }
+    ]
+})

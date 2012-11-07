@@ -1,0 +1,84 @@
+div.keep-aspect-ratio > div { border:0;padding:0;margin:0;position:relative; }
+div.keep-aspect-ratio > div > img { border:0;padding:0;margin:0;z-index:-1000;position:relative;top:0;bottom:0;left:0;width:100%;display:block; }
+div.keep-aspect-ratio > div > div { border:0;padding:0;margin:0;position:absolute;top:0;bottom:0;left:0;width:100%;overflow:auto}
+div.keep-aspect-ratio > div > div { height: 100%; overflow: hidden; }
+
+.playerControls {
+	position: absolute;
+	bottom: 0;
+}
+.slider {
+  background: transparent url("http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ui/volume_slider_bg.png") repeat-x top left;
+  height: 9px;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid rgb(51, 51, 51);
+  float: left;
+  width: 100px;
+  clear: right;
+  margin: 10px 10px 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: inset 0 0 8px #000;
+  box-shadow: inset 0 0 8px #000;
+  border-image: initial;
+}
+.slider .progress {
+    background: transparent url("http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ui/volume_slider_bg.png") repeat-x 0 -9px;
+    height: 9px;
+    background-color: rgb(102, 0, 0);
+}
+.slider .handle {
+    background: rgb(153, 153, 153);
+    height: 16px;
+    width: 16px;
+    top: -4px;
+    position: absolute;
+    display: block;
+    margin-top: 1px;
+    border: 1px solid black;
+    cursor: move;
+    -webkit-box-shadow: 0 0 2px #000;
+    -moz-box-shadow: 0 0 2px #000;
+    box-shadow: 0 0 2px #000;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    border-radius: 14px;
+    border-image: initial;
+}
+.range {
+  display: none;
+}
+
+.videoGroupTabs {
+	padding: 0;
+	margin-bottom: 0;
+	padding: 0;
+	width: 100%;
+}
+.videoGroupTabs li {
+	float: left;
+	width: 18%;
+	list-style:none;
+	border: 0;
+	padding: 0;
+	margin: 1%;
+}
+.videoGroupTabs li.active {
+	width: 19%;
+	margin: .5%;
+	-webkit-box-shadow: 5px 5px 5px 1px #666;
+	   -moz-box-shadow: 5px 5px 5px 1px #666;
+			box-shadow: 5px 5px 5px 1px #666; 
+}
+.videoGroupTabs li img{
+	width: 100%;
+}
+
+#wrap {
+	background: #E6E6E6;
+}
+#videoGroups {
+	margin: 0;
+}

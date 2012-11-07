@@ -1,0 +1,49 @@
+{
+league-of-legends: [
+{
+id: "5018335fb7d4e0470900002c",
+starts_at: "2012-08-03T11:00:00-07:00",
+ends_at: "2012-08-03T17:00:00-07:00",
+title: "IPL Elites EU - Grand finals",
+subtitle_1: "Grand Finals",
+subtitle_2: "EU",
+metadata: { }
+},
+{
+id: "5018335fb7d4e0470900002d",
+starts_at: "2012-08-03T17:00:00-07:00",
+ends_at: "2012-08-03T23:00:00-07:00",
+title: "IPL Elites NA - Grand Finals",
+subtitle_1: "Grand Finals",
+subtitle_2: "NA",
+metadata: { }
+},
+id: "5018335fb7d4e0470900002d",
+starts_at: "2012-08-04T17:00:00-07:00",
+ends_at: "2012-08-04T23:00:00-07:00",
+title: "IPL Elites NA - Grand Finals",
+subtitle_1: "Grand Finals",
+subtitle_2: "NA",
+metadata: { }
+},
+id: "5018335fb7d4e0470900002d",
+starts_at: "2012-08-05T17:00:00-07:00",
+ends_at: "2012-08-05T23:00:00-07:00",
+title: "IPL Elites NA - Grand Finals",
+subtitle_1: "Grand Finals",
+subtitle_2: "NA",
+metadata: { }
+}
+],
+starcraft-2: [
+{
+id: "501718dfb7d4e0783700005b",
+starts_at: "2012-08-03T16:00:00-07:00",
+ends_at: "2012-08-03T18:30:00-07:00",
+title: "IPL5 Asian Satellite",
+subtitle_1: null,
+subtitle_2: null,
+metadata: { }
+}
+]
+}

@@ -1,0 +1,40 @@
+@mixin IGNButtons
+  -webkit-box-shadow: inset 1px 11px 20px 1px white
+  -moz-box-shadow: inset 1px 11px 20px 1px white
+  box-shadow: inset 1px 11px 20px 1px white
+  background-color: #EDEDED
+  background: -webkit-gradient(linear,left top, left bottom, color-stop(0.05, #EDEDED), color-stop(1, #DFDFDF))
+  background-image: -webkit-linear-gradient(top, #EDEDED 5%, #DFDFDF 100%)
+  background-image:    -moz-linear-gradient(top, #EDEDED 5%, #DFDFDF 100%)
+  background-image:      -o-linear-gradient(top, #EDEDED 5%, #DFDFDF 100%)
+  background-image:      -linear-gradient(top, #EDEDED 5%, #DFDFDF 100%)
+  -webkit-border-radius: .25em
+  -moz-border-radius: .25em
+  border-radius: .25em
+  display: inline-block
+  color: #333
+  font-size: 11px
+  font-weight: bold
+  text-decoration: none
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5)
+  padding: 0 .5em
+  &:active
+    position: relative
+    top: 1px
+
+.ytSubscribe
+  @include IGNButtons
+  line-height: 24px
+  span
+    background: transparent url("http://media.ign.com/ev/esports/ipl-static/ipl-site/images/youtube_logo_standard_againstwhite_41x15.png") center center no-repeat
+    text-indent: -999em
+    display: inline-block
+    width: 45px
+
+.twitchSubscribe
+  @include IGNButtons
+  span
+    background: transparent url("http://media.ign.com/ev/esports/ipl-static/ipl-site/images/twitch_logo_45x15.png") center center no-repeat
+    text-indent: -999em
+    display: inline-block
+    width: 50px

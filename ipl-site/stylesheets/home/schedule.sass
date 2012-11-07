@@ -1,0 +1,19 @@
+#schedule-link
+  color: #b21b00
+#schedule
+  width: 970px
+  float: none
+  margin: auto
+  .guide 
+    .games 
+      li
+        &.times
+          width: 10%
+    .dates
+      width: 10%
+  $i: 1
+  @while $i <= 10
+    &.games-#{$i}
+      .schedule, .gameHeader
+        width: (90%/$i)
+    $i: $i + 1

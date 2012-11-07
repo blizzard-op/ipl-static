@@ -1,0 +1,96 @@
+#scores {
+  margin-bottom: 1em;
+}
+  #scores .status-link {
+    text-decoration: none;
+    color: #2f2f2f;
+    font-weight: bold; 
+    display: block;
+    background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl-widgets/scores/images/video.png) 5px center no-repeat;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  #scores .controls {
+    width: 1015px;
+    margin: auto; }
+  #scores .container {
+    width: 971px;
+    float: left;
+    font-size: 10px;
+    margin-top: .5em;
+    color: #2f2f2f;
+    overflow: hidden;
+    position: relative; }
+  #scores .box-scores {
+    width: 1540px;
+    overflow: hidden; }
+  #scores .match {
+    width: 150px;
+    margin: 0 1px;
+    float: left;
+    overflow: hidden; }
+  #scores .match div {
+    text-align: center;
+    height: 15px;
+    line-height: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: nowrap;
+    background: #efefef;
+  }
+  #scores .date-container {
+    font-size: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid #000;}
+  #scores .match .title {
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #aaa;}
+  #scores .team-top {
+    border-bottom: 1px solid #fff;}
+  #scores .match .status-container {
+    background: #aaa;}
+  #scores .status-container p {
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    color: #555;
+    background: #ccc;
+    text-transform: uppercase;
+  }
+  #scores .team-name {
+    float: left;
+    margin: 0 5px; }
+  #scores .score {
+    float: right;
+    margin: 0 5px; }
+  #scores .date {
+    margin: 0 5px; }
+  #scores .winner {
+    font-weight: bold; }
+  #scores .loser {
+    color: #555; }
+  #scores .left-control {
+    width: 20px;
+    height: 75px;
+    margin-right: 1px;
+    float: left;
+    overflow: hidden; }
+  #scores .right-control {
+    width: 20px;
+    height: 75px;
+    margin-left: 2px;
+    float: left;
+    overflow: hidden; }
+  #scores .left-button {
+    cursor: pointer;
+    margin: 25.5px 0;
+    margin-left: 5px; }
+  #scores .right-button {
+    cursor: pointer;
+    margin: 25.5px 0;
+    margin-left: -5px; }
+  #scores .live {
+    color: #efefef;
+    background: #b21b00;}

@@ -1,0 +1,163 @@
+#schedule {
+  float: left;
+}
+#schedule p {
+  margin: 0; }
+#schedule .schedule-container {
+  width: 640px;
+  color: #333;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background: #efefef;
+  background: -webkit-linear-gradient(bottom, #efefef 0%, #dddddd 100%);
+  background: -moz-linear-gradient(bottom, #efefef 0%, #dddddd 100%);
+  background: -o-linear-gradient(bottom, #efefef 0%, #dddddd 100%);
+  background: -ms-linear-gradient(bottom, #efefef 0%, #dddddd 100%);
+  background: linear-gradient(bottom, #efefef 0%, #dddddd 100%); }
+#schedule .header {
+  background: white; }
+#schedule .date-header {
+  font-size: 12px;
+  font-style: italic;
+  margin: 15px 0;
+  text-align: center;
+  font-weight: bold;
+  background: #fff; }
+#schedule th {
+  border: 1px solid #ccc; }
+#schedule .sc-header {
+  font-size: 15px;
+  margin: 15px 0;
+  text-align: center;
+  font-weight: bold;
+  vertical-align: middle;
+  background: #fff; }
+#schedule .lol-header {
+  font-size: 15px;
+  margin: 15px 0;
+  text-align: center;
+  font-weight: bold;
+  vertical-align: middle;
+  background: #fff; }
+#schedule .schedule-link {
+  color: #777;
+  font-size: 10px; }
+#schedule .date {
+  width: 100px;
+  height: 50px;
+  vertical-align: top;
+  font-weight: bold;
+  padding: 8px 8px;
+  text-shadow: 0px 1px 0px #fff;
+  border: 1px solid #ccc; }
+#schedule .sc2 {
+  width: 250px;
+  height: 50px;
+  vertical-align: top;
+  text-align: left;
+  font-weight: bold;
+  border: 1px solid #ccc; }
+#schedule .lol {
+  width: 250px;
+  height: 50px;
+  vertical-align: top;
+  text-align: left;
+  font-weight: bold;
+  border: 1px solid #ccc; }
+#schedule .listing {
+  border: 1px solid #efefef;
+  margin: 5px;
+  padding: 5px;
+  background: #fff;
+  box-shadow: 0px 2px 2px #ccc; }
+#schedule .live-now {
+  font-weight: bold; }
+#schedule .live-now:hover {
+  background: rgba(178, 27, 0, 0.1);
+  cursor: pointer; }
+#schedule .live-now a {
+  text-decoration: none;
+}
+#schedule #date-today {
+  color: #B21B00;
+  font-weight: bold;
+  font-size: 15px; }
+#schedule .sub1 {
+  font-weight: normal;
+  color: #777; }
+#schedule .sub2 {
+  font-weight: normal;
+  color: #777;
+  font-size: 10px;
+  font-style: italic; }
+#schedule span {
+  font-style: italic;
+  color: #555; }
+#schedule a {
+  color: #333;
+  -webkit-transition: color 300ms ease-in-out 50ms;
+  -moz-transition: color 300ms ease-in-out 50ms;
+  -ms-transition: color 300ms ease-in-out 50ms;
+  -o-transition: color 300ms ease-in-out 50ms;
+  transition: color 300ms ease-in-out 50ms; }
+#schedule a:link, #schedule a:visited {
+  color: #333; }
+#schedule a:hover {
+  cursor: pointer;
+  color: #b21b00; }
+#schedule #date-1 {
+  font-size: 10px;
+  font-style: italic; }
+#schedule .all {
+  font-weight: bold;
+  font-size: 10px;
+  font-style: normal;
+  text-transform: uppercase;
+  background: black;
+  color: white;
+  padding: 2px;
+  border-radius: 0.25em; }
+#schedule .tag {
+  font-weight: bold;
+  font-size: 10px;
+  font-style: normal;
+  text-shadow: none;
+  text-transform: uppercase;
+  background: #b21b00;
+  color: white;
+  padding: 2px;
+  border-radius: 0.25em; }
+#schedule .tags {
+	margin-top: 2px;
+}
+#schedule .rebroadcast {
+  font-size: 10px;
+  text-transform: uppercase; }
+#schedule .live {
+  font-weight: bold;
+  font-size: 10px;
+  font-style: normal;
+  text-shadow: none;
+  text-transform: uppercase;
+  margin-right: 5px;
+  background: #b21b00;
+  color: white;
+  padding: 2px;
+  border-radius: 0.25em; }
+#schedule a.now {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 10px;
+  font-style: normal;
+  text-shadow: none;
+  text-transform: uppercase; }
+#schedule .vid {
+  padding-right: 5px; }
+#schedule .vod {
+  font-size: 10px; }
+#schedule #date-2, #schedule #date-3, #schedule #date-4, #schedule #date-5, #schedule #date-6, #schedule #date-7 {
+  font-size: 10px;
+  font-style: italic; }
+#schedule .link-live {
+  text-decoration: none; }

@@ -1,0 +1,247 @@
+/* Retina Control Panel Main Stylesheet
+
+
+
+
+/* BEGIN JAMES BURROUGHS */
+
+@import url(http://fonts.googleapis.com/css?family=Questrial);
+
+html, body, input, textarea, select {
+	font-family: 'Questrial', sans-serif;
+	font-size:13px;
+}
+
+.tar {
+	text-align: right;
+}
+
+.tac {
+	text-align: center;
+}
+
+.fr {
+	float:right;
+}
+
+input[type=submit].button {
+	font-size:120%;
+}
+
+input.error,
+select.error,
+textarea.error {
+	background-color:#fdf5bc
+}
+
+body {
+	background-color:#eeeeee;
+	margin:0px;
+	color:#666;
+}
+
+body#home {
+	background:url(../img/gradient_tile.png) left 300px repeat-x #eeeeee;
+}
+
+.header {
+	text-transform: uppercase;
+	color:#b21b00;
+	padding-bottom:5px;
+	border-bottom:1px solid #DDD;
+	margin-bottom:10px;
+}
+
+* + .header {
+	margin-top:20px;
+}
+
+.button, .subtleButton {
+	padding:5px 10px 5px 10px;
+	background-color:#b21b00;
+	color:#FFF;
+	border:1px solid #801300;
+	cursor:pointer;
+
+	box-shadow:0px 3px 2px rgba(0,0,0,.3), 0px 1px 0px #ffafa1 inset;
+	border-radius:5px;
+	text-shadow:0px 1px 0px #000;
+
+	background-image: linear-gradient(bottom, rgb(178,27,0) 0%, rgb(219,68,41) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(178,27,0) 0%, rgb(219,68,41) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(178,27,0) 0%, rgb(219,68,41) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(178,27,0) 0%, rgb(219,68,41) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(178,27,0) 0%, rgb(219,68,41) 100%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(178,27,0)),
+		color-stop(1, rgb(219,68,41))
+	);
+}
+
+.button:hover, .subtleButton:hover {
+	box-shadow:0px 1px 3px #520c00 inset;
+}
+
+.subtleButton {
+	border-color:#999;
+	color:#666;
+
+	box-shadow:0px 3px 2px rgba(0,0,0,.2), 0px 1px 0px #fff inset;
+	text-shadow:0px 1px 0px #FFF;
+
+	background-image: linear-gradient(bottom, rgb(212,212,212) 0%, rgb(237,237,237) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(212,212,212) 0%, rgb(237,237,237) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(212,212,212) 0%, rgb(237,237,237) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(212,212,212) 0%, rgb(237,237,237) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(212,212,212) 0%, rgb(237,237,237) 100%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(212,212,212)),
+		color-stop(1, rgb(237,237,237))
+	);
+}
+
+#infobar {
+	height:30px;
+	line-height:30px;
+	border-bottom:1px solid #DDD;
+	background-color:#FFF;
+	list-style:none;
+	margin:0px;
+	padding:0px;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+
+	box-shadow:0px 0px 5px #888;
+}
+
+#infobar li {
+	float:left;
+	height:100%;
+	padding:0 20px 0 20px;
+	border-right:1px solid #DDD;
+}
+
+#infobar strong {
+	color:#b21b00;
+	margin-right:10px;
+}
+
+
+.gray {
+	color:#AAA;
+}
+
+#home_title {
+	font-size:32px;
+	line-height:32px;
+	color:#888;
+	margin:50px 20px 20px 20px;
+
+	text-shadow:0px 1px 0px #FFF;
+}
+
+#home_title_details {
+	margin:-20px 20px 20px 20px;
+	letter-spacing: 1px;
+	text-indent: 140px;
+	color:#AAA;
+}
+
+#home_dash_menu {
+	position:absolute;
+	top:200px;
+	height:150px;
+	width:100%;
+	text-align:center;
+}
+
+.home_dash_button {
+	vertical-align: top;
+	display:inline-block;
+	width:190px;
+	height:140px;
+	line-height:150px;
+	color:#FFF;
+	font-size:26px;
+	background-color:#b21b00;
+	background-position:center center;
+	background-repeat:no-repeat;
+	border:5px solid #b21b00;
+	cursor:pointer;
+	text-decoration: none;
+
+	text-shadow:5px 5px 5px rgba(0,0,0,0.5);
+	border-radius:10px;
+}
+
+.home_dash_button:hover {
+	border-color:#FFF;
+	text-shadow:none;
+
+	box-shadow:0px 0px 20px rgba(0,0,0,0.5) inset;
+}
+
+#home_helper {
+	position:absolute;
+	top:150px;
+	width:100%;
+	text-align:center;
+	font-size:24px;
+}
+
+.home_dash_button + .home_dash_button {
+	margin-left:20px;
+}
+
+#dashboardWrapper {
+	background-color:#fff;
+	margin:20px;
+	border:1px solid #DDD;
+	overflow:hidden;
+	padding:10px;
+}
+
+#home_button {
+	width:34px;
+	height:32px;
+	float:left;
+	background:url(../img/home_button.png) left top no-repeat;
+	margin:0 10px 0 20px;
+	padding-right:10px;
+	border-right:1px dotted #CCC;
+	cursor:pointer;
+}
+
+.inputWrapper {
+	border:1px solid #AAA;
+	padding:5px;
+
+	box-shadow:0px 3px 2px #DDD inset;
+}
+
+.inputWrapper input, .inputWrapper textarea, .inputWrapper select {
+	width:100%;
+	border:none;
+	line-height:16px;
+	font-size:16px;
+}
+
+
+
+
+
+/* DASH BUTTONS */
+#livepoll_button {
+	background-image:url(../img/livepoll_button.png);
+}
+
+
+

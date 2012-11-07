@@ -1,0 +1,101 @@
+<!DOCTYPE html><!--[if lt IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"></html><![endif]--><!--[if IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8"></html><![endif]--><!--[if IE 8]>
+<html lang="en" class="no-js lt-ie9"></html><![endif]--><!--[if gt IE 8]>
+<html lang="en" class="no-js"></html><![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>IPL TV</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl-tv/stylesheets/style.css">
+  <script src="http://media.ign.com/ev/esports/ipl-static/ipl-site/javascripts/modernizr.js"></script>
+  <!--script(src = "http://media.ign.com/ev/esports/ipl-static/ipl-site/javascripts/lib/selectivizr-min.js")-->
+  <link rel="shortcut icon" type="image/x-icon" href="http://media.ignimgs.com/media/ign/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ipl-touch-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon-precomposed" href="http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ipl-touch-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon-precomposed" href="http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ipl-touch-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon-precomposed" href="http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ipl-touch-icon-144x144.png" sizes="144x144">
+</head>
+<body data-bind="css: {sideBarVisible: sideBarVisible}">
+  <header role="banner" class="clearfix">
+    <h1 class="logo"><a id="logo" href="/ipl/">IPL - IGN Pro League</a></h1>
+    <nav class="game-nav">
+      <ul id="game" class="game">
+        <li class="starcraft-2"><a href="/ipl/starcraft-2" target="blank">StarCraft II</a></li>
+        <li class="league-of-legends"><a href="/ipl/league-of-legends" target="blank">League of Legends</a></li>
+      </ul>
+    </nav>
+    <nav class="secondary-nav">
+      <ul>
+        <li><a href="/ipl/tv" data-sidebar="chat" class="chat">Chat</a></li>
+        <li><a href="/ipl/tv" data-sidebar="streams" class="streams">Streams</a></li>
+        <li><a href="/ipl/tv" data-sidebar="schedule" class="schedule">Schedule</a></li>
+        <li><a href="/ipl/videos" data-sidebar="videos" class="videos">Videos</a></li>
+        <li><a href="http://ign.uservoice.com/forums/101861?lang=en&amp;referer=http%3A%2F%2Fwww.ign.com%2Fipl%2Ftv" data-sidebar="feedback" class="feedback">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="main" role="main" data-bind="attr: {'class': viewModel.layout()} ">
+    <div id="video-container"></div>
+  </div>
+  <aside>
+    <div id="chat" data-bind="fadeVisible: viewModel.sideBarContent() === 'chat'">
+      <ul data-bind="foreach: liveChannelsJSON">
+        <li><a target="_blank" data-bind="css: {active: viewModel.chatchannel() === $data.name}, attr: {href: 'http://www.justin.tv/chat/embed?channel=' + $data.name + '&amp;hide_chat=myspace,facebook&amp;default_chat=jtv'}, text: $data.name + ' chat'" class="chat"> </a></li>
+      </ul>
+      <iframe src="http://www.justin.tv/chat/embed?channel=ignproleague&amp;hide_chat=myspace,facebook&amp;default_chat=jtv" style="border-width:0" frameborder="0" scrolling="no" data-bind="attr: {src: 'http://www.justin.tv/chat/embed?channel=' + viewModel.chatchannel() + '&amp;hide_chat=myspace,facebook&amp;default_chat=jtv'}"></iframe>
+    </div>
+    <div id="streams" data-bind="fadeVisible: viewModel.sideBarContent() === 'streams'">
+      <p>Choose a layout:</p>
+      <ul id="layout-switch">
+        <li> <a href="#" data-layout="one" data-bind="css: {active: viewModel.layout() === 'one'}" class="layout-1"> 
+            <div></div><span>One Up</span></a></li>
+        <li data-bind="visible: liveChannelsJSON().length &gt;= 2"><a href="#" data-layout="two" data-bind="css: {active: viewModel.layout() === 'two'}" class="layout-2"> 
+            <div></div><span>Side by Side</span></a></li>
+        <li data-bind="visible: liveChannelsJSON().length &gt;= 2"><a href="#" data-layout="stacked" data-bind="css: {active: viewModel.layout() === 'stacked'}" class="layout-stacked"> 
+            <div></div><span>Two Stacked</span></a></li>
+        <li data-bind="visible: liveChannelsJSON().length &gt;= 3"><a href="#" data-layout="three" data-bind="css: {active: viewModel.layout() === 'three'}" class="layout-3"> 
+            <div></div><span>Three Videos</span></a></li>
+        <li data-bind="visible: liveChannelsJSON().length &gt;= 4"><a href="#" data-layout="four" data-bind="css: {active: viewModel.layout() === 'four'}" class="layout-4"> 
+            <div></div><span>Four Videos</span></a></li>
+        <li data-bind="visible: liveChannelsJSON().length &gt;= 5"><a href="#" data-layout="five" data-bind="css: {active: viewModel.layout() === 'five'}" class="layout-5"> 
+            <div></div><span>Five Videos</span></a></li>
+      </ul>
+    </div>
+    <div id="schedule" data-bind="fadeVisible: sideBarContent() === 'schedule'">
+      <ul>
+        <li><a href="https://www.google.com/calendar/embed?src=1u5m1559a5rlih3tr8jqp4kgac%40group.calendar.google.com" data-bind="css: {active: viewModel.calid() === '1u5m1559a5rlih3tr8jqp4kgac'}" data-calid="1u5m1559a5rlih3tr8jqp4kgac" class="calendar active">
+             
+            StarCraft 2 Calendar</a></li>
+        <li><a href="https://www.google.com/calendar/embed?src=igpia9kc2fst1ijkde1avplkq0%40group.calendar.google.com" data-bind="css: {active: viewModel.calid() === 'igpia9kc2fst1ijkde1avplkq0'}" data-calid="igpia9kc2fst1ijkde1avplkq0" class="calendar">League of Legends Calendar</a></li>
+      </ul>
+      <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=515&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=1u5m1559a5rlih3tr8jqp4kgac%40group.calendar.google.com&amp;color=%23691426&amp;ctz=America%2FLos_Angeles" style="border-width:0" frameborder="0" scrolling="no" data-bind="attr: {src: 'https://www.google.com/calendar/embed?showTitle=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=515&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=' + viewModel.calid() + '%40group.calendar.google.com&amp;color=%23691426&amp;ctz=America%2FLos_Angeles'}"></iframe>
+    </div>
+  </aside>
+  <div id="iplTicker"></div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('script(src="http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl-tv/javascripts/libs/jquery-1.7.1.min.js")')</script>
+  <script src="http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl-tv/javascripts/libs/knockout.js"></script>
+  <script>
+    var _gaq=[['_setAccount','UA-12449618-7'],['_trackPageview']];
+    (function(d,t){
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+    
+  </script>
+  <script src="http://media.ign.com/ev/esports/ipl-static/ipl-site/javascripts/comscore.js"></script>
+  <script src="http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl-tv/javascripts/model.js"></script>
+  <script src="http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl-tv/javascripts/plugins.js"></script>
+  <script src="http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl-tv/javascripts/script.js"></script>
+  <script src="http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl-widgets/ticker/js/script.js"></script>
+  <script>
+    comscoreEvent.firePageView();
+    var iplTickerConfig = {
+      fontSize: "14px", //String
+      speed: 30, //Int higher number is slower
+    }; 
+  </script>
+</body>

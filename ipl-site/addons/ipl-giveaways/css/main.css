@@ -1,0 +1,157 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body{
+	background-color: #000;
+	color: #fff;
+	font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	padding-top: 0;
+	background-image: url('../img/ipl-bgfade.jpg');
+	background-position: 50% 180px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+div.container{
+	font-size: 15px;
+	line-height: 1.5em;
+}
+
+header[role="banner"] h1 a{
+	padding: 0;
+}
+
+.clearfix{
+	zoom: 1;
+}
+
+#title-unit{
+	background-color: #B21B00;
+	margin-top:-121px;
+	float: left;
+}
+
+#title-unit h1{
+	font-size: 3.2em;
+	letter-spacing: 14px;
+	float:right;
+	margin-top: 22px;
+	text-shadow: 1px 1px 0 #B21B00, 2px 2px 0 #B21B00, 3px 3px 0 #B21B00, 4px 4px 0 #B21B00, 5px 5px 25px rgba(0,0,0,.75);
+}
+
+#socal-bar li{
+	float: left;
+	margin-right: 16px;
+}
+
+#sponsor-thanks{
+	text-align: center;
+	padding: 0 30px;
+}
+
+#sponsor-thanks a{
+	color:#B21B00;
+
+}
+
+#sponsor-thanks a:hover{
+	color:#FF3333;
+	text-decoration: none;
+}
+
+ul{
+	list-style: none;
+}
+
+h3.spn-space{
+	letter-spacing: 1px;
+}
+
+div.back-drop{
+	box-shadow: 0 0 20px rgba(0,0,0,.88);
+	background-color: rgba(0,0,0,.40);
+}
+
+div.back-drop p{
+	letter-spacing: 1px;
+	font-weight: 100;
+}
+
+div.span8.splurgy{
+	height:640px;
+}
+
+div.span-bar{
+	background-color: #B21B00;
+	width:100%;
+	height:110px;
+	margin:0;
+	margin-bottom: 16px;
+}
+
+div.sponsor-row{
+	background-color: #fff;
+	color: #333;
+	padding: 20px 0;
+	margin-bottom: 0;
+	margin-top:0;
+	margin-left: 0;
+	z-index:1 !important;
+}
+
+img.sponsor-img-logo{
+	margin: 12px 0;
+}
+
+div.sponsor-row .btn{
+	box-shadow: 1px 1px 8px rgba(0,0,0,.4); 
+}
+
+div.sponsor-row:nth-last-child(odd){
+	background-color: #eee;
+}
+
+div.sponsor-row .sponsor-logo{
+	text-align: center;
+}
+
+div.sponsor-row.upcoming .sponsor-logo img{
+	height:80px;
+}
+
+div.sponsor-row a.btn{
+	color:#fff;
+	float: right;
+}
+
+div.sponsor-row a{
+	color:#B21B00;
+}
+
+div.sponsor-logo a:hover{
+	color:#FF3333;
+	text-decoration: none;
+}
+
+div p{
+	margin-top:1em;
+}
+
+#astro-a50-row {
+	background-image: url('../img/a50_glamour.jpeg');
+	background-size: contain;
+	background-repeat:no-repeat; 
+}
+
+.active-giveaway img.img-rounded{
+	border:1px solid #fcc;
+	box-shadow: 0 0 30px #f33;
+	z-index:2 !important;
+}
+
+div.upcoming{
+
+}

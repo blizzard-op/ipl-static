@@ -1,0 +1,42 @@
+table {
+  float: none !important;
+  background: white;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.adminList { width: 800px }
+
+tr:nth-of-type(odd) {
+  background: #eee;
+}
+th {
+  background: #333;
+  color: white; 
+  border: 1px solid black;
+}
+.paginatedList th a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+td {
+  border: 1px solid black;
+  text-align: center;
+}
+table input {
+  margin: .25em;
+  float: right;
+  width:  48%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.hidden {
+  visibility: hidden;
+}
+.power .name img {
+  display: inline;
+  margin: 0;
+  width: 15px;
+}

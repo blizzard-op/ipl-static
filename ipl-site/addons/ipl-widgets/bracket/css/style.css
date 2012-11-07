@@ -1,0 +1,348 @@
+.IPLBracketWindow{
+	width:100%;
+	height:100%;
+	background-color:#ddd;
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(#ccc,0),color-stop(#fff,1));
+	background:-webkit-linear-gradient(top, #ccc 0, #fff 100%);
+	background:   -moz-linear-gradient(top, #ccc 0, #fff 100%);
+	background:     -o-linear-gradient(top, #ccc 0, #fff 100%);
+	background:        linear-gradient(top, #ccc 0, #fff 100%);
+
+	display:block;
+	/* needs to be absolute if not contained within an outside object */
+	position: relative;
+	overflow:hidden;
+	cursor: move;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	-moz-user-select: none;
+	-ms-user-select: none;
+ 	-webkit-user-select: none;
+}
+
+.no-zoom .IPLBracketWindow{
+	overflow: scroll;
+}
+
+.btn{
+	font-weight: bold;
+}
+
+div.IPLBracketTools{
+	z-index: 11;
+	position: absolute;
+	padding:4px;
+	-webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+	display:block;
+	
+	width:auto;
+	height:auto;
+	float:right;
+	background-color: rgba(255, 255, 255, .8);
+	white-space: nowrap;
+}
+
+div.bracket-zoom-tip{
+	margin:8px;
+	padding: 4px;
+	background-color: #fff;
+	-webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+	width:auto;
+	display: block;
+	position: absolute;
+	white-space: nowrap;
+}
+
+div.IPLBracketTools div{
+	float:left;
+}
+
+div.IPLBracketTools .toolbar-spoiler-box{
+	background-color: #000;
+	color:#fff;
+	border-radius: 4px;
+	padding: 0 4px 5px 4px;
+	margin: 2px 2px 2px 2px;
+	width:auto;
+	white-space: nowrap;
+}
+
+h1.bracket-title{
+	font-size: 3.6em;
+	line-height: 1.3em;
+	color:#000;
+	text-shadow: 2px 2px 0 #fff;
+	-moz-user-select: none;
+	-ms-user-select: none;
+ 	-webkit-user-select: none;
+ 	margin-top:-1em;
+ 	white-space: nowrap;
+}
+
+.no-zoom .bracket-title, .no-zoom .round-title{
+	font-size: 100%;
+}
+
+.round-title{
+	color:#000;
+	float:left;
+	position: absolute;
+	margin-top: -1.8em;
+	-moz-user-select: none;
+	-ms-user-select: none;
+ 	-webkit-user-select: none;
+}
+
+div.IPLBracketLayer{
+	position: absolute;
+	display:block;
+	width:auto;
+	height:auto;
+}
+
+.no-zoom div.line{
+	height:3px;
+}
+
+div.line{
+transform-origin: 0 100%;
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  height: 6px;
+  background-color:#a00000;
+  z-index:2;
+}
+
+div.line.unplayed{
+	background-color: #aaa;
+	z-index:0;
+}
+
+div.line.toLive{
+	background:-webkit-gradient(linear,left top,right top,color-stop(#a00000,0),color-stop(#fdb531,1));
+	background:-webkit-linear-gradient(left, #a00000 0, #fdb531 100%);
+	background:   -moz-linear-gradient(left, #a00000 0, #fdb531 100%);
+	background:     -o-linear-gradient(left, #a00000 0, #fdb531 100%);
+	background:        linear-gradient(left, #a00000 0, #fdb531 100%);
+}
+
+div.match-content{
+	position: absolute;
+}
+
+div.match-content.players{
+	height:100%;
+	position: relative;
+}
+
+ div.has-content div.match-content.players{
+	height:70%;
+}
+
+div.score-tip{
+	height:100%;
+	position: absolute;
+	width: 100%;
+	display:table;
+	text-align:center;
+	margin: auto;
+	float:left;
+}
+
+div.additional-info p{
+	margin: 2% 0 0 0;
+}
+
+div.score-tip p{
+	font-size:2em;
+	margin: auto;
+	height:100%;
+	line-height: 1.3em;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+div.bracket-match{
+	width:400px;
+	height:140px;
+	
+	-webkit-box-shadow:3px 3px 0px #a00000,  6px 6px 0px #a00000;
+    -moz-box-shadow:3px 3px 0px #a00000,  6px 6px 0px #a00000;
+    box-shadow:3px 3px 0px #a00000,  6px 6px 0px #a00000;
+	
+	background-color: #000;
+	-webkit-border-radius:0 8px 0 8px;
+    -moz-border-radius:0 8px 0 8px;
+    border-radius:0 8px 0 8px;
+	position: relative;
+	color:#fff;
+	overflow: hidden;
+	z-index:10;
+}
+
+div.bracket-match.live{
+	-webkit-box-shadow:3px 3px 0px #fdb531,  6px 6px 0px #fdb531, 0px 0px 24px #fdb531;
+    -moz-box-shadow:3px 3px 0px #fdb531,  6px 6px 0px #fdb531, 0px 0px 24px #fdb531;
+    box-shadow:3px 3px 0px #fdb531,  6px 6px 0px #fdb531, 0px 0px 24px #fdb531;
+}
+
+div.bracket-match button.btn-warning{
+	color:#000;
+	font-size:1.3em;
+	
+}
+
+.no-zoom div.bracket-match{
+	width:160px;
+	height:70px;
+	font-size: 36%;
+	-webkit-box-shadow:3px 3px 0px #a00000;
+    -moz-box-shadow:3px 3px 0px #a00000;
+    box-shadow:3px 3px 0px #a00000;
+}
+
+div.bracket-match.unplayed{
+	-webkit-box-shadow:3px 3px 0px #aaa,  6px 6px 0px #aaa;
+    -moz-box-shadow:3px 3px 0px #aaa,  6px 6px 0px #aaa;
+    box-shadow:3px 3px 0px #aaa,  6px 6px 0px #aaa;
+	background-color: #aaa;
+}
+
+/*
+div.bracket-match.match-spoiler .team-name{
+	display: none;
+}
+*/
+div.bracket-match .score-slidein{
+	position: absolute;
+	float:left;
+	height:100%;
+	background-color: #a00000;
+	-webkit-border-radius:8px 8px 0 8px;
+    -moz-border-radius:8px 8px 0 8px;
+    border-radius:8px 8px 0 8px;
+	width:3.75em;
+}
+
+div.bracket-match .score-container{
+	height:100%;
+}
+
+div.bracket-match.has-content .score-slidein .score-container{
+	height:70%;
+}
+
+div.bracket-match.live .score-slidein{
+	background-color: #fdb531;
+}
+
+div.bracket-match .match-hide-score{
+	display: none;
+}
+
+div.bracket-match .score-slidein .score{
+	height: 50%;
+	clear:both;
+	display: table;
+	margin: auto;
+}
+
+div.bracket-match .score-slidein .score h3{
+	color: #fff;
+	vertical-align: middle;
+	display: table-cell;
+	font-size: 2.5em;
+	line-height: 1.3em;
+	text-shadow: 2px 2px 0 #000;
+}
+
+div.bracket-match.live .score-slidein .score h3{
+	color: #000;
+	text-shadow: 2px 2px 0 #fff;
+}
+
+div.bracket-match .team-name{
+	width:100%;
+	height:50%;
+	position: relative;
+	vertical-align: middle;
+	display: table;	
+}
+
+div.bracket-match .team-name h2{
+	vertical-align: middle;
+	display:table-cell;
+	height:100%;
+	line-height: 1.4em;
+	padding-left:4%;
+	font-size: 2.4em;
+	-moz-user-select: none;
+	-ms-user-select: none;
+ 	-webkit-user-select: none;
+}
+
+div.bracket-match .team-name.long-team-name{
+	font-size: .75em;
+}
+
+div.additional-info{
+	position: relative;
+	height:30%;
+	width:85%;
+	display: block;
+	text-align: center;
+	font-size: 1.35em;
+	-moz-user-select: none;
+	-ms-user-select: none;
+ 	-webkit-user-select: none;
+}
+
+div.winLayer{
+	margin-left:45px;
+}
+
+div.champLayer{
+	float:right;
+}
+
+div.lossLayer{
+	position: absolute;
+	-moz-user-select: none;
+	-ms-user-select: none;
+ 	-webkit-user-select: none;
+}
+
+.lossLayer .bracket-round{
+	display: block;
+	float:left;
+	margin-right: 32px;
+}
+
+.bracket-round{
+	display: block;
+	float:left;
+	margin-right: 200px;
+	-moz-user-select: none;
+	-ms-user-select: none;
+ 	-webkit-user-select: none;
+}
+
+.bracket-round.loser{
+	display: block;
+	float:left;
+	margin-right: 48px;
+}
+/* ugly fix for ie */
+.no-zoom div.lossLayer{
+	margin-left: 80px;
+}
+.no-zoom .loser-title{
+	margin-left: 80px;
+}
+

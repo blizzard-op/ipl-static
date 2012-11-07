@@ -1,0 +1,34 @@
+html, body {
+	background-color: black;
+	font-family: arial;
+	padding: 0;
+	margin: 0;
+}
+
+.player {
+}
+
+.caption a {
+    color: #404040;
+    padding: 0 .25em;
+}
+
+.caption a:hover {
+    color: white;
+    background-color: #404040;
+}
+
+.caption .name {
+    font-color: black;
+    font-size: 16px;
+}
+
+.caption .show {
+    margin-right: 0.5em;
+    font-weight: bold;
+}
+
+.inner {
+    display: block;
+    padding: 0 0.25em;
+}

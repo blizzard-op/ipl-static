@@ -1,0 +1,58 @@
+aside
+  position: absolute
+  top: 34px
+  right: auto
+  bottom: 26px
+  left: 100%
+  width: 25%
+  background: #333
+  -webkit-transition: left 300ms linear
+  -moz-transition: left 300ms linear
+  -o-transition: left 300ms linear
+  transition: left 300ms linear
+  border-left: 1px solid $site-red
+  > div
+    height: 100%
+  ul
+    margin: $spacing auto
+    padding: 0
+    list-style: none
+    width: 90%
+    li
+      a
+        margin-bottom: $spacing/2
+        font-size: $small-text
+        &:link, &:visited
+          color: white
+          text-decoration: underline
+        &:hover
+          color: $site-red
+        &.active
+          cursor: default
+          color: $site-red
+          text-decoration: none
+          font-weight: bold
+          font-size: 16px
+          &:active
+            position: static
+          &:before
+            content: ""
+            width: .5em
+            height: .5em
+            background-color: $site-red
+            @include inlineBlock
+            vertical-align: middle
+            border-radius: 100%
+            margin-right: $spacing/2
+
+  iframe
+    max-height: 80%
+    min-height: 60%
+    width: 90%
+    display: block
+    margin: auto
+  #streams
+    p
+      margin: $spacing/2 0  
+      text-align: center
+      color: white

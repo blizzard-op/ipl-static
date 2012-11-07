@@ -1,0 +1,124 @@
+#schedule
+  position: relative
+  clear: left
+  float: left
+  width: 66%
+  background: $site-bg-color
+  padding: $spacing
+  $i: 1
+  @while $i <= 10
+    &.games-#{$i}
+      .schedule, .gameHeader
+        width: (80%/$i)
+    $i: $i + 1
+.guide
+  form
+    float: right
+    padding: 0 0 $spacing/2
+    position: relative
+    z-index: 1
+  > ul
+    background: #f6f6f6
+  li
+    list-style: none
+    border: 1px solid #d5d5d5
+    border-top: none
+    border-left: none
+    p
+      margin: 0 0 $spacing/4
+  .games
+    clear: both
+    li
+      float: left
+      width: 40%
+      text-align: center
+      height: 4em
+      border: 1px solid #d5d5d5
+      background: -webkit-gradient(linear, left top, left bottom, from(white), to(#f6f6f6))
+      background: -webkit-linear-gradient(top, white, #f6f6f6)
+      background: -moz-linear-gradient(top, white, #f6f6f6)
+      background: -ms-linear-gradient(top, white, #f6f6f6)
+      background: -o-linear-gradient(top, white, #f6f6f6)
+      background: linear-gradient(to bottom, white, #f6f6f6)
+      &.times
+        width: 20%
+        padding: $spacing/2
+        p
+          font-size: 11px
+      &.gameHeader
+        border-left: 0
+        padding: $spacing/2
+      .fullCal
+        font-size: 10px
+  .dates
+    width: 20%
+    clear: left
+    float: left
+    text-align: left
+    li
+      padding: 1em
+      border-left: 1px solid #d5d5d5
+    time
+      float: left
+      span
+        font-size: $small-text
+        font-weight: bold
+        float: left
+      font-size: 11px
+    .today
+      time
+        color: #b21b00
+        span
+          font-size: $medium-text
+        &:after
+          content: "Today"
+          background: #b21b00
+          padding: $spacing/4
+          display: block
+          position: absolute
+          margin: $spacing/2 0
+          color: white
+          border-radius: $spacing/4
+  .schedule
+    float: left
+    ul
+      li
+        width: 100%
+        height: 100%
+        background: #fff
+        padding: $spacing
+        -webkit-box-shadow: -2px 2px 2px rgba(120, 120, 120, .2)
+        -moz-box-shadow: -2px 2px 2px rgba(120, 120, 120, .2)
+        box-shadow: -2px 2px 2px rgba(120, 120, 120, .2)
+        margin-bottom: .5em
+        &:nth-last-of-type(1)
+          margin-bottom: 0
+
+    li
+      padding: $spacing/4
+      p
+        font-size: $small-text
+        font-weight: bold
+        time
+          color: lighten($text-color, 20%)
+        span
+          font-weight: normal
+          margin-bottom: $spacing/4
+          &.title
+            font-weight: bold
+    .new
+      margin-right: $spacing/2
+      font-weight: bold
+      font-size: 9px
+      text-transform: uppercase
+      background: black
+      color: white
+      border-radius: $spacing/4
+      padding: $spacing/4 $spacing/2
+    .old
+      color: #999
+      font-size: 10px
+  .now
+    @include buttonStyle
+    font-size: $small-text
+    margin: $spacing/2 0

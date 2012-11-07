@@ -1,0 +1,648 @@
+@mixin inlineBlock 
+  display: inline-block
+  list-style: none
+  vertical-align: top
+  /* For IE 7 */
+  zoom: 1
+  *display: inline
+
+@mixin imageReplacement
+  font: 0/0 a
+  text-shadow: none
+  color: transparent
+
+@mixin IGNGradientHeader
+  border-bottom: $header-border
+  background: #404040
+  background: -moz-linear-gradient(top, #404040 0, #151515 100%)
+  background: -webkit-gradient(linear,0% 0,0% 100%,from(#404040),to(#151515))
+  background: -webkit-linear-gradient(top, #404040 0, #151515 100%)
+  background: -o-linear-gradient(top, #404040 0, #151515 100%)
+  background: -ms-linear-gradient(top, #404040 0, #151515 100%)
+  background: linear-gradient(top, #404040 0, #151515 100%)
+
+@mixin IGNButtons
+  -webkit-box-shadow: inset 1px 11px 20px 1px white
+  -moz-box-shadow: inset 1px 11px 20px 1px white
+  box-shadow: inset 1px 11px 20px 1px white
+  background-color: #EDEDED
+  background: -webkit-gradient(linear,left top, left bottom, color-stop(0.05, #EDEDED), color-stop(1, #DFDFDF))
+  background-image: -webkit-linear-gradient(top, #EDEDED 5%, #DFDFDF 100%) 
+  background-image:    -moz-linear-gradient(top, #EDEDED 5%, #DFDFDF 100%)
+  background-image:      -o-linear-gradient(top, #EDEDED 5%, #DFDFDF 100%)
+  background-image:      -linear-gradient(top, #EDEDED 5%, #DFDFDF 100%)
+  -webkit-border-radius: .25em
+  -moz-border-radius: .25em
+  border-radius: .25em
+  @include inlineBlock
+  color: #333
+  font-size: 11px
+  font-weight: bold
+  text-decoration: none
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5)
+  padding: 0 .5em
+  &:active
+    position: relative
+    top: 1px
+
+@mixin playbutton_overlay
+  &:before, &:after
+    content: ''
+    position: absolute
+    left: 50%
+    top: 50%
+    margin: -15px 0 0 -15px
+  &:before
+    width: 30px
+    height: 30px
+    border-radius: 200px
+    border: 3px solid white
+    border: 3px solid rgba(255, 255, 255, .7)
+  &:after
+    border-left: 15px solid #b21b00
+    border-left: 15px solid rgba(178, 27, 0, .7)
+    border-top: 10px solid transparent
+    border-bottom: 10px solid transparent
+    margin: -7px 0 0 -2px
+@mixin playbutton_overlay_hover
+  &:before
+    border-color: $site-yellow
+    border-color: rgba(253, 181, 39, .7)
+  &:after
+    border-left-color: white
+    border-left-color: rgba(255, 255, 255, .7)
+
+@mixin currentHighLight
+  .current
+    a
+      text-decoration: none
+      cursor: default
+      color: #333
+
+@mixin buttonStyle
+  background: #b21b00
+  background: -webkit-gradient(linear, left top, left bottom, from(#b21b00), to(#4d0c00))
+  background: -webkit-linear-gradient(top, #b21b00, #4d0c00)
+  background: -moz-linear-gradient(top, #b21b00, #4d0c00)
+  background: -ms-linear-gradient(top, #b21b00, #4d0c00)
+  background: -o-linear-gradient(top, #b21b00, #4d0c00)
+  background: linear-gradient(top, #b21b00, #4d0c00)
+  padding: .5em 1em
+  border-radius: .25em
+  border: 1px solid #b21b00
+  color: white
+  font-size: $medium-text
+  text-decoration: none
+  @include inlineBlock
+  &:hover
+    background: #e62200
+    background: -webkit-gradient(linear, left top, left bottom, from(#b21b00), to(#4d0c00))
+    background: -webkit-linear-gradient(top, #e62200, #801300)
+    background: -moz-linear-gradient(top, #e62200, #801300)
+    background: -ms-linear-gradient(top, #e62200, #801300)
+    background: -o-linear-gradient(top, #e62200, #801300)
+    background: linear-gradient(top, #e62200, #801300)
+  &:active
+    position: relative
+    top: 1px
+@mixin tool_tip
+  position: absolute
+  bottom: 150%
+  display: none
+  color: white
+  background: rgba(51, 51, 51, 1)
+  border: 2px solid black
+  border-radius: .25em
+  padding: 1em
+  &:before, &:after
+    content: ''
+    position: absolute
+    left: 50%
+    margin-left: -5px
+    border: 10px solid rgba(51, 51, 51, 1)
+    border-right-color: transparent
+    border-left-color: transparent
+    border-bottom: 0
+  &:before
+    top: 99%
+    z-index: 5
+  &:after
+    border-top-color: black
+    top: 102%
+  
+@mixin nav_button
+  background-color: #f5f5f5
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#343432), color-stop(1, #f5f5f5))
+  background-image: -webkit-linear-gradient(top, #fff, #f5f5f5)
+  background-image: -moz-linear-gradient(top, #343432, #f5f5f5)
+  background-image: -o-linear-gradient(top, #343432, #f5f5f5)
+  background-image: -ms-linear-gradient(top, #343432, #f5f5f5)
+  background-image: linear-gradient(top, #343432, #f5f5f5)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#818181', EndColorStr='#333333')
+  
+@mixin selected_gradient
+  background-color: #343432
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#343432), to(#0d0c0c))
+  background-image: -webkit-linear-gradient(top, #343432, #0d0c0c)
+  background-image: -moz-linear-gradient(top, #343432, #0d0c0c)
+  background-image: -o-linear-gradient(top, #343432, #0d0c0c)
+  background-image: -ms-linear-gradient(top, #343432, #0d0c0c)
+  background-image: linear-gradient(top, #343432, #0d0c0c)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#343432', EndColorStr='#0d0c0c')
+ 
+@mixin newFlag
+  content: "New"
+  position: absolute
+  background: $site-red
+  left: -6.5em
+  top: .5em
+  left: -.5em
+  padding: .3em
+  color: white
+  text-align: center
+  height: 1.2em
+  z-index: 10
+  font-weight: bold
+
+@mixin matchup_game_links
+  .matchup_game
+    position: absolute
+    bottom: 1em
+    left: 52%
+    li
+      line-height: 2em
+      margin: 0 .5em 0 0
+      a
+        margin: 0
+        background: #000
+        text-align: center
+        -webkit-border-radius: .25em
+        -moz-border-radius: .25em
+        border-radius: .25em
+        height: 2em
+        width: 2em
+        color: #fff
+        -webkit-transition: box-shadow 300ms
+        &:hover
+          background: $site-red
+        &:active
+          box-shadow: inset 1px 1px 2px rgba(0, 0, 0, .8), inset -1px -1px 2px rgba(0, 0, 0, .8)
+
+@mixin responsiveWidth
+  width: $site-width
+  max-width: $site-max-width
+
+
+$site-red: #b21b00
+$site-bg-color: white
+$site-yellow: #fdb531
+$spacing: 1em
+$text-color: #333
+$site-width: 970px
+$site-max-width: 1300px
+$large-text: 18px
+$medium-text: 16px
+$small-text: 12px
+$header-border: 1px solid #292929
+$header-height: 34px
+
+@import "h5bp", "past_tournaments", "../ipl/playlist", "header", "articles", "powerRankings", "../slider/elastislide", "../widgets/ticker", "program_guide"
+
+* 
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+a
+  color: $text-color
+  -webkit-transition: color 300ms ease-in-out 50ms
+  -moz-transition: color 300ms ease-in-out 50ms
+  -ms-transition: color 300ms ease-in-out 50ms
+  -o-transition: color 300ms ease-in-out 50ms
+  transition: color 300ms ease-in-out 50ms
+  &:link, &:visited
+    color: $text-color
+  &:hover
+    cursor: pointer
+    color: $site-red
+body 
+  background: $text-color
+  color: $text-color
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  padding-bottom: $spacing*3
+h1, h2, h3
+  margin: 0
+ul
+  margin: 0
+  padding: 0
+  li
+    list-style-type: none
+img, video
+  max-width: 100%
+
+#flashmessage
+  display: none
+  @include responsiveWidth
+  margin: auto
+  background: white
+  padding: 1em
+  margin-bottom: $spacing
+  > img
+    float: left
+    margin-right: $spacing
+  a
+    color: $site-red
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+  li
+    span
+      color: $site-yellow
+      
+
+.container
+  position: relative
+  @include responsiveWidth
+  margin: auto
+  
+  aside
+    float: right
+    clear: right
+    width: 33%
+    background: $site-bg-color
+    > div, > article
+      border-bottom: 1px solid #333
+      padding: $spacing 10px
+    .important
+      text-align: center
+    .promoButton
+      @include buttonStyle
+      @include inlineBlock
+    .featured-event
+      text-align: center
+      img
+        margin-bottom: $spacing
+    #headlines
+      ul
+        margin-left: 1.4em
+        li
+          list-style-type: square
+    .featured-medrec
+      width: 300px
+      background-color: black
+      padding: 0
+      margin: 1em auto 0
+      color: #ffffff
+      .inner
+        padding: 1em
+        text-align: center
+        .buttons
+          p
+            text-align: center
+            a
+              @include buttonStyle
+        ul
+          li
+            font-size: 12px
+            margin-bottom: 3px
+    .sugarad
+      margin: 0    
+    h2
+      font-size: $medium-text
+      margin: .5em 0
+    .mobile
+      text-align: center
+      a
+        @include inlineBlock
+        margin: 0 auto 1em
+    #partners
+      padding: 0 1em
+      img
+        display: block
+        margin: 0 auto $spacing
+    .iptl 
+      .paginatedList
+        margin-bottom: $spacing
+  .shootmania-signups
+    text-align: center
+    .button
+      @include buttonStyle
+      padding: $spacing/2 $spacing
+      line-height: 48px
+      span
+        background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/SM_STORM_logo.png) 0 0 no-repeat
+        display: inline-block
+        vertical-align: top
+        height: 48px
+        width: 135px
+.leaderboard
+  @include responsiveWidth
+  margin: $spacing/2 auto
+  background: black
+  text-align: center
+  //realtive and z-index so the tournaments overlay is visible above the ad
+  position: relative
+  z-index: 1
+  #sugarad-728x90
+    display: block
+    margin: 0 auto
+    width: 728px
+    position: relative
+#heroUnit
+  margin-bottom: 1em
+  background: black
+  overflow: hidden
+  float: left
+  width: 66%
+  .loader
+    width: 100% 
+  #keep-aspect-ratio
+    overflow: hidden
+    position: relative
+    padding-bottom: 29px
+    #player-wrapper
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      object, embed, video, .youtubeEmbed
+        width: 100% !important
+        height: 100% !important
+      
+  #description
+    padding: 1em 2.5%
+    background: black
+    line-height: 2em
+    border-top: 1px solid #333
+    border-bottom: 1px solid #333
+    a
+      color: white
+      text-decoration: none
+    .title
+      color: white
+      font-size: $large-text
+      display: block
+      text-overflow: ellipsis
+      word-wrap: break-word
+      white-space: nowrap
+      font-weight: bold
+      overflow: hidden
+      margin: 0
+      margin: 0 0 $spacing/2
+      float: left
+      width: 85%
+
+    ul
+      li
+        height: 19px
+        line-height: 19px
+        float: left
+        margin-right: $spacing
+        a
+          display: block
+    #chat
+      @include IGNButtons
+      float: right
+      font-size: 11px
+    .ytSubscribe
+      @include IGNButtons
+      span
+        background: transparent url("http://media.ign.com/ev/esports/ipl-static/ipl-site/images/youtube_logo_standard_againstwhite_41x15.png") center center no-repeat
+        text-indent: -999em
+        display: inline-block
+        width: 45px
+    .twitchSubscribe
+      @include IGNButtons
+      span
+        background: transparent url("http://media.ign.com/ev/esports/ipl-static/ipl-site/images/twitch_logo_45x15.png") center center no-repeat
+        text-indent: -999em
+        display: inline-block
+        width: 50px
+
+#mobileNavButton
+  position: absolute
+  bottom: .3em
+  right: .9em
+  padding: 0
+  display: none
+  height: 27px
+  width: 31px
+  background: white
+  border-radius: .25em
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .5), inset -1px -1px 1px rgba(0, 0, 0, .5)
+  -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .5), inset -1px -1px 1px rgba(0, 0, 0, .5)
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .5), inset -1px -1px 1px rgba(0, 0, 0, .5)
+  p
+    text-indent: -999em
+    height: 100%
+    margin: 0
+    padding: 0
+  span
+    position: absolute
+    left: .6em
+    right: .6em
+    height: 2px
+    background-color: $site-yellow
+    border-radius: 5em
+    top: 50%
+    padding: 0
+    width: auto
+    &:after, &:before
+      content: ''
+      position: absolute
+      left: 0
+      right: 0
+      height: 2px
+      background-color: $site-yellow
+      border-radius: 5em
+    &:after
+      top: 200%
+    &:before
+      bottom: 200%
+
+body
+  #ignFooter-container
+    background: $site-bg-color
+    @include responsiveWidth
+    margin: 1em auto 0
+    footer
+      width: 100%
+      .ignFooter-content
+        max-width: 100%
+
+/** tournament pages **/
+
+.container 
+  #wrapper
+    .tournamentHeader
+      width: 66%   
+      float: left
+      &.live
+        width: 100%
+      #heroUnit
+        width: auto
+        float: none
+      #posts
+        width: 100%
+        header
+          h2
+            float: left
+            border-bottom: none
+        .cosmoRoom
+          width: 50%
+        .cosmoExterior
+          float: none
+          display: block
+          margin: auto
+    .tournamentInfo
+      > article
+        padding: $spacing
+        &#tickets
+          span
+            font-size: 1.5em
+            color: $site-yellow
+            font-weight: bold
+          p
+            text-align: center
+            a
+              @include buttonStyle
+        p
+          margin: 0
+      h2
+        margin: 0
+        
+#tournamentNav
+  background-color: $site-bg-color
+  padding: $spacing
+  margin: 0
+  clear: none
+  > div
+    float: left
+    clear: left
+    margin-bottom: 1em
+    border: 1px solid #333
+    border-radius: .25em
+    padding: .5em
+    width: 100%
+  ul
+    clear:  left
+    li
+      float: left
+      a
+        display: block
+        padding: .5em
+        color: $site-red
+        &:hover
+          color: $text-color
+          text-deocration: none
+  h2
+    float: left
+    span
+      text-transform: uppercase
+
+#heroUnit.promo
+  width: 100%
+
+#tournamentNav 
+  @include currentHighLight
+  .e3
+    margin: -.5em -.5em 0
+    border-radius: $spacing/4
+    img
+      border-radius: $spacing/4
+      width: 100%
+.stats
+  header[role="banner"] 
+    .additionalContent.clearfix
+      width: auto
+      min-width: 0
+      ul
+        border: none
+  
+.no-touch
+  #heroUnit 
+    ul.showHolder 
+      li 
+        a:hover
+          p
+            display: block
+            bottom:  100%
+/** versus **/
+
+input[type=submit]
+  border: none
+  @include buttonStyle
+
+
+/** ads **/
+
+.sugarads
+  margin:  0 0 $spacing 0
+  border-bottom: 1px solid #333
+  #sugarad-300x100
+    width: 300px
+    height: 100px
+    padding: 0
+    margin: auto
+
+.hidden
+  display: none
+
+.container #wrapper article > #disqus_thread
+  margin-top: $spacing*2
+  padding-top: $spacing*2
+  border-top: 1px dashed #A6A6A6
+  p
+    color: $text-color
+    a
+      color: $text-color
+      cursor: default
+
+/** shootmania **/
+
+#video-list
+  overflow: hidden
+  li
+    float: left
+    width: 150px
+    margin: 1px
+  li:first
+    margin-left: 0
+  li:last
+    margin-right: 0
+
+.video-box
+  padding: 24px 16px 
+
+.sm-styles
+  .title
+    color: #FFFFFF
+
+.article-box
+  padding: 13px 16px
+  background-color: #fff
+  overflow:hidden
+
+#articles-list
+  h3
+    color: #333
+  overflow: hidden
+  li
+    border-bottom: 1px dashed #A6A6A6
+    padding-bottom: 1em
+    .img-holder
+      float: left
+      margin-top: 16px
+      width: 136px
+      overflow: hidden 
+    article
+      padding: 8px 16px
+      float: left
+      width: 470px
+      .moreLink
+        clear: both
+  li:last-child
+    border-bottom: none
+
+

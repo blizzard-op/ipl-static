@@ -1,0 +1,91 @@
+#main
+  background-color: #fff
+  padding: 1em
+  #pane
+    width: 20%
+    float: left
+    #shortcuts, ul
+      margin: 1em 0
+  #channels-previews-content
+    width: 80%
+    float: left
+    .channel-preview
+      display: inline-block
+      margin-bottom: 20px
+      background: #eee
+      width: 100%
+      .featured
+        padding: 1em
+        li
+          float: left
+          width: 20%
+          padding-right: 1em
+          &:nth-last-of-type(1)
+            padding-right: 0
+          a
+            display: block
+            text-align: center
+            img
+              display: block
+      .search-results
+        display: none
+        position: relative
+        .clear-search
+          background: #bababa
+          font-size: 12px
+          height: 2em
+          width: 2em
+          line-height: 1.5em
+          border: 2px solid white
+          display: inline-block
+          text-align: center
+          border-radius: 50px
+          margin-left: 1em
+          color: white
+          position: relative
+          &:active
+            top: 1px
+        > h3
+          margin: 0
+          padding: 1em
+        .channel-videos-list
+          width: 100%
+      h3
+        display: inline-block
+        &.heading
+          clear: both
+          padding: 1em 0 0 1em
+          margin-bottom: -.5em
+      .channel-preview-header
+        padding: .5em 1em 
+        background: #404040
+        background: -moz-linear-gradient(top, #404040 0, #151515 100%)
+        background: -webkit-gradient(linear,0% 0,0% 100%,from(#404040),to(#151515))
+        background: -webkit-linear-gradient(top, #404040 0, #151515 100%)
+        background: -o-linear-gradient(top, #404040 0, #151515 100%)
+        background: -ms-linear-gradient(top, #404040 0, #151515 100%)
+        background: linear-gradient(top, #404040 0, #151515 100%)
+        .search-wrapper
+          float: right
+          label
+            color: white
+        ul
+          li
+            float: left
+            a
+              color: white
+              text-decoration: none
+              &:hover
+                color: #b21b00
+            &.call-to-action
+              margin-left: 3em
+              a
+                color: #333
+      > a
+        float: right
+        margin-right: 260px
+@import "videos_list", "../social"
+ol.channel-videos-list 
+  background: #eee
+  margin: 0
+  padding: 1em

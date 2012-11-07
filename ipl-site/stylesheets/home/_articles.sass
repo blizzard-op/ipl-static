@@ -1,0 +1,138 @@
+#posts
+  float: left
+  width: 66%
+  background-color: $site-bg-color
+  padding: 1em
+  margin: 0 0 1em
+  clear: none
+  font-size: $medium-text
+  line-height: $medium-text * 1.5
+
+  table
+    margin: auto
+  td
+    border: 1px solid black
+    text: center
+    padding: .5em
+  header
+    margin: 0 0 $spacing
+    border-bottom: 1px dashed #A6A6A6
+    h2
+      font-size: 1.5em
+      line-height: 1.5em
+      border-bottom: 1px solid #000000
+      padding-bottom: $spacing/2
+    img
+      float: right
+      max-width: 150px
+      &.postGame
+        max-width: 100px
+    p
+      margin: 0
+      padding: $spacing/2 0
+  a
+    color: $site-red
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+
+  ul
+    margin: $spacing 0
+    padding-left: 40px
+    li
+      list-style-type: disc
+  h4
+    margin: 0
+  p
+    font-size: $medium-text
+    line-height: $medium-text * 1.5
+    margin: 0 6px $medium-text*1.5 0
+    &:empty
+      display: none
+    img
+      margin: 0 $spacing $spacing 0
+      &.directions
+        float: none
+        margin: auto
+        display: block
+  .alignleft
+    float: left
+    margin-right: 12px
+  .alignright
+    float: right
+    margin-left: 12px
+  .aligncenter
+    text-align: center
+    margin: auto
+  img.aligncenter
+    display: block
+  .alignnone
+    float: none
+
+  .article-list
+    margin: 0
+    padding: 0
+    li
+      border-bottom: 1px dashed #a6a6a6
+      margin-bottom: $spacing
+      padding-bottom: $spacing
+      list-style-type: none
+      > article
+        header
+          margin: 0
+          padding: 0
+          border: none
+          h3
+            font-size: $large-text
+          a
+            color: $text-color
+            &:hover
+              color: $site-red
+        p
+          margin: 0
+          span
+            margin-left: 0
+  iframe
+    .splurgy-unit-frame
+      height: 700px !important
+.pagination
+  span
+    padding: 0 $spacing/4
+#headlines
+  h3
+    font-size: $large-text
+    margin-bottom: $spacing/2
+
+
+.article_author
+  font-size: 14px
+  font-weight: bold
+  line-height: 24px
+  padding-top: 3px
+  margin: 0
+
+.article_pub_date
+  color: #999
+  font-size: 11px
+  font-weight: bold
+  line-height: 24px
+  margin-left: 10px
+  padding-top: 3px
+  text-transform: uppercase
+
+.article_title 
+  font-family: "helvetica neue",arial,sans-serif
+  color: #333333
+  font-size: 30px
+  font-weight: normal
+  line-height: 36px
+  margin: 0
+
+.article_content h2 
+  font-size: 16px
+  font-weight: bold
+  margin: 0 0 2px
+
+.article_pager 
+  padding-bottom: 12px
+  margin-left: 18px
