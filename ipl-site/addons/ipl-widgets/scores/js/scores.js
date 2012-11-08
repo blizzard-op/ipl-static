@@ -6,8 +6,7 @@
 	var ipl = {
 		init: function(config) {
 			this.loadStyleSheet();
-			this.url = 'http://esports-varnish-prd-www-01.las1.colo.ignops.com/content/v1/events.json';
-			// this.url = 'http://esports.ign.com/scores.json';
+			this.url = 'http://esports.ign.com/scores.json';
 			this.container = $('#scores');
 			this.fetch();
 			this.buttons();
@@ -15,8 +14,8 @@
 		scoresTmpl: function(){
 			var html = "";
 			html += "<div class='controls clearfix'><div class='left-control'><img src='http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl-widgets/scores/images/left.png' class='left-button' /></div><div class='container'><div class='box-scores'>";
-			for (var i = 0;i<this.matchUps.length;++i) {
-				
+			for (var i = this.matchUps.length - 1; i >= 0; i--) {
+				console.log();
 				html += "<div class='match'>";
 				html += "<div class='date-container'><div class='date'>" + this.matchUps[i].date + "</div></div>";
 				html += "<div class='title'>" + this.matchUps[i].title + "</div>";
@@ -36,21 +35,25 @@
 		attachTemplate: function(){
 			this.container.append(this.scoresTmpl());
 		},
-		getStatus: function(game, url){
-			var startTime=new Date(game.starts_at.dateTime).getTime();
-			var endTime=new Date(game.ends_at.dateTime).getTime();
-			var currentTime = new Date().getTime();
-			
-			if(currentTime<startTime){
+		getStatus: function(status, url){
+			switch (status)
+			{
+			case 'finished':
+				if(url === null) {
+					return "coming soon";
+				} else {
+					return "watch vod";
+				}
+					break;
+			case 'underway':
+				return "live now";
+			case 'ready':
 				return "coming soon";
-			}else if(currentTime>endTime){
+			default:
 				return "finished";
-			}else if(currentTime>=startTime&&currentTime<=endTime){
-				return "underway";
 			}
 		},
 		getURLs: function(url, status, franchiseSlug){
-			// rework
 			if (status == 'underway') {
 				return 'http://ign.com/ipl/' + franchiseSlug;
 			} else if (status == 'finished' && url !== null) {
@@ -61,49 +64,66 @@
 		},
 		fetch: function(url, status, slug) {
 			var self = this;
-			var startDay = moment().subtract('days', 7).format();
-			var endDay = moment().add('days', 1).eod().format();
-			var sendD = {
-				'startDate':startDay,
-				'endDate':endDay
-			}
-
 			$.ajax({
 					url: this.url,
-					data: sendD,
 					dataType: "jsonp",
 					cache: true,
-					jsonpCallback: "getCachedEvents",
+				jsonpCallback: "getCachedScores",
+
 					success: function(data) {
-						self.matchUps=[];
-						var game;
-						
-						data = data.reverse();
-						//data = data.sort(function(a,b){return (new Date(a.starts_at.dateTime)).getTime()<(new Date(b.starts_at.dateTime)).getTime()?-1:1});
-						self.getStatus(data[0]);
-						for(var i=0;i<10;++i){
-							if(data[i]==null)
-								break;
-							game = {
-								title:data[i].title,
-								status:self.getStatus(data[i]), // rewrite
-								url: self.getURLs("http://ign.com/ipl/videos", self.getStatus(data[i]), data[i].franchise.slug),
-								date:moment(data[i].starts_at.dateTime, "YYYY-MM-DD").format("MMM D, YYYY")
-							};
-							for(var j=0;j<data[i].matchup.teams.length;++j){
-								game["username"+(j+1)] = data[i].matchup.teams[j].name;
-								game["points"+(j+1)] = data[i].matchup.teams[j].points;
-							};
-							if(data[i].matchup.teams[0]>data[i].matchup.teams[1]){
-								game.team1Class = 'winner';
-								game.team2Class = 'loser';
-							}else if(data[i].matchup.teams[0]<data[i].matchup.teams[1]){
-								game.team1Class = 'loser';
-								game.team2Class = 'winner';
+							self.matchUps = [];
+							var keys = [];
+							for(var key in data) {
+								if(data.hasOwnProperty(key)){
+									keys.push(key);
+								}
 							}
-							self.matchUps.push(game);
-						}
-						self.attachTemplate();
+							keys = keys.sort().reverse();
+							for (var k = keys.length - 1; k >= 0; k--) {
+									match = data[keys[k]][0];
+									var franchiseSlug = match.match_score.match.show ? match.match_score.match.show.franchise.slug : "";
+									var game = {
+										date: moment(keys[k], "YYYY-MM-DD").format("MMM D, YYYY"),
+										title: match.match_score.title ? match.match_score.title : "&nbsp;",
+										status: self.getStatus(match.match_score.match.status, match.match_score.match.url),
+										url: self.getURLs(match.match_score.match.url, match.match_score.match.status, franchiseSlug)
+									};
+									var i = 1, team1Score, team2Score, team1Class, team2Class;
+									var card = match.match_score.card;
+									for (var j in card){
+										if(card.hasOwnProperty(j)) {
+											if(i === 1) {
+												team1Score = card[j].points;
+											} else if (i === 2){
+												team2Score = card[j].points;
+											}
+											i += 1;
+										}
+									}
+									if (team1Score > team2Score) {
+										team1Class = 'winner';
+										team2Class = 'loser';
+									} else if (team1Score < team2Score) {
+										team2Class = 'winner';
+										team1Class = 'loser';
+									} else {
+										team1Class = 'draw';
+										team2Class = 'draw';
+									}
+									i = 1;
+									for (var m in card){
+										if(card.hasOwnProperty(m)) {
+											game['username' + i] = card[m].username;
+											game['points' + i] = card[m].points;
+											if (i === 1) game.team1Class = team1Class;
+											if (i === 2) game.team2Class = team2Class;
+											i++;
+										}
+									}
+
+									self.matchUps.push(game);
+							}
+					self.attachTemplate();
 					},
 					error: function(jqXHR, textStatus, errorThrown) {
 							data = {
@@ -116,6 +136,7 @@
 					}
 			});
 		},
+
 		loadStyleSheet: function() {
 			var head = document.getElementsByTagName( 'head' )[0],
 					link = document.createElement( 'link' );
