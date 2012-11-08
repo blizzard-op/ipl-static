@@ -7,7 +7,7 @@ iplSchedule =
       config =
         franchise: "all"
 
-    fetchingSchedule = this.fetchUrl "schedule"
+    fetchingSchedule = this.fetchUrl "events"
     fetchingFranchises = this.fetchUrl "franchises"
 
     fetchingSchedule.fail (jqXHR, textStatus, errorThrown)->
@@ -22,30 +22,33 @@ iplSchedule =
     ###
     
     $.when(fetchingSchedule, fetchingFranchises).done (scheduleData, franchiseData) =>
-      schedule = this.buildSchedule scheduleData[0], franchiseData[0], config.franchise
-      games = this.buildGames scheduleData[0], franchiseData[0], config.franchise
+      converted = @convertSchedule scheduleData[0]
+      schedule = this.buildSchedule( converted, franchiseData[0], config.franchise)
+      games = this.buildGames( converted, franchiseData[0], config.franchise)
       date = this.buildDates()
       allSchedules = schedule.join("")
       $("#schedule").html("<section class='guide'>" + games + date + allSchedules + "</section>").addClass("games-" + schedule.length) if schedule.length
-
       this.balanceGuide()
 
   getBroadcastDate: (broadcast) ->
     broadcastDate =
-      starts_at: new Date broadcast.starts_at
-      ends_at: new Date broadcast.ends_at
+      starts_at: new Date broadcast.starts_at.dateTime
+      ends_at: new Date broadcast.ends_at.dateTime
+
 
   fetchUrl: (type) ->
     $.ajax({
-      url: "http://esports.ign.com/" + type + ".json"
+      url: "http://esports-varnish-prd-www-01.las1.colo.ignops.com/content/v1/" + type + ".json"
       dataType: "jsonp"
       cache: true
-      jsonpCallback: "getCached" + type
+      jsonpCallback: "getCached" + type.charAt(0).toUpperCase() + type.slice(1)
     })
 
-  buildGames: (scheduleData, franchiseData, currentFranchiseSlug = all) ->
+
+  buildGames: (scheduleData, franchiseData, currentFranchiseSlug = "all") ->
     gameList = "<ul class='games'>"
     gameList += "<li class='times'><p>Times for your time zone</p><a href='/ipl/all/schedule'>Full Schedule</a></li>"
+    
     for franchise in franchiseData
       for own game, value of scheduleData
         if game is franchise.slug && (currentFranchiseSlug is "all" || currentFranchiseSlug is game)
@@ -65,11 +68,23 @@ iplSchedule =
 
     dateList += "</ul>"
 
-  buildSchedule: (scheduleData, franchiseData, currentFranchiseSlug = all) ->
+  convertSchedule: (scheduleData) ->
+    franchiseList = {}
+    index = 0
+    # sort games into map
+    for game in scheduleData
+      unless franchiseList[game.franchise.slug]?
+        franchiseList[game.franchise.slug] = []
+      franchiseList[game.franchise.slug].push game
+    franchiseList
+
+  buildSchedule:(scheduleData, franchiseData, currentFranchiseSlug = "all") ->
     broadcastList = []
     index = 0
+
     for franchise in franchiseData
       for own game, broadcasts of scheduleData
+
         if game is franchise.slug && (currentFranchiseSlug is "all" || currentFranchiseSlug is game)
           i = 0
           broadcastList[index] = "<ul class='" + franchise.slug + " schedule'>"
@@ -88,7 +103,7 @@ iplSchedule =
                   broadcastList[index] += "<br />" 
                   broadcastList[index] += "<span>" + broadcast.subtitle_1 + "</span> " if broadcast.subtitle_1
                   broadcastList[index] += "<span>" + broadcast.subtitle_2 + "</span> " if broadcast.subtitle_2
-                if broadcast.metadata.rebroadcast
+                if broadcast.rebroadcast
                   broadcastList[index] += "<br /><span class='old'>Rebroadcast</span>"
                 else
                   broadcastList[index] += "<br /><span class='new'>All new</span>"

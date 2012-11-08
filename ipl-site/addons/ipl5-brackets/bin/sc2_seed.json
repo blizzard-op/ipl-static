@@ -1,4227 +1,2425 @@
 jsonp({
-  "ID": null,
-  "UserId": null,
-  "SessionId": null,
-  "Name": "ipl5-2012-StarCraft-2",
-  "Slug": "ipl5-2012-sc2",
-  "Kind": "ipl5-sc2",
-  "FirstLoserRound": 10,
-  "LoserSpacing": 158,
-  "WinnerSpacing": 270,
-  "Rounds": [
-    {
-      "Name": "Winners Round 1",
-      "Position": 0,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": {
-              "X": 0,
-              "Y": 0
-            },
-            "Parent": [
-              1,
-              0
-            ],
-            "Players": [
-              {
-                "Id": 12,
-                "Name": "GSL Ro4 Player 1"
+	  "id": null,
+    "name": "ipl5-2012-StarCraft-2",
+    "slug": "ipl5-2012-sc2",
+    "kind": "ipl5-sc2",
+    "firstLoserRound": 10,
+    "user_id": null,
+    "loserSpacing":158,
+    "winnerSpacing":270,
+    "labels": [
+      {
+        "x":0,
+        "y":0,
+        "html":"<h2>Bracket!<h2>"
+      }
+    ],
+    "rounds": [
+    	{
+    		"name": "Winners Round 1",
+        "position": 0,
+        "matches": [
+          {
+            "match": {
+            	"position":0,
+            	"transform":{
+            		"x":0,
+            		"y":0
+            	},
+           		"parent":[1,0],
+         			"children":[],
+         			"loserDropsTo":[9,0],
+              "locked":[true,true],
+         			"players":[
+            		{
+            			"id":12,
+            			"name":"GSL Ro4 Player 1"
+            		},
+            		{
+            			"id":13,
+                  "name":"Int. Satellite #3 2"
+            		}
+            	]
+            }
+          },
+          {
+            "match": {
+            	"position":1,
+            	"transform":{
+            		"x":0,
+            		"y":112
+            	},
+           		"parent":[1,0],
+         			"children":[],
+         			"loserDropsTo":[9,0],
+              "locked":[true,true],
+         			"players":[
+            		{
+            			"id":14,
+            			"name":"GSL Ro4 Player 2"
+            		},
+            		{
+            			"id":15,
+            			"name":"Int. Satellite #3"
+            		}
+            	]
+            }
+          },
+          {
+            "match": {
+            	"position":2,
+            	"transform":{
+            		"x":0,
+            		"y":222
+            	},
+           		"parent":[1,1],
+         			"children":[],
+         			"loserDropsTo":[9,1],
+              "locked":[true,true],
+         			"players":[
+            		{
+            			"id":16,
+            			"name":"GSL Ro4 Player 3"
+            		},
+            		{
+            			"id":17,
+            			"name":"KR Satellite #3 2"
+            		}
+            	]
+            }
+          },
+          {
+            "match": {
+            	"position":3,
+            	"transform":{
+            		"x":0,
+            		"y":332
+            	},
+           		"parent":[1,1],
+         			"children":[],
+         			"loserDropsTo":[9,1],
+              "locked":[true,true],
+         			"players":[
+            		{
+            			"id":18,
+            			"name":"GSL Ro4 Player 4"
+            		},
+            		{
+            			"id":19,
+            			"name":"KR Satellite #3"
+            		}
+            	]
+            }
+          },
+          {
+            "match": {
+              "position":4,
+              "transform":{
+                "x":0,
+                "y":442
               },
-              {
-                "Id": 13,
-                "Name": "Int. Satellite #3 2"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              0
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 1,
-            "Transform": {
-              "X": 0,
-              "Y": 112
-            },
-            "Parent": [
-              1,
-              0
-            ],
-            "Players": [
-              {
-                "Id": 14,
-                "Name": "GSL Ro4 Player 2"
+              "parent":[1,2],
+              "children":[],
+              "loserDropsTo":[9,2],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":20,
+                  "name":"Life"
+                },
+                {
+                  "id":21,
+                  "name":"EU Satellite #3 2"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":5,
+              "transform":{
+                "x":0,
+                "y":552
               },
-              {
-                "Id": 15,
-                "Name": "Int. Satellite #3"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              0
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 2,
-            "Transform": {
-              "X": 0,
-              "Y": 222
-            },
-            "Parent": [
-              1,
-              1
-            ],
-            "Players": [
-              {
-                "Id": 16,
-                "Name": "GSL Ro4 Player 3"
+              "parent":[1,2],
+              "children":[],
+              "loserDropsTo":[9,2],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":22,
+                  "name":"Sea"
+                },
+                {
+                  "id":23,
+                  "name":"EU Satellite #3"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":6,
+              "transform":{
+                "x":0,
+                "y":662
               },
-              {
-                "Id": 17,
-                "Name": "KR Satellite #3 2"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              1
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 3,
-            "Transform": {
-              "X": 0,
-              "Y": 332
-            },
-            "Parent": [
-              1,
-              1
-            ],
-            "Players": [
-              {
-                "Id": 18,
-                "Name": "GSL Ro4 Player 4"
+              "parent":[1,3],
+              "children":[],
+              "loserDropsTo":[9,3],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":24,
+                  "name":"IM Invite - TBD"
+                },
+                {
+                  "id":25,
+                  "name":"Daisuke"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":7,
+              "transform":{
+                "x":0,
+                "y":772
               },
-              {
-                "Id": 19,
-                "Name": "KR Satellite #3"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              1
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 4,
-            "Transform": {
-              "X": 0,
-              "Y": 442
-            },
-            "Parent": [
-              1,
-              2
-            ],
-            "Players": [
-              {
-                "Id": 20,
-                "Name": "Life"
+              "parent":[1,3],
+              "children":[],
+              "loserDropsTo":[9,3],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":26,
+                  "name":"Genius"
+                },
+                {
+                  "id":27,
+                  "name":"Glon"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":8,
+              "transform":{
+                "x":0,
+                "y":882
               },
-              {
-                "Id": 21,
-                "Name": "EU Satellite #3 2"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              2
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 5,
-            "Transform": {
-              "X": 0,
-              "Y": 552
-            },
-            "Parent": [
-              1,
-              2
-            ],
-            "Players": [
-              {
-                "Id": 22,
-                "Name": "Sea"
+              "parent":[1,4],
+              "children":[],
+              "loserDropsTo":[9,4],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":28,
+                  "name":"Stephano"
+                },
+                {
+                  "id":29,
+                  "name":"Perfect"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":9,
+              "transform":{
+                "x":0,
+                "y":992
               },
-              {
-                "Id": 23,
-                "Name": "EU Satellite #3"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              2
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 6,
-            "Transform": {
-              "X": 0,
-              "Y": 662
-            },
-            "Parent": [
-              1,
-              3
-            ],
-            "Players": [
-              {
-                "Id": 24,
-                "Name": "IM Invite - TBD"
+              "parent":[1,4],
+              "children":[],
+              "loserDropsTo":[9,4],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":30,
+                  "name":"NaNiWa"
+                },
+                {
+                  "id":31,
+                  "name":"DBS"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":10,
+              "transform":{
+                "x":0,
+                "y":1102
               },
-              {
-                "Id": 25,
-                "Name": "Daisuke"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              3
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 7,
-            "Transform": {
-              "X": 0,
-              "Y": 772
-            },
-            "Parent": [
-              1,
-              3
-            ],
-            "Players": [
-              {
-                "Id": 26,
-                "Name": "Genius"
+              "parent":[1,5],
+              "children":[],
+              "loserDropsTo":[9,5],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":32,
+                  "name":"GSL WC Korea 1"
+                },
+                {
+                  "id":33,
+                  "name":"Gowser"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":11,
+              "transform":{
+                "x":0,
+                "y":1212
               },
-              {
-                "Id": 27,
-                "Name": "Glon"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              3
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 8,
-            "Transform": {
-              "X": 0,
-              "Y": 882
-            },
-            "Parent": [
-              1,
-              4
-            ],
-            "Players": [
-              {
-                "Id": 28,
-                "Name": "Stephano"
+              "parent":[1,5],
+              "children":[],
+              "loserDropsTo":[9,5],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":34,
+                  "name":"GSL WC Korea 2"
+                },
+                {
+                  "id":35,
+                  "name":"SeleCT"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":12,
+              "transform":{
+                "x":0,
+                "y":1322
               },
-              {
-                "Id": 29,
-                "Name": "Perfect"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              4
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 9,
-            "Transform": {
-              "X": 0,
-              "Y": 992
-            },
-            "Parent": [
-              1,
-              4
-            ],
-            "Players": [
-              {
-                "Id": 30,
-                "Name": "NaNiWa"
+              "parent":[1,6],
+              "children":[],
+              "loserDropsTo":[9,6],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":36,
+                  "name":"GSL WC Korea 3"
+                },
+                {
+                  "id":37,
+                  "name":"TriMaster"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":13,
+              "transform":{
+                "x":0,
+                "y":1432
               },
-              {
-                "Id": 31,
-                "Name": "DBS"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              4
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 10,
-            "Transform": {
-              "X": 0,
-              "Y": 1102
-            },
-            "Parent": [
-              1,
-              5
-            ],
-            "Players": [
-              {
-                "Id": 32,
-                "Name": "GSL WC Korea 1"
+              "parent":[1,6],
+              "children":[],
+              "loserDropsTo":[9,6],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":38,
+                  "name":"GSL WC Korea 4"
+                },
+                {
+                  "id":39,
+                  "name":"CatZ"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":14,
+              "transform":{
+                "x":0,
+                "y":1542
               },
-              {
-                "Id": 33,
-                "Name": "Gowser"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              5
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 11,
-            "Transform": {
-              "X": 0,
-              "Y": 1212
-            },
-            "Parent": [
-              1,
-              5
-            ],
-            "Players": [
-              {
-                "Id": 34,
-                "Name": "GSL WC Korea 2"
+              "parent":[1,7],
+              "children":[],
+              "loserDropsTo":[9,7],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":40,
+                  "name":"GSL WC Korea 5"
+                },
+                {
+                  "id":41,
+                  "name":"Caliber"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":15,
+              "transform":{
+                "x":0,
+                "y":1652
               },
-              {
-                "Id": 35,
-                "Name": "SeleCT"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              5
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 12,
-            "Transform": {
-              "X": 0,
-              "Y": 1322
-            },
-            "Parent": [
-              1,
-              6
-            ],
-            "Players": [
-              {
-                "Id": 36,
-                "Name": "GSL WC Korea 3"
+              "parent":[1,7],
+              "children":[],
+              "loserDropsTo":[9,7],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":42,
+                  "name":"GSL WC EU 1"
+                },
+                {
+                  "id":43,
+                  "name":"Sting"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":16,
+              "transform":{
+                "x":0,
+                "y":1762
               },
-              {
-                "Id": 37,
-                "Name": "TriMaster"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              6
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 13,
-            "Transform": {
-              "X": 0,
-              "Y": 1432
-            },
-            "Parent": [
-              1,
-              6
-            ],
-            "Players": [
-              {
-                "Id": 38,
-                "Name": "GSL WC Korea 4"
+              "parent":[1,8],
+              "children":[],
+              "loserDropsTo":[9,8],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":44,
+                  "name":"GSL WC EU 2"
+                },
+                {
+                  "id":45,
+                  "name":"Hendralisk"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":17,
+              "transform":{
+                "x":0,
+                "y":1872
               },
-              {
-                "Id": 39,
-                "Name": "CatZ"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              6
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 14,
-            "Transform": {
-              "X": 0,
-              "Y": 1542
-            },
-            "Parent": [
-              1,
-              7
-            ],
-            "Players": [
-              {
-                "Id": 40,
-                "Name": "GSL WC Korea 5"
+              "parent":[1,8],
+              "children":[],
+              "loserDropsTo":[9,8],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":46,
+                  "name":"GSL WC EU 3"
+                },
+                {
+                  "id":47,
+                  "name":"Shuttle"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":18,
+              "transform":{
+                "x":0,
+                "y":1982
               },
-              {
-                "Id": 41,
-                "Name": "Caliber"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              7
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 15,
-            "Transform": {
-              "X": 0,
-              "Y": 1652
-            },
-            "Parent": [
-              1,
-              7
-            ],
-            "Players": [
-              {
-                "Id": 42,
-                "Name": "GSL WC EU 1"
+              "parent":[1,9],
+              "children":[],
+              "loserDropsTo":[9,9],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":48,
+                  "name":"GSL WC NA 1"
+                },
+                {
+                  "id":49,
+                  "name":"ToD"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":19,
+              "transform":{
+                "x":0,
+                "y":2092
               },
-              {
-                "Id": 43,
-                "Name": "Sting"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              7
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 16,
-            "Transform": {
-              "X": 0,
-              "Y": 1762
-            },
-            "Parent": [
-              1,
-              8
-            ],
-            "Players": [
-              {
-                "Id": 44,
-                "Name": "GSL WC EU 2"
+              "parent":[1,9],
+              "children":[],
+              "loserDropsTo":[9,9],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":50,
+                  "name":"GSL WC NA 2"
+                },
+                {
+                  "id":51,
+                  "name":"Sculp"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":20,
+              "transform":{
+                "x":0,
+                "y":2202
               },
-              {
-                "Id": 45,
-                "Name": "Hendralisk"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              8
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 17,
-            "Transform": {
-              "X": 0,
-              "Y": 1872
-            },
-            "Parent": [
-              1,
-              8
-            ],
-            "Players": [
-              {
-                "Id": 46,
-                "Name": "GSL WC EU 3"
+              "parent":[1,10],
+              "children":[],
+              "loserDropsTo":[9,10],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":52,
+                  "name":"Nerchio"
+                },
+                {
+                  "id":53,
+                  "name":"TheStC"
+                }
+              ]
+            }
+          },
+
+          {
+            "match": {
+              "position":21,
+              "transform":{
+                "x":0,
+                "y":2312
               },
-              {
-                "Id": 47,
-                "Name": "Shuttle"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              8
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 18,
-            "Transform": {
-              "X": 0,
-              "Y": 1982
-            },
-            "Parent": [
-              1,
-              9
-            ],
-            "Players": [
-              {
-                "Id": 48,
-                "Name": "GSL WC NA 1"
+              "parent":[1,10],
+              "children":[],
+              "loserDropsTo":[9,10],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":54,
+                  "name":"HerO"
+                },
+                {
+                  "id":55,
+                  "name":"Bboong"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":22,
+              "transform":{
+                "x":0,
+                "y":2422
               },
-              {
-                "Id": 49,
-                "Name": "ToD"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              9
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 19,
-            "Transform": {
-              "X": 0,
-              "Y": 2092
-            },
-            "Parent": [
-              1,
-              9
-            ],
-            "Players": [
-              {
-                "Id": 50,
-                "Name": "GSL WC NA 2"
+              "parent":[1,11],
+              "children":[],
+              "loserDropsTo":[9,11],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":56,
+                  "name":"Creator"
+                },
+                {
+                  "id":57,
+                  "name":"Golden"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":23,
+              "transform":{
+                "x":0,
+                "y":2552
               },
-              {
-                "Id": 51,
-                "Name": "Sculp"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              9
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 20,
-            "Transform": {
-              "X": 0,
-              "Y": 2202
-            },
-            "Parent": [
-              1,
-              10
-            ],
-            "Players": [
-              {
-                "Id": 52,
-                "Name": "Nerchio"
+              "parent":[1,11],
+              "children":[],
+              "loserDropsTo":[9,11],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":58,
+                  "name":"viOLet"
+                },
+                {
+                  "id":59,
+                  "name":"ByuL"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":24,
+              "transform":{
+                "x":0,
+                "y":2662
               },
-              {
-                "Id": 53,
-                "Name": "TheStC"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              10
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 21,
-            "Transform": {
-              "X": 0,
-              "Y": 2312
-            },
-            "Parent": [
-              1,
-              10
-            ],
-            "Players": [
-              {
-                "Id": 54,
-                "Name": "HerO"
+              "parent":[1,12],
+              "children":[],
+              "loserDropsTo":[9,12],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":60,
+                  "name":"HuK"
+                },
+                {
+                  "id":61,
+                  "name":"ParanOid"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":25,
+              "transform":{
+                "x":0,
+                "y":2772
               },
-              {
-                "Id": 55,
-                "Name": "Bboong"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              10
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 22,
-            "Transform": {
-              "X": 0,
-              "Y": 2422
-            },
-            "Parent": [
-              1,
-              11
-            ],
-            "Players": [
-              {
-                "Id": 56,
-                "Name": "Creator"
+              "parent":[1,12],
+              "children":[],
+              "loserDropsTo":[9,12],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":62,
+                  "name":"HyuN"
+                },
+                {
+                  "id":63,
+                  "name":"Axslav"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":26,
+              "transform":{
+                "x":0,
+                "y":2882
               },
-              {
-                "Id": 57,
-                "Name": "Golden"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              11
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 23,
-            "Transform": {
-              "X": 0,
-              "Y": 2552
-            },
-            "Parent": [
-              1,
-              11
-            ],
-            "Players": [
-              {
-                "Id": 58,
-                "Name": "viOLet"
+              "parent":[1,13],
+              "children":[],
+              "loserDropsTo":[9,13],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":64,
+                  "name":"Byun"
+                },
+                {
+                  "id":65,
+                  "name":"Slavik"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":27,
+              "transform":{
+                "x":0,
+                "y":2992
               },
-              {
-                "Id": 59,
-                "Name": "ByuL"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              11
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 24,
-            "Transform": {
-              "X": 0,
-              "Y": 2662
-            },
-            "Parent": [
-              1,
-              12
-            ],
-            "Players": [
-              {
-                "Id": 60,
-                "Name": "HuK"
+              "parent":[1,13],
+              "children":[],
+              "loserDropsTo":[9,13],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":66,
+                  "name":"MMA"
+                },
+                {
+                  "id":67,
+                  "name":"sLivko"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":28,
+              "transform":{
+                "x":0,
+                "y":3102
               },
-              {
-                "Id": 61,
-                "Name": "ParanOid"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              12
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 25,
-            "Transform": {
-              "X": 0,
-              "Y": 2772
-            },
-            "Parent": [
-              1,
-              12
-            ],
-            "Players": [
-              {
-                "Id": 62,
-                "Name": "HyuN"
+              "parent":[1,14],
+              "children":[],
+              "loserDropsTo":[9,14],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":68,
+                  "name":"J"
+                },
+                {
+                  "id":69,
+                  "name":"QXC"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":29,
+              "transform":{
+                "x":0,
+                "y":3212
               },
-              {
-                "Id": 63,
-                "Name": "Axslav"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              12
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 26,
-            "Transform": {
-              "X": 0,
-              "Y": 2882
-            },
-            "Parent": [
-              1,
-              13
-            ],
-            "Players": [
-              {
-                "Id": 64,
-                "Name": "Byun"
+              "parent":[1,14],
+              "children":[],
+              "loserDropsTo":[9,14],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":70,
+                  "name":"Bly"
+                },
+                {
+                  "id":71,
+                  "name":"Suppy"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":30,
+              "transform":{
+                "x":0,
+                "y":3322
               },
-              {
-                "Id": 65,
-                "Name": "Slavik"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              13
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 27,
-            "Transform": {
-              "X": 0,
-              "Y": 2992
-            },
-            "Parent": [
-              1,
-              13
-            ],
-            "Players": [
-              {
-                "Id": 66,
-                "Name": "MMA"
+              "parent":[1,15],
+              "children":[],
+              "loserDropsTo":[9,15],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":72,
+                  "name":"Ziktomini"
+                },
+                {
+                  "id":73,
+                  "name":"ViBE"
+                }
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":31,
+              "transform":{
+                "x":0,
+                "y":3432
               },
-              {
-                "Id": 67,
-                "Name": "sLivko"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              13
-            ],
-            "Locked": [
-              true,
-              true
-            ]
+              "parent":[1,15],
+              "children":[],
+              "loserDropsTo":[9,15],
+              "locked":[true,true],
+              "players":[
+                {
+                  "id":74,
+                  "name":"HayprO"
+                },
+                {
+                  "id":75,
+                  "name":"JonnyRecco"
+                }
+              ]
+            }
           }
-        },
-        {
-          "Match": {
-            "Position": 28,
-            "Transform": {
-              "X": 0,
-              "Y": 3102
-            },
-            "Parent": [
-              1,
-              14
-            ],
-            "Players": [
-              {
-                "Id": 68,
-                "Name": "J"
+        ]
+    	},
+
+    	{
+    		"name": "Winners Round 2",
+        "position": 1,
+        "matches": [
+          {
+            "match": {
+            	"position":0,
+           		"parent":[2,0],
+         			"children":[[0,0],[0,1]],
+         			"loserDropsTo":[10,15],
+              "locked":[false,false],
+         			"players":[
+                null,
+                null
+            	]
+            }
+          },
+          {
+            "match": {
+            	"position":1,
+           		"parent":[2,0],
+         			"children":[[0,2],[0,3]],
+         			"loserDropsTo":[10,14],
+              "locked":[false,false],
+         			"players":[
+                null,
+                null
+            	]
+            }
+          },
+          {
+            "match": {
+              "position":2,
+              "parent":[2,1],
+              "children":[[0,4],[0,5]],
+              "loserDropsTo":[10,13],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":3,
+              "parent":[2,1],
+              "children":[[0,6],[0,7]],
+              "loserDropsTo":[10,12],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":4,
+              "parent":[2,2],
+              "children":[[0,8],[0,9]],
+              "loserDropsTo":[10,11],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":5,
+              "parent":[2,2],
+              "children":[[0,10],[0,11]],
+              "loserDropsTo":[10,10],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":6,
+              "parent":[2,3],
+              "children":[[0,12],[0,13]],
+              "loserDropsTo":[10,9],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":7,
+              "parent":[2,3],
+              "children":[[0,14],[0,15]],
+              "loserDropsTo":[10,8],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":8,
+              "parent":[2,4],
+              "children":[[0,16],[0,17]],
+              "loserDropsTo":[10,7],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":9,
+              "parent":[2,4],
+              "children":[[0,18],[0,19]],
+              "loserDropsTo":[10,6],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":10,
+              "parent":[2,5],
+              "children":[[0,20],[0,21]],
+              "loserDropsTo":[10,5],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":11,
+              "parent":[2,5],
+              "children":[[0,22],[0,23]],
+              "loserDropsTo":[10,4],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":12,
+              "parent":[2,6],
+              "children":[[0,24],[0,25]],
+              "loserDropsTo":[10,3],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":13,
+              "parent":[2,6],
+              "children":[[0,26],[0,27]],
+              "loserDropsTo":[10,2],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":14,
+              "parent":[2,7],
+              "children":[[0,28],[0,29]],
+              "loserDropsTo":[10,1],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":15,
+              "parent":[2,7],
+              "children":[[0,30],[0,31]],
+              "loserDropsTo":[10,0],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+    	},
+
+    	{
+    		"name": "Winners Round 3",
+        "position": 2,
+        "matches": [
+          {
+            "match": {
+            	"position":0,
+           		"parent":[3,0],
+         			"children":[[1,0],[1,1]],
+         			"loserDropsTo":[12,7],
+              "locked":[false,false],
+         			"players":[
+                null,
+                null
+            	]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "parent":[3,1],
+              "children":[[1,2],[1,3]],
+              "loserDropsTo":[12,6],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":2,
+              "parent":[3,2],
+              "children":[[1,4],[1,5]],
+              "loserDropsTo":[12,5],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":3,
+              "parent":[3,3],
+              "children":[[1,6],[1,7]],
+              "loserDropsTo":[12,4],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":4,
+              "parent":[3,4],
+              "children":[[1,8],[1,9]],
+              "loserDropsTo":[12,3],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":5,
+              "parent":[3,5],
+              "children":[[1,10],[1,11]],
+              "loserDropsTo":[12,2],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":6,
+              "parent":[3,6],
+              "children":[[1,12],[1,13]],
+              "loserDropsTo":[12,1],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":7,
+              "parent":[3,7],
+              "children":[[1,14],[1,15]],
+              "loserDropsTo":[12,0],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+    	},
+
+      {
+        "name": "Winners Round 4",
+        "position": 3,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[4,0],
+              "children":[[2,0]],
+              "loserDropsTo":[13,7],
+              "locked":[true,false],
+              "players":[
+                {
+                  "id":76,
+                  "name":"aLive"
+                },
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "parent":[4,0],
+              "children":[[2,1]],
+              "loserDropsTo":[13,6],
+              "locked":[true,false],
+              "players":[
+               {
+                  "id":77,
+                  "name":"Taeja"
+                },
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":2,
+              "parent":[4,1],
+              "children":[[2,2]],
+              "loserDropsTo":[13,5],
+              "locked":[true,false],
+              "players":[
+                {
+                  "id":78,
+                  "name":"Polt"
+                },
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":3,
+              "parent":[4,1],
+              "children":[[2,3]],
+              "loserDropsTo":[13,4],
+              "locked":[true,false],
+              "players":[
+                {
+                  "id":79,
+                  "name":"Xigua"
+                },
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":4,
+              "parent":[4,2],
+              "children":[[2,4]],
+              "loserDropsTo":[13,3],
+              "locked":[true,false],
+              "players":[
+                {
+                  "id":80,
+                  "name":"MarineKing"
+                },
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":5,
+              "parent":[4,2],
+              "children":[[2,5]],
+              "loserDropsTo":[13,2],
+              "locked":[true,false],
+              "players":[
+                {
+                  "id":81,
+                  "name":"Crank"
+                },
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":6,
+              "parent":[4,2],
+              "children":[[2,6]],
+              "loserDropsTo":[13,1],
+              "locked":[true,false],
+              "players":[
+                {
+                  "id":82,
+                  "name":"Snute"
+                },
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":7,
+              "parent":[4,2],
+              "children":[[2,7]],
+              "loserDropsTo":[13,0],
+              "locked":[true,false],
+              "players":[
+                {
+                  "id":83,
+                  "name":"Sleep"
+                },
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+    	{
+    		"name": "Winners Round 5",
+        "position": 4,
+        "matches": [
+          {
+            "match": {
+            	"position":0,
+           		"parent":[5,0],
+         			"children":[[3,0],[3,1]],
+         			"loserDropsTo":[15,3],
+              "locked":[false,false],
+         			"players":[
+                null,
+                null
+            	]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "parent":[5,0],
+              "children":[[3,2],[3,3]],
+              "loserDropsTo":[15,2],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":2,
+              "parent":[5,1],
+              "children":[[3,4],[3,5]],
+              "loserDropsTo":[15,1],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":3,
+              "parent":[5,1],
+              "children":[[3,6],[3,7]],
+              "loserDropsTo":[15,0],
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+    	},
+
+      {
+        "name": "Winners Round 6",
+        "position": 5,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[6,0],
+              "locked":[false,false],
+              "children":[[4,0],[4,1]],
+              "loserDropsTo":[17,1],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "parent":[6,0],
+              "locked":[false,false],
+              "children":[[4,2],[4,3]],
+              "loserDropsTo":[17,0],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Winners Finals",
+        "position": 6,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[7,0],
+              "locked":[false,false],
+              "children":[[5,0],[5,1]],
+              "loserDropsTo":[19,0],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Grand Finals",
+        "position": 7,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[8,0],
+              "locked":[false,false],
+              "children":[[6,0],[19,0]],
+              "loserDropsTo":null,
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Grand Champion",
+        "position": 8,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":null,
+              "locked":[true,false],
+              "children":[[7,0]],
+              "loserDropsTo":null,
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Losers Round 1",
+        "position": 9,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "transform":{
+                "x":40,
+                "y":3600
               },
-              {
-                "Id": 69,
-                "Name": "QXC"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              14
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 29,
-            "Transform": {
-              "X": 0,
-              "Y": 3212
-            },
-            "Parent": [
-              1,
-              14
-            ],
-            "Players": [
-              {
-                "Id": 70,
-                "Name": "Bly"
+              "parent":[10,0],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "transform":{
+                "x":40,
+                "y":3668
               },
-              {
-                "Id": 71,
-                "Name": "Suppy"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              14
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 30,
-            "Transform": {
-              "X": 0,
-              "Y": 3322
-            },
-            "Parent": [
-              1,
-              15
-            ],
-            "Players": [
-              {
-                "Id": 72,
-                "Name": "Ziktomini"
+              "parent":[10,1],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":2,
+              "transform":{
+                "x":40,
+                "y":3736
               },
-              {
-                "Id": 73,
-                "Name": "ViBE"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              15
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 31,
-            "Transform": {
-              "X": 0,
-              "Y": 3432
-            },
-            "Parent": [
-              1,
-              15
-            ],
-            "Players": [
-              {
-                "Id": 74,
-                "Name": "HayprO"
+              "parent":[10,2],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":3,
+              "transform":{
+                "x":40,
+                "y":3804
               },
-              {
-                "Id": 75,
-                "Name": "JonnyRecco"
-              }
-            ],
-            "Children": [],
-            "LoserDropsTo": [
-              9,
-              15
-            ],
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Winners Round 2",
-      "Position": 1,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              2,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                0
-              ],
-              [
-                0,
-                1
+              "parent":[10,3],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
               ]
-            ],
-            "LoserDropsTo": [
-              10,
-              15
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 1,
-            "Transform": null,
-            "Parent": [
-              2,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                2
-              ],
-              [
-                0,
-                3
-              ]
-            ],
-            "LoserDropsTo": [
-              10,
-              14
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 2,
-            "Transform": null,
-            "Parent": [
-              2,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                4
-              ],
-              [
-                0,
-                5
-              ]
-            ],
-            "LoserDropsTo": [
-              10,
-              13
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 3,
-            "Transform": null,
-            "Parent": [
-              2,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                6
-              ],
-              [
-                0,
-                7
-              ]
-            ],
-            "LoserDropsTo": [
-              10,
-              12
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 4,
-            "Transform": null,
-            "Parent": [
-              2,
-              2
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                8
-              ],
-              [
-                0,
-                9
-              ]
-            ],
-            "LoserDropsTo": [
-              10,
-              11
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 5,
-            "Transform": null,
-            "Parent": [
-              2,
-              2
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                10
-              ],
-              [
-                0,
-                11
-              ]
-            ],
-            "LoserDropsTo": [
-              10,
-              10
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 6,
-            "Transform": null,
-            "Parent": [
-              2,
-              3
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                12
-              ],
-              [
-                0,
-                13
-              ]
-            ],
-            "LoserDropsTo": [
-              10,
-              9
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 7,
-            "Transform": null,
-            "Parent": [
-              2,
-              3
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                14
-              ],
-              [
-                0,
-                15
-              ]
-            ],
-            "LoserDropsTo": [
-              10,
-              8
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 8,
-            "Transform": null,
-            "Parent": [
-              2,
-              4
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                16
-              ],
-              [
-                0,
-                17
-              ]
-            ],
-            "LoserDropsTo": [
-              10,
-              7
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 9,
-            "Transform": null,
-            "Parent": [
-              2,
-              4
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                18
-              ],
-              [
-                0,
-                19
-              ]
-            ],
-            "LoserDropsTo": [
-              10,
-              6
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 10,
-            "Transform": null,
-            "Parent": [
-              2,
-              5
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                20
-              ],
-              [
-                0,
-                21
-              ]
-            ],
-            "LoserDropsTo": [
-              10,
-              5
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 11,
-            "Transform": null,
-            "Parent": [
-              2,
-              5
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                22
-              ],
-              [
-                0,
-                23
-              ]
-            ],
-            "LoserDropsTo": [
-              10,
-              4
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 12,
-            "Transform": null,
-            "Parent": [
-              2,
-              6
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                24
-              ],
-              [
-                0,
-                25
-              ]
-            ],
-            "LoserDropsTo": [
-              10,
-              3
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 13,
-            "Transform": null,
-            "Parent": [
-              2,
-              6
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                26
-              ],
-              [
-                0,
-                27
-              ]
-            ],
-            "LoserDropsTo": [
-              10,
-              2
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 14,
-            "Transform": null,
-            "Parent": [
-              2,
-              7
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                28
-              ],
-              [
-                0,
-                29
-              ]
-            ],
-            "LoserDropsTo": [
-              10,
-              1
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 15,
-            "Transform": null,
-            "Parent": [
-              2,
-              7
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                0,
-                30
-              ],
-              [
-                0,
-                31
-              ]
-            ],
-            "LoserDropsTo": [
-              10,
-              0
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Winners Round 3",
-      "Position": 2,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              3,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                1,
-                0
-              ],
-              [
-                1,
-                1
-              ]
-            ],
-            "LoserDropsTo": [
-              12,
-              7
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 1,
-            "Transform": null,
-            "Parent": [
-              3,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                1,
-                2
-              ],
-              [
-                1,
-                3
-              ]
-            ],
-            "LoserDropsTo": [
-              12,
-              6
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 2,
-            "Transform": null,
-            "Parent": [
-              3,
-              2
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                1,
-                4
-              ],
-              [
-                1,
-                5
-              ]
-            ],
-            "LoserDropsTo": [
-              12,
-              5
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 3,
-            "Transform": null,
-            "Parent": [
-              3,
-              3
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                1,
-                6
-              ],
-              [
-                1,
-                7
-              ]
-            ],
-            "LoserDropsTo": [
-              12,
-              4
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 4,
-            "Transform": null,
-            "Parent": [
-              3,
-              4
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                1,
-                8
-              ],
-              [
-                1,
-                9
-              ]
-            ],
-            "LoserDropsTo": [
-              12,
-              3
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 5,
-            "Transform": null,
-            "Parent": [
-              3,
-              5
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                1,
-                10
-              ],
-              [
-                1,
-                11
-              ]
-            ],
-            "LoserDropsTo": [
-              12,
-              2
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 6,
-            "Transform": null,
-            "Parent": [
-              3,
-              6
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                1,
-                12
-              ],
-              [
-                1,
-                13
-              ]
-            ],
-            "LoserDropsTo": [
-              12,
-              1
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 7,
-            "Transform": null,
-            "Parent": [
-              3,
-              7
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                1,
-                14
-              ],
-              [
-                1,
-                15
-              ]
-            ],
-            "LoserDropsTo": [
-              12,
-              0
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Winners Round 4",
-      "Position": 3,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              4,
-              0
-            ],
-            "Players": [
-              {
-                "Id": 76,
-                "Name": "aLive"
+            }
+          },
+          {
+            "match": {
+              "position":4,
+              "transform":{
+                "x":40,
+                "y":3872
               },
-              null
-            ],
-            "Children": [
-              [
-                2,
-                0
+              "parent":[10,4],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
               ]
-            ],
-            "LoserDropsTo": [
-              13,
-              7
-            ],
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 1,
-            "Transform": null,
-            "Parent": [
-              4,
-              0
-            ],
-            "Players": [
-              {
-                "Id": 77,
-                "Name": "Taeja"
+            }
+          },
+          {
+            "match": {
+              "position":5,
+              "transform":{
+                "x":40,
+                "y":3940
               },
-              null
-            ],
-            "Children": [
-              [
-                2,
-                1
+              "parent":[10,5],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
               ]
-            ],
-            "LoserDropsTo": [
-              13,
-              6
-            ],
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 2,
-            "Transform": null,
-            "Parent": [
-              4,
-              1
-            ],
-            "Players": [
-              {
-                "Id": 78,
-                "Name": "Polt"
+            }
+          },
+          {
+            "match": {
+              "position":6,
+              "transform":{
+                "x":40,
+                "y":4008
               },
-              null
-            ],
-            "Children": [
-              [
-                2,
-                2
+              "parent":[10,6],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
               ]
-            ],
-            "LoserDropsTo": [
-              13,
-              5
-            ],
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 3,
-            "Transform": null,
-            "Parent": [
-              4,
-              1
-            ],
-            "Players": [
-              {
-                "Id": 79,
-                "Name": "Xigua"
+            }
+          },
+          {
+            "match": {
+              "position":7,
+              "transform":{
+                "x":40,
+                "y":4076
               },
-              null
-            ],
-            "Children": [
-              [
-                2,
-                3
+              "parent":[10,7],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
               ]
-            ],
-            "LoserDropsTo": [
-              13,
-              4
-            ],
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 4,
-            "Transform": null,
-            "Parent": [
-              4,
-              2
-            ],
-            "Players": [
-              {
-                "Id": 80,
-                "Name": "MarineKing"
+            }
+          },
+          {
+            "match": {
+              "position":8,
+              "transform":{
+                "x":40,
+                "y":4144
               },
-              null
-            ],
-            "Children": [
-              [
-                2,
-                4
+              "parent":[10,8],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
               ]
-            ],
-            "LoserDropsTo": [
-              13,
-              3
-            ],
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 5,
-            "Transform": null,
-            "Parent": [
-              4,
-              2
-            ],
-            "Players": [
-              {
-                "Id": 81,
-                "Name": "Crank"
+            }
+          },
+          {
+            "match": {
+              "position":9,
+              "transform":{
+                "x":40,
+                "y":4212
               },
-              null
-            ],
-            "Children": [
-              [
-                2,
-                5
+              "parent":[10,9],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
               ]
-            ],
-            "LoserDropsTo": [
-              13,
-              2
-            ],
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 6,
-            "Transform": null,
-            "Parent": [
-              4,
-              3
-            ],
-            "Players": [
-              {
-                "Id": 82,
-                "Name": "Snute"
+            }
+          },
+          {
+            "match": {
+              "position":10,
+              "transform":{
+                "x":40,
+                "y":4280
               },
-              null
-            ],
-            "Children": [
-              [
-                2,
-                6
+              "parent":[10,10],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
               ]
-            ],
-            "LoserDropsTo": [
-              13,
-              1
-            ],
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 7,
-            "Transform": null,
-            "Parent": [
-              4,
-              3
-            ],
-            "Players": [
-              {
-                "Id": 83,
-                "Name": "Sleep"
+            }
+          },
+          {
+            "match": {
+              "position":11,
+              "transform":{
+                "x":40,
+                "y":4348
               },
-              null
-            ],
-            "Children": [
-              [
-                2,
-                7
-              ]
-            ],
-            "LoserDropsTo": [
-              13,
-              0
-            ],
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Winners Round 5",
-      "Position": 4,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              5,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                3,
-                0
-              ],
-              [
-                3,
-                1
-              ]
-            ],
-            "LoserDropsTo": [
-              15,
-              3
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 1,
-            "Transform": null,
-            "Parent": [
-              5,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                3,
-                2
-              ],
-              [
-                3,
-                3
-              ]
-            ],
-            "LoserDropsTo": [
-              15,
-              2
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 2,
-            "Transform": null,
-            "Parent": [
-              5,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                3,
-                4
-              ],
-              [
-                3,
-                5
-              ]
-            ],
-            "LoserDropsTo": [
-              15,
-              1
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 3,
-            "Transform": null,
-            "Parent": [
-              5,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                3,
-                6
-              ],
-              [
-                3,
-                7
-              ]
-            ],
-            "LoserDropsTo": [
-              15,
-              0
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Winners Round 6",
-      "Position": 5,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              6,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                4,
-                0
-              ],
-              [
-                4,
-                1
-              ]
-            ],
-            "LoserDropsTo": [
-              17,
-              1
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 1,
-            "Transform": null,
-            "Parent": [
-              6,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                4,
-                2
-              ],
-              [
-                4,
-                3
-              ]
-            ],
-            "LoserDropsTo": [
-              17,
-              0
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Winners Finals",
-      "Position": 6,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              7,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                5,
-                0
-              ],
-              [
-                5,
-                1
-              ]
-            ],
-            "LoserDropsTo": [
-              19,
-              0
-            ],
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Grand Finals",
-      "Position": 7,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              8,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                6,
-                0
-              ],
-              [
-                19,
-                0
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Grand Champion",
-      "Position": 8,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": null,
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                7,
-                0
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Losers Round 1",
-      "Position": 9,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": {
-              "X": 40,
-              "Y": 3600
-            },
-            "Parent": [
-              10,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 1,
-            "Transform": {
-              "X": 40,
-              "Y": 3668
-            },
-            "Parent": [
-              10,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 2,
-            "Transform": {
-              "X": 40,
-              "Y": 3736
-            },
-            "Parent": [
-              10,
-              2
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 3,
-            "Transform": {
-              "X": 40,
-              "Y": 3804
-            },
-            "Parent": [
-              10,
-              3
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 4,
-            "Transform": {
-              "X": 40,
-              "Y": 3872
-            },
-            "Parent": [
-              10,
-              4
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 5,
-            "Transform": {
-              "X": 40,
-              "Y": 3940
-            },
-            "Parent": [
-              10,
-              5
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 6,
-            "Transform": {
-              "X": 40,
-              "Y": 4008
-            },
-            "Parent": [
-              10,
-              6
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 7,
-            "Transform": {
-              "X": 40,
-              "Y": 4076
-            },
-            "Parent": [
-              10,
-              7
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 8,
-            "Transform": {
-              "X": 40,
-              "Y": 4144
-            },
-            "Parent": [
-              10,
-              8
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 9,
-            "Transform": {
-              "X": 40,
-              "Y": 4212
-            },
-            "Parent": [
-              10,
-              9
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 10,
-            "Transform": {
-              "X": 40,
-              "Y": 4280
-            },
-            "Parent": [
-              10,
-              10
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 11,
-            "Transform": {
-              "X": 40,
-              "Y": 4348
-            },
-            "Parent": [
-              10,
-              11
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 12,
-            "Transform": {
-              "X": 40,
-              "Y": 4416
-            },
-            "Parent": [
-              10,
-              12
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 13,
-            "Transform": {
-              "X": 40,
-              "Y": 4484
-            },
-            "Parent": [
-              10,
-              13
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 14,
-            "Transform": {
-              "X": 40,
-              "Y": 4552
-            },
-            "Parent": [
-              10,
-              14
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 15,
-            "Transform": {
-              "X": 40,
-              "Y": 4620
-            },
-            "Parent": [
-              10,
-              15
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              true
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Losers Round 2",
-      "Position": 10,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              11,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                0
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 1,
-            "Transform": null,
-            "Parent": [
-              11,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                1
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 2,
-            "Transform": null,
-            "Parent": [
-              11,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                2
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 3,
-            "Transform": null,
-            "Parent": [
-              11,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                3
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 4,
-            "Transform": null,
-            "Parent": [
-              11,
-              2
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                4
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 5,
-            "Transform": null,
-            "Parent": [
-              11,
-              2
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                5
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 6,
-            "Transform": null,
-            "Parent": [
-              11,
-              3
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                6
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 7,
-            "Transform": null,
-            "Parent": [
-              11,
-              3
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                7
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 8,
-            "Transform": null,
-            "Parent": [
-              11,
-              4
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                8
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 9,
-            "Transform": null,
-            "Parent": [
-              11,
-              4
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                9
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 10,
-            "Transform": null,
-            "Parent": [
-              11,
-              5
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                10
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 11,
-            "Transform": null,
-            "Parent": [
-              11,
-              5
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                11
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 12,
-            "Transform": null,
-            "Parent": [
-              11,
-              6
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                12
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 13,
-            "Transform": null,
-            "Parent": [
-              11,
-              6
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                13
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 14,
-            "Transform": null,
-            "Parent": [
-              11,
-              7
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                14
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 15,
-            "Transform": null,
-            "Parent": [
-              11,
-              7
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                9,
-                15
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Losers Round 3",
-      "Position": 11,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              12,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                10,
-                0
-              ],
-              [
-                10,
-                1
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 1,
-            "Transform": null,
-            "Parent": [
-              12,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                10,
-                2
-              ],
-              [
-                10,
-                3
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 2,
-            "Transform": null,
-            "Parent": [
-              12,
-              2
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                10,
-                4
-              ],
-              [
-                10,
-                5
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 3,
-            "Transform": null,
-            "Parent": [
-              12,
-              3
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                10,
-                6
-              ],
-              [
-                10,
-                7
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 4,
-            "Transform": null,
-            "Parent": [
-              12,
-              4
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                10,
-                8
-              ],
-              [
-                10,
-                9
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 5,
-            "Transform": null,
-            "Parent": [
-              12,
-              5
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                10,
-                10
-              ],
-              [
-                10,
-                11
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 6,
-            "Transform": null,
-            "Parent": [
-              12,
-              6
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                10,
-                12
-              ],
-              [
-                10,
-                13
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 7,
-            "Transform": null,
-            "Parent": [
-              12,
-              7
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                10,
-                14
-              ],
-              [
-                10,
-                15
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Losers Round 4",
-      "Position": 12,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              13,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                11,
-                0
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 1,
-            "Transform": null,
-            "Parent": [
-              13,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                11,
-                1
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 2,
-            "Transform": null,
-            "Parent": [
-              13,
-              2
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                11,
-                2
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 3,
-            "Transform": null,
-            "Parent": [
-              13,
-              3
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                11,
-                3
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 4,
-            "Transform": null,
-            "Parent": [
-              13,
-              4
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                11,
-                4
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 5,
-            "Transform": null,
-            "Parent": [
-              13,
-              5
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                11,
-                5
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 6,
-            "Transform": null,
-            "Parent": [
-              13,
-              6
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                11,
-                6
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 7,
-            "Transform": null,
-            "Parent": [
-              13,
-              7
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                11,
-                7
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Losers Round 5",
-      "Position": 13,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              14,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                12,
-                0
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 1,
-            "Transform": null,
-            "Parent": [
-              14,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                12,
-                1
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 2,
-            "Transform": null,
-            "Parent": [
-              14,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                12,
-                2
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 3,
-            "Transform": null,
-            "Parent": [
-              14,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                12,
-                3
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 4,
-            "Transform": null,
-            "Parent": [
-              14,
-              2
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                12,
-                4
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 5,
-            "Transform": null,
-            "Parent": [
-              14,
-              2
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                12,
-                5
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 6,
-            "Transform": null,
-            "Parent": [
-              14,
-              3
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                12,
-                6
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 7,
-            "Transform": null,
-            "Parent": [
-              14,
-              3
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                12,
-                7
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Losers Round 6",
-      "Position": 14,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              15,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                13,
-                0
-              ],
-              [
-                13,
-                1
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 1,
-            "Transform": null,
-            "Parent": [
-              15,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                13,
-                2
-              ],
-              [
-                13,
-                3
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 2,
-            "Transform": null,
-            "Parent": [
-              15,
-              2
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                13,
-                4
-              ],
-              [
-                13,
-                5
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 3,
-            "Transform": null,
-            "Parent": [
-              15,
-              3
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                13,
-                6
-              ],
-              [
-                13,
-                7
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Losers Round 7",
-      "Position": 15,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              16,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                14,
-                0
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 1,
-            "Transform": null,
-            "Parent": [
-              16,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                14,
-                1
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 2,
-            "Transform": null,
-            "Parent": [
-              16,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                14,
-                2
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 3,
-            "Transform": null,
-            "Parent": [
-              16,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                14,
-                3
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Losers Round 8",
-      "Position": 16,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              17,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                15,
-                0
-              ],
-              [
-                15,
-                1
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 1,
-            "Transform": null,
-            "Parent": [
-              17,
-              1
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                15,
-                2
-              ],
-              [
-                15,
-                3
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Losers Round 9",
-      "Position": 17,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              18,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                16,
-                0
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        },
-        {
-          "Match": {
-            "Position": 1,
-            "Transform": null,
-            "Parent": [
-              18,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                16,
-                1
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Losers Round 10",
-      "Position": 18,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              19,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                17,
-                0
-              ],
-              [
-                17,
-                1
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              false,
-              false
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Losers Finals",
-      "Position": 19,
-      "Matches": [
-        {
-          "Match": {
-            "Position": 0,
-            "Transform": null,
-            "Parent": [
-              7,
-              0
-            ],
-            "Players": [
-              null,
-              null
-            ],
-            "Children": [
-              [
-                18,
-                0
-              ]
-            ],
-            "LoserDropsTo": null,
-            "Locked": [
-              true,
-              false
-            ]
-          }
-        }
-      ]
-    }
-  ],
-  "Groups": null
+              "parent":[10,11],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":12,
+              "transform":{
+                "x":40,
+                "y":4416
+              },
+              "parent":[10,12],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":13,
+              "transform":{
+                "x":40,
+                "y":4484
+              },
+              "parent":[10,13],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":14,
+              "transform":{
+                "x":40,
+                "y":4552
+              },
+              "parent":[10,14],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":15,
+              "transform":{
+                "x":40,
+                "y":4620
+              },
+              "parent":[10,15],
+              "children":[],
+              "loserDropsTo":null,
+              "locked":[true,true],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Losers Round 2",
+        "position": 10,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[11,0],
+              "children":[[9,0]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "parent":[11,0],
+              "children":[[9,1]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":2,
+              "parent":[11,1],
+              "children":[[9,2]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":3,
+              "parent":[11,1],
+              "children":[[9,3]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":4,
+              "parent":[11,2],
+              "children":[[9,4]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":5,
+              "parent":[11,2],
+              "children":[[9,5]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":6,
+              "parent":[11,3],
+              "children":[[9,6]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":7,
+              "parent":[11,3],
+              "children":[[9,7]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":8,
+              "parent":[11,4],
+              "children":[[9,8]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":9,
+              "parent":[11,4],
+              "children":[[9,9]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":10,
+              "parent":[11,5],
+              "children":[[9,10]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":11,
+              "parent":[11,5],
+              "children":[[9,11]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":12,
+              "parent":[11,6],
+              "children":[[9,12]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":13,
+              "parent":[11,6],
+              "children":[[9,13]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":14,
+              "parent":[11,7],
+              "children":[[9,14]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":15,
+              "parent":[11,7],
+              "children":[[9,15]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Losers Round 3",
+        "position": 11,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[12,0],
+              "children":[[10,0],[10,1]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "parent":[12,1],
+              "children":[[10,2],[10,3]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":2,
+              "parent":[12,2],
+              "children":[[10,4],[10,5]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":3,
+              "parent":[12,3],
+              "children":[[10,6],[10,7]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":4,
+              "parent":[12,4],
+              "children":[[10,8],[10,9]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":5,
+              "parent":[12,5],
+              "children":[[10,10],[10,11]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":6,
+              "parent":[12,6],
+              "children":[[10,12],[10,13]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":7,
+              "parent":[12,7],
+              "children":[[10,14],[10,15]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Losers Round 4",
+        "position": 12,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[13,0],
+              "children":[[11,0]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "parent":[13,1],
+              "children":[[11,1]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":2,
+              "parent":[13,2],
+              "children":[[11,2]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":3,
+              "parent":[13,3],
+              "children":[[11,3]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":4,
+              "parent":[13,4],
+              "children":[[11,4]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":5,
+              "parent":[13,5],
+              "children":[[11,5]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":6,
+              "parent":[13,6],
+              "children":[[11,6]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":7,
+              "parent":[13,7],
+              "children":[[11,7]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Losers Round 5",
+        "position": 13,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[14,0],
+              "children":[[12,0]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "parent":[14,0],
+              "children":[[12,1]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":2,
+              "parent":[14,1],
+              "children":[[12,2]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":3,
+              "parent":[14,1],
+              "children":[[12,3]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":4,
+              "parent":[14,2],
+              "children":[[12,4]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":5,
+              "parent":[14,2],
+              "children":[[12,5]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":6,
+              "parent":[14,3],
+              "children":[[12,6]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":7,
+              "parent":[14,3],
+              "children":[[12,7]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Losers Round 6",
+        "position": 14,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[15,0],
+              "children":[[13,0],[13,1]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "parent":[15,0],
+              "children":[[13,2],[13,3]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":2,
+              "parent":[15,1],
+              "children":[[13,4],[13,5]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":3,
+              "parent":[15,1],
+              "children":[[13,6],[13,7]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Losers Round 7",
+        "position": 15,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[16,0],
+              "children":[[14,0]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "parent":[16,0],
+              "children":[[14,1]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":2,
+              "parent":[16,1],
+              "children":[[14,2]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":3,
+              "parent":[16,1],
+              "children":[[14,3]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Losers Round 8",
+        "position": 16,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[17,0],
+              "children":[[15,0],[15,1]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "parent":[17,1],
+              "children":[[15,2],[15,3]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Losers Round 9",
+        "position": 17,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[18,0],
+              "children":[[16,0]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          },
+          {
+            "match": {
+              "position":1,
+              "parent":[18,0],
+              "children":[[16,1]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        "name": "Losers Round 10",
+        "position": 18,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[19,0],
+              "children":[[17,0],[17,1]],
+              "loserDropsTo":null,
+              "locked":[false,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Losers Finals",
+        "position": 19,
+        "matches": [
+          {
+            "match": {
+              "position":0,
+              "parent":[7,0],
+              "children":[[18,0]],
+              "loserDropsTo":null,
+              "locked":[true,false],
+              "players":[
+                null,
+                null
+              ]
+            }
+          }
+        ]
+      }
+    ]
 })
