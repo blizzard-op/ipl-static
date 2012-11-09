@@ -1,0 +1,100 @@
+#hero_container {
+    border-bottom: none;
+    background-color: #F4F4F4;
+    border-top: none;
+    overflow:  hidden;
+    -webkit-box-shadow: #999 0 2px 4px;
+    -moz-box-shadow: #999 0 2px 4px;
+    box-shadow: #999 0 2px 4px;
+}
+#hero_shadow {
+    padding-bottom: 10px;
+    background: #DDD;
+    overflow:  hidden;
+    border-bottom:  1px solid #CCC;
+}
+#hero_content_link_container{position: relative; height: 85px;}
+#hero_content_link_container a{
+    padding:10px 25px 10px 9px;
+    color: #003399;
+    text-decoration: none;
+    overflow: hidden;
+    font-weight: bold;
+    display: block;
+    background:url(../../../../../ignmediamobile/img/default/listArrow.png) center right no-repeat;
+}
+#hero_content_link_container a.hero_video_link{background:none;position: relative;}
+#hero_content_link_container img{margin-right:12px;float: left;width: 112px;height: 63px;border:1px solid #CCC; background-color: #CCC}
+#hero_content_link_container video{margin-right:12px;float: left;min-width: 112px;min-height: 63px;border:1px solid #999;}
+
+#hero_pager_container{
+    position: relative;
+    background: url(../../../../../ignmediamobile/img/default/heroBG.png) repeat center;
+    height: 40px;
+}
+#hero_pager_container ul{padding:3px 0;text-align:center;border-top:1px solid #d32028;height: 36px;}
+#hero_pager_container li{border-bottom: none;overflow: hidden;}
+.hero_pager_image{
+    display: inline-block;
+    background: #CCC;
+    -webkit-box-shadow: inset #BBB 1px 1px 0;
+    -moz-box-shadow: inset #BBB 1px 1px 0;
+    box-shadow: inset #BBB 1px 1px 0;
+    border-radius: 5px;
+    width: 10px;
+    height: 10px;
+    margin-right:4px;
+    margin-top: 12px;
+}
+#hero_pager_container .selected{
+    background: #d32028;
+    -webkit-box-shadow: #d32028 0 0 2px;
+    -moz-box-shadow: #d32028 0 0 2px;
+    box-shadow: #d32028 0 0 2px;
+}
+#hero_pager_container.sub_hero_pager_container .selected{
+    background: #000;
+    -webkit-box-shadow: #000 0 0 2px;
+    -moz-box-shadow: #000 0 0 2px;
+    box-shadow: #000 0 0 2px;
+}
+#hero_content_link_container .icon-video{
+    position:absolute;
+    right:6px;
+    top:6px;
+    height:20px;
+    width:20px;
+    display: block;
+    border: 1px solid #999;
+    background: #222;
+    background: -moz-linear-gradient(100% 100% 90deg, #040404, #333);
+    background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#040404));
+    display:inline;
+    top:13px;
+    left:98px;
+    z-index: 100;
+}
+#hero_content_link_container .icon-video span{
+    display: block;
+    height: 0px;
+    width: 0px;
+    border-color: transparent transparent transparent #d00;
+    border-style: solid;
+    border-width: 6px 0px 6px 12px;
+    margin:4px 5px;
+}
+.sub_hero_container {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    border-bottom:  1px solid #ccc !important;
+}
+.sub_hero_pager_container ul{border-top: 1px solid #ccc !important;}
+
+/* All @2x styles for iPhone retina display go here */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+    #hero_content_link_container a {
+        background:url(../../../../../ignmediamobile/img/default/listArrow@2x.png) center right no-repeat;
+        background-size: 20px 14px;
+    }
+}

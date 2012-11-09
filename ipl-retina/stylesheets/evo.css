@@ -1,0 +1,507 @@
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.evo-coverStories{
+    display:inline;
+    float:left;
+    /*margin-left: 6px;*/
+    width:948px;
+    overflow:hidden;
+    position: relative;
+}
+
+.evo-coverStories .fuseNav{
+    width: 100%;
+}
+.evo-coverStories .fuseNav a{
+    display: block;
+    float: left;
+    font-family: "proxima-nova", "helvetica neue", arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 44px;
+    text-transform: uppercase;
+}
+.evo-coverStories .fuseNav a.active{
+    color: #d3222a;
+}
+.evo-coverStories .fuseNav a span{
+    display: block;
+}
+.evo-coverStories .fuseNav a .text{
+    border-left: 1px solid #CCC;
+    height: 44px;
+    padding: 5px 15px 0px;
+}
+
+.evo-coverStories .fuseNav a.first .text{
+    border-left-width: 0px;
+}
+.evo-coverStories .fuseNav .fuse{
+    background-color: #CCC;
+    height: 5px;
+    overflow: hidden;
+}
+.evo-coverStories .fuseNav a .fuse .activeFuse{
+    background-color: #d3222a;
+    float: right;
+    height: 5px;
+    width: 0%;
+}
+.evo-coverStories .fuseNav a.previous .fuse{
+    background-color: #333;
+}
+.evo-coverStories .fuseNav a.active .fuse .activeFuse{
+    float: left;
+}
+.evo-coverStories .fuseNav a.selected .fuse{
+    background-color: #d3222a;
+}
+.evo-coverStories a{
+    text-decoration:none;
+    color:#000;
+}
+.evo-coverStories .prime,
+.evo-coverStories .secondary {
+    height: 263px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
+    background-repeat:no-repeat;
+}
+.evo-wrapper {
+    margin-left:6px;
+}
+.evo-coverStories .prime{
+    display:inline;
+    float:left;
+    margin-right:5px;
+    width:468px;
+    height: 263px;
+}
+
+.evo-coverStories .prime .video-overlay {
+    background: url("../../../../img/widgets/slotted/coverstories/carousel-sprite.png") no-repeat -199px -12px;
+    display: block;
+    height: 25px;
+    left: 10px;
+    position: absolute;
+    top: 231px;
+    width: 27px;
+}
+
+.evo-coverStories .prime .video-overlay:hover {
+        background:url(../../../../img/widgets/slotted/coverstories/carousel-sprite.png) no-repeat -250px -12px;
+        display: block;
+        height: 25px;
+        left: 10px;
+        position: absolute;
+        top: 231px;
+        width: 27px;
+    }
+    .evo-coverStories a.prime:link, .evo-coverStories a.prime:visited {
+        color:#e6e6e6;
+    }
+    .evo-coverStories a.prime:hover, .evo-coverStories a.prime:active {
+        color:#fff;
+    }
+    .evo-coverStories .wide .video-overlay {
+        background: url("../../../../img/widgets/slotted/coverstories/carousel-sprite.png") no-repeat -7px -14px;
+        display: block;
+        height: 64px;
+        left: 10px;
+        position: absolute;
+        top: 183px;
+        width: 76px;
+    }
+
+.evo-coverStories .wide .video-overlay:hover {
+
+    background:url(../../../../img/widgets/slotted/coverstories/carousel-sprite.png) no-repeat -101px -14px;
+
+    display: block;
+
+    height: 64px;
+
+    left: 10px;
+
+    position: absolute;
+
+    top: 183px;
+
+    width: 76px;
+
+}
+
+.evo-coverStories .secondary {
+
+    display:inline;
+
+    float:left;
+
+    margin:0 6px 0 6px;
+
+    padding-top:140px;
+
+    width:227px;
+
+    height:123px;
+
+    font-size:18px;
+
+    background-repeat: no-repeat;
+
+    background-size: 228px 128px;
+
+}
+
+.evo-coverStories .secondary .video-overlay {
+
+    background: url("../../../../img/widgets/slotted/coverstories/carousel-sprite.png") no-repeat -200px -12px;
+
+    display: block;
+
+    height: 25px;
+
+    left: 7px;
+
+    position: absolute;
+
+    top: 95px;
+
+    width: 27px;
+
+}
+
+.evo-coverStories .secondary .video-overlay:hover {
+
+    background:url(../../../../img/widgets/slotted/coverstories/carousel-sprite.png) no-repeat -251px -12px;
+
+    display: block;
+
+    height: 25px;
+
+    left: 7px;
+
+    position: absolute;
+
+    top: 95px;
+
+    width: 27px;
+
+}
+
+.evo-coverStories a.secondary:link, .evo-coverStories a.secondary:visited{
+
+    color:#000;
+
+}
+
+.evo-coverStories a.secondary:hover, .evo-coverStories a.secondary:active{
+
+    color:#003399;
+
+}
+
+.evo-coverStories .secondary.omega{
+
+    margin-right: 0;
+
+    margin-left: 6px;
+
+}
+
+
+
+.evo-coverStories .overlayBackground,
+
+.evo-coverStories .overlayContent{
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width:250px;
+
+    height:135px;
+
+    display:inline;
+
+    float:left;
+
+    margin:0;
+
+}
+
+.evo-coverStories .carousel {
+
+    height: 280px;
+
+    margin: 0;
+
+    padding: 0;
+
+    position: relative;
+
+    overflow: hidden;
+
+    width: 948px;
+
+}
+
+.evo-coverStories .carousel .storyUnit {
+
+    height: 280px;
+
+    list-style: none;
+
+    position: absolute;
+
+    top: -280px;
+
+    transition: top 0.3s ease-out 0.3s;
+
+    -moz-transition: top 0.3s ease-out 0.3s;
+
+    -o-transition: top 0.3s ease-out 0.3s;
+
+    -webkit-transition: top 0.3s ease-out 0.3s;
+
+    width: 948px;
+
+    z-index: 1;
+
+}
+
+.evo-coverStories .carousel .storyUnit.active{
+
+    top: 0px;
+
+    transition-delay: 0s;
+
+    -moz-transition-delay: 0s;
+
+    -o-transition-delay: 0s;
+
+    -webkit-transition-delay: 0s;
+
+    z-index: 2;
+
+}
+
+.evo-coverStories .overlayBackground{
+
+    background: #000;
+
+    opacity: .75;
+
+}
+
+.overlayContent span{
+
+    display:block;
+
+    margin: 0;
+
+}
+
+.lcs-headline, .lcs-headline a {
+
+    font-family: "proxima-nova", "helvetica neue", arial, sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    line-height: 25px;
+
+}
+
+.lcs-teaser{
+
+    font-family: "proxima-nova", "helvetica neue", arial, sans-serif;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+}
+
+.cvr-highlightsSubTitle {
+
+    font-family: "proxima-nova", "helvetica neue", arial, sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    margin-top: 15px;
+
+    text-transform: uppercase;
+
+}
+
+.cvr-highlights {
+
+    height: 210px;
+
+    padding: 30px;
+
+    position: absolute;
+
+    right: 0;
+
+    top: 0;
+
+    width: 248px;
+
+    z-index: 6;
+
+    background: rgb(0,0,0);
+
+    background: rgba(0,0,0, 0.75);
+
+    overflow: hidden;
+
+}
+
+.cvr-highlights a, .cvr-highlights {
+
+    /* using rgba so that it will not do strange things when animated */
+
+    color: rgb(255,255,255);
+
+    color: rgba(255,255,255,1);
+
+}
+
+.evo-coverStories-subitems {
+
+    color: #d3222a;
+
+}
+
+.evo-coverStories-subitems li{
+
+    margin: 4px 0px;
+
+}
+
+.evo-coverStories-subitems a{
+
+    /* using rgba so that it will not do strange things when animated */
+
+    clear: right;
+
+    color: rgb(204,204,204);
+
+    color: rgba(204,204,204,1);
+
+    display: block;
+
+    font-family: "proxima-nova", "helvetica neue", arial, sans-serif;
+
+    font-size: 13px;
+
+    left: 3px;
+
+    line-height: 15px;
+
+    margin-left: 7px;
+
+    position: relative;
+
+}
+
+.evo-coverStories-subitems a:hover{
+
+    color: #fff;
+
+}
+
+.cvr-main {
+
+    position: relative;
+
+    height:270px;
+
+}
+
+.overlayContent .lcs-headline{
+
+    margin: 6px 12px 6px 12px;
+
+}
+
+.overlayContent .lcs-subheadline{
+
+    margin: 0px 12px 0px 12px;
+
+}
+
+.evo-coverStories .readMoreArrow{
+
+    color: #fff;
+
+    text-decoration: none;
+
+    text-indent:-9999px;
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    height: 18px;
+
+    display:block;
+
+    width:18px;
+
+    background-image:url('../../../../../ignmedia/img/default/evolution-icons.png');
+
+    background-position:0 -40px;
+
+    background-repeat:no-repeat;
+
+}
+
+.overlayContent .readMoreArrow{
+
+    left: 12px;
+
+    bottom: 6px;
+
+}
+
+
+
+.evo-coverStories .wide li:before {
+
+    clear: left;
+
+    content: "\00BB";
+
+    float: left;
+
+    line-height: 12px;
+
+}
+
