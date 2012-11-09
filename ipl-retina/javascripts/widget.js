@@ -33,7 +33,7 @@
 
   createPoll = function(poll) {
     var index, payout, percent, player, pollHTML, votes, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2;
-    pollHTML = "<div id='" + poll.id + "'>\n  <h4>Who Will Win Game " + poll.matchup.game.number + "?</h4>\n  <div class=\"label clearfix\">";
+    pollHTML = "<div id='" + poll.id + "' class='results'>\n  <h4>Who Will Win Game " + poll.matchup.game.number + "?</h4>\n  <div class=\"label clearfix\">";
     _ref = poll.options;
     for (index = _i = 0, _len = _ref.length; _i < _len; index = ++_i) {
       player = _ref[index];
