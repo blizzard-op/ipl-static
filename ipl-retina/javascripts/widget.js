@@ -2,9 +2,7 @@
 (function() {
   var authCheck, calculatePercent, createPoll, currentStreams, getPayouts, getPolls, getStreams, getVotes, init, loadPolls, loadUser, loadVideo, loadWidget, params, parseQueryString, pollForStream, pollsObj, postVote, randomizeOrder, readCookie, socket, streamKeys, updateVotes, userId;
 
-  socket = io.connect("http://esports.ign.com", {
-    resource: "vote/v1/socket.io"
-  });
+  socket = io.connect();
 
   pollsObj = {};
 
@@ -322,12 +320,10 @@
   };
 
   getStreams = function() {
-    var cookie, gettingStreams;
+    var gettingStreams;
     $("head").append("<link rel='stylesheet' href='http://media.ign.com/ev/esports/ipl-static/ipl-retina/stylesheets/widget.css'>");
     $("#coverStoriesContainer .evo-wrapper").append("<div class='evo-coverStories'><div class='carousel'><div class='storyUnit wide index-0 active'><div class='cvr-main'><div id='IGNPlayerContainer'></div></div><div id='poll-container' class='cvr-highlights'></div></div></div></div>");
     params = parseQueryString();
-    cookie = readCookie("ignauth");
-    console.log(cookie);
     gettingStreams = $.ajax({
       url: "http://esports.ign.com/content/v1/streams.json",
       dataType: "jsonp",

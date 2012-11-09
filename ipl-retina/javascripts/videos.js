@@ -2,9 +2,7 @@
 (function() {
   var authCheck, calculatePercent, createPoll, currentStreams, getPayouts, getPolls, getStreams, getVotes, init, initialLoadDisqus, loadDisqus, loadPolls, loadUser, loadVideo, loadWidget, params, parseQueryString, pollForStream, pollsObj, postVote, randomizeOrder, readCookie, socket, streamKeys, updateVotes, userId;
 
-  socket = io.connect("http://" + hostname + ":" + port, {
-    resource: "vote/v1/socket.io"
-  });
+  socket = io.connect("http://" + hostname + ":" + port);
 
   pollsObj = {};
 
