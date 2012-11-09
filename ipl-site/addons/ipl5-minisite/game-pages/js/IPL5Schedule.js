@@ -80,7 +80,7 @@ var Schedule = function(calendarUrl) {
 			// update the schedule data with new hourly events
 			scheduleData[day] = hourlyEvents;
 		});
-		console.log(scheduleData);
+		// console.log(scheduleData);
 		renderData(scheduleData);
 	}
 	
