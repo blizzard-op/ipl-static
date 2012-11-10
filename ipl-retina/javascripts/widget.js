@@ -2,7 +2,7 @@
 (function() {
   var authCheck, calculatePercent, createPoll, currentStreams, getPayouts, getPolls, getStreams, getVotes, init, loadPolls, loadUser, loadVideo, loadWidget, params, parseQueryString, pollForStream, pollsObj, postVote, randomizeOrder, readCookie, socket, streamKeys, updateVotes, userId;
 
-  socket = io.connect();
+  socket = io.connect("http://esports.ign.com");
 
   pollsObj = {};
 
