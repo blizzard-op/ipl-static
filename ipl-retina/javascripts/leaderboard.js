@@ -42,7 +42,7 @@
           return $("#user-score").append(userScoreHTML);
         });
         return gettingScores.fail(function(jqxhr, status, text) {
-          return $("#user-score").append("<p>No score yet :( Go vote on some <a href='http://ign.com/ipl'>games</a></p>");
+          return $("#user-score").append("<p><a href='http://ign.com/ipl'>Vote to win stuff, dummy!</a> Oh, and go wash your dirty hands. I hate it when you touch me like that.</p>");
         });
       } else {
         return setupLoginForm("Not Found");
