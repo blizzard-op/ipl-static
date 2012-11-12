@@ -282,7 +282,7 @@
 
   getStreams = function() {
     var gettingStreams;
-    $("head").append("<link rel='stylesheet' href='http://esports.ign.com/media/ev/esports/ipl-static/ipl-retina/stylesheets/widget.css'>");
+    $("head").append("<link rel='stylesheet' href='http://media.ign.com/ev/esports/ipl-static/ipl-retina/stylesheets/widget.css'>");
     $("#coverStoriesContainer .evo-wrapper").append("<div class='evo-coverStories'><div class='carousel'><div class='storyUnit wide index-0 active'><div class='cvr-main'><div id='IGNPlayerContainer'></div></div><div id='poll-container' class='cvr-highlights'></div></div></div></div>");
     gettingStreams = $.ajax({
       url: "http://esports.ign.com/content/v1/streams.json",
