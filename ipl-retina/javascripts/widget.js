@@ -9,7 +9,13 @@
   userId = 21;
 
   calculatePercent = function(total, votes) {
-    return parseInt(Math.round(votes / total * 100), 10);
+    var percent;
+    percent = parseInt(Math.round(votes / total * 100), 10);
+    console.log(percent, votes, total);
+    if (isNaN(percent)) {
+      percent = 50;
+    }
+    return percent;
   };
 
   getVotes = function(poll, name) {
@@ -48,9 +54,7 @@
       player = _ref1[index];
       votes = player.votes || 0;
       percent = calculatePercent(poll.total, votes);
-      if (isNaN(percent)) {
-        percent = 50;
-      }
+      console.log(percent);
       if (Math.round(votes / poll.total * 100) + Math.round((poll.total - votes) / poll.total * 100) > 100) {
         if (index === 1 && percent > 0) {
           percent -= 1;
@@ -67,7 +71,7 @@
     for (index = _k = 0, _len2 = _ref2.length; _k < _len2; index = ++_k) {
       player = _ref2[index];
       payout = player.payout;
-      pollHTML += "<p class='team-" + (index + 1) + "'>Potential: <span class='potential'>" + payout + "</span></p>";
+      pollHTML += "<p class='team-" + (index + 1) + "'>Payout: <span class='potential'>" + payout + "</span></p>";
     }
     pollHTML += "<div class='payout'>\n  <p>You chose:\n    <span id='team-" + poll.id + "'> </span>\n  </p>";
     if (userId !== 21) {
@@ -115,6 +119,7 @@
       _results = [];
       for (index = _i = 0, _len = _ref.length; _i < _len; index = ++_i) {
         player = _ref[index];
+        console.log(poll.total, player.votes);
         percent = calculatePercent(poll.total, player.votes);
         modifier = index === 0 ? 1 : 0;
         $poll.find(".team-" + (index + 1) + " .potential").html(player.payout);
