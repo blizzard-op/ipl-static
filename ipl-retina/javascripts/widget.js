@@ -64,16 +64,7 @@
       player = _ref1[index];
       votes = player.votes || 0;
       percent = calculatePercent(poll.total, votes);
-      if (Math.round(votes / poll.total * 100) + Math.round((poll.total - votes) / poll.total * 100) > 100) {
-        if (index === 1 && percent > 0) {
-          percent -= 1;
-        }
-      }
-      if (index === 0) {
-        pollHTML += "<div class='percent team-" + (index + 1) + "' style='width: " + percent + "%' data-team='team-" + (index + 1) + "' data-value='" + player.name + "'>" + percent + "%</div>";
-      } else {
-        pollHTML += "<div class='percent team-" + (index + 1) + "' style='width: " + percent + "%' data-team='team-" + (index + 1) + "' data-value='" + player.name + "'>" + percent + "%</div>";
-      }
+      pollHTML += "<div class='percent team-" + (index + 1) + "' style='width: " + percent + "%' data-team='team-" + (index + 1) + "' data-value='" + player.name + "'>" + percent + "%</div>";
     }
     pollHTML += "</div>";
     _ref2 = poll.options;
@@ -86,7 +77,7 @@
     if (userId !== 21) {
       pollHTML += "<p>Winning payout: <span id='payout-" + poll.id + "'>0</span></p>";
     } else {
-      pollHTML += "<p><a href='https://s.ign.com/' class='signin'>Login</a> to have your scores tracked</p>";
+      pollHTML += "<p><a href='https://s.ign.com/' class='signin'>Login</a> to have your scores tracked and win an IPL PC!</p>";
     }
     pollHTML += "<a href='http://" + _url + "/vote/v1/leaderboard'>Leaderboard and rules</a>";
     return pollHTML += "</div>";
@@ -103,7 +94,7 @@
   });
 
   socket.on("updatePoll", function(poll) {
-    var $poll, index, modifier, percent, player, _i, _len, _ref, _results;
+    var $poll, index, percent, player, _i, _len, _ref, _results;
     $poll = $("#" + poll.id);
     if (poll.state === "inactive") {
       $poll.find(".label p").remove();
@@ -129,9 +120,8 @@
       for (index = _i = 0, _len = _ref.length; _i < _len; index = ++_i) {
         player = _ref[index];
         percent = calculatePercent(poll.total, player.votes);
-        modifier = index === 0 ? 1 : 0;
         $poll.find(".team-" + (index + 1) + " .potential").html(player.payout);
-        _results.push($poll.find(".team-" + (index + 1) + ".percent").width("" + (percent - modifier) + "%").html("" + percent + "%"));
+        _results.push($poll.find(".team-" + (index + 1) + ".percent").width("" + percent + "%").html("" + percent + "%"));
       }
       return _results;
     }
