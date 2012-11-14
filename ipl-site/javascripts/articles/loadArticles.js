@@ -61,12 +61,17 @@
   };
 
   replaceYoutube = function(text) {
-    var matchArray, youtubeRegex, ytId;
+    var item, matchArray, modifiedItem, videoRegex, youtubeRegex, ytId, _i, _len;
     youtubeRegex = /(\[youtube clip_id=\")(.+?)(\"\])/g;
     matchArray = text.match(youtubeRegex);
-    if (matchArray !== null) {
-      ytId = matchArray[0].split('="')[1].split('"]')[0];
-      text = text.replace(youtubeRegex, '<iframe width="610" height="371" src="http://www.youtube.com/embed/' + ytId + '?&amp;hl=en_US" frameborder="0" allowfullscreen></iframe>');
+    if (matchArray != null ? matchArray.length : void 0) {
+      for (_i = 0, _len = matchArray.length; _i < _len; _i++) {
+        item = matchArray[_i];
+        modifiedItem = item.replace("[", "\\[").replace("]", "\\]").replace('"', '\\"').replace("'", "\\'");
+        videoRegex = new RegExp(modifiedItem);
+        ytId = item.split('="')[1].split('"]')[0];
+        text = text.replace(videoRegex, '<iframe width="610" height="371" src="http://www.youtube.com/embed/' + ytId + '?&amp;hl=en_US" frameborder="0" allowfullscreen></iframe>');
+      }
     }
     return text;
   };
