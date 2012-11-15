@@ -360,7 +360,7 @@
     for (index = _i = 0, _len = order.length; _i < _len; index = ++_i) {
       franchiseSlug = order[index];
       first = index === 0 ? 'first' : '';
-      tabs += "<a href='http://www.ign.com/ipl/" + franchiseSlug + "'class='tab " + franchiseSlug + " " + first + "'><span class='text' data-franchise='" + franchiseSlug + "' >" + currentStreams[franchiseSlug].franchise.name + "</span><span class='fuse'><span></span></span></a>";
+      tabs += "<a href='http://www.ign.com/ipl/" + franchiseSlug + "'class='tab " + franchiseSlug + " " + first + "'><span class='text' data-franchise='" + franchiseSlug + "' >IPL5 Live: " + currentStreams[franchiseSlug].franchise.name + "</span><span class='fuse'><span></span></span></a>";
     }
     tabs += "</div>";
     $(".evo-coverStories").prepend(tabs);
