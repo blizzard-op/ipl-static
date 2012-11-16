@@ -482,6 +482,21 @@ ul li p {
   padding: 0;
 }
 
+ul{
+  list-style-type: none;
+  padding: 0 !important;
+  margin:  0 !important;
+}
+
+section#gen-info{
+  background-color: #fff;
+  padding-bottom: 2em;
+}
+
+section#gen-info .grid_3rds:first-child{
+  margin-left: 48px;
+}
+
 @media only screen and (min-width: 35em) {
   
 
