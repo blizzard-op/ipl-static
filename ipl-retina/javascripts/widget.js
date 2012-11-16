@@ -2,7 +2,7 @@
 (function() {
   var authCheck, calculatePercent, checkForNewPolls, createDescription, createPoll, currentStreams, descriptionText, getPayouts, getPoll, getPollInterval, getPolls, getStreams, getVotes, init, loadPolls, loadUser, loadVideo, loadWidget, newPollInterval, pollForStream, pollsObj, postVote, randomizeOrder, readCookie, returningVote, streamKeys, submittingPoll, updatePoll, updatePollView, updateVotes, updatingVote, userId, _mediaUrl, _url;
 
-  _url = "esports.ign.com:80";
+  _url = "esports.ign.com";
 
   _mediaUrl = "media.ign.com";
 
@@ -274,7 +274,7 @@
 
   loadUser = function(userData, pollId) {
     if ((userData != null ? userData.profileId : void 0) == null) {
-      return $("#" + pollId).find(".signin").html("<a href='https://s.ign.com/' class='signin'>Log in</a> and vote to win an IPL PC!");
+      return $("#" + pollId).find(".signin").html("<a href='https://s.ign.com/'>Log in</a> and vote to win an IPL PC!");
     } else {
       userId = userData.profileId;
       return getPayouts(pollId, userData.profileId);
@@ -439,14 +439,12 @@
     }
   });
 
-  $("body").delegate(".signin", "click", function(evt) {
+  $("body").delegate(".signin a", "click", function(evt) {
     var gettingLogin;
     evt.preventDefault();
     gettingLogin = $.ajax({
-      url: "http://widgets.ign.com/social/shared/registration/signin.jsonp?r=" + (encodeURIComponent(document.location.href)) + "&callback=?",
-      dataType: "jsonp",
-      cache: true,
-      jsonpCallback: "getCachedLogin"
+      url: "http://widgets.ign.com/social/shared/registration/signin.jsonp?disable_js=false&r=" + (encodeURIComponent(document.location.href)),
+      dataType: "jsonp"
     });
     return gettingLogin.done(function(registration) {
       return $("body").append(registration);
