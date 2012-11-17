@@ -432,14 +432,14 @@
 
   getStreams();
 
-  $("body").delegate("#poll-container .label i", "click", function(evt) {
+  $("#coverStoriesContainer").delegate("#poll-container .label i", "click", function(evt) {
     evt.preventDefault();
     if (!$(this).hasClass("disabled")) {
       return updateVotes(evt);
     }
   });
 
-  $("body").delegate(".signin a", "click", function(evt) {
+  $("#coverStoriesContainer").delegate(".signin a", "click", function(evt) {
     var gettingLogin;
     evt.preventDefault();
     gettingLogin = $.ajax({
@@ -451,7 +451,7 @@
     });
   });
 
-  $("body").delegate(".tab", "click", function(evt) {
+  $("#coverStoriesContainer").delegate(".tab", "click", function(evt) {
     var $pollContainer, IGNId, franchiseSlug, provider, _i, _len, _ref;
     evt.preventDefault();
     franchiseSlug = $(evt.target).data("franchise");
