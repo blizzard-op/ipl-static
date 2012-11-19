@@ -18,7 +18,7 @@
 
   descriptionText = {
     "league-of-legends": "League of Legends (LoL) is a multiplayer online battle arena \nvideo game developed and published by Riot Games. It was first announced on October 7, 2008, and \nreleased on October 27, 2009.The game was in a closed beta from April 10, 2009, to October 22, 2009. \n<a href=\"http://www.ign.com/ipl/league-of-legends/ipl-5\">More Details</a>",
-    "shootmania": "IGN Pro League is thrilled to announce a $100,000 ShootMania tournament at IPL5 at the \nCosmopolitan of Las Vegas! ShootMania, developed by Ubisoft's Nadeo studio, is a fast-paced PC first-person \nshooter that makes it easy for anyone to pick up and play! <a href=\"http://www.ign.com/ipl/shootmania/ipl-5\">More Details</a>",
+    "shootmania": "ShootMania is a pure first person shooter with a $100,000 tournament being held live at \nIPL5! The 8 best teams from North America and Europe will be battling it out in ShootMania's \nElite mode, which pits 1 attacker against 3 defenders in a tug of war battle for the Goal with the winner \ntaking home the $30,000 first prize!\n<a href=\"http://www.ign.com/ipl/shootmania/ipl-5\">More Details</a>",
     "fighters": "TBD",
     "starcraft-2": "At IPL5, 72 of the world’s greatest StarCraft II players compete for $100,000 in prizes \nin a double elimination bracket! First place takes $40,000 and earns the title IPL5 Champion! \n<a href=\"http://www.ign.com/ipl/starcraft-2/ipl-5\">More Details</a>"
   };
@@ -247,7 +247,7 @@
           return updatePoll(poll);
         }
       });
-    }, 6000);
+    }, 30000);
   };
 
   updateVotes = function(evt) {
@@ -511,7 +511,7 @@
   });
 
   $("#coverStoriesContainer").delegate(".tab.whatisipl", "click", function(evt) {
-    var $pollContainer, descriptionHTML, franchiseSlug;
+    var $pollContainer, franchiseSlug, whatIsIPLDescription, whatIsIPLDescriptionHTML;
     evt.preventDefault();
     franchiseSlug = $(evt.target).data("franchise");
     loadVideo("e2f90c251223e52920e891dc126f23e4");
@@ -521,9 +521,9 @@
         return $(this).remove();
       });
     });
-    descriptionText = "The IGN ProLeague is holding a $300,000 eSports tournament at the Cosmopolitan of Las Vegas this weekend! \nIPL5 features the top professional gamers competing in StarCraft 2, League of Legends, and ShootMania. Catch \nthe action all weekend long here on IGN.com.\n<a href=\"http://www.ign.com/ipl/all/ipl-5\">More Details</a>";
-    descriptionHTML = "<div class='description cvr-highlights'><h3 class='cvr-headline lcs-headline'>What is IPL?</h3><p class='cvr-teaser lcs-teaser'>" + descriptionText + "</p></div>";
-    $pollContainer.prepend(descriptionHTML);
+    whatIsIPLDescription = "The IGN ProLeague is holding a $300,000 eSports tournament at the Cosmopolitan of Las Vegas this weekend! \nIPL5 features the top professional gamers competing in StarCraft 2, League of Legends, and ShootMania. Catch \nthe action all weekend long here on IGN.com.\n<a href=\"http://www.ign.com/ipl/all/ipl-5\">More Details</a>";
+    whatIsIPLDescriptionHTML = "<div class='description cvr-highlights'><h3 class='cvr-headline lcs-headline'>What is IPL?</h3><p class='cvr-teaser lcs-teaser'>" + whatIsIPLDescription + "</p></div>";
+    $pollContainer.prepend(whatIsIPLDescriptionHTML);
     updatePoll();
     checkForNewPolls();
     $(".tab").removeClass("active");
