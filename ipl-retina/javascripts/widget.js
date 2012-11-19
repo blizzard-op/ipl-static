@@ -19,8 +19,8 @@
   descriptionText = {
     "league-of-legends": "League of Legends (LoL) is a multiplayer online battle arena \nvideo game developed and published by Riot Games. It was first announced on October 7, 2008, and \nreleased on October 27, 2009.The game was in a closed beta from April 10, 2009, to October 22, 2009. \n<a href=\"http://www.ign.com/ipl/league-of-legends/ipl-5\">More Details</a>",
     "shootmania": "IGN Pro League is thrilled to announce a $100,000 ShootMania tournament at IPL5 at the \nCosmopolitan of Las Vegas! ShootMania, developed by Ubisoft's Nadeo studio, is a fast-paced PC first-person \nshooter that makes it easy for anyone to pick up and play! <a href=\"http://www.ign.com/ipl/shootmania/ipl-5\">More Details</a>",
-    "fighters": "lorem",
-    "starcraft-2": "The IGN Pro League is proud to bring a $100,000 StarCraft II tournament, the Global \nStarCraft II League Code S Semifinals and Finals, the Global StarCraft II League World Championship, and \nmore back to Cosmopolitan of Las Vegas for the best eSports event in history! \n<a href=\"http://www.ign.com/ipl/starcraft-2/ipl-5\">More Details</a>"
+    "fighters": "TBD",
+    "starcraft-2": "At IPL5, 72 of the world’s greatest StarCraft II players compete for $100,000 in prizes \nin a double elimination bracket! First place takes $40,000 and earns the title IPL5 Champion! \n<a href=\"http://www.ign.com/ipl/starcraft-2/ipl-5\">More Details</a>"
   };
 
   calculatePercent = function(total, votes) {
@@ -463,6 +463,13 @@
 
   getStreams();
 
+  $("#coverStoriesContainer").delegate("#poll-container .label i", "click", function(evt) {
+    evt.preventDefault();
+    if (!$(this).hasClass("disabled")) {
+      return updateVotes(evt);
+    }
+  });
+
   $("#coverStoriesContainer").delegate(".signin a", "click", function(evt) {
     var gettingLogin;
     evt.preventDefault();
@@ -514,7 +521,8 @@
         return $(this).remove();
       });
     });
-    descriptionHTML = "<div class='description cvr-highlights'><h3 class='cvr-headline lcs-headline'>What is IPL?</h3><p class='cvr-teaser lcs-teaser'>It's super awesome!</p></div>";
+    descriptionText = "The IGN ProLeague is holding a $300,000 eSports tournament at the Cosmopolitan of Las Vegas this weekend! \nIPL5 features the top professional gamers competing in StarCraft 2, League of Legends, and ShootMania. Catch \nthe action all weekend long here on IGN.com.\n<a href=\"http://www.ign.com/ipl/all/ipl-5\">More Details</a>";
+    descriptionHTML = "<div class='description cvr-highlights'><h3 class='cvr-headline lcs-headline'>What is IPL?</h3><p class='cvr-teaser lcs-teaser'>" + descriptionText + "</p></div>";
     $pollContainer.prepend(descriptionHTML);
     updatePoll();
     checkForNewPolls();
