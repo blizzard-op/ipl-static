@@ -47,6 +47,14 @@ header[role="banner"] h1 a{
 	margin-right: 16px;
 }
 
+ul.seagateList{
+	list-style: circle;
+}
+
+.seagateList ul li{
+	list-style-type: disc;
+}
+
 #sponsor-thanks{
 	text-align: center;
 	padding: 0 30px;
@@ -81,7 +89,7 @@ div.back-drop p{
 }
 
 div.span8.splurgy{
-	height:740px;
+	height:640px;
 }
 
 div.span-bar{
