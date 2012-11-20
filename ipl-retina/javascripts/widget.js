@@ -2,9 +2,13 @@
 (function() {
   var authCheck, calculatePercent, checkForNewPolls, createDescription, createPoll, currentStreams, descriptionText, getPayouts, getPoll, getPollInterval, getPolls, getStreams, getVotes, init, loadDigibet, loadPolls, loadUser, loadVideo, loadWidget, newPollInterval, pollForStream, pollsObj, postVote, randomizeOrder, readCookie, restrictedCountries, returningVote, streamKeys, submittingPoll, updatePoll, updatePollView, updateVotes, updatingVote, userId, _mediaUrl, _url;
 
-  _url = "esports.ign.com";
-
-  _mediaUrl = "media.ign.com";
+  if (document.location.port === "3000") {
+    _url = "test.ign.com:3000";
+    _mediaUrl = "localhost:8888/media";
+  } else {
+    _url = "esports.ign.com";
+    _mediaUrl = "media.ign.com";
+  }
 
   getPollInterval = "";
 
@@ -451,6 +455,7 @@
     if (IGNId == null) {
       IGNId = "e2f90c251223e52920e891dc126f23e4";
     }
+    IGNId = "e2f90c251223e52920e891dc126f23e4";
     gettingVideos = $.ajax({
       url: "http://widgets.ign.com/video/embed/content.jsonp?id=" + IGNId + "&autoplay=true&width=640&height=360",
       dataType: "jsonp",
