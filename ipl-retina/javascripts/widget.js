@@ -14,7 +14,15 @@
 
   newPollInterval = "";
 
-  restrictedCountries = ["US", "France", "Spain", "Denmark", "Netherlands", "Belgium"];
+  restrictedCountries = ["United States", "France", "Spain", "Denmark", "Netherlands", "Belgium"];
+
+  returningVote = false;
+
+  updatingVote = false;
+
+  streamKeys = [];
+
+  currentStreams = {};
 
   descriptionText = {
     "league-of-legends": "League of Legends (LoL) is a multiplayer online battle arena \nvideo game developed and published by Riot Games. It was first announced on October 7, 2008, and \nreleased on October 27, 2009.The game was in a closed beta from April 10, 2009, to October 22, 2009. \n<a href=\"http://www.ign.com/ipl/league-of-legends/ipl-5\">More Details</a>",
@@ -43,10 +51,6 @@
     }
   };
 
-  returningVote = false;
-
-  updatingVote = false;
-
   pollForStream = function(poll, streamId) {
     if (poll.stream.id === streamId) {
       return poll;
@@ -57,7 +61,7 @@
 
   createPoll = function(poll) {
     var chartHTML, index, payout, percent, percentHTML, player, pollHTML, votes, _i, _j, _len, _len1, _ref, _ref1;
-    pollHTML = "<div id='" + poll.id + "' class='results'>\n  <img src='http://" + _mediaUrl + "/ev/esports/ipl-static/ipl-site/images/ipl5-150x115.png' alt='IPL5 logo' class=\"ipl5-logo\" />\n  <h4>Who Will Win Game " + poll.matchup.game.number + "?</h4>\n  <div class=\"label clearfix\">";
+    pollHTML = "<div id='" + poll.id + "' class='results vcentered'>\n  <img src='http://" + _mediaUrl + "/ev/esports/ipl-static/ipl-site/images/ipl5-150x115.png' alt='IPL5 logo' class=\"ipl5-logo\" />\n  <h4>Who Will Win Game " + poll.matchup.game.number + "?</h4>\n  <div class=\"label clearfix\">";
     _ref = poll.options;
     for (index = _i = 0, _len = _ref.length; _i < _len; index = ++_i) {
       player = _ref[index];
@@ -304,9 +308,7 @@
     }
     $results = $("#poll-container").find(".results");
     if (restricted === false) {
-      return $results.append("<a href='http://media.digibet.com/redirect.aspx?pid=2693&bid=1501' class='digibet'><img src='http://" + _mediaUrl + "/ev/esports/ipl-static/ipl-site/images/digibet-01.png' alt='Digibet' /><a>");
-    } else {
-      return $results.addClass("vcentered");
+      return $results.removeClass("vcentered").append("<a href='http://media.digibet.com/redirect.aspx?pid=2693&bid=1501' class='digibet'><img src='http://" + _mediaUrl + "/ev/esports/ipl-static/ipl-site/images/digibet-01.png' alt='Digibet' /><a>");
     }
   };
 
@@ -336,7 +338,7 @@
     checkingAuth = authCheck();
     checkingAuth.done(function(data) {
       loadUser(data, currentPoll.id);
-      return loadDigibet(data.countryCode);
+      return loadDigibet(data.country);
     });
     checkingAuth.fail(function(jqxhr, status, text) {
       return console.log(jqxhr, status, text);
@@ -356,10 +358,6 @@
       return console.log(jqxhr, status, text);
     });
   };
-
-  streamKeys = [];
-
-  currentStreams = {};
 
   readCookie = function(name) {
     var c, ca, nameEQ, _i, _len;
@@ -382,7 +380,7 @@
     $("head").append("<link rel='stylesheet' href='http://" + _mediaUrl + "/ev/esports/ipl-static/ipl-retina/stylesheets/widget.css'>");
     $("#coverStoriesContainer .evo-wrapper").append("<div class='evo-coverStories'><div class='carousel'><div class='storyUnit wide index-0 active'><div class='cvr-main'></div><div id='poll-container' class='cvr-highlights'></div></div></div></div>");
     gettingStreams = $.ajax({
-      url: "http://esports.ign.com/content/v1/streams.json",
+      url: "http://esports.ign.com/content/v1/streams.json?test=true",
       dataType: "jsonp",
       cache: true,
       jsonpCallback: "getCachedStreams"
@@ -450,6 +448,9 @@
 
   loadVideo = function(IGNId) {
     var gettingVideos;
+    if (IGNId == null) {
+      IGNId = "e2f90c251223e52920e891dc126f23e4";
+    }
     gettingVideos = $.ajax({
       url: "http://widgets.ign.com/video/embed/content.jsonp?id=" + IGNId + "&autoplay=true&width=640&height=360",
       dataType: "jsonp",
@@ -514,7 +515,7 @@
     var $pollContainer, franchiseSlug, whatIsIPLDescription, whatIsIPLDescriptionHTML;
     evt.preventDefault();
     franchiseSlug = $(evt.target).data("franchise");
-    loadVideo("e2f90c251223e52920e891dc126f23e4");
+    loadVideo();
     $pollContainer = $("#poll-container");
     $pollContainer.children().each(function() {
       return $(this).fadeOut("slow", function() {
