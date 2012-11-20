@@ -38,7 +38,7 @@ iplSchedule =
 
   fetchUrl: (type) ->
     $.ajax({
-      url: "http://esports-varnish-prd-www-01.las1.colo.ignops.com/content/v1/" + type + ".json"
+      url: "http://esports.ign.com/content/v1/" + type + ".json"
       dataType: "jsonp"
       cache: true
       jsonpCallback: "getCached" + type.charAt(0).toUpperCase() + type.slice(1)
@@ -97,6 +97,7 @@ iplSchedule =
 
             for broadcast in broadcasts
               broadcastDate = iplSchedule.getBroadcastDate broadcast
+              # console.log(, broadcastDate.starts_at.getDate() is day.date())
               if broadcastDate.starts_at.getDate() is day.date() and broadcastDate.ends_at > moment()
                 broadcastList[index] += "<li class='clearfix'><p><time>" + moment(broadcastDate.starts_at).format("h:mma") + "</time> - <span class='title'>" + broadcast.title + "</span>"
                 if broadcast.subtitle_1 || broadcast.subtitle_2

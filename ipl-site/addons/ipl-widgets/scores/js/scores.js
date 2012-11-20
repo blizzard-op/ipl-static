@@ -73,7 +73,7 @@
 					data: sendD,
 					dataType: "jsonp",
 					cache: true,
-					jsonpCallback: "getCachedEvents",
+					jsonpCallback: "getCachedEvent",
 					success: function(data) {
 						self.matchUps=[];
 						var game;
@@ -90,6 +90,7 @@
 								url: self.getURLs("http://ign.com/ipl/videos", self.getStatus(data[i]), data[i].franchise.slug),
 								date:moment(data[i].starts_at.dateTime, "YYYY-MM-DD").format("MMM D, YYYY")
 							};
+							console.log(data[i])
 							for(var j=0;j<data[i].matchup.teams.length;++j){
 								game["username"+(j+1)] = data[i].matchup.teams[j].name;
 								game["points"+(j+1)] = data[i].matchup.teams[j].points;
