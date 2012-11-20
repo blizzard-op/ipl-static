@@ -18,7 +18,7 @@
           franchise: "all"
         };
       }
-      fetchingSchedule = this.fetchUrl("schedule");
+      fetchingSchedule = this.fetchUrl("events");
       fetchingFranchises = this.fetchUrl("franchises");
       fetchingSchedule.fail(function(jqXHR, textStatus, errorThrown) {
         return console.log(jqXHR, textStatus, errorThrown);
@@ -32,9 +32,10 @@
       */
 
       return $.when(fetchingSchedule, fetchingFranchises).done(function(scheduleData, franchiseData) {
-        var allSchedules, date, games, schedule;
-        schedule = _this.buildSchedule(scheduleData[0], franchiseData[0], config.franchise);
-        games = _this.buildGames(scheduleData[0], franchiseData[0], config.franchise);
+        var allSchedules, converted, date, games, schedule;
+        converted = _this.convertSchedule(scheduleData[0]);
+        schedule = _this.buildSchedule(converted, franchiseData[0], config.franchise);
+        games = _this.buildGames(converted, franchiseData[0], config.franchise);
         date = _this.buildDates();
         allSchedules = schedule.join("");
         if (schedule.length) {
@@ -46,22 +47,22 @@
     getBroadcastDate: function(broadcast) {
       var broadcastDate;
       return broadcastDate = {
-        starts_at: new Date(broadcast.starts_at),
-        ends_at: new Date(broadcast.ends_at)
+        starts_at: new Date(broadcast.starts_at.dateTime),
+        ends_at: new Date(broadcast.ends_at.dateTime)
       };
     },
     fetchUrl: function(type) {
       return $.ajax({
-        url: "http://esports.ign.com/" + type + ".json",
+        url: "http://esports.ign.com/content/v1/" + type + ".json",
         dataType: "jsonp",
         cache: true,
-        jsonpCallback: "getCached" + type
+        jsonpCallback: "getCached" + type.charAt(0).toUpperCase() + type.slice(1)
       });
     },
     buildGames: function(scheduleData, franchiseData, currentFranchiseSlug) {
       var franchise, game, gameList, value, _i, _len;
       if (currentFranchiseSlug == null) {
-        currentFranchiseSlug = all;
+        currentFranchiseSlug = "all";
       }
       gameList = "<ul class='games'>";
       gameList += "<li class='times'><p>Times for your time zone</p><a href='/ipl/all/schedule'>Full Schedule</a></li>";
@@ -91,10 +92,23 @@
       }
       return dateList += "</ul>";
     },
+    convertSchedule: function(scheduleData) {
+      var franchiseList, game, index, _i, _len;
+      franchiseList = {};
+      index = 0;
+      for (_i = 0, _len = scheduleData.length; _i < _len; _i++) {
+        game = scheduleData[_i];
+        if (franchiseList[game.franchise.slug] == null) {
+          franchiseList[game.franchise.slug] = [];
+        }
+        franchiseList[game.franchise.slug].push(game);
+      }
+      return franchiseList;
+    },
     buildSchedule: function(scheduleData, franchiseData, currentFranchiseSlug) {
       var broadcast, broadcastDate, broadcastList, broadcasts, day, franchise, game, i, index, _i, _j, _len, _len1, _ref;
       if (currentFranchiseSlug == null) {
-        currentFranchiseSlug = all;
+        currentFranchiseSlug = "all";
       }
       broadcastList = [];
       index = 0;
@@ -127,7 +141,7 @@
                       broadcastList[index] += "<span>" + broadcast.subtitle_2 + "</span> ";
                     }
                   }
-                  if (broadcast.metadata.rebroadcast) {
+                  if (broadcast.rebroadcast) {
                     broadcastList[index] += "<br /><span class='old'>Rebroadcast</span>";
                   } else {
                     broadcastList[index] += "<br /><span class='new'>All new</span>";
