@@ -161,3 +161,6 @@
   font-style: italic; }
 #schedule .link-live {
   text-decoration: none; }
+#schedule ul li {
+  min-height:54px;
+}

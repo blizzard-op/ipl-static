@@ -54,7 +54,7 @@
 			if (status == 'underway') {
 				return 'http://ign.com/ipl/' + franchiseSlug;
 			} else if (status == 'finished' && url !== null) {
-				return 'http://ign.com' + url;
+				return 'http://ign.com/ipl/videos';
 			} else {
 				return '#';
 			}
@@ -90,7 +90,7 @@
 								url: self.getURLs("http://ign.com/ipl/videos", self.getStatus(data[i]), data[i].franchise.slug),
 								date:moment(data[i].starts_at.dateTime, "YYYY-MM-DD").format("MMM D, YYYY")
 							};
-							console.log(data[i])
+							
 							for(var j=0;j<data[i].matchup.teams.length;++j){
 								game["username"+(j+1)] = data[i].matchup.teams[j].name;
 								game["points"+(j+1)] = data[i].matchup.teams[j].points;
@@ -102,7 +102,8 @@
 								game.team1Class = 'loser';
 								game.team2Class = 'winner';
 							}
-							self.matchUps.push(game);
+							if(data[i].matchup.teams[0].name != "" && data[i].matchup.teams[1] != "")
+								self.matchUps.push(game);
 						}
 						self.attachTemplate();
 					},
@@ -142,20 +143,20 @@
 			var i = 1;
 
 			$('#scores').on('click', '.right-button', function() {
-				if(i === 5) {
-					$('.box-scores').css('margin-left', '-760');
-				} else {
+				var boxWidth = $('.box-scores .match').length * $('.box-scores .match').outerWidth()
+				if( boxWidth + parseInt($('.box-scores').css('margin-left')) -152 < $('.box-scores').parent('.container').width() ){
+					$('.box-scores').animate({'margin-left':  $('.box-scores').parent('.container').width() - boxWidth }, 500);
+				}else{
 					$('.box-scores').animate({'margin-left': '-=152'}, 500);
-					i++;
 				}
+				
 			});
 
 			$('#scores').on('click', '.left-button', function() {
-				if(i === 1) {
-					$('.box-scores').css('margin-left', '0');
-				} else {
+				if( parseInt($('.box-scores').css('margin-left'))+152 > 0 ){
+					$('.box-scores').animate({'margin-left': '0'}, 500);
+				}else{
 					$('.box-scores').animate({'margin-left': '+=152'}, 500);
-					i--;
 				}
 			});
 
