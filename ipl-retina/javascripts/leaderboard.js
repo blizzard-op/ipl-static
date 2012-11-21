@@ -22,7 +22,7 @@
     fetchingAuth = authCheck();
     fetchingAuth.done(function(userData) {
       var gettingScores;
-      if (userData != null ? userData.profileId : void 0) {
+      if (userData !== null) {
         gettingScores = $.getJSON("http://esports.ign.com/vote/v1/scores/" + userData.profileId + "?callback=?");
         gettingScores.done(function(data) {
           var userScoreHTML, _ref;
