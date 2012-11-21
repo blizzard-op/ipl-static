@@ -143,7 +143,8 @@
 			var i = 1;
 
 			$('#scores').on('click', '.right-button', function() {
-				var boxWidth = $('.box-scores .match').length * $('.box-scores .match').outerWidth()
+				
+				var boxWidth = $('.box-scores .match').length * ($('.box-scores .match').outerWidth() + 2)
 				if( boxWidth + parseInt($('.box-scores').css('margin-left')) -152 < $('.box-scores').parent('.container').width() ){
 					$('.box-scores').animate({'margin-left':  $('.box-scores').parent('.container').width() - boxWidth }, 500);
 				}else{
