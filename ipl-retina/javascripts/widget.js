@@ -29,7 +29,7 @@
   currentStreams = {};
 
   descriptionText = {
-    "league-of-legends": "League of Legends (LoL) is a multiplayer online battle arena \nvideo game developed and published by Riot Games. It was first announced on October 7, 2008, and \nreleased on October 27, 2009.The game was in a closed beta from April 10, 2009, to October 22, 2009. \n<a href=\"http://www.ign.com/ipl/league-of-legends/ipl-5\">More Details</a>",
+    "league-of-legends": "League of Legends is a popular team game featuring intense combat and complex \nstrategies. Teams of 5 battle it out with the overall goal of destroying their opponents’ base. The team \nwith the greater mechanics, and the greater strategy, will prevail. \n<a href=\"http://www.ign.com/ipl/league-of-legends/ipl-5\">More Details</a>",
     "shootmania": "ShootMania is a pure first person shooter with a $100,000 tournament being held live at \nIPL5! The 8 best teams from North America and Europe will be battling it out in ShootMania's \nElite mode, which pits 1 attacker against 3 defenders in a tug of war battle for the Goal with the winner \ntaking home the $30,000 first prize!\n<a href=\"http://www.ign.com/ipl/shootmania/ipl-5\">More Details</a>",
     "fighters": "TBD",
     "starcraft-2": "At IPL5, 72 of the world’s greatest StarCraft II players compete for $100,000 in prizes \nin a double elimination bracket! First place takes $40,000 and earns the title IPL5 Champion! \n<a href=\"http://www.ign.com/ipl/starcraft-2/ipl-5\">More Details</a>"
@@ -473,7 +473,7 @@
     }
     IGNId = "e2f90c251223e52920e891dc126f23e4";
     gettingVideos = $.ajax({
-      url: "http://widgets.ign.com/video/embed/content.jsonp?id=" + IGNId + "&qs_automute=true&autoplay=true&width=640&height=360",
+      url: "http://widgets.ign.com/video/embed/content.jsonp?id=" + IGNId + "&automute=true&autoplay=true&width=640&height=360",
       dataType: "jsonp",
       cache: true,
       jsonpCallback: "getCachedVideo"
