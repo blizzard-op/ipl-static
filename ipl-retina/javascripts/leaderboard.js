@@ -3,9 +3,9 @@
   var authCheck, getScores, setupLoginForm;
 
   getScores = function(userId) {
-    var fetchingScores, fetchingUserScore, queryParams;
+    var fetchingAuth, fetchingScores, queryParams;
     queryParams = document.location.search ? document.location.search : "";
-    fetchingScores = $.getJSON("" + routePrefix + "/scores" + queryParams);
+    fetchingScores = $.getJSON("http://esports.ign.com/vote/v1/scores" + queryParams + "?callback=?");
     fetchingScores.done(function(scores) {
       var score, scoreboard, _i, _len, _ref;
       scoreboard = "<table><thead><tr><td>Rank</td><td>User</td><td>Score</td></tr></thead><tbody>";
@@ -17,21 +17,14 @@
         }
       }
       scoreboard += "</tbody></table>";
-      /*
-          if scores.count > 
-          paginationList = "<ul>"
-          console.log scores.count
-      
-          paginationList += "</ul>"
-      */
-
-      return $(".leaderboard").append(scoreboard);
+      return $("#vote-leaderboard .leaderboard").append(scoreboard);
     });
-    fetchingUserScore = authCheck(mmmm);
-    fetchingUserScore.done(function(userScoreData) {
+    fetchingAuth = authCheck();
+    fetchingAuth.done(function(userData) {
       var gettingScores;
-      if ((userScoreData != null ? userScoreData.SignedIn : void 0) === true) {
-        gettingScores = $.getJSON("" + routePrefix + "/scores/" + userScoreData.ProfileId);
+      console.log(userData);
+      if (userData.profileId) {
+        gettingScores = $.getJSON("http://esports.ign.com/vote/v1/scores/" + userData.profileId + "?callback=?");
         gettingScores.done(function(data) {
           var userScoreHTML, _ref;
           if ((data != null ? (_ref = data.user) != null ? _ref.id : void 0 : void 0) != null) {
@@ -51,7 +44,7 @@
     fetchingScores.fail(function(jqxhr, status, text) {
       return console.log(jqxhr, status, text);
     });
-    return fetchingUserScore.fail(function(jqxhr, status, text) {
+    return fetchingAuth.fail(function(jqxhr, status, text) {
       return setupLoginForm(text);
     });
   };
@@ -74,8 +67,13 @@
     });
   });
 
-  authCheck = function(cookie) {
-    return $.getJSON("http://esports-fantasy-prd-api-01.las1.colo.ignops.com:8181/auth/v1/users/ignauth/" + cookie + "?callback=?");
+  authCheck = function() {
+    return $.ajax({
+      url: "http://esports.ign.com/auth/v1/users/current/?geo=true",
+      dataType: "jsonp",
+      cache: true,
+      jsonpCallback: "getCachedAuth"
+    });
   };
 
   getScores();
