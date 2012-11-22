@@ -1879,10 +1879,33 @@ input[type=submit] {
   padding-top: 7px;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
-  border-radius: 8px; }
-  #ipl5-pc big {
+  border-radius: 8px; 
+  background: #b21b00;
+  background: -webkit-gradient(linear, left top, left bottom, from(#b21b00), to(#4d0c00));
+  background: -webkit-linear-gradient(top, #b21b00, #4d0c00);
+  background: -moz-linear-gradient(top, #b21b00, #4d0c00);
+  background: -ms-linear-gradient(top, #b21b00, #4d0c00);
+  background: -o-linear-gradient(top, #b21b00, #4d0c00);
+  background: linear-gradient(top, #b21b00, #4d0c00);
+  padding: .5em 1em;
+  border: 1px solid #b21b00; }
+  #ipl5-pc span {
     font-size: 15px;
-    display: block; }
+    display: block; 
+  }
+  
+  #ipl5-pc:hover {
+      background: #e62200;
+      background: -webkit-gradient(linear, left top, left bottom, from(#b21b00), to(#4d0c00));
+      background: -webkit-linear-gradient(top, #e62200, #801300);
+      background: -moz-linear-gradient(top, #e62200, #801300);
+      background: -ms-linear-gradient(top, #e62200, #801300);
+      background: -o-linear-gradient(top, #e62200, #801300);
+      background: linear-gradient(top, #e62200, #801300);
+  }
+  #ipl5-pc:active {
+      position: relative;
+      top: 1px; }
 
 #digibet {
   display: none; }
