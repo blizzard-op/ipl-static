@@ -1909,3 +1909,7 @@ input[type=submit] {
 
 #digibet {
   display: none; }
+/* tab sizes are bigger with no fighters or what is ipl tab */
+#wrapper .evo-wrapper .evo-coverStories .fuseNav a {
+  width: 33.333%;
+}

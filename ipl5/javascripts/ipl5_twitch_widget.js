@@ -412,6 +412,9 @@
         if (!(stream.providers[1].id !== null && typeof currentStreams[stream.franchise.slug] === "undefined")) {
           continue;
         }
+        if(stream.franchise.slug === "fighters") {
+          break;
+        }
         streamKeys.push(stream.franchise.slug);
         currentStreams[stream.franchise.slug] = stream;
       }
@@ -429,7 +432,7 @@
       first = index === 0 ? 'first' : '';
       tabs += "<a href='http://www.ign.com/ipl/" + franchiseSlug + "'class='tab " + franchiseSlug + " " + first + "'><span class='text' data-franchise='" + franchiseSlug + "' >Live: " + currentStreams[franchiseSlug].franchise.name + "</span><span class='fuse'><span></span></span></a>";
     }
-    tabs += "<a href='#'class='tab whatisipl'><span class='text'>What is IPL?</span><span class='fuse'><span></span></span></a>";
+    //tabs += "<a href='#'class='tab whatisipl'><span class='text'>What is IPL?</span><span class='fuse'><span></span></span></a>";
     tabs += "</div>";
     $(".evo-coverStories").prepend(tabs);
     franchiseSlug = readCookie("ipl5selectedstream") ? readCookie("ipl5selectedstream") : order[0];
