@@ -1836,6 +1836,8 @@ input[type=submit] {
 #ipl5-now {
   float: left;
   width: 375px;
+  /* 495 used while we have three games displayed */
+  width: 495px;
   height: 80px;
   padding: 10px 15px 10px 15px;
   margin-left: 10px; }
