@@ -2,8 +2,8 @@
 
   var authCheck, calculatePercent, checkForNewPolls, createDescription, createPoll, currentStreams, descriptionText, getGeoIP, getPayouts, getPoll, getPollInterval, getPolls, getStreams, getVotes, init, loadDigibet, loadPolls, loadUser, loadVideo, loadWidget, newPollInterval, pollForStream, pollsObj, postVote, randomizeOrder, readCookie, restrictedCountries, returningVote, streamKeys, submittingPoll, updatePoll, updatePollView, updateVotes, updatingVote, userId, _mediaUrl, _url;
 
-  if (document.location.port === "3000") {
-    _url = "test.ign.com:3000";
+  if (document.location.port === "2007") {
+    _url = "test.ign.com:2007";
     _mediaUrl = "localhost:8888/media";
   } else {
     _url = "esports.ign.com";
@@ -430,7 +430,7 @@
     for (index = _i = 0, _len = order.length; _i < _len; index = ++_i) {
       franchiseSlug = order[index];
       first = index === 0 ? 'first' : '';
-      tabs += "<a href='http://www.ign.com/ipl/" + franchiseSlug + "'class='tab " + franchiseSlug + " " + first + "'><span class='text' data-franchise='" + franchiseSlug + "' >Live: " + currentStreams[franchiseSlug].franchise.name + "</span><span class='fuse'><span></span></span></a>";
+      tabs += "<a href='http://www.ign.com/ipl/" + franchiseSlug + "'class='tab " + franchiseSlug + " " + first + " tab-" + (order.length) + "'><span class='text' data-franchise='" + franchiseSlug + "' >Live: " + currentStreams[franchiseSlug].franchise.name + "</span><span class='fuse'><span></span></span></a>";
     }
     //tabs += "<a href='#'class='tab whatisipl'><span class='text'>What is IPL?</span><span class='fuse'><span></span></span></a>";
     tabs += "</div>";
