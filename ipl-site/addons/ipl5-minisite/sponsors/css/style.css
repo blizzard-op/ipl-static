@@ -498,6 +498,41 @@ h3 {
 }
 
 
+.sponsor_row {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+  border-spacing:10px 5px;
+}
+
+.sponsor_cell {
+  display:table-cell;
+  text-decoration: none;
+  height:100px;
+  vertical-align: middle;
+  text-align: center;
+  font-size:0;
+  background-color:#f24041;
+
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+}
+
+.sponsor_cell:hover {
+  background-color:#f45455;
+}
+
+.sponsor_cell p {
+  font-size:14px;
+  line-height:18px;
+}
+
+.sponsor_cell img {
+  margin:auto;
+}
+
+
 
 
 
