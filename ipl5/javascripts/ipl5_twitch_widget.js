@@ -558,5 +558,20 @@
     $(".tab").removeClass("active");
     return $(this).addClass("active");
   });
+  $("#chat-toggle").click(function(){
+    var $schedule = $("#schedule");
+    var $disqusThread = $("#disqus_thread");
+    var visible = $schedule.is(':visible');
+
+    if(visible) {
+      $schedule.fadeOut("fast", function(){
+        $disqusThread.fadeIn("fast");
+      });
+    } else {
+      $disqusThread.fadeOut("fast", function(){
+        $schedule.fadeIn("fast");
+      });
+    }
+  });
 
 }).call(this);

@@ -842,7 +842,7 @@ header[role=banner] .subNav {
 #disqus_thread {
   float: left;
   width: 635px;
-  margin-left: 10px; }
+  margin-left: 1em; }
 
 .evo_wrapper {
   margin: 0; }
