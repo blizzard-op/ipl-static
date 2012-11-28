@@ -89,7 +89,7 @@
     chartHTML += "</div>";
     pollHTML += percentHTML + chartHTML;
     pollHTML += "<p class='signin'></p>";
-    pollHTML += "<a href='http://" + _url + "/vote/v1/leaderboard'>Leaderboard and rules</a>";
+    pollHTML += "<a href='http://www.ign.com/ipl/vote/leaderboard'>Leaderboard and rules</a>";
     return pollHTML += "</div>";
   };
 
