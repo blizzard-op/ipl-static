@@ -551,4 +551,18 @@
     return $(this).addClass("active");
   });
 
+  $("#chat-toggle").click(function() {
+    var $disqusThread, $schedule, visible;
+    $schedule = $("#schedule");
+    $disqusThread = $("#disqus_thread");
+    visible = $schedule.is(':visible');
+    if (visible) {
+      $schedule.fadeOut("fast");
+      return $disqusThread.fadeIn("fast");
+    } else {
+      $schedule.fadeIn("fast");
+      return $disqusThread.fadeOut("fast");
+    }
+  });
+
 }).call(this);
