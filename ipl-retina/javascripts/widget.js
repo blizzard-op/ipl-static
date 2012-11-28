@@ -469,9 +469,8 @@
   loadVideo = function(IGNId) {
     var gettingVideos;
     if (IGNId == null) {
-      IGNId = "e2f90c251223e52920e891dc126f23e4";
+      IGNId = "503a23efb2658992583643d4494be5f8";
     }
-    IGNId = "e2f90c251223e52920e891dc126f23e4";
     gettingVideos = $.ajax({
       url: "http://widgets.ign.com/video/embed/content.jsonp?id=" + IGNId + "&automute=true&autoplay=true&width=640&height=360",
       dataType: "jsonp",
