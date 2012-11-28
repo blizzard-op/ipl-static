@@ -980,6 +980,7 @@ header[role=banner] .subNav {
       font-size: 12px;
       font-weight: bold;
       float: left; }
+  .guide .dates .today{min-height:80px}
   .guide .dates .today time {
     color: #b21b00; }
     .guide .dates .today time span {
