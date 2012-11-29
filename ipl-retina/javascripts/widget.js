@@ -230,7 +230,7 @@
         return gettingPoll.done(function(poll) {
           return updatePollView(poll);
         });
-      }, 1000);
+      }, 10000);
     }
   };
 
