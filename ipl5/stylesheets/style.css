@@ -1079,6 +1079,96 @@ header[role=banner] .subNav {
       height: 30px;
       background-color: #b21b00;
       color: white;
+<<<<<<< HEAD
+      font-weight: bold;
+      text-align: center;
+      overflow: hidden;
+      padding-top: 3px;
+      border-top-left-radius: 5px; }
+      #scores-aside .date .day_number .month_text {
+        text-transform: uppercase;
+        font-size: 8px;
+        line-height: 8px;
+        font-weight: normal;
+        margin-bottom: -2px; }
+    #scores-aside .date .day_text {
+      font-size: 16px;
+      text-transform: uppercase; }
+  #scores-aside .row + .date {
+    margin-top: 10px; }
+  #scores-aside .title {
+    padding: 2px 2px;
+    color: #666666;
+    background: #eeeeee; }
+    #scores-aside .title .gameAbbrev {
+      font-weight: bold;
+      font-size: 10px;
+      text-transform: uppercase;
+      padding: 1px 3px;
+      background-color: #dddddd;
+      border: 1px solid #999999;
+      color: #333333;
+      float: left;
+      width: 30px;
+      border-radius: 3px; }
+    #scores-aside .title .text {
+      margin-left: 30px;
+      padding: 0 3px; }
+  #scores-aside .date,
+  #scores-aside .title .text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  #scores-aside .row {
+    display: table;
+    width: 100%;
+    table-layout: fixed; }
+  #scores-aside .cell {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 17px;
+    padding: 5px 0 5px 0; }
+  #scores-aside .cell + .cell {
+    border-left: 1px solid #eeeeee; }
+  #scores-aside .score1,
+  #scores-aside .score2 {
+    width: 30px;
+    font-size: 17px; }
+  #scores-aside .win {
+    color: green;
+    font-weight: bold; }
+  #scores-aside .watch {
+    width: 30px;
+    background: url(../../images/view_camera.gif) center center no-repeat; }
+  #scores-aside .team1,
+  #scores-aside .team2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 3px; }
+  #scores-aside .thumb {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px; }
+
+#betting_offers {
+  color: #222222; }
+  #betting_offers #eventWrapper {
+    overflow-y: scroll;
+    height: 286px; }
+    #betting_offers #eventWrapper .event {
+      border-collapse: seperate;
+      border-spacing: 0 5px;
+      display: table;
+      width: 100%;
+      text-align: right; }
+      #betting_offers #eventWrapper .event span {
+        display: table-cell; }
+    #betting_offers #eventWrapper .event + .event {
+      border-top: 1px dotted #cccccc; }
+    #betting_offers #eventWrapper .teams {
+=======
+>>>>>>> 9dcbe41c461d3c01cac5fd5d8a00bbcb02ac4f90
       font-weight: bold;
       text-align: center;
       overflow: hidden;
@@ -1216,22 +1306,22 @@ img, video {
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4); }
   .container aside {
-    float: right;
-    clear: right;
-    width: 300px;
-    margin-right: 10px; }
-    .container aside .header {
-      height: 24px;
-      overflow: hidden;
-      margin: -1em 0 1em 0; }
-      .container aside .header .text {
-        background-color: #b21b00;
-        padding: 0 10px 0 10px;
-        color: white;
-        font-weight: bold;
+      float: right;
+      clear: right;
+      width: 300px;
+      margin-right: 10px; }
+      .container aside .header {
         height: 24px;
-        line-height: 24px;
-        float: left; }
+        overflow: hidden;
+        margin: -1em 0 1em 0; }
+        .container aside .header .text {
+          background-color: #b21b00;
+          padding: 0 10px 0 10px;
+          color: white;
+          font-weight: bold;
+          height: 24px;
+          line-height: 24px;
+          float: left; }
     .container aside > div + div,
     .container aside > div + article,
     .container aside > article + article,
@@ -1854,7 +1944,7 @@ input[type=submit] {
   background-color: black;
   float: left;
   margin: 10px 0 0 0;
-  background: url(../../images/ipl5-logo.png) left top no-repeat; }
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ipl5-logo.png) left top no-repeat; }
 
 .ipl5-games {
   margin: 0;
@@ -1938,10 +2028,33 @@ input[type=submit] {
   padding-top: 7px;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
-  border-radius: 8px; }
-  #ipl5-pc big {
+  border-radius: 8px; 
+  background: #b21b00;
+  background: -webkit-gradient(linear, left top, left bottom, from(#b21b00), to(#4d0c00));
+  background: -webkit-linear-gradient(top, #b21b00, #4d0c00);
+  background: -moz-linear-gradient(top, #b21b00, #4d0c00);
+  background: -ms-linear-gradient(top, #b21b00, #4d0c00);
+  background: -o-linear-gradient(top, #b21b00, #4d0c00);
+  background: linear-gradient(top, #b21b00, #4d0c00);
+  padding: .5em 1em;
+  border: 1px solid #b21b00; }
+  #ipl5-pc span {
     font-size: 15px;
-    display: block; }
+    display: block; 
+  }
+  
+  #ipl5-pc:hover {
+      background: #e62200;
+      background: -webkit-gradient(linear, left top, left bottom, from(#b21b00), to(#4d0c00));
+      background: -webkit-linear-gradient(top, #e62200, #801300);
+      background: -moz-linear-gradient(top, #e62200, #801300);
+      background: -ms-linear-gradient(top, #e62200, #801300);
+      background: -o-linear-gradient(top, #e62200, #801300);
+      background: linear-gradient(top, #e62200, #801300);
+  }
+  #ipl5-pc:active {
+      position: relative;
+      top: 1px; }
 
 #digibet {
   display: none; }
