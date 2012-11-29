@@ -124,11 +124,11 @@
 			if(team2_avatar) team2_avatar.setAttribute("src", teams[1]["image_url"]);
 
 			var team1_cell = ce("div","team1 cell");
-			if(team1_avatar) team1_cell.appendChild(team1_avatar);
+			//if(team1_avatar) team1_cell.appendChild(team1_avatar);
 			team1_cell.innerHTML += team1;
 
 			var team2_cell = ce("div","team2 cell");
-			if(team2_avatar) team1_cell.appendChild(team2_avatar);
+			//if(team2_avatar) team2_cell.appendChild(team2_avatar);
 			team2_cell.innerHTML += team2;
 
 			row.appendChild(ce("div","score1 cell" + ((team1_score > team2_score) ? " win" : ""),"",team1_score));
