@@ -351,10 +351,8 @@ td {
    ========================================================================== */
 @media only screen and (min-width: 480px) {
   /* Style adjustments for viewports 480px and over go here */ }
-
 @media only screen and (min-width: 768px) {
   /* Style adjustments for viewports 768px and over go here */ }
-
 /* ==|== print styles =======================================================
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
@@ -404,7 +402,6 @@ td {
 
   h2, h3 {
     page-break-after: avoid; } }
-
 .tournamentpage {
   float: left;
   width: 66%;
@@ -842,7 +839,7 @@ header[role=banner] .subNav {
 #disqus_thread {
   float: left;
   width: 635px;
-  margin-left: 1em; }
+  margin-left: 10px; }
 
 .evo_wrapper {
   margin: 0; }
@@ -911,19 +908,19 @@ header[role=banner] .subNav {
   #schedule.games-2 .schedule, #schedule.games-2 .gameHeader {
     width: 40%; }
   #schedule.games-3 .schedule, #schedule.games-3 .gameHeader {
-    width: 26.667%; }
+    width: 26.66667%; }
   #schedule.games-4 .schedule, #schedule.games-4 .gameHeader {
     width: 20%; }
   #schedule.games-5 .schedule, #schedule.games-5 .gameHeader {
     width: 16%; }
   #schedule.games-6 .schedule, #schedule.games-6 .gameHeader {
-    width: 13.333%; }
+    width: 13.33333%; }
   #schedule.games-7 .schedule, #schedule.games-7 .gameHeader {
-    width: 11.429%; }
+    width: 11.42857%; }
   #schedule.games-8 .schedule, #schedule.games-8 .gameHeader {
     width: 10%; }
   #schedule.games-9 .schedule, #schedule.games-9 .gameHeader {
-    width: 8.889%; }
+    width: 8.88889%; }
   #schedule.games-10 .schedule, #schedule.games-10 .gameHeader {
     width: 8%; }
 
@@ -980,20 +977,21 @@ header[role=banner] .subNav {
       font-size: 12px;
       font-weight: bold;
       float: left; }
-  .guide .dates .today{min-height:80px}
-  .guide .dates .today time {
-    color: #b21b00; }
-    .guide .dates .today time span {
-      font-size: 16px; }
-    .guide .dates .today time:after {
-      content: "Today";
-      background: #b21b00;
-      padding: 0.25em;
-      display: block;
-      position: absolute;
-      margin: 0.5em 0;
-      color: white;
-      border-radius: 0.25em; }
+  .guide .dates .today {
+    min-height: 80px; }
+    .guide .dates .today time {
+      color: #b21b00; }
+      .guide .dates .today time span {
+        font-size: 16px; }
+      .guide .dates .today time:after {
+        content: "Today";
+        background: #b21b00;
+        padding: 0.25em;
+        display: block;
+        position: absolute;
+        margin: 0.5em 0;
+        color: white;
+        border-radius: 0.25em; }
 .guide .schedule {
   float: left; }
   .guide .schedule ul li {
@@ -1081,6 +1079,7 @@ header[role=banner] .subNav {
       height: 30px;
       background-color: #b21b00;
       color: white;
+<<<<<<< HEAD
       font-weight: bold;
       text-align: center;
       overflow: hidden;
@@ -1168,26 +1167,78 @@ header[role=banner] .subNav {
     #betting_offers #eventWrapper .event + .event {
       border-top: 1px dotted #cccccc; }
     #betting_offers #eventWrapper .teams {
+=======
+>>>>>>> 9dcbe41c461d3c01cac5fd5d8a00bbcb02ac4f90
       font-weight: bold;
-      width: 60%;
-      text-align: left; }
-  #betting_offers p {
-    border: 1px solid #aaaaaa;
-    background-color: #eeeeee;
-    text-align: center;
-    margin-top: 20px;
-    text-transform: uppercase;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    -moz-box-shadow: 0 2px 3px #cccccc, 0 -1px 0px white inset;
-    -webkit-box-shadow: 0 2px 3px #cccccc, 0 -1px 0px white inset;
-    box-shadow: 0 2px 3px #cccccc; }
-    #betting_offers p a {
-      text-decoration: none;
+      text-align: center;
+      overflow: hidden;
+      padding-top: 3px;
+      border-top-left-radius: 5px; }
+      #scores-aside .date .day_number .month_text {
+        text-transform: uppercase;
+        font-size: 8px;
+        line-height: 8px;
+        font-weight: normal;
+        margin-bottom: -2px; }
+    #scores-aside .date .day_text {
+      font-size: 16px;
+      text-transform: uppercase; }
+  #scores-aside .row + .date {
+    margin-top: 10px; }
+  #scores-aside .title {
+    padding: 2px 2px;
+    color: #666666;
+    background: #eeeeee; }
+    #scores-aside .title .gameAbbrev {
       font-weight: bold;
-      padding: 5px;
-      display: block; }
+      font-size: 10px;
+      text-transform: uppercase;
+      padding: 1px 3px;
+      background-color: #dddddd;
+      border: 1px solid #999999;
+      color: #333333;
+      float: left;
+      width: 30px;
+      border-radius: 3px; }
+    #scores-aside .title .text {
+      margin-left: 30px;
+      padding: 0 3px; }
+  #scores-aside .date,
+  #scores-aside .title .text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  #scores-aside .row {
+    display: table;
+    width: 100%;
+    table-layout: fixed; }
+  #scores-aside .cell {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 17px;
+    padding: 5px 0 5px 0; }
+  #scores-aside .cell + .cell {
+    border-left: 1px solid #eeeeee; }
+  #scores-aside .score1,
+  #scores-aside .score2 {
+    width: 30px;
+    font-size: 17px; }
+  #scores-aside .win {
+    color: green;
+    font-weight: bold; }
+  #scores-aside .watch {
+    width: 30px;
+    background: url(../../images/view_camera.gif) center center no-repeat; }
+  #scores-aside .team1,
+  #scores-aside .team2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 3px; }
+  #scores-aside .thumb {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px; }
 
 * {
   -webkit-box-sizing: border-box;
@@ -1936,8 +1987,6 @@ input[type=submit] {
 #ipl5-now {
   float: left;
   width: 375px;
-  /* 495 used while we have three games displayed */
-  width: 495px;
   height: 80px;
   padding: 10px 15px 10px 15px;
   margin-left: 10px; }
