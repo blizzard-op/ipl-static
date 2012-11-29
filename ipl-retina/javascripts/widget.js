@@ -69,6 +69,9 @@
     _ref = poll.options;
     for (index = _i = 0, _len = _ref.length; _i < _len; index = ++_i) {
       player = _ref[index];
+      if (index === 2) {
+        break;
+      }
       payout = player.payout;
       pollHTML += "<div class=\"team-" + (index + 1) + "\">\n  <p>Vote for</p>\n  <i data-value=\"" + player.name + "\" data-combined-id=\"" + poll.id + "\" data-team=\"team-" + (index + 1) + "\">\n    <p>" + player.name + "</p>\n    <p class='potential-label'><span class=\"potential-payout\">Payout: </span><span class='potential team-" + (index + 1) + "'>" + payout + "</span></p>\n  </i>\n</div>";
       if (index === 0) {
@@ -81,6 +84,9 @@
     _ref1 = poll.options;
     for (index = _j = 0, _len1 = _ref1.length; _j < _len1; index = ++_j) {
       player = _ref1[index];
+      if (index === 2) {
+        break;
+      }
       votes = player.votes || 0;
       percent = calculatePercent(poll.total, votes);
       percentHTML += "<span class='team-" + (index + 1) + " team-percent'>" + percent + "%</span>";
@@ -466,13 +472,16 @@
     return franchiseArray;
   };
 
-  loadVideo = function(IGNId) {
+  loadVideo = function(IGNId, muted) {
     var gettingVideos;
     if (IGNId == null) {
       IGNId = "503a23efb2658992583643d4494be5f8";
     }
+    if (muted == null) {
+      muted = true;
+    }
     gettingVideos = $.ajax({
-      url: "http://widgets.ign.com/video/embed/content.jsonp?id=" + IGNId + "&automute=true&autoplay=true&width=640&height=360",
+      url: "http://widgets.ign.com/video/embed/content.jsonp?id=" + IGNId + "&automute=" + muted + "&autoplay=true&width=640&height=360",
       dataType: "jsonp",
       cache: true,
       jsonpCallback: "getCachedVideo"
@@ -515,7 +524,7 @@
         IGNId = provider.id;
       }
     }
-    loadVideo(IGNId);
+    loadVideo(IGNId, false);
     $pollContainer = $("#poll-container");
     $pollContainer.children().each(function() {
       return $(this).fadeOut("slow", function() {
@@ -535,7 +544,7 @@
     var $pollContainer, franchiseSlug, whatIsIPLDescription, whatIsIPLDescriptionHTML;
     evt.preventDefault();
     franchiseSlug = $(evt.target).data("franchise");
-    loadVideo();
+    loadVideo(null, false);
     $pollContainer = $("#poll-container");
     $pollContainer.children().each(function() {
       return $(this).fadeOut("slow", function() {
