@@ -128,7 +128,7 @@
 			team1_cell.innerHTML += team1;
 
 			var team2_cell = ce("div","team2 cell");
-			if(team2_avatar) team1_cell.appendChild(team2_avatar);
+			if(team2_avatar) team2_cell.appendChild(team2_avatar);
 			team2_cell.innerHTML += team2;
 
 			row.appendChild(ce("div","score1 cell" + ((team1_score > team2_score) ? " win" : ""),"",team1_score));
