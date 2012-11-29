@@ -69,6 +69,9 @@
     _ref = poll.options;
     for (index = _i = 0, _len = _ref.length; _i < _len; index = ++_i) {
       player = _ref[index];
+      if (index === 2) {
+        break;
+      }
       payout = player.payout;
       pollHTML += "<div class=\"team-" + (index + 1) + "\">\n  <p>Vote for</p>\n  <i data-value=\"" + player.name + "\" data-combined-id=\"" + poll.id + "\" data-team=\"team-" + (index + 1) + "\">\n    <p>" + player.name + "</p>\n    <p class='potential-label'><span class=\"potential-payout\">Payout: </span><span class='potential team-" + (index + 1) + "'>" + payout + "</span></p>\n  </i>\n</div>";
       if (index === 0) {
@@ -81,6 +84,9 @@
     _ref1 = poll.options;
     for (index = _j = 0, _len1 = _ref1.length; _j < _len1; index = ++_j) {
       player = _ref1[index];
+      if (index === 2) {
+        break;
+      }
       votes = player.votes || 0;
       percent = calculatePercent(poll.total, votes);
       percentHTML += "<span class='team-" + (index + 1) + " team-percent'>" + percent + "%</span>";
