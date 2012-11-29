@@ -451,7 +451,7 @@
         IGNId = provider.id;
       }
     }
-    loadVideo(IGNId, true);
+    loadVideo(IGNId);
     $("#poll-container").prepend(createDescription(franchiseSlug));
     return init(currentStreams[franchiseSlug].id);
   };
@@ -479,9 +479,6 @@
     }
     if (muted == null) {
       muted = true;
-    }
-    if (readCookie("ipl5selectedstream")) {
-      muted = false;
     }
     gettingVideos = $.ajax({
       url: "http://widgets.ign.com/video/embed/content.jsonp?id=" + IGNId + "&automute=" + muted + "&autoplay=true&width=640&height=360",
