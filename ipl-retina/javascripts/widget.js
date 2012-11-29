@@ -445,7 +445,7 @@
         IGNId = provider.id;
       }
     }
-    loadVideo(IGNId);
+    loadVideo(IGNId, true);
     $("#poll-container").prepend(createDescription(franchiseSlug));
     return init(currentStreams[franchiseSlug].id);
   };
@@ -466,13 +466,19 @@
     return franchiseArray;
   };
 
-  loadVideo = function(IGNId) {
+  loadVideo = function(IGNId, muted) {
     var gettingVideos;
     if (IGNId == null) {
       IGNId = "503a23efb2658992583643d4494be5f8";
     }
+    if (muted == null) {
+      muted = true;
+    }
+    if (readCookie("ipl5selectedstream")) {
+      muted = false;
+    }
     gettingVideos = $.ajax({
-      url: "http://widgets.ign.com/video/embed/content.jsonp?id=" + IGNId + "&automute=true&autoplay=true&width=640&height=360",
+      url: "http://widgets.ign.com/video/embed/content.jsonp?id=" + IGNId + "&automute=" + muted + "&autoplay=true&width=640&height=360",
       dataType: "jsonp",
       cache: true,
       jsonpCallback: "getCachedVideo"
@@ -515,7 +521,7 @@
         IGNId = provider.id;
       }
     }
-    loadVideo(IGNId);
+    loadVideo(IGNId, false);
     $pollContainer = $("#poll-container");
     $pollContainer.children().each(function() {
       return $(this).fadeOut("slow", function() {
@@ -535,7 +541,7 @@
     var $pollContainer, franchiseSlug, whatIsIPLDescription, whatIsIPLDescriptionHTML;
     evt.preventDefault();
     franchiseSlug = $(evt.target).data("franchise");
-    loadVideo();
+    loadVideo(null, false);
     $pollContainer = $("#poll-container");
     $pollContainer.children().each(function() {
       return $(this).fadeOut("slow", function() {
