@@ -230,7 +230,7 @@
         return gettingPoll.done(function(poll) {
           return updatePollView(poll);
         });
-      }, 1000);
+      }, 10000);
     }
   };
 
@@ -406,7 +406,7 @@
     $("head").append("<link rel='stylesheet' href='http://" + _mediaUrl + "/ev/esports/ipl-static/ipl-retina/stylesheets/widget.css'>");
     $("#coverStoriesContainer .evo-wrapper").append("<div class='evo-coverStories'><div class='carousel'><div class='storyUnit wide index-0 active'><div class='cvr-main'></div><div id='poll-container' class='cvr-highlights'></div></div></div></div>");
     gettingStreams = $.ajax({
-      url: "http://esports.ign.com/content/v1/streams.json?test=true",
+      url: "http://esports.ign.com/content/v1/streams.json",
       dataType: "jsonp",
       cache: true,
       jsonpCallback: "getCachedStreams"
