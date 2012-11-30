@@ -427,13 +427,14 @@
   };
 
   loadWidget = function(order) {
-    var IGNId, first, franchiseSlug, index, provider, tabs, _i, _j, _len, _len1, _ref;
+    var IGNId, first, franchiseSlug, franchiseURL, index, provider, tabs, _i, _j, _len, _len1, _ref;
     first = '';
     tabs = "<div class='fuseNav clearfix'>";
     for (index = _i = 0, _len = order.length; _i < _len; index = ++_i) {
       franchiseSlug = order[index];
       first = index === 0 ? 'first' : '';
-      tabs += "<a href='http://www.ign.com/ipl/" + franchiseSlug + "'class='tab " + franchiseSlug + " " + first + " tab-" + (order.length + 1) + "'><span class='text' data-franchise='" + franchiseSlug + "' >Live: " + currentStreams[franchiseSlug].franchise.name + "</span><span class='fuse'><span></span></span></a>";
+      franchiseURL = franchiseSlug === "fighters" ? "" : franchiseSlug;
+      tabs += "<a href='http://www.ign.com/ipl/" + franchiseURL + "'class='tab " + franchiseSlug + " " + first + " tab-" + (order.length + 1) + "'><span class='text' data-franchise='" + franchiseSlug + "' >Live: " + currentStreams[franchiseSlug].franchise.name + "</span><span class='fuse'><span></span></span></a>";
     }
     tabs += "<a href='#'class='tab whatisipl tab-" + (order.length + 1) + "'><span class='text'>What is IPL?</span><span class='fuse'><span></span></span></a>";
     tabs += "</div>";
