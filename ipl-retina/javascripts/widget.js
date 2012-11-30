@@ -31,7 +31,7 @@
   descriptionText = {
     "league-of-legends": "League of Legends is a popular team game featuring intense combat and complex \nstrategies. Teams of 5 battle it out with the overall goal of destroying their opponents’ base. The team \nwith the greater mechanics, and the greater strategy, will prevail. \n<a href=\"http://www.ign.com/ipl/league-of-legends/ipl-5\">More Details</a>",
     "shootmania": "ShootMania is a pure first person shooter with a $100,000 tournament being held live at \nIPL5! The 8 best teams from North America and Europe will be battling it out in ShootMania's \nElite mode, which pits 1 attacker against 3 defenders in a tug of war battle for the Goal with the winner \ntaking home the $30,000 first prize!\n<a href=\"http://www.ign.com/ipl/shootmania/ipl-5\">More Details</a>",
-    "fighters": "IPL Welcomes Capcom!",
+    "fighters": "Live at Las Vegas.",
     "starcraft-2": "At IPL5, 72 of the world’s greatest StarCraft II players compete for $100,000 in prizes \nin a double elimination bracket! First place takes $40,000 and earns the title IPL5 Champion! \n<a href=\"http://www.ign.com/ipl/starcraft-2/ipl-5\">More Details</a>"
   };
 
