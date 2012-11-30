@@ -132,8 +132,8 @@
                 broadcastDate = iplSchedule.getBroadcastDate(broadcast);
                 streamName = broadcast.stream.name;
                 mainStream = parseInt(streamName[streamName.length - 1], 10) === 1 ? true : false;
-                if (broadcastDate.starts_at.getDate() === day.date() && broadcastDate.ends_at > moment()) {
-                  broadcastList[index] += "<li class='clearfix'><p><time>" + moment(broadcastDate.starts_at).format("h:mma") + "</time> - <span class='title'>" + broadcast.title + "</span>";
+                if (broadcastDate.starts_at.getDate() === day.date() && moment(broadcastDate.ends_at).local() > moment().local()) {
+                  broadcastList[index] += "<li class='clearfix'><p><time>" + moment(broadcastDate.starts_at).local().format("h:mma") + "</time> - <span class='title'>" + broadcast.title + "</span>";
                   if (broadcast.subtitle_1 || broadcast.subtitle_2) {
                     broadcastList[index] += "<br />";
                     if (broadcast.subtitle_1) {
@@ -149,7 +149,7 @@
                   } else {
                     broadcastList[index] += "<br /><span class='new'>All new</span>";
                   }
-                  if ((broadcastDate.starts_at < (_ref = moment()) && _ref < broadcastDate.ends_at)) {
+                  if ((moment(broadcastDate.starts_at).local() < (_ref = moment().local()) && _ref < moment(broadcastDate.ends_at).local())) {
                     /*
                                         for provider, index in broadcast.providers
                                           if provider.id?
