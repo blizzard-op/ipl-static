@@ -438,7 +438,14 @@
     tabs += "<a href='#'class='tab whatisipl tab-" + (order.length + 1) + "'><span class='text'>What is IPL?</span><span class='fuse'><span></span></span></a>";
     tabs += "</div>";
     $(".evo-coverStories").prepend(tabs);
-    franchiseSlug = readCookie("ipl5selectedstream") ? readCookie("ipl5selectedstream") : order[0];
+    if (typeof selectedFranchise !== "undefined" && selectedFranchise !== null) {
+      franchiseSlug = selectedFranchise;
+      document.cookie = "ipl5selectedstream=" + franchiseSlug + "; expires=Mon, 3 Dec 2012 01:00:00 UTC; path=/";
+    } else if (readCookie("ipl5selectedstream")) {
+      franchiseSlug = readCookie("ipl5selectedstream");
+    } else {
+      franchiseSlug = order[0];
+    }
     $(".fuseNav ." + franchiseSlug).addClass("active");
     if (typeof window.initialLoadDisqus === "function") {
       initialLoadDisqus(franchiseSlug);
