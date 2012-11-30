@@ -97,6 +97,8 @@ iplSchedule =
 
             for broadcast in broadcasts
               broadcastDate = iplSchedule.getBroadcastDate broadcast
+              streamName = broadcast.stream.name
+              mainStream = if parseInt(streamName[streamName.length - 1], 10) is 1 then true else false
               # console.log(, broadcastDate.starts_at.getDate() is day.date())
               if broadcastDate.starts_at.getDate() is day.date() and broadcastDate.ends_at > moment()
                 broadcastList[index] += "<li class='clearfix'><p><time>" + moment(broadcastDate.starts_at).format("h:mma") + "</time> - <span class='title'>" + broadcast.title + "</span>"
@@ -104,12 +106,31 @@ iplSchedule =
                   broadcastList[index] += "<br />" 
                   broadcastList[index] += "<span>" + broadcast.subtitle_1 + "</span> " if broadcast.subtitle_1
                   broadcastList[index] += "<span>" + broadcast.subtitle_2 + "</span> " if broadcast.subtitle_2
+                broadcastList[index] += "<span> on #{streamName}</span>"
                 if broadcast.rebroadcast
                   broadcastList[index] += "<br /><span class='old'>Rebroadcast</span>"
                 else
                   broadcastList[index] += "<br /><span class='new'>All new</span>"
+               if broadcastDate.starts_at < moment() < broadcastDate.ends_at
+                  ###
+                    providerLinkUrl = "http://www.ign.com/ipl"
+                    for provider, index in broadcast.providers
+                      if provider.id?
+                        if provider.name is "IGN"
+                          providerLinkUrl = "http://www.ign.com/ipl/#{franchise.slug}"
+                          break
+                        else
+                          providerLinkUrl = "http://www.twitch.com/#{provider.id}"
 
-                broadcastList[index] += "<br /><a class='now' href= '/ipl/" + franchise.slug + "'>Watch now</a>" if broadcastDate.starts_at < moment() < broadcastDate.ends_at
+                    broadcastList[index] += "<br /><a class='now' href='#{providerLinkUrl}'>Watch now</a>"
+                      
+                  ###
+                  
+                  if mainStream
+                    broadcastList[index] += "<br /><a class='now' href= '/ipl/" + franchise.slug + "'>Watch now</a>"
+                  #else
+                    #broadcastList[index] += "<br /><a class='now' href= '/ipl/" + franchise.slug + "'>Watch now</a>"
+
                 broadcastList[index] += "</p></li>"
 
             broadcastList[index] += "</ul></li>"

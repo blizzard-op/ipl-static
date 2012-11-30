@@ -106,7 +106,7 @@
       return franchiseList;
     },
     buildSchedule: function(scheduleData, franchiseData, currentFranchiseSlug) {
-      var broadcast, broadcastDate, broadcastList, broadcasts, day, franchise, game, i, index, _i, _j, _len, _len1, _ref;
+      var broadcast, broadcastDate, broadcastList, broadcasts, day, franchise, game, i, index, mainStream, streamName, _i, _j, _len, _len1, _ref;
       if (currentFranchiseSlug == null) {
         currentFranchiseSlug = "all";
       }
@@ -130,6 +130,8 @@
               for (_j = 0, _len1 = broadcasts.length; _j < _len1; _j++) {
                 broadcast = broadcasts[_j];
                 broadcastDate = iplSchedule.getBroadcastDate(broadcast);
+                streamName = broadcast.stream.name;
+                mainStream = parseInt(streamName[streamName.length - 1], 10) === 1 ? true : false;
                 if (broadcastDate.starts_at.getDate() === day.date() && broadcastDate.ends_at > moment()) {
                   broadcastList[index] += "<li class='clearfix'><p><time>" + moment(broadcastDate.starts_at).format("h:mma") + "</time> - <span class='title'>" + broadcast.title + "</span>";
                   if (broadcast.subtitle_1 || broadcast.subtitle_2) {
@@ -141,16 +143,32 @@
                       broadcastList[index] += "<span>" + broadcast.subtitle_2 + "</span> ";
                     }
                   }
+                  broadcastList[index] += "<span> on " + streamName + "</span>";
                   if (broadcast.rebroadcast) {
                     broadcastList[index] += "<br /><span class='old'>Rebroadcast</span>";
                   } else {
                     broadcastList[index] += "<br /><span class='new'>All new</span>";
                   }
-                  if ((broadcastDate.starts_at < (_ref = moment()) && _ref < broadcastDate.ends_at)) {
+                }
+                if ((broadcastDate.starts_at < (_ref = moment()) && _ref < broadcastDate.ends_at)) {
+                  /*
+                                      providerLinkUrl = "http://www.ign.com/ipl"
+                                      for provider, index in broadcast.providers
+                                        if provider.id?
+                                          if provider.name is "IGN"
+                                            providerLinkUrl = "http://www.ign.com/ipl/#{franchise.slug}"
+                                            break
+                                          else
+                                            providerLinkUrl = "http://www.twitch.com/#{provider.id}"
+                  
+                                      broadcastList[index] += "<br /><a class='now' href='#{providerLinkUrl}'>Watch now</a>"
+                  */
+
+                  if (mainStream) {
                     broadcastList[index] += "<br /><a class='now' href= '/ipl/" + franchise.slug + "'>Watch now</a>";
                   }
-                  broadcastList[index] += "</p></li>";
                 }
+                broadcastList[index] += "</p></li>";
               }
               broadcastList[index] += "</ul></li>";
               i++;
