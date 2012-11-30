@@ -113,16 +113,12 @@ iplSchedule =
                   broadcastList[index] += "<br /><span class='new'>All new</span>"
                if broadcastDate.starts_at < moment() < broadcastDate.ends_at
                   ###
-                    providerLinkUrl = "http://www.ign.com/ipl"
                     for provider, index in broadcast.providers
                       if provider.id?
-                        if provider.name is "IGN"
-                          providerLinkUrl = "http://www.ign.com/ipl/#{franchise.slug}"
-                          break
-                        else
+                        if provider.name is "twitch"
                           providerLinkUrl = "http://www.twitch.com/#{provider.id}"
-
-                    broadcastList[index] += "<br /><a class='now' href='#{providerLinkUrl}'>Watch now</a>"
+                        if provider.name is "ign"
+                          providerLinkUrl = "http://www.ign.com/ipl/#{franchise.slug}"
                       
                   ###
                   
