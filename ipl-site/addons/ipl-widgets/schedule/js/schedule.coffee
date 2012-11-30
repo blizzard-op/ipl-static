@@ -99,7 +99,6 @@ iplSchedule =
               broadcastDate = iplSchedule.getBroadcastDate broadcast
               streamName = broadcast.stream.name
               mainStream = if parseInt(streamName[streamName.length - 1], 10) is 1 then true else false
-              # console.log(, broadcastDate.starts_at.getDate() is day.date())
               if broadcastDate.starts_at.getDate() is day.date() and broadcastDate.ends_at > moment()
                 broadcastList[index] += "<li class='clearfix'><p><time>" + moment(broadcastDate.starts_at).format("h:mma") + "</time> - <span class='title'>" + broadcast.title + "</span>"
                 if broadcast.subtitle_1 || broadcast.subtitle_2
@@ -111,7 +110,7 @@ iplSchedule =
                   broadcastList[index] += "<br /><span class='old'>Rebroadcast</span>"
                 else
                   broadcastList[index] += "<br /><span class='new'>All new</span>"
-               if broadcastDate.starts_at < moment() < broadcastDate.ends_at
+                if broadcastDate.starts_at < moment() < broadcastDate.ends_at
                   ###
                     for provider, index in broadcast.providers
                       if provider.id?

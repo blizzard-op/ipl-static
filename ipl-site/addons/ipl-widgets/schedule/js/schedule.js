@@ -149,22 +149,22 @@
                   } else {
                     broadcastList[index] += "<br /><span class='new'>All new</span>";
                   }
-                }
-                if ((broadcastDate.starts_at < (_ref = moment()) && _ref < broadcastDate.ends_at)) {
-                  /*
-                                      for provider, index in broadcast.providers
-                                        if provider.id?
-                                          if provider.name is "twitch"
-                                            providerLinkUrl = "http://www.twitch.com/#{provider.id}"
-                                          if provider.name is "ign"
-                                            providerLinkUrl = "http://www.ign.com/ipl/#{franchise.slug}"
-                  */
+                  if ((broadcastDate.starts_at < (_ref = moment()) && _ref < broadcastDate.ends_at)) {
+                    /*
+                                        for provider, index in broadcast.providers
+                                          if provider.id?
+                                            if provider.name is "twitch"
+                                              providerLinkUrl = "http://www.twitch.com/#{provider.id}"
+                                            if provider.name is "ign"
+                                              providerLinkUrl = "http://www.ign.com/ipl/#{franchise.slug}"
+                    */
 
-                  if (mainStream) {
-                    broadcastList[index] += "<br /><a class='now' href= '/ipl/" + franchise.slug + "'>Watch now</a>";
+                    if (mainStream) {
+                      broadcastList[index] += "<br /><a class='now' href= '/ipl/" + franchise.slug + "'>Watch now</a>";
+                    }
                   }
+                  broadcastList[index] += "</p></li>";
                 }
-                broadcastList[index] += "</p></li>";
               }
               broadcastList[index] += "</ul></li>";
               i++;
