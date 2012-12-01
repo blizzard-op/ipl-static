@@ -97,19 +97,35 @@ iplSchedule =
 
             for broadcast in broadcasts
               broadcastDate = iplSchedule.getBroadcastDate broadcast
-              # console.log(, broadcastDate.starts_at.getDate() is day.date())
-              if broadcastDate.starts_at.getDate() is day.date() and broadcastDate.ends_at > moment()
-                broadcastList[index] += "<li class='clearfix'><p><time>" + moment(broadcastDate.starts_at).format("h:mma") + "</time> - <span class='title'>" + broadcast.title + "</span>"
+              streamName = broadcast.stream.name
+              mainStream = if parseInt(streamName[streamName.length - 1], 10) is 1 then true else false
+              if broadcastDate.starts_at.getDate() is day.date() and moment(broadcastDate.ends_at).local() > moment().local()
+                broadcastList[index] += "<li class='clearfix'><p><time>" + moment(broadcastDate.starts_at).local().format("h:mma") + "</time> - <span class='title'>" + broadcast.title + "</span>"
                 if broadcast.subtitle_1 || broadcast.subtitle_2
                   broadcastList[index] += "<br />" 
                   broadcastList[index] += "<span>" + broadcast.subtitle_1 + "</span> " if broadcast.subtitle_1
                   broadcastList[index] += "<span>" + broadcast.subtitle_2 + "</span> " if broadcast.subtitle_2
+                broadcastList[index] += "<span> on #{streamName}</span>"
                 if broadcast.rebroadcast
                   broadcastList[index] += "<br /><span class='old'>Rebroadcast</span>"
                 else
                   broadcastList[index] += "<br /><span class='new'>All new</span>"
+                if moment(broadcastDate.starts_at).local() < moment().local() < moment(broadcastDate.ends_at).local()
+                  ###
+                    for provider, index in broadcast.providers
+                      if provider.id?
+                        if provider.name is "twitch"
+                          providerLinkUrl = "http://www.twitch.com/#{provider.id}"
+                        if provider.name is "ign"
+                          providerLinkUrl = "http://www.ign.com/ipl/#{franchise.slug}"
+                      
+                  ###
+                  
+                  if mainStream
+                    broadcastList[index] += "<br /><a class='now' href= '/ipl/" + franchise.slug + "'>Watch now</a>"
+                  #else
+                    #broadcastList[index] += "<br /><a class='now' href= '/ipl/" + franchise.slug + "'>Watch now</a>"
 
-                broadcastList[index] += "<br /><a class='now' href= '/ipl/" + franchise.slug + "'>Watch now</a>" if broadcastDate.starts_at < moment() < broadcastDate.ends_at
                 broadcastList[index] += "</p></li>"
 
             broadcastList[index] += "</ul></li>"
