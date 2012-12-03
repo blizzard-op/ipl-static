@@ -2058,3 +2058,52 @@ input[type=submit] {
 
 #digibet {
   display: none; }
+
+#ipl5_post_wrapper {
+  width: 640px;
+  margin-left: 10px;
+  float: left; }
+  #ipl5_post_wrapper h1 {
+    font-size: 12px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #b21b00;
+    height: 26px;
+    line-height: 26px;
+    margin-top: 15px; }
+    #ipl5_post_wrapper h1 span {
+      background-color: #b21b00;
+      color: white;
+      padding: 5px 10px; }
+
+.ipl5_post_table {
+  width: 100%;
+  table-layout: fixed;
+  display: table; }
+
+.ipl5_post_table + .ipl5_post_table .ipl5_post_cell {
+  padding-top: 10px;
+  border-top: 1px dotted #cccccc; }
+
+.ipl5_post_cell {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  height: 100px; }
+  .ipl5_post_cell h2 {
+    font-size: 16px; }
+  .ipl5_post_cell h3 {
+    color: #666666; }
+
+.ipl5_post_cell.winner {
+  width: 55%; }
+  .ipl5_post_cell.winner h2 {
+    font-size: 22px; }
+
+.ipl5_post_cell + .ipl5_post_cell {
+  border-left: 1px dotted #cccccc; }
+
+.ipl5_post_cell .winnings {
+  color: #b21b00;
+  font-size: 16px;
+  font-style: italic;
+  margin-top: 10px; }
