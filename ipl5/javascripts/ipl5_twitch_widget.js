@@ -31,7 +31,7 @@
   descriptionText = {
     "league-of-legends": "League of Legends is a popular team game featuring intense combat and complex \nstrategies. Teams of 5 battle it out with the overall goal of destroying their opponents’ base. The team \nwith the greater mechanics, and the greater strategy, will prevail. \n<a href=\"http://www.ign.com/ipl/league-of-legends/ipl-5\">More Details</a>",
     "shootmania": "ShootMania is a pure first person shooter with a $100,000 tournament being held live at \nIPL5! The 8 best teams from North America and Europe will be battling it out in ShootMania's \nElite mode, which pits 1 attacker against 3 defenders in a tug of war battle for the Goal with the winner \ntaking home the $30,000 first prize!\n<a href=\"http://www.ign.com/ipl/shootmania/ipl-5\">More Details</a>",
-    "fighters": "TBD",
+    "fighters": "Capcom is joining IPL for 2013. Checkout the <a href='http://www.ign.com/articles/2012/11/30/ign-pro-league-becomes-capcoms-official-esports-home'>announcement</a>. We're also bringing <a href='http://www.ign.com/articles/2012/11/30/ign-pro-league-bringing-dead-or-alive-5-to-esports-in-2013'>Dead or Alive 5</a> to the 2013 season.",
     "starcraft-2": "At IPL5, 72 of the world’s greatest StarCraft II players compete for $100,000 in prizes \nin a double elimination bracket! First place takes $40,000 and earns the title IPL5 Champion! \n<a href=\"http://www.ign.com/ipl/starcraft-2/ipl-5\">More Details</a>"
   };
 
@@ -412,9 +412,6 @@
         if (!(stream.providers[1].id !== null && typeof currentStreams[stream.franchise.slug] === "undefined")) {
           continue;
         }
-        if(stream.franchise.slug === "fighters") {
-          break;
-        }
         streamKeys.push(stream.franchise.slug);
         currentStreams[stream.franchise.slug] = stream;
       }
@@ -428,9 +425,15 @@
     first = '';
     tabs = "<div class='fuseNav clearfix'>";
     for (index = _i = 0, _len = order.length; _i < _len; index = ++_i) {
+      var tabLink = "http://ign.com/ipl";
       franchiseSlug = order[index];
+      if(franchiseSlug === "fighters") {
+        tabLink = "http://www.ign.com/articles/2012/11/30/ign-pro-league-becomes-capcoms-official-esports-home";
+      } else {
+         tabLink = "http://ign.com/ipl" + franchiseSlug;
+      }
       first = index === 0 ? 'first' : '';
-      tabs += "<a href='http://www.ign.com/ipl/" + franchiseSlug + "'class='tab " + franchiseSlug + " " + first + " tab-" + (order.length) + "'><span class='text' data-franchise='" + franchiseSlug + "' >Live: " + currentStreams[franchiseSlug].franchise.name + "</span><span class='fuse'><span></span></span></a>";
+      tabs += "<a href='" + tabLink + "'class='tab " + franchiseSlug + " " + first + " tab-" + (order.length) + "'><span class='text' data-franchise='" + franchiseSlug + "' >Live: " + currentStreams[franchiseSlug].franchise.name + "</span><span class='fuse'><span></span></span></a>";
     }
     //tabs += "<a href='#'class='tab whatisipl'><span class='text'>What is IPL?</span><span class='fuse'><span></span></span></a>";
     tabs += "</div>";
