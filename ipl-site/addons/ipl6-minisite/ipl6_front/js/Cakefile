@@ -1,0 +1,7 @@
+fs     = require 'fs'
+{exec} = require 'child_process'
+
+task 'build', 'compiles everything', ->
+  exec 'coffee -c ipl6-logo.coffee', (err, stdout, stderr) ->
+    throw err if err
+    console.log "Compiled coffee files"
