@@ -1089,6 +1089,8 @@ a:active {
   .articlelist_row a {
     color: black;
     text-decoration: none; }
+  .articlelist_row a:hover {
+    text-decoration: underline; }
 
 .articlelist_row + .articlelist_row {
   margin-top: 20px;
