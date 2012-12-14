@@ -775,7 +775,7 @@ a:active {
   position: absolute;
   top: -5px;
   left: -9px;
-  background: url(http://test.ign.com:8888/media/ev/esports/ipl-static/shared/images/logos/IPL_logo.png);
+  background: url(http://media.ign.com/ev/esports/ipl-static/shared/images/logos/IPL_logo.png);
   z-index: 2; }
 
 .content {
@@ -1203,7 +1203,7 @@ a:active {
 .hero_channel.watching {
   border-right: 3px solid #db3a22;
   padding-right: 9px;
-  background: url(../images/hero_watching_arrow.gif) 4px center no-repeat black; }
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/v2/images/hero_watching_arrow.gif) 4px center no-repeat black; }
   .hero_channel.watching .thumb {
     opacity: 1; }
 
