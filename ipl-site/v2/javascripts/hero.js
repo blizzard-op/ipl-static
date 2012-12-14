@@ -222,7 +222,7 @@
 				if(window.franchise) {
 					for(var i = 0, len = _data.length; i < len; i++) {
 						if(_data[i].franchise_slug === window.franchise) {
-							_data[i].btn.trigger("click");
+							$(_data[i].btn).trigger("click");
 							return;
 						}
 					}
