@@ -1,0 +1,115 @@
+.hero
+	padding: 15px 0 30px 0
+
+.hero_box
+	background-color: #0c0c0c
+
+#hero_video
+	margin-right: 320px
+	background-color: #000
+
+.hero_rhs
+	float: right
+	width: 300px
+	padding: 20px 0 0 20px
+
+#hero_switcher
+	list-style: none
+	margin: 0
+	padding: 0
+	border-top: 1px solid #000
+	font-size: 13px
+	color: #6B6B6B
+	font-weight: bold
+	text-transform: uppercase
+	overflow: hidden
+
+	li
+		float: left
+		cursor: pointer
+
+	li:hover
+		span
+			color: $site-red
+
+	span
+		display: block
+		padding: 20px 12px 10px 12px
+
+	li.selected
+		border: 2px solid #000
+		background-color: #000
+
+		span
+			border-top: 3px solid $site-red
+			color: $site-red
+			padding: 15px 10px 8px
+
+
+.hero_channel
+	height: 60px
+	padding: 12px
+	overflow: hidden
+	background-color: #000
+	color: #6B6B6B
+	cursor: pointer
+	margin-right: 1px
+
+	.thumb
+		border: 2px solid #6B6B6B
+		float: left
+		height: 56px
+		width: 99px
+		margin-right: 10px
+		opacity: .8
+
+	.statusbar
+		font-size: 11px
+		text-transform: uppercase
+
+	.status
+		font-weight: bold
+		vertical-align: middle
+
+	.title
+		color: #FFF
+		height: 36px
+		overflow: hidden
+		text-overflow: ellipsis
+		word-wrap: break-word
+
+.hero_channel:hover
+	border-right: 3px solid #AAA
+	padding-right: 9px
+	background-color: #111
+	.thumb
+		border-color: #AAA
+		opacity: 1
+
+.hero_channel + .hero_channel
+	margin-top: 1px
+
+.hero_channel.watching
+	border-right: 3px solid $site-red
+	padding-right: 9px
+	background: url(../images/hero_watching_arrow.gif) 4px center no-repeat #000
+
+	.thumb
+		opacity: 1
+
+.hero_channel.live
+	.status
+		color: $site-red
+		font-size: 12px
+
+#hero_slider_wrapper
+	position: relative
+	overflow: hidden
+
+#hero_slider
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+
+

@@ -1,0 +1,92 @@
+.boxscores
+	background-color: #eee
+	padding: 30px 0
+	margin: 30px 0
+
+.boxscores_container
+	height: 130px
+	position: relative
+	overflow: hidden
+
+.boxscores_slider
+	position: absolute
+	top: 0
+	left: 0
+	width: auto
+	height: 100%
+	white-space: nowrap
+
+.boxscores_block
+	float: left
+	width: 210px
+	height: 100%
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	padding-right: 20px
+
+.boxscores_block + .boxscores_block
+	padding: 0 20px
+	border-left: 1px solid #CCC
+
+.boxscores_block:nth-of-type(4n + 1)
+	border-left: none
+
+.boxscores_block:nth-last-of-type(1)
+	padding-right: 0
+
+
+.boxscores_date
+	color: #888
+	font-size: 12px
+
+.boxscores_title
+	padding-bottom: 10px
+	margin-bottom: 15px
+	border-bottom: 1px dotted #CCC
+
+.boxscores_team
+	font-weight: bold
+	color: #888
+	margin-bottom: 10px
+
+.boxscores_image_container
+	position: relative
+	z-index: 5
+	display: inline-block
+	margin: -10px 5px 0 0
+	border-radius: 50%
+	border: 3px solid #ccc
+
+	img
+		border-radius: 50%
+		position: relative
+		z-index: -1
+
+.boxscores_team.winner
+	color: $text-color
+
+.boxscores_team_score
+	float: right
+
+.boxscores_team_title
+	margin-right: 30px
+	overflow: hidden
+	white-space: nowrap
+	text-overflow: ellipsis
+
+.boxscores_watch
+	float: right
+	font-size: 12px
+	color: #888
+
+.box_score_control
+	position: absolute
+	top: 45%
+	z-index: 20
+
+.box_score_prev	
+	right: 102%
+
+.box_score_next
+	left: 102%

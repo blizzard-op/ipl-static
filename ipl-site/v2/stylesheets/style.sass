@@ -1,0 +1,276 @@
+//============================= VARS =================================
+$site-red: #db3a22
+$site-bg-color: #1e1d1d
+$text-color: #000
+$content-border: #CCC
+$content-border-light: #DDD
+
+
+//============================= MIX INS =================================
+@mixin RedStripe
+	background-image: url(http://oystatic.ignimgs.com/src/ignmedia/img/articles/runner.gif)
+	background-position: left
+	background-repeat: repeat-y
+
+//============================= TOP LEVEL IMPORTS =================================
+@import "lib/h5bp/main", "lib/h5bp/normalize"
+//=======================================================================
+
+
+body
+	font-family: 'ars-maquette-web', 'Hevetica Neue', Helvetica, Arial, sans-serif
+	font-size: 14px
+	line-height: 18px
+	color: $text-color
+	background: $site-bg-color
+	margin: 0
+
+a:link
+	color: $site-red
+
+a:visited
+	color: darken($site-red, 10%)
+
+a:hover
+	color: lighten($site-red, 5%)
+
+a:active
+	color: lighten($site-red, 10%)
+
+.site_width
+	margin: auto
+	position: relative
+
+	content: " "
+	clear: both
+	*zoom: 1
+
+.IGN_topbar
+	height: 36px
+	border-bottom: 1px solid #292929
+	background: #404040
+	background: -moz-linear-gradient(top,#404040 0,#151515 100%)
+	background: -webkit-gradient(linear,0% 0,0% 100%,from(#404040),to(#151515))
+	background: -webkit-linear-gradient(top,#404040 0,#151515 100%)
+	background: -o-linear-gradient(top,#404040 0,#151515 100%)
+	background: -ms-linear-gradient(top,#404040 0,#151515 100%)
+	background: linear-gradient(top,#404040 0,#151515 100%)
+
+.IGN_topbar_nav
+	list-style: none
+	float: right
+	margin: 0
+	padding: 0
+	border-left: 1px solid #000
+	font-size: 12px
+
+	li
+		float: left
+		height: 36px
+		border-right: 1px solid #000
+
+	a
+		display: block
+		height: 36px
+		line-height: 36px
+		padding: 0 18px
+		color: white
+		font-weight: bold
+		text-decoration: none
+		background: #535353
+		background: -moz-linear-gradient(top,#535353 0,#2D2D2D 100%)
+		background: -webkit-gradient(linear,0% 0,0% 100%,from(#535353),to(#2D2D2D))
+		background: -webkit-linear-gradient(top,#535353 0,#2D2D2D 100%)
+		background: -o-linear-gradient(top,#535353 0,#2D2D2D 100%)
+		background: -ms-linear-gradient(top,#535353 0,#2D2D2D 100%)
+		background: linear-gradient(top,#535353 0,#2D2D2D 100%)
+		-moz-user-select: none
+		-webkit-user-select: none
+		-ms-user-select: none
+		user-select: none
+		cursor: pointer
+
+	a:hover
+		background: #666
+		background: -moz-linear-gradient(top,#666 0,#333 100%)
+		background: -webkit-gradient(linear,0% 0,0% 100%,from(#666),to(#333))
+		background: -webkit-linear-gradient(top,#666 0,#333 100%)
+		background: -o-linear-gradient(top,#666 0,#333 100%)
+		background: -ms-linear-gradient(top,#666 0,#333 100%)
+		background: linear-gradient(top,#666 0,#333 100%)
+
+.IGN_btmbar
+	height: 36px
+	background-color: #000
+	font-size: 12px
+
+	ul
+		list-style: none
+		margin: 0
+		padding: 0
+
+	li
+		float: left
+		height: 36px
+		line-height: 36px
+		font-weight: bold
+
+	a
+		color: #999
+		display: block
+		text-decoration: none
+
+	a:hover
+		color: $site-red
+
+	.IGN_btmbar_rightnav
+		float: right
+
+		li
+			margin-left: 14px
+
+	.IGN_btmbar_leftnav
+		float: left
+		margin-left: 82px
+
+		li
+			color: $site-red
+			margin-right: 14px
+
+.backtoIGN
+	font-weight: normal
+
+.IPL_logo
+	width: 82px
+	height: 80px
+	float: left
+	position: absolute
+	top: -5px
+	left: -9px
+	background: url(http://test.ign.com:8888/media/ev/esports/ipl-static/shared/images/logos/IPL_logo.png)
+	z-index: 2
+
+.content
+	background-color: #f9f9f9
+	padding: 30px 0
+
+.medrec
+	width: 300px
+	height: 250px
+	background-color: #eee
+
+.content_header
+	border-bottom: 1px solid #CCC
+	font-weight: bold
+	margin-bottom: 20px
+	padding-bottom: 12px
+	text-transform: uppercase
+
+
+//Ads
+
+.leaderboard
+	text-align: center
+	padding-top: 15px
+	height: 90px
+
+
+//Reusable Columns
+
+//2 columns with static medrec to right
+.col_medrec
+	>
+		.left
+			margin-right: 330px
+
+		.right
+			width: 300px
+			float: right
+
+//Half Half
+.col_half
+	>
+		.left
+			float: left
+			width: 50%
+
+			.spacer
+				padding-right: 15px
+
+		.right
+			float: right
+			width: 50%
+
+			.spacer
+				padding-left: 15px
+
+//using an id because this is what we get from ign widgets
+#ignFooter-container
+	footer
+		margin-top: 30px
+
+//============================= LOW LEVEL IMPORTS =================================
+@import "boxscores", "nextevent", "schedule", "articlelist", "footer", "hero"
+//=================================================================================
+
+//============================= RESOLUTION SCALING ================================
+//Scrollbar: 15px
+//RedLine: 20px
+//Sufficient spacing: 40px
+
+//The site is built to be viewed at max size on a 1440px resolution monitor
+
+//For all resolutions above 1680, add red trim to LHS
+@media screen and (min-width: 1680px)
+	.content,
+	.leaderboard,
+	.hero,
+	.boxscores
+		@include RedStripe
+
+//For resolutions equal to and above 1440 - scrollbar
+@media screen and (min-width: 1440px)
+	$width: (1440px - 40 - 15px)
+	.site_width
+		width: $width
+
+	.boxscores_block
+		width: floor( $width / 4 )
+
+//For resolutions below 1440 but above or equal to 1280 - scrollbar
+@media screen and (min-width: 1280px) and (max-width: 1439px)
+	$width: (1280 - 40 - 15px)
+	.site_width
+		width: $width
+
+	.boxscores_block
+		width: floor( $width / 4 )
+
+//Less than 1280 - scrollbar
+@media screen and (max-width: 1279px)
+	$width: 970px
+	body
+		font-size: 12px
+
+	.site_width
+		width: $width
+
+	.boxscores_block
+		width: floor( $width / 4 )
+
+
+//============================= TAKE OVER MODE ================================
+body.takeover
+	.site_width,
+	.leaderboard,
+	.hero,
+		margin: auto
+		width: 970px
+
+	.content,
+	.content > .site_width
+		width: 950px
+		margin: auto
+
+	.content
+		padding: 10px
