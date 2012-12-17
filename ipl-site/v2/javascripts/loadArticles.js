@@ -82,23 +82,22 @@
     page = parseInt(page, 10);
     paginationHTML = "<nav class='pagination'>";
     if (page !== 1) {
-      paginationHTML += "<span clas='first'><a href='/ipl/all/news'>First</a></span><span class='prev'><a href='?page=" + (page - 1) + "'>Prev</a></span>";
+      paginationHTML += "<span clas='pagination_page first'><a href='/ipl/all/news'>First</a></span><span class='pagination_page prev'><a href='?page=" + (page - 1) + "'>Prev</a></span>";
     }
     pageStart = page - parseInt(pageLimit / 2) - 1 < 1 ? 1 : page - parseInt(pageLimit / 2) - 1;
     pageEnd = pageStart + pageLimit;
     pageCounter = pageEnd <= pages ? pageStart : pages - pageLimit;
     pageEnd = pageEnd > pages ? pages : pageEnd;
-    console.log(pageEnd - pageCounter);
     while (pageCounter <= pageEnd) {
       if (pageCounter === page) {
-        paginationHTML += "<span class='page current'>" + pageCounter + "</span>";
+        paginationHTML += "<span class='pagination_page current'>" + pageCounter + "</span>";
       } else {
-        paginationHTML += "<span class='page'><a href='?page=" + pageCounter + "'>" + pageCounter + "</a></span>";
+        paginationHTML += "<span class='pagination_page'><a href='?page=" + pageCounter + "'>" + pageCounter + "</a></span>";
       }
       pageCounter += 1;
     }
     if (page !== pages) {
-      paginationHTML += "<span class='next'><a href='?page=" + (page + 1) + "'>Next</a></span><span class='last'><a href='?page=" + pages + "'>Last</a></span>";
+      paginationHTML += "<span class='pagination_page next'><a href='?page=" + (page + 1) + "'>Next</a></span><span class='pagination_page last'><a href='?page=" + pages + "'>Last</a></span>";
     }
     return paginationHTML += "</nav>";
   };
@@ -181,7 +180,7 @@
       source = $("#article-list").html();
       tmpl = Handlebars.compile(source);
       $posts.find("ul").html(tmpl(articleFeed.data));
-      return $posts.append(createPaginationList(articleFeed, page, per_page, 15));
+      return $posts.append(createPaginationList(articleFeed, page, per_page, 9));
     });
   };
 
