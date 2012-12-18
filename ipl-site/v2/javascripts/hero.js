@@ -4,6 +4,20 @@
 
 	var _dom;				//Map of DOM elements
 	var _provider;			//So the resize function knows what size to scale to
+	var _filterMap = {
+		all: {
+			sources: ["streams","videos"],
+			btn: null
+		},
+		live: {
+			sources: ["streams"],
+			btn: null
+		},
+		"on demand": {
+			sources: ["videos"],
+			btn: null
+		}
+	};
 
 
 	//================================== Util
@@ -25,6 +39,73 @@
 			cb(data || []);
 		});
 	}
+
+
+	//================================== Scroll NS
+	var scroll = (function() {
+
+		var _wrapperHeight;
+		var _sliderHeight;
+		var _sliderOffset;
+		var _maxStep;
+
+		var setValues = function(sliderWrapperHeight) {
+			if(sliderWrapperHeight) _wrapperHeight = sliderWrapperHeight;
+			_sliderHeight = $(_dom.slider).height();
+			_sliderOffset = 0;
+			_maxStep = maxStep();
+			_dom.slider.style.top = "0px"; //Reset
+
+			show();
+		};
+
+		var show = function() {
+			if(_sliderHeight + _sliderOffset > _wrapperHeight) {
+				$(_dom.down).show();
+			}
+			else {
+				$(_dom.down).hide();
+			}
+
+			if(_sliderOffset < 0) {
+				$(_dom.up).show();
+			}
+			else {
+				$(_dom.up).hide();
+			}
+		};
+
+
+		var maxStep = function() {
+			return Math.floor(_wrapperHeight / 84) * 84;
+		};
+
+		var up = function(event) {
+			var toEnd = -_sliderOffset;
+			var step = Math.min(_maxStep, toEnd);
+			_sliderOffset += step;
+			animate();
+		};
+
+		var down = function(event) {
+			var toEnd =  _sliderHeight + _sliderOffset - _wrapperHeight;
+			var step = Math.min(_maxStep, toEnd);
+			_sliderOffset -= step;
+			animate();
+		};
+
+		var animate = function() {
+			$(_dom.slider).animate({top: _sliderOffset}, 500, "swing", show);
+		};
+
+		return {
+			set: setValues,
+			show: show,
+			up: up,
+			down: down
+		};
+
+	})();
 		
 
 
@@ -52,10 +133,16 @@
 
 			var newHeight = ratioFunction(currWidth);
 			$(video).height(newHeight);//Set video height
-			$(slider_wrapper).height(newHeight - 70); //Set slider height
+
+			var newSliderWrapperHeight = newHeight - 70;
+			$(slider_wrapper).height(newSliderWrapperHeight); //Set slider height
+
+			scroll.set(newSliderWrapperHeight); //Show/hide updown buttons
 
 			savedWidth = currWidth;
+
 		};
+
 	})();
 
 
@@ -73,6 +160,18 @@
 			var xiSwfUrlStr = "http://oystatic.ignimgs.com/src/core/swf/expressInstall.swf";
 
 			var playerMap = {
+
+				youtube: function(id) {
+					var flashvars = {
+						autoplay: 1
+					};
+					var params = {
+						allowScriptAccess: "always",
+						autoplay: 1
+					};
+					swfobject.embedSWF("http://www.youtube.com/v/" + id + "?enablejsapi=1&playerapiid=ytplayer&version=3", "hero_video_target", width, height, swfVersionStr, xiSwfUrlStr, flashvars, params);
+				},
+
 				ign: function(id) {
 
 					var swf = "http://oystatic.ignimgs.com/src/core/swf/IGNPlayer.swf";
@@ -179,12 +278,13 @@
 
 
 
-		//================================== Streams NS
-		var streams = (function() {
-			var _url = "http://esports.ign.com/content/v1/streams.json";
-			var _data = [];
-
-			var format = function(data) {
+		//================================== Streams Class
+		function Streams() {
+			this.url = "http://esports.ign.com/content/v1/streams.json?test=true";
+			this.data = [];
+		}
+		Streams.prototype = {
+			format: function(data) {
 				return {
 					id:         		data.id,
 					thumb: 				data.image_url || "",
@@ -194,89 +294,76 @@
 					provider: 			data.providers && data.providers[data.providers.length - 1] || null,
 					type: 				"stream"
 				};
-			};
-
-			var load = function(cb) {
-				_data = []; //Purge
-				req(_url, "getCachedEvent", function(data) {
+			},
+			load: function(cb) {
+				var self = this;
+				req(this.url, "getCachedEvent", function(data) {
 					for(var i = 0, len = data.length; i < len; i++) {
-						_data.push(format(data[i]));
+						self.data.push(self.format(data[i]));
 					}
 					cb();
 				});
-			};
-
-			var sort = function() {
-				//Sort by amount of viewers (current not in api)
-			};
-
-			var frag = function() {
-				sort();
-				return getHTML(_data);
-			};
-
-			var start = function() {
-				if(_activeChannel || !_data.length) return
+			},
+			sort: function() {
+				//Sort by most concurrent viewers
+			},
+			frag: function() {
+				this.sort();
+				return getHTML(this.data);
+			},
+			start: function() {
+				if(_activeChannel || !this.data.length) return
 
 				//Override default random behavior if franchise is set
 				if(window.franchise) {
-					for(var i = 0, len = _data.length; i < len; i++) {
-						if(_data[i].franchise_slug === window.franchise) {
-							$(_data[i].btn).trigger("click");
+					for(var i = 0, len = this.data.length; i < len; i++) {
+						if(this.data[i].franchise_slug === window.franchise) {
+							$(this.data[i].btn).trigger("click");
 							return;
 						}
 					}
 				}
 
 				//Choose live stream at random
-				var index = Math.floor(Math.random()*_data.length);
-				$(_data[index].btn).trigger("click");
-
-			};
-
-			return {
-				load: load,
-				frag: frag,
-				start: start
-			};
-		})();
+				var index = Math.floor(Math.random()*this.data.length);
+				$(this.data[index].btn).trigger("click");
+			}
+		}
 
 
 
-		//================================== VODs NS
-		var videos = (function() {
-			var _url = "http://esports.ign.com/content/v1/videos.json";
-			var _data = [];
-
-			var format = function(data) {
-				var data = data.video;
+		//================================== Videos Class
+		function Videos() {
+			this.url = "http://esports.ign.com/content/v1/videos.json?kind=youtube";
+			this.data = [];
+		}
+		Videos.prototype = {
+			format: function(data) {
 				return {
 					id:         data.id,
 					thumb: 		data.thumbnails && data.thumbnails[0] && data.thumbnails[0].thumbnail && data.thumbnails[0].thumbnail.url || "",
-					title: 		data.name || "",
+					title: 		data.title || "",
 					franchise: 	data.franchise && data.franchise.name || "",
 					type: 		"video",
 					provider: 	{
-						name: "ign",
-						id: data.url
+						name: "youtube",
+						id: data.youtube_id
 					},
 					duration: data.duration,
 					date: data.publish_at
 				};
-			};
-
-			var load = function(cb) {
-				_data = []; //Purge
-				req(_url, "getCachedVideo", function(data) {
+			},
+			load: function(cb) {
+				var self = this;
+				req(this.url, "getCachedVideo", function(data) {
 					for(var i = 0, len = data.length; i < len; i++) {
-						_data.push(format(data[i]));
+						self.data.push(self.format(data[i]));
 					}
 					cb();
 				});
-			};
-
-			var sort = function() {
-				_data.sort(function(a, b) {
+			},
+			sort: function() {
+				this.data.sort(function(a, b) {
 					var d_a = new Date(a.date).getTime();
 					var d_b = new Date(b.date).getTime();
 
@@ -284,32 +371,23 @@
 					if(d_a < d_b) return 1;
 					return 0;
 				});
-			};
-
-			var frag = function() {
-				sort();
-				return getHTML(_data);
-			};
-
-			var start = function() {
-				if(_activeChannel || !_data.length) return;
+			},
+			frag: function() {
+				this.sort();
+				return getHTML(this.data);
+			},
+			start: function() {
+				if(_activeChannel || !this.data.length) return;
 
 				//Always trigger latest vod
-				$(_data[0].btn).trigger("click");
-			};
-
-			return {
-				load: load,
-				frag: frag,
-				start: start
-			};
-		})();
-
+				$(this.data[0].btn).trigger("click");
+			}
+		}
 
 
 		return {
-			streams: streams,
-			videos: videos
+			streams: Streams,
+			videos: Videos
 		};
 
 	})();
@@ -319,24 +397,9 @@
 	//================================== Run NS
 	var runtime = (function() {
 
-		var filterMap = {
-			// all: {
-			// 	sources: ["streams","videos"],
-			// 	btn: null
-			// },
-			live: {
-				sources: ["streams"],
-				btn: null
-			}
-			// "on demand": {
-			// 	sources: ["videos"],
-			// 	btn: null
-			// }
-		};
 		var activePane;
 		var activeFilter;
 		var activeChannel;
-
 
 		var changeActiveButton = function(filter) {
 			if(activeFilter && activeFilter.btn) $(activeFilter.btn).removeClass("selected"); //Remove selected from other filter buttons
@@ -353,26 +416,32 @@
 			//****************** Parallel AJAX
 			var wait = true;
 			var waitOn = 0;
+			var sourceObj_arr = [];
 
 			var finish = function() {
 				if(wait || waitOn) return;
 
 				var pane = ce("div");
-				for(var i = 0, len = filter.sources.length; i < len; i++) {
-					var source = sources[filter.sources[i]];
+				for(var i = 0, len = sourceObj_arr.length; i < len; i++) {
+					var source = sourceObj_arr[i];
 					pane.appendChild(source.frag());
 					source.start(); //Start video if not already playing
 				}
 
+				$(pane).hide();
+				_dom.slider.appendChild(pane);
+
 				if(activePane) {
-					$(activePane).fadeOut("fast", function() {
-						$(pane).hide();
-						_dom.slider.appendChild(pane);
+					var currPane = activePane; //Temp store
+					$(currPane).fadeOut("fast", function() {
+						$(currPane).remove();
 						$(pane).fadeIn("fast");
+						scroll.set();
 					});
 				}
 				else {
-					_dom.slider.appendChild(pane);
+					$(pane).show();
+					scroll.set();
 				}
 
 				activePane = pane;
@@ -384,7 +453,9 @@
 					waitOn--;
 					finish();
 				};
-				sources[filter.sources[i]].load(callback);
+				var source = new sources[filter.sources[i]]();
+				source.load(callback);
+				sourceObj_arr.push(source);
 			}
 
 			wait = false;
@@ -400,14 +471,14 @@
 			var switcher = _dom.switcher;
 
 			//Add filters
-			for(var i in filterMap) {
+			for(var i in _filterMap) {
 				var li = ce("li");
 				var span = ce("span");
 				span.innerHTML = i;
 				li.appendChild(span);
 
 				var closure = function() {
-					var filter = filterMap[i];
+					var filter = _filterMap[i];
 					return function() {
 						load(filter);
 					};
@@ -415,14 +486,18 @@
 
 				$(li).click(closure());
 
-				filterMap[i].btn = li;
+				_filterMap[i].btn = li;
 
 				switcher.appendChild(li);
 			}
 
+			//Create Up/Down Buttons
+			_dom.up = $(ce("div")).addClass("hero_slider_btn").attr("id","hero_slider_up").hide().appendTo(_dom.slider_wrapper).click(scroll.up);
+			_dom.down = $(ce("div")).addClass("hero_slider_btn").attr("id","hero_slider_down").hide().appendTo(_dom.slider_wrapper).click(scroll.down);
+
 			//Load first filter
-			for(var filter in filterMap) {
-				load(filterMap[filter]);
+			for(var filter in _filterMap) {
+				load(_filterMap[filter]);
 				break;
 			}
 

@@ -11,7 +11,10 @@ Handlebars.registerHelper 'today', ->
   if this[0].startWeekDay is moment().format("dddd")
     return '<div class="schedule_calendar today">'
   return '<div class="schedule_calendar">'
-
+$scheduleTemplate = $("#schedule-template")
+return unless $scheduleTemplate.length
+scheduleTemplate = $scheduleTemplate.html()
+tmpl = Handlebars.compile scheduleTemplate
 do ->
 
   fetchingEvents = $.ajax
@@ -53,8 +56,6 @@ do ->
 
     dates.sort()
 
-    scheduleTemplate = $("#schedule-template").html()
-    tmpl = Handlebars.compile scheduleTemplate
 
     for date in dates
       mdate = moment(date)

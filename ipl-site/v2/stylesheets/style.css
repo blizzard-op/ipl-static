@@ -794,6 +794,12 @@ a:active {
   padding-bottom: 12px;
   text-transform: uppercase; }
 
+* + .content_header {
+  margin-top: 30px; }
+
+.ad {
+  margin: 30px 0 0; }
+
 .leaderboard {
   text-align: center;
   padding: 15px 0;
@@ -815,6 +821,16 @@ a:active {
   width: 50%; }
   .col_half > .right .spacer {
     padding-left: 15px; }
+
+.col_medrec_left > .right {
+  margin-left: 330px; }
+  .col_medrec_left > .right .spacer {
+    padding-left: 15px; }
+.col_medrec_left > .left {
+  width: 300px;
+  float: left; }
+  .col_medrec_left > .left .spacer {
+    padding-right: 15px; }
 
 #ignFooter-container footer {
   margin-top: 30px; }
@@ -900,22 +916,28 @@ a:active {
   color: #888888; }
 
 .box_score_control {
+  width: 36px;
+  height: 56px;
+  margin-top: -28px;
   position: absolute;
-  top: 45%;
-  z-index: 20; }
+  top: 50%;
+  z-index: 20;
+  background-image: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/v2/images/horizontal_arrows.png);
+  overflow: hidden;
+  text-indent: 100%; }
 
 .box_score_prev {
-  right: 102%; }
+  right: 100%;
+  background-position: 0 0; }
 
 .box_score_next {
-  left: 102%; }
+  left: 100%;
+  background-position: -36px 0; }
 
 .col_nextevent .left,
 .col_nextevent .middle,
 .col_nextevent .right {
   float: left; }
-.col_nextevent .spacer {
-  height: inherit; }
 .col_nextevent .left {
   width: 50%;
   height: 250px;
@@ -951,9 +973,7 @@ a:active {
     width: 100%; }
 
 .nextevent_nav {
-  float: left;
   height: 32px;
-  width: 50%;
   list-style: none;
   margin: 20px 0 0 0;
   padding: 0;
@@ -1098,6 +1118,10 @@ aside .schedule_calendar, aside .schedule_calendar_number {
   padding: 5px 0;
   font-size: 14px; }
 
+.schedule_show .schedule {
+  width: 66%;
+  float: left; }
+
 .articlelist_row {
   overflow: hidden; }
   .articlelist_row a {
@@ -1108,7 +1132,8 @@ aside .schedule_calendar, aside .schedule_calendar_number {
 
 .articlelist_row {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  display: block; }
   .articlelist_row + .articlelist_row {
     margin-top: 20px;
     padding-top: 20px;
@@ -1123,7 +1148,8 @@ aside .schedule_calendar, aside .schedule_calendar_number {
 
 .articlelist_title {
   display: block;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-left: 135px; }
 
 .articlelist_more {
   float: right;
@@ -1132,7 +1158,7 @@ aside .schedule_calendar, aside .schedule_calendar_number {
   font-size: 12px; }
 
 .articlelist_para {
-  margin: 10px 0 10px 0; }
+  margin: 10px 0 10px 135px; }
 
 .hero {
   padding: 0 0 30px 0; }
@@ -1147,7 +1173,7 @@ aside .schedule_calendar, aside .schedule_calendar_number {
 .hero_rhs {
   float: right;
   width: 300px;
-  padding: 20px 0 0 20px; }
+  padding: 20px 0 0 0; }
 
 #hero_switcher {
   list-style: none;
@@ -1211,9 +1237,6 @@ aside .schedule_calendar, aside .schedule_calendar_number {
     border-color: #aaaaaa;
     opacity: 1; }
 
-.hero_channel + .hero_channel {
-  margin-top: 1px; }
-
 .hero_channel.watching {
   border-right: 3px solid #db3a22;
   padding-right: 9px;
@@ -1235,6 +1258,22 @@ aside .schedule_calendar, aside .schedule_calendar_number {
   left: 0;
   width: 100%; }
 
+.hero_slider_btn {
+  position: absolute;
+  width: 100%;
+  height: 26px;
+  background: url(../images/hero_scroll_sprite.png);
+  background-repeat: repeat-x;
+  cursor: pointer; }
+
+#hero_slider_up {
+  top: 0;
+  background-position: top center; }
+
+#hero_slider_down {
+  bottom: 0;
+  background-position: bottom center; }
+
 .article_list {
   padding: 0;
   margin: 0; }
@@ -1255,8 +1294,7 @@ aside .schedule_calendar, aside .schedule_calendar_number {
   color: #999999;
   margin: 0.5em 0; }
 
-.article_list_aside {
-  margin-top: 1em;
+.article_list_aside, .article_aside {
   float: right;
   min-width: 300px;
   width: 30%; }
@@ -1272,28 +1310,31 @@ aside .schedule_calendar, aside .schedule_calendar_number {
 .pagination_page {
   margin: 0 0.5em; }
 
-.article_wrapper, .article_list_wrapper {
-  padding: 1em;
+.article_wrapper, .tournament_show_wrapper, .article_list_wrapper {
+  padding: 1.5em 1em;
   background-color: white;
   border-top: 10px solid #333333;
   -moz-box-shadow: 0 0 8px #cccccc;
   -webkit-box-shadow: 0 0 8px #cccccc;
   box-shadow: 0 0 8px #cccccc; }
 
-.article_content_main {
+.article_aside {
+  margin-top: 1em; }
+
+.article_content_main, .tournament_show {
   margin: 0;
   float: left;
   width: 66%;
   border-bottom: 1px dashed #a6a6a6;
   margin: 0 0 2em 0;
   padding-bottom: 2em;
+  font-size: 16px;
+  line-height: 1.5;
   font-family: "helvetica neue", arial, sans-serif; }
-  .article_content_main header {
+  .article_content_main header, .tournament_show header {
     font-family: "proxima nova", "proxima-nova-1", "proxima-nova-2", "helvetica neue", arial, sans-serif; }
-  .article_content_main p {
-    margin: 0 0 1em;
-    font-size: 16px;
-    line-height: 1.5; }
+  .article_content_main p, .tournament_show p {
+    margin: 0 0 1em; }
 
 .article_pub_date {
   text-transform: uppercase;
@@ -1314,8 +1355,136 @@ aside .schedule_calendar, aside .schedule_calendar_number {
   padding-bottom: 0.5em;
   border-bottom: 1px solid black; }
 
-.disqus {
-  margin-right: 330px; }
+.article_content_disqus {
+  width: 66%; }
+
+.video_show_disqus {
+  float: left;
+  width: 66%; }
+
+.video_show_sidebar {
+  float: right;
+  width: 30%; }
+
+.content_header + #videolist {
+  margin-top: -20px; }
+
+.videolist_cell {
+  float: left;
+  border-right: 1px dotted #cccccc;
+  border-bottom: 1px dotted #cccccc;
+  padding: 15px 0 15px 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.videolist_cell:hover {
+  background-color: #f1f1f1; }
+
+.videolist_lining {
+  display: block;
+  width: 160px;
+  margin: auto;
+  line-height: 14px; }
+  .videolist_lining a {
+    text-decoration: none; }
+
+.videolist_thumb {
+  display: block;
+  width: 100%; }
+  .videolist_thumb img {
+    margin-bottom: 10px;
+    width: 160px;
+    height: 90px;
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); }
+
+.videolist_channel {
+  margin-bottom: 10px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 11px;
+  height: 14px; }
+  .videolist_channel strong {
+    margin-right: 5px;
+    color: #999999; }
+
+.videolist_title {
+  display: block;
+  font-weight: bold;
+  height: 30px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word; }
+
+.videolist_published {
+  display: block;
+  color: #999999;
+  font-size: 11px;
+  margin-top: 5px; }
+
+.tournament_list {
+  list-style: none; }
+
+.tournament_list_item {
+  float: left;
+  width: 32%;
+  padding: 0;
+  margin: 0 1% 1% 0;
+  text-align: center;
+  border: 1px dotted #dddddd; }
+  .tournament_list_item a {
+    display: block;
+    height: 100%;
+    padding: 1em 0; }
+    .tournament_list_item a:hover {
+      background-color: #f1f1f1; }
+  .tournament_list_item img {
+    display: block;
+    margin: 0 auto; }
+
+.tournament_show.full-width {
+  width: 100%; }
+
+.tournament_info {
+  float: right;
+  width: 30%; }
+
+.streamslist_wrapper + .streamslist_wrapper {
+  border-top: 1px dotted #cccccc;
+  padding-top: 10px;
+  margin-top: 10px; }
+
+.streamslist_thumb_a {
+  float: left; }
+
+.streamslist_thumb {
+  width: 100px;
+  height: 56px;
+  display: block;
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); }
+
+.streamslist_franchise {
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #999999; }
+
+.streamslist_title {
+  display: block;
+  text-decoration: none; }
+
+.streamslist_franchise,
+.streamslist_title {
+  margin-left: 110px; }
 
 @media screen and (min-width: 1680px) {
   .content,
@@ -1330,13 +1499,25 @@ aside .schedule_calendar, aside .schedule_calendar_number {
     width: 1385px; }
 
   .boxscores_block {
-    width: 346px; } }
+    width: 346px; }
+
+  .videolist_cell {
+    width: 20%; }
+
+  .videolist_cell:nth-child(5n) {
+    border-right: none; } }
 @media screen and (min-width: 1280px) and (max-width: 1439px) {
   .site_width {
     width: 1225px; }
 
   .boxscores_block {
-    width: 306px; } }
+    width: 306px; }
+
+  .videolist_cell {
+    width: 25%; }
+
+  .videolist_cell:nth-child(4n) {
+    border-right: none; } }
 @media screen and (max-width: 1279px) {
   body {
     font-size: 12px; }
@@ -1345,7 +1526,13 @@ aside .schedule_calendar, aside .schedule_calendar_number {
     width: 970px; }
 
   .boxscores_block {
-    width: 242px; } }
+    width: 242px; }
+
+  .videolist_cell {
+    width: 33.33%; }
+
+  .videolist_cell:nth-child(3n) {
+    border-right: none; } }
 body.takeover .site_width,
 body.takeover .leaderboard,
 body.takeover .hero {

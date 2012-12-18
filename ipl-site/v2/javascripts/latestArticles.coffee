@@ -1,4 +1,7 @@
 loadHeadlines = (per_page = 5) ->
+  return unless $("#latest_articles_template").length
+  source = $("#latest_articles_template").html()
+  tmpl = Handlebars.compile source
   queryParams = 
     franchise: franchise
     per_page: per_page
@@ -9,8 +12,6 @@ loadHeadlines = (per_page = 5) ->
     cache: true
     jsonpCallback: "getCachedHeadlines"
   fetchingHeadlines.done (headlines)->
-    source = $("#latest_articles_template").html()
-    tmpl = Handlebars.compile source
     $("#latest_articles").append tmpl headlines.data
 
 loadHeadlines()
