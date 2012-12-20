@@ -2,6 +2,8 @@
 
 (function($, swfobject) {
 
+	if(window.hero) return; //Only load once
+
 	var _dom;				//Map of DOM elements
 	var _provider;			//So the resize function knows what size to scale to
 	var _filterMap = window.hero_filterMap || {
@@ -404,6 +406,8 @@
 			start: function() {
 				if(_activeChannel || !this.parentVideo) return;
 				embedFlashPlayer(this.parentVideo.provider);
+				//Embed Disqus
+				if(window.disqus) disqus.loadComments(this.parentVideo.id || this.params.videoSlug);
 
 			}
 		}
@@ -602,6 +606,10 @@
 		//OnResize
 		$(window).resize(resize);
 	});
+
+
+
+	window.hero = true;
 
 
 })(jQuery, swfobject);
