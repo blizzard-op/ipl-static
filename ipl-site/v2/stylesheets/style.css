@@ -1240,9 +1240,11 @@ aside .schedule_calendar, aside .schedule_calendar_number {
 .hero_channel.watching {
   border-right: 3px solid #db3a22;
   padding-right: 9px;
-  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/v2/images/hero_watching_arrow.gif) 4px center no-repeat black; }
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/v2/images/hero_watching_arrow.gif) 4px center no-repeat #262626; }
   .hero_channel.watching .thumb {
     opacity: 1; }
+  .hero_channel.watching .statusbar {
+    color: #aaaaaa; }
 
 .hero_channel.live .status {
   color: #db3a22;
@@ -1262,7 +1264,7 @@ aside .schedule_calendar, aside .schedule_calendar_number {
   position: absolute;
   width: 100%;
   height: 26px;
-  background: url(../images/hero_scroll_sprite.png);
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/v2/images/hero_scroll_sprite.png);
   background-repeat: repeat-x;
   cursor: pointer; }
 
@@ -1273,6 +1275,34 @@ aside .schedule_calendar, aside .schedule_calendar_number {
 #hero_slider_down {
   bottom: 0;
   background-position: bottom center; }
+
+.hero_related {
+  display: block;
+  height: 36px;
+  padding: 12px;
+  overflow: hidden;
+  background-color: black;
+  color: #6b6b6b;
+  cursor: pointer;
+  text-decoration: none; }
+  .hero_related .thumb {
+    border: 2px solid #6b6b6b;
+    float: left;
+    height: 32px;
+    width: 56px;
+    margin-right: 10px;
+    opacity: 0.8; }
+  .hero_related .title {
+    color: white;
+    height: 36px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word; }
+
+.hero_related:hover .title {
+  color: #db3a22; }
+.hero_related:hover .thumb {
+  border-color: #db3a22; }
 
 .article_list {
   padding: 0;
@@ -1544,3 +1574,6 @@ body.takeover .content > .site_width {
   margin: auto; }
 body.takeover .content {
   padding: 10px; }
+
+#disqus_thread {
+  clear: none !important; }

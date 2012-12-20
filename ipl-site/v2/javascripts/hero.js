@@ -4,18 +4,22 @@
 
 	var _dom;				//Map of DOM elements
 	var _provider;			//So the resize function knows what size to scale to
-	var _filterMap = {
+	var _filterMap = window.hero_filterMap || {
 		all: {
-			sources: ["streams","videos"],
-			btn: null
+			sources: [
+				{type: "streams"},
+				{type: "videos"}
+			]
 		},
 		live: {
-			sources: ["streams"],
-			btn: null
+			sources: [
+				{type: "streams"}
+			]
 		},
 		"on demand": {
-			sources: ["videos"],
-			btn: null
+			sources: [
+				{type: "videos"}
+			]
 		}
 	};
 
@@ -23,7 +27,7 @@
 	//================================== Util
 	function gebi(id) {return document.getElementById(id);}
 	function ce(type) {return document.createElement(type);}
-	function req(url, jsonpcallback, cb) {
+	function req(url, data, jsonpcallback, cb) {
 		if(!cb) return;
 
 		var req = $.ajax({
@@ -31,6 +35,7 @@
 			dataType: "jsonp",
 			cache: true,
 			jsonpCallback: jsonpcallback,
+			data: data || null
 		});
 		req.fail(function() {
 			cb([]);
@@ -229,7 +234,6 @@
 
 
 		var getHTML = function(data) {
-
 			var frag = document.createDocumentFragment();
 
 			for(var i = 0, len = data.length; i < len; i++) {
@@ -277,9 +281,30 @@
 		};
 
 
+		var getRelatedHTML = function(data) {
+			var frag = document.createDocumentFragment();
+
+			for(var i = 0, len = data.length; i < len; i++) {
+				var d = data[i];
+				var wrapper = ce("a");
+				var thumb = ce("img");
+				var title = ce("div");
+
+				$(thumb).addClass("thumb").attr("src", d.thumb).attr("alt","");
+				$(title).addClass("title").text(d.title);
+				$(wrapper).addClass("hero_related").append(thumb, title).attr("href", d.url);
+
+				frag.appendChild(wrapper);
+			}
+
+			return frag;
+		};
+
+
 
 		//================================== Streams Class
-		function Streams() {
+		function Streams(params) {
+			this.params = params || {};
 			this.url = "http://esports.ign.com/content/v1/streams.json?test=true";
 			this.data = [];
 		}
@@ -297,7 +322,7 @@
 			},
 			load: function(cb) {
 				var self = this;
-				req(this.url, "getCachedEvent", function(data) {
+				req(this.url, null, "getCachedEvent", function(data) {
 					for(var i = 0, len = data.length; i < len; i++) {
 						self.data.push(self.format(data[i]));
 					}
@@ -331,9 +356,63 @@
 		}
 
 
+		//================================== Related Class
+		function Related(params) {
+			this.params = params || {};
+			this.related = [];
+			this.parentVideo = null;
+		}
+		Related.prototype = {
+			format: function(data) {
+				return {
+					url: 	data.url || "",
+					thumb: 	data.thumbnails && data.thumbnails[0] && data.thumbnails[0].thumbnail && data.thumbnails[0].thumbnail.url || "",
+					title: 	data.title
+				};
+			},
+			load: function(cb) {
+				var self = this;
+				var url = this.params.videoSlug ? "http://esports.ign.com/content/v1/videos/" + this.params.videoSlug + ".json" : "";
+				var data = {
+					related: true,
+					kind: "youtube"
+				};
+				req(url, data, "getCachedVideo", function(data) {
+					self.parentVideo = {
+						id:         data.id,
+						thumb: 		data.thumbnails && data.thumbnails[0] && data.thumbnails[0].thumbnail && data.thumbnails[0].thumbnail.url || "",
+						title: 		data.title || "",
+						franchise: 	data.franchise && data.franchise.name || "",
+						duration: 	data.duration,
+						date: 		data.publish_at,
+						provider: 	{
+							name: "youtube",
+							id: data.youtube_id
+						}
+					};
+
+					for(var i = 0, len = data.related.videos.length; i < len; i++) {
+						self.related.push(self.format(data.related.videos[i]));
+					}
+
+					cb();
+				});
+			},
+			frag: function() {
+				return getRelatedHTML(this.related);
+			},
+			start: function() {
+				if(_activeChannel || !this.parentVideo) return;
+				embedFlashPlayer(this.parentVideo.provider);
+
+			}
+		}
+
+
 
 		//================================== Videos Class
-		function Videos() {
+		function Videos(params) {
+			this.params = params || {};
 			this.url = "http://esports.ign.com/content/v1/videos.json?kind=youtube";
 			this.data = [];
 		}
@@ -349,31 +428,20 @@
 						name: "youtube",
 						id: data.youtube_id
 					},
-					duration: data.duration,
-					date: data.publish_at
+					duration: 	data.duration,
+					date: 		data.publish_at
 				};
 			},
 			load: function(cb) {
 				var self = this;
-				req(this.url, "getCachedVideo", function(data) {
+				req(this.url, this.params, "getCachedVideo", function(data) {
 					for(var i = 0, len = data.length; i < len; i++) {
 						self.data.push(self.format(data[i]));
 					}
 					cb();
 				});
 			},
-			sort: function() {
-				this.data.sort(function(a, b) {
-					var d_a = new Date(a.date).getTime();
-					var d_b = new Date(b.date).getTime();
-
-					if(d_a > d_b) return -1;
-					if(d_a < d_b) return 1;
-					return 0;
-				});
-			},
 			frag: function() {
-				this.sort();
 				return getHTML(this.data);
 			},
 			start: function() {
@@ -387,7 +455,8 @@
 
 		return {
 			streams: Streams,
-			videos: Videos
+			videos: Videos,
+			related: Related
 		};
 
 	})();
@@ -453,7 +522,7 @@
 					waitOn--;
 					finish();
 				};
-				var source = new sources[filter.sources[i]]();
+				var source = new sources[filter.sources[i].type](filter.sources[i].params);
 				source.load(callback);
 				sourceObj_arr.push(source);
 			}
