@@ -407,7 +407,7 @@
 				if(_activeChannel || !this.parentVideo) return;
 				embedFlashPlayer(this.parentVideo.provider);
 				//Embed Disqus
-				if(window.disqus) disqus.loadComments(this.parentVideo.id || this.params.videoSlug);
+				if(window.disqus) disqus.loadComments(this.parentVideo.id, this.params.videoSlug || "");
 
 			}
 		}
