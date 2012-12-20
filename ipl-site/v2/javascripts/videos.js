@@ -48,7 +48,7 @@
 			var o = {
 				game: 		d.franchise && d.franchise.abbreviation || "",
 				category: 	d.show && d.show.name || "General",
-				url: 		"http://www.youtube.com/watch?v=" + d.youtube_id, //d.url || "",
+				url: 		d.url || "",
 				title: 		d.title || "",
 				date: 		d.published_at ? new Date(d.published_at).toLocaleDateString() : "",
 				thumb:  	d.thumbnails && d.thumbnails[0] && d.thumbnails[0].thumbnail && d.thumbnails[0].thumbnail.url || ""  
@@ -71,11 +71,11 @@
 		var cell 			= ce("div");
 
 		$(game).text(o.game);
-		$(channel_link).attr("href", o.url).attr("target","_blank").text(o.category);
+		$(channel_link).attr("href", o.url).text(o.category);
 		$(channel).addClass("videolist_channel").append(game, channel_link);
 		$(thumb_img).attr("src", o.thumb);
-		$(thumb).attr("href", o.url).attr("target","_blank").addClass("videolist_thumb").append(thumb_img);
-		$(title).attr("href", o.url).attr("target","_blank").addClass("videolist_title").text(o.title);
+		$(thumb).attr("href", o.url).addClass("videolist_thumb").append(thumb_img);
+		$(title).attr("href", o.url).addClass("videolist_title").text(o.title);
 		$(date).addClass("videolist_published").text(o.date);
 		$(lining).addClass("videolist_lining").append(channel, thumb, title, date);
 		$(cell).addClass("videolist_cell").append(lining);
