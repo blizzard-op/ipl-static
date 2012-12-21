@@ -677,6 +677,9 @@ a:hover {
 a:active {
   color: #e3604d; }
 
+img {
+  max-width: 100%; }
+
 .site_width {
   margin: auto;
   position: relative;
@@ -835,7 +838,7 @@ a:active {
 #ignFooter-container footer {
   margin-top: 30px; }
 
-.boxscores {
+.boxscores, .sponsors {
   background-color: #eeeeee;
   padding: 30px 0;
   margin: 30px 0; }
@@ -879,7 +882,10 @@ a:active {
 .boxscores_title {
   padding-bottom: 10px;
   margin-bottom: 15px;
-  border-bottom: 1px dotted #cccccc; }
+  border-bottom: 1px dotted #cccccc;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
 
 .boxscores_team {
   font-weight: bold;
@@ -1516,11 +1522,24 @@ aside .schedule_calendar, aside .schedule_calendar_number {
 .streamslist_title {
   margin-left: 110px; }
 
+.sponsors {
+  text-align: center; }
+
+.sponsors_item {
+  border: 1px dotted #cccccc;
+  display: inline-block;
+  width: 25%;
+  margin: auto;
+  background-color: #f9f9f9; }
+  .sponsors_item:hover {
+    background-color: #f1f1f1; }
+
 @media screen and (min-width: 1680px) {
   .content,
   .leaderboard,
   .hero,
-  .boxscores {
+  .boxscores,
+  .sponsors {
     background-image: url(http://oystatic.ignimgs.com/src/ignmedia/img/articles/runner.gif);
     background-position: left;
     background-repeat: repeat-y; } }
