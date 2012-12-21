@@ -37,14 +37,17 @@
 			dataType: "jsonp",
 			cache: true,
 			jsonpCallback: jsonpcallback,
-			data: data || null
+			data: data || null,
+			success: function(data) {
+				cb(data || []);
+			},
+			error: function() {
+				cb([]);
+			}
 		});
-		req.fail(function() {
-			cb([]);
-		});
-		req.done(function(data) {
-			cb(data || []);
-		});
+
+		return req;
+
 	}
 
 
@@ -181,19 +184,33 @@
 
 				ign: function(id) {
 
-					var swf = "http://oystatic.ignimgs.com/src/core/swf/IGNPlayer.swf";
-					var cachebust = "?version=3.120612.02";
-					var url = id + "?qs_autoplay=true";
-					var flashvars = {
-						cacheBusting: "true",
-						url: url
+					var IGN_api_url = "http://apis.ign.com/video/v3/videos/" + id + "?fields=metadata.url";
+					var IGN_api_params = {
+						fields: "metadata.url",
+						format: "js"
 					};
-					var params = {
-						quality: "high",
-						allowscriptaccess: "always",
-						allowfullscreen: "true",
-					};
-					swfobject.embedSWF(swf+cachebust, "hero_video_target", width, height, swfVersionStr, xiSwfUrlStr, flashvars, params);
+
+					var xhr = req(IGN_api_url, IGN_api_params, "foo", function(data) {
+
+						if(!data || !data.metadata || !data.metadata.url) return;
+
+						var videoURL = data && data.metadata && data.metadata.url || "";
+
+						var swf = "http://oystatic.ignimgs.com/src/core/swf/IGNPlayer.swf";//"http://media.ign.com/ev/esports/ipl-static/ipl-site/v2/swfs/IGNPlayer.swf";
+						var cachebust = "?version=3.120612.02";
+						videoURL += "?qs_autoplay=true";
+						var flashvars = {
+							cacheBusting: "true",
+							url: videoURL
+						};
+						var params = {
+							quality: "high",
+							allowscriptaccess: "always",
+							allowfullscreen: "true",
+							bgcolor: "#000000"
+						};
+						swfobject.embedSWF(swf+cachebust, "hero_video_target", width, height, swfVersionStr, xiSwfUrlStr, flashvars, params);
+					});
 
                 },
 
@@ -307,7 +324,7 @@
 		//================================== Streams Class
 		function Streams(params) {
 			this.params = params || {};
-			this.url = "http://esports.ign.com/content/v1/streams.json?test=true";
+			this.url = "http://esports.ign.com/content/v1/streams.json";
 			this.data = [];
 		}
 		Streams.prototype = {
@@ -318,7 +335,7 @@
 					title: 				data.title || "",
 					franchise: 			data.franchise && data.franchise.name || "",
 					franchise_slug: 	data.franchise && data.franchise.slug || "",
-					provider: 			data.providers && data.providers[data.providers.length - 1] || null,
+					provider: 			data.providers && data.providers[1] || data.providers[0] || null,
 					type: 				"stream"
 				};
 			},
