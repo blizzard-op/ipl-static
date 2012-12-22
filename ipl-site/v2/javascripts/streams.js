@@ -2,7 +2,7 @@
 
 (function($) {
 
-	var _api = "http://esports.ign.com/content/v1/streams.json?test=true";
+	var _api = "http://esports.ign.com/content/v1/streams.json";
 	var _target;
 	var _pollrate = 5 * 60 * 1000; //5 Minutes
 
