@@ -185,7 +185,7 @@
 				ign: function(videoURL) {
 
 					videoURL += "?qs_autoplay=true";
-					var swf = "http://dev.oystatic.ignimgs.com/jweeks/core/swf/IGNPlayer_ipl.swf";
+					var swf = "http://media.ign.com/ev/esports/ipl-static/ipl-site/v2/swfs/ignplayer_ipl.swf";
 					var cachebust = "?version=3.120612.02";
 					
 					var flashvars = {
