@@ -75,21 +75,19 @@ createPaginationList = (obj, page, per_page, pageLimit)->
   pages = Math.ceil(obj.total/per_page)
   page = parseInt(page, 10)
   paginationHTML = "<nav class='pagination'>"
-  paginationHTML += "<span clas='first'><a href='/ipl/all/news'>First</a></span><span class='prev'><a href='?page=" + (page - 1) + "'>Prev</a></span>" unless page is 1
+  paginationHTML += "<span clas='pagination_page first'><a href='/ipl/all/news'>First</a></span><span class='pagination_page prev'><a href='?page=" + (page - 1) + "'>Prev</a></span>" unless page is 1
   pageStart = if page-parseInt(pageLimit/2)-1<1 then 1 else page-parseInt(pageLimit/2)-1
   pageEnd = pageStart + pageLimit
   pageCounter = if pageEnd <= pages then pageStart else pages - pageLimit
   pageEnd = if pageEnd > pages then pages else pageEnd
 
-  console.log(pageEnd-pageCounter)
-
   while pageCounter <= pageEnd
     if pageCounter is page
-      paginationHTML += "<span class='page current'>" + pageCounter + "</span>"
+      paginationHTML += "<span class='pagination_page current'>" + pageCounter + "</span>"
     else
-      paginationHTML += "<span class='page'><a href='?page=" + pageCounter + "'>" + pageCounter + "</a></span>"
+      paginationHTML += "<span class='pagination_page'><a href='?page=" + pageCounter + "'>" + pageCounter + "</a></span>"
     pageCounter += 1
-  paginationHTML += "<span class='next'><a href='?page=" + (page + 1) + "'>Next</a></span><span class='last'><a href='?page=" + pages + "'>Last</a></span>" unless page is pages
+  paginationHTML += "<span class='pagination_page next'><a href='?page=" + (page + 1) + "'>Next</a></span><span class='pagination_page last'><a href='?page=" + pages + "'>Last</a></span>" unless page is pages
 
   paginationHTML += "</nav>"
 
@@ -147,7 +145,7 @@ loadAllArticles = (page = 1, per_page = 10, franchise = "all")->
     source = $("#article-list").html()
     tmpl = Handlebars.compile source
     $posts.find("ul").html tmpl(articleFeed.data)
-    $posts.append createPaginationList(articleFeed, page, per_page, 15)
+    $posts.append createPaginationList(articleFeed, page, per_page, 9)
 
 
 loadArticle = (slug) ->

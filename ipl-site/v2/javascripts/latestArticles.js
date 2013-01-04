@@ -3,10 +3,15 @@
   var loadHeadlines;
 
   loadHeadlines = function(per_page) {
-    var fetchingHeadlines, params, queryParams;
+    var fetchingHeadlines, params, queryParams, source, tmpl;
     if (per_page == null) {
       per_page = 5;
     }
+    if (!$("#latest_articles_template").length) {
+      return;
+    }
+    source = $("#latest_articles_template").html();
+    tmpl = Handlebars.compile(source);
     queryParams = {
       franchise: franchise,
       per_page: per_page
@@ -19,9 +24,6 @@
       jsonpCallback: "getCachedHeadlines"
     });
     return fetchingHeadlines.done(function(headlines) {
-      var source, tmpl;
-      source = $("#latest_articles_template").html();
-      tmpl = Handlebars.compile(source);
       return $("#latest_articles").append(tmpl(headlines.data));
     });
   };

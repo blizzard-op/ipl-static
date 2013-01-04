@@ -16,11 +16,25 @@
     return new Handlebars.SafeString(text);
   });
 
+  Handlebars.registerHelper('boxScoreWinner', function(points) {
+    var text;
+    if (points >= this.matchup.teams[1].points && points >= this.matchup.teams[0].points) {
+      text = "winner";
+    } else {
+      text = "";
+    }
+    return new Handlebars.SafeString(text);
+  });
+
   maxTimesToScroll = 1;
 
   scrolledRight = 0;
 
   $boxscoresWrapper = $(".boxscores_wrapper");
+
+  if (!$boxscoresWrapper.length) {
+    return;
+  }
 
   $boxscoresSlider = $boxscoresWrapper.find(".boxscores_slider");
 

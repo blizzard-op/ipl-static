@@ -7,10 +7,20 @@ Handlebars.registerHelper 'boxScoreDate', ->
   text = moment(this.starts_at.dateTime).format("dddd, MMM Do, YYYY")
   new Handlebars.SafeString text
 
+
+Handlebars.registerHelper 'boxScoreWinner', (points)->
+  if points >= this.matchup.teams[1].points and points >= this.matchup.teams[0].points
+    text = "winner"
+  else
+    text = ""
+  new Handlebars.SafeString text
+
 maxTimesToScroll = 1
 scrolledRight = 0
 
 $boxscoresWrapper = $(".boxscores_wrapper")
+return unless $boxscoresWrapper.length
+
 $boxscoresSlider = $boxscoresWrapper.find(".boxscores_slider")
 $prev = $boxscoresWrapper.find(".box_score_prev")
 $next = $boxscoresWrapper.find(".box_score_next")
