@@ -71,7 +71,7 @@
       dates.sort();
       for (_i = 0, _len = dates.length; _i < _len; _i++) {
         date = dates[_i];
-        mdate = moment(date);
+        mdate = moment(date, "MM-DD-YYYY");
         firstEvent = groupOfEvents[date][0];
         firstEvent.startDay = mdate.date();
         firstEvent.startWeekDay = mdate.format("dddd");

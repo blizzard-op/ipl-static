@@ -5,16 +5,16 @@ Handlebars.registerHelper 'formattedDateTime', ->
   text = moment(this.starts_at.dateTime).format("h:mma")
   new Handlebars.SafeString text
 
-
-
 Handlebars.registerHelper 'today', ->
   if this[0].startWeekDay is moment().format("dddd")
     return '<div class="schedule_calendar today">'
   return '<div class="schedule_calendar">'
+
 $scheduleTemplate = $("#schedule-template")
 return unless $scheduleTemplate.length
 scheduleTemplate = $scheduleTemplate.html()
 tmpl = Handlebars.compile scheduleTemplate
+
 do ->
 
   fetchingEvents = $.ajax
@@ -50,21 +50,19 @@ do ->
             startTime: newDate
           }
         ]
-          
+
         diff -= 1
       previousDay = formattedDay
 
     dates.sort()
 
-
     for date in dates
-      mdate = moment(date)
+      mdate = moment(date, "MM-DD-YYYY")
       firstEvent = groupOfEvents[date][0]
       firstEvent.startDay = mdate.date()
       firstEvent.startWeekDay = mdate.format("dddd")
       firstEvent.startMonth = mdate.format("MMM")
       firstEvent.startYear = mdate.year()
       rows += tmpl groupOfEvents[date]
-
 
     $("#schedule").append rows
