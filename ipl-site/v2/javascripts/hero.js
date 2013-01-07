@@ -182,35 +182,23 @@
 					swfobject.embedSWF("http://www.youtube.com/v/" + id + "?enablejsapi=1&playerapiid=ytplayer&version=3", "hero_video_target", width, height, swfVersionStr, xiSwfUrlStr, flashvars, params);
 				},
 
-				ign: function(id) {
+				ign: function(videoURL) {
 
-					var IGN_api_url = "http://apis.ign.com/video/v3/videos/" + id + "?fields=metadata.url";
-					var IGN_api_params = {
-						fields: "metadata.url",
-						format: "js"
+					videoURL += "?qs_autoplay=true";
+					var swf = "http://dev.oystatic.ignimgs.com/jweeks/core/swf/IGNPlayer_ipl.swf";
+					var cachebust = "?version=3.120612.02";
+					
+					var flashvars = {
+						cacheBusting: "true",
+						url: videoURL
 					};
-
-					var xhr = req(IGN_api_url, IGN_api_params, "foo", function(data) {
-
-						if(!data || !data.metadata || !data.metadata.url) return;
-
-						var videoURL = data && data.metadata && data.metadata.url || "";
-
-						var swf = "http://oystatic.ignimgs.com/src/core/swf/IGNPlayer.swf";//"http://media.ign.com/ev/esports/ipl-static/ipl-site/v2/swfs/IGNPlayer.swf";
-						var cachebust = "?version=3.120612.02";
-						videoURL += "?qs_autoplay=true";
-						var flashvars = {
-							cacheBusting: "true",
-							url: videoURL
-						};
-						var params = {
-							quality: "high",
-							allowscriptaccess: "always",
-							allowfullscreen: "true",
-							bgcolor: "#000000"
-						};
-						swfobject.embedSWF(swf+cachebust, "hero_video_target", width, height, swfVersionStr, xiSwfUrlStr, flashvars, params);
-					});
+					var params = {
+						quality: "high",
+						allowscriptaccess: "always",
+						allowfullscreen: "true",
+						bgcolor: "#000000"
+					};
+					swfobject.embedSWF(swf+cachebust, "hero_video_target", width, height, swfVersionStr, xiSwfUrlStr, flashvars, params);
 
                 },
 
@@ -335,8 +323,11 @@
 					title: 				data.title || "",
 					franchise: 			data.franchise && data.franchise.name || "",
 					franchise_slug: 	data.franchise && data.franchise.slug || "",
-					provider: 			data.providers && data.providers[1] || data.providers[0] || null,
-					type: 				"stream"
+					type: 				"stream",
+					provider: {
+						name: "ign",
+						id: "http://esports.ign.com/content/v1/streams/" + data.id
+					}
 				};
 			},
 			load: function(cb) {
@@ -352,7 +343,7 @@
 				//Sort by most concurrent viewers
 			},
 			frag: function() {
-				this.sort();
+				//this.sort();
 				return getHTML(this.data);
 			},
 			start: function() {
@@ -436,6 +427,9 @@
 			this.params = params || {};
 			this.url = "http://esports.ign.com/content/v1/videos.json?kind=youtube";
 			this.data = [];
+			if(franchise && franchise !== "all") {
+				this.url += "&franchise=" + franchise
+			}
 		}
 		Videos.prototype = {
 			format: function(data) {
@@ -497,6 +491,34 @@
 		};
 
 
+		var changeActivePane = function(sourceObj_arr) {
+			var pane = ce("div");
+			for(var i = 0, len = sourceObj_arr.length; i < len; i++) {
+				var source = sourceObj_arr[i];
+				pane.appendChild(source.frag());
+				source.start(); //Start video if not already playing
+			}
+
+			$(pane).hide();
+			_dom.slider.appendChild(pane);
+
+			if(activePane) {
+				var currPane = activePane; //Temp store
+				$(currPane).fadeOut("fast", function() {
+					$(currPane).remove();
+					$(pane).fadeIn("fast");
+					scroll.set();
+				});
+			}
+			else {
+				$(pane).show();
+				scroll.set();
+			}
+
+			activePane = pane;
+		};
+
+
 		var load = function(filter) {
 
 			if(activeFilter === filter) return;
@@ -509,42 +531,21 @@
 			var sourceObj_arr = [];
 
 			var finish = function() {
-				if(wait || waitOn) return;
-
-				var pane = ce("div");
-				for(var i = 0, len = sourceObj_arr.length; i < len; i++) {
-					var source = sourceObj_arr[i];
-					pane.appendChild(source.frag());
-					source.start(); //Start video if not already playing
-				}
-
-				$(pane).hide();
-				_dom.slider.appendChild(pane);
-
-				if(activePane) {
-					var currPane = activePane; //Temp store
-					$(currPane).fadeOut("fast", function() {
-						$(currPane).remove();
-						$(pane).fadeIn("fast");
-						scroll.set();
-					});
-				}
-				else {
-					$(pane).show();
-					scroll.set();
-				}
-
-				activePane = pane;
+				if(!wait && !waitOn) changeActivePane(sourceObj_arr);
 			};
 
 			for(var i = 0, len = filter.sources.length; i < len; i++) {
 				waitOn++;
-				var callback = function() {
+
+				var filterType = filter.sources[i].type;
+				var filterParams = filter.sources[i].params;
+				var source = new sources[filterType](filterParams);
+
+				source.load(function() {
 					waitOn--;
 					finish();
-				};
-				var source = new sources[filter.sources[i].type](filter.sources[i].params);
-				source.load(callback);
+				});
+
 				sourceObj_arr.push(source);
 			}
 
