@@ -427,6 +427,9 @@
 			this.params = params || {};
 			this.url = "http://esports.ign.com/content/v1/videos.json?kind=youtube";
 			this.data = [];
+			if(franchise && franchise !== "all") {
+				this.url += "&franchise=" + franchise
+			}
 		}
 		Videos.prototype = {
 			format: function(data) {
