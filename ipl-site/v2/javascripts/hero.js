@@ -293,8 +293,8 @@
 		}
 		var updateHeroBottom = function (franchise, title) {
 			$("#hero_related_links").empty();
-			loadFeatured(franchise.slug, 1, "featured", renderFeaturedArticle);
-			loadFeatured(franchise.slug, 8, "featured-sticky", renderRelatedLinks);
+			loadFeatured(franchise.slug, 1, "feature", renderFeaturedArticle);
+			loadFeatured(franchise.slug, 8, "sticky", renderRelatedLinks);
 			udpateNowWatching(franchise.name, title);
 		}
 		var udpateNowWatching = function(franchiseName, title) {
