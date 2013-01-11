@@ -1394,6 +1394,19 @@ aside .schedule_calendar, aside .schedule_calendar_number {
 .article_content_disqus {
   width: 66%; }
 
+.alignright {
+  float: right;
+  margin-right: 12px; }
+
+.alignleft {
+  float: left;
+  margin-right: 12px; }
+
+img.aligncenter {
+  display: block;
+  text-align: center;
+  margin: auto; }
+
 .video_show_disqus {
   float: left;
   width: 66%; }
