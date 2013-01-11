@@ -25,7 +25,6 @@
 		}
 	};
 
-
 	//================================== Util
 	function gebi(id) {return document.getElementById(id);}
 	function ce(type) {return document.createElement(type);}
@@ -239,6 +238,72 @@
 
 		};
 
+		var renderRelatedLinks = function(articleList){
+			$relatedLinks = $("#hero_related_links")
+			var linkText = "";
+			for (var i = 0; i < articleList.length; i++) {
+				var articleData = articleList[i];
+				var title = articleData.metadata.headline;
+				var url = "/ipl/all/news/" + articleData.metadata.slug;
+				linkText += "<li><a href='" + url + "'>" + title + "</a></li>";
+			};
+			$relatedLinks.append(linkText);
+		}
+
+		var findFeaturedImage = function (articleContent) {
+			var firstImage = articleContent.match(/<img[\w'-=\"\s]+\/>/), firstImageSrc = "";
+			if(firstImage){
+				firstImageSrc = firstImage[0].match(/src=[\"|\']([\w:\/\/\.-]+)[\"|\']/);
+			}
+			return firstImageSrc[1];
+		}
+
+		var renderFeaturedArticle = function(articleData) {
+			
+			var articleData = articleData[0];
+			var featuredImageUrl = findFeaturedImage(articleData.content[0]);
+			var $heroFeaturedArticle = $(_dom.featured).find(".hero_featured_article_text");
+			var articleLink = "<a href='/ipl/all/news/" + articleData.metadata.slug + "' class='hero_featured_image_wrapper'>";
+			articleLink += "<img src='" + featuredImageUrl + "' alt='" + articleData.promo.title + "' class='hero_featured_image'/>";
+			articleLink += "<p class='hero_featured_title'>" + articleData.metadata.headline + "</p>";
+			articleLink += "<p class='hero_featured_read'>Click to read</p></a>";
+			$heroFeaturedArticle.html(articleLink);
+		}
+
+		var loadFeatured = function(franchiseSlug, numberOfArticles, tag, cb){
+			var params = {
+				per_page: numberOfArticles,
+				tag: tag,
+				franchiseSlug: franchiseSlug
+			};
+			var fetchingFeaturedArticle = articleLoader.fetchArticles(params, "getCachedArticles" + numberOfArticles);
+			fetchingFeaturedArticle.done(function(articleData){
+				if(articleData.count > 0) {
+					cb(articleData.data);
+				}
+				if(articleData.count < numberOfArticles) {
+					params.tag = null;
+					params.per_page = numberOfArticles - articleData.count
+					var fetchingArticle = articleLoader.fetchArticles(params, "getCachedArticles" + numberOfArticles);
+					fetchingArticle.done(function(articleData){
+						cb(articleData.data);
+					})
+				} 
+			});
+		}
+		var updateHeroBottom = function (franchise, title) {
+			$("#hero_related_links").empty();
+			loadFeatured(franchise.slug, 1, "feature", renderFeaturedArticle);
+			loadFeatured(franchise.slug, 8, "sticky", renderRelatedLinks);
+			udpateNowWatching(franchise.name, title);
+		}
+		var udpateNowWatching = function(franchiseName, title) {
+			var videoDetails = $(_dom.featured).find(".hero_video_details")[0],
+					heading = videoDetails.getElementsByTagName("h1")[0],
+					details = videoDetails.getElementsByTagName("p")[0];
+			heading.innerHTML = franchiseName;
+			details.innerHTML = title;
+		}
 
 		var getHTML = function(data) {
 			var frag = document.createDocumentFragment();
@@ -269,8 +334,14 @@
 				var closure = function() {
 					var provider = row.provider;
 					var id = row.id;
+					var franchise = {
+						slug: row.franchise_slug,
+						name: row.franchise
+					}
+					var title = row.title;
 					return function() {
 						embedFlashPlayer(provider);
+						updateHeroBottom(franchise, title);
 						if(_activeChannel) $(_activeChannel).removeClass("watching");
 						$(this).addClass("watching");
 						_activeChannel = this;
@@ -323,6 +394,7 @@
 					title: 				data.title || "",
 					franchise: 			data.franchise && data.franchise.name || "",
 					franchise_slug: 	data.franchise && data.franchise.slug || "",
+					long_title: 	data.metadata && data.metadata.longTitle || "",
 					type: 				"stream",
 					provider: {
 						name: "ign",
@@ -393,6 +465,7 @@
 						thumb: 		data.thumbnails && data.thumbnails[0] && data.thumbnails[0].thumbnail && data.thumbnails[0].thumbnail.url || "",
 						title: 		data.title || "",
 						franchise: 	data.franchise && data.franchise.name || "",
+					franchise_slug: 	data.franchise && data.franchise.slug || "",
 						duration: 	data.duration,
 						date: 		data.publish_at,
 						provider: 	{
@@ -438,6 +511,7 @@
 					thumb: 		data.thumbnails && data.thumbnails[0] && data.thumbnails[0].thumbnail && data.thumbnails[0].thumbnail.url || "",
 					title: 		data.title || "",
 					franchise: 	data.franchise && data.franchise.name || "",
+					franchise_slug: 	data.franchise && data.franchise.slug || "",
 					type: 		"video",
 					provider: 	{
 						name: "youtube",
@@ -557,7 +631,6 @@
 
 		};
 
-
 		var init = function() {
 			var switcher = _dom.switcher;
 
@@ -606,10 +679,11 @@
 	//================================== OnReady
 	$(function() {
 		_dom = {
-			video: 			gebi("hero_video"),
+			video: 					gebi("hero_video"),
 			slider_wrapper: gebi("hero_slider_wrapper"),
-			slider: 		gebi("hero_slider"),
-			switcher: 		gebi("hero_switcher")
+			slider: 				gebi("hero_slider"),
+			switcher: 			gebi("hero_switcher"),
+			featured: 			gebi("featured")
 		};
 
 		//Check all DOM elements are accounted for
