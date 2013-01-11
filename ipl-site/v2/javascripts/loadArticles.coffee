@@ -123,6 +123,12 @@ setQueryParams = (queryParams)->
       "condition": "containsOne"
       "value": queryParams.franchise
 
+  if queryParams.tag?
+    params.rules.push 
+      "field": "tags"
+      "condition": "containsOne"
+      "value": queryParams.tag
+
   JSON.stringify(params)
 
 addLeadingZero = (num)->
@@ -146,6 +152,19 @@ loadAllArticles = (page = 1, per_page = 10, franchise = "all")->
     tmpl = Handlebars.compile source
     $posts.find("ul").html tmpl(articleFeed.data)
     $posts.append createPaginationList(articleFeed, page, per_page, 9)
+
+fetchArticles = (params, cb)->
+  queryParams =
+    page: params.page || 1
+    per_page: params.per_page || 10
+    franchise: params.franchiseSlug || "all"
+    tag: params.tag || null
+  params = setQueryParams(queryParams)
+  return $.ajax 
+    url: "http://apis.ign.com/article/v3/articles/search?q=" + params + "&format=js"
+    dataType: "jsonp"
+    cache: true
+    jsonpCallback: cb
 
 
 loadArticle = (slug) ->
@@ -176,3 +195,4 @@ window.articleLoader =
   loadAllArticles: loadAllArticles
   loadArticle: loadArticle
   setQueryParams: setQueryParams
+  fetchArticles: fetchArticles

@@ -1310,6 +1310,152 @@ aside .schedule_calendar, aside .schedule_calendar_number {
 .hero_related:hover .thumb {
   border-color: #db3a22; }
 
+.hero_bottom_wrapper {
+  width: 100%;
+  display: table; }
+
+.hero_bottom {
+  display: table-row;
+  border-collapse: collapse;
+  border-spacing: 0;
+  clear: both; }
+
+.hero_bottom_cell {
+  display: table-cell;
+  background-color: black;
+  color: #999999;
+  padding: 20px;
+  overflow: hidden;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .hero_bottom_cell h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 14px;
+    margin: 0 0 15px 0;
+    color: white; }
+  .hero_bottom_cell a {
+    color: #aaaaaa;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block; }
+    .hero_bottom_cell a:hover {
+      color: #db3a22;
+      text-decoration: underline; }
+
+.hero_video_details {
+  width: 35%;
+  min-width: 340px;
+  border-bottom: 20px solid #0c0c0c; }
+  .hero_video_details .redstripe {
+    position: relative;
+    right: 18px;
+    border-left: 3px solid #db3a22;
+    padding-left: 15px; }
+  .hero_video_details h1 {
+    font-size: 22px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    color: white; }
+  .hero_video_details p {
+    font-size: 16px;
+    line-height: 22px; }
+
+.hero_now_watching {
+  color: #db3a22;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  font-size: 13px; }
+
+.hero_featured_article {
+  border-top: 20px solid #0c0c0c;
+  border-left: 20px solid #0c0c0c;
+  height: 160px; }
+
+.hero_featured_article_text {
+  height: 100%; }
+
+.hero_featured_image_wrapper {
+  position: relative;
+  float: left;
+  width: 270px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 2px solid #222222;
+  height: 100%;
+  display: block;
+  cursor: pointer; }
+  .hero_featured_image_wrapper p {
+    margin: 0; }
+
+.hero_featured_image_wrapper:hover {
+  border-color: #6b6b6b; }
+
+.hero_featured_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.hero_featured_title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-transform: uppercase;
+  z-index: 1;
+  text-indent: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: bold; }
+
+.hero_featured_read {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 12px;
+  text-transform: uppercase;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 10px 0 10px;
+  color: #6b6b6b; }
+
+.hero_related_links {
+  float: right;
+  width: 280px;
+  height: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 12px;
+  border-left: 1px solid #222222; }
+  .hero_related_links ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    @media screen and (max-width: 1279px) {
+      .hero_related_links ul li:nth-last-of-type(1) {
+        display: none; } }
+  .hero_related_links li + li {
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px dotted #222222; }
+
 .article_list {
   padding: 0;
   margin: 0; }
@@ -1567,7 +1713,13 @@ img.aligncenter {
     width: 20%; }
 
   .videolist_cell:nth-child(5n) {
-    border-right: none; } }
+    border-right: none; }
+
+  .hero_featured_article {
+    height: 305px; }
+
+  .hero_featured_image_wrapper {
+    width: 540px; } }
 @media screen and (min-width: 1280px) and (max-width: 1439px) {
   .site_width {
     width: 1225px; }
@@ -1579,7 +1731,16 @@ img.aligncenter {
     width: 25%; }
 
   .videolist_cell:nth-child(4n) {
-    border-right: none; } }
+    border-right: none; }
+
+  .hero_featured_article {
+    height: 246px; }
+
+  .hero_featured_image_wrapper {
+    width: 435px; }
+
+  .hero_related_links ul li:nth-of-type(n + 7) {
+    display: none; } }
 @media screen and (max-width: 1279px) {
   body {
     font-size: 12px; }
@@ -1594,7 +1755,14 @@ img.aligncenter {
     width: 33.33%; }
 
   .videolist_cell:nth-child(3n) {
-    border-right: none; } }
+    border-right: none; }
+
+  .hero_video_details p {
+    font-size: 14px;
+    line-height: 18px; }
+
+  .hero_related_links ul li:nth-of-type(n + 5) {
+    display: none; } }
 body.takeover .site_width,
 body.takeover .leaderboard,
 body.takeover .hero {
