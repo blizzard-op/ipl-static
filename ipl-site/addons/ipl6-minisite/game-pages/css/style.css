@@ -1,0 +1,530 @@
+/* HTML5 Boilerplate  */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body { margin: 0; font-size: 13px; line-height: 1.6; background-color: #000; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;}
+
+::-moz-selection { background: #B21B00; color: #fff; text-shadow: none; }
+::selection { background: #B21B00; color: #fff; text-shadow: none; }
+
+a { color: #B21B00; }
+a:visited { color: #B21B00; }
+a:hover { color: #B21B00; text-decoration: underline;}
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+dfn { font-style: italic; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ins { background: #ff9; color: #000; text-decoration: none; }
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+small { font-size: 85%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+svg:not(:root) { overflow: hidden; }
+figure { margin: 0; }
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+label { cursor: pointer; }
+legend { border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: normal; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+button[disabled], input[disabled] { cursor: default; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+#game-wrapper{
+  width:970px;
+  margin:auto;
+}
+
+#game-wrapper h1{
+  color:#fff;
+  margin-top:.25em; 
+}
+
+article.game-content{
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(255,255,255,.3);
+  padding: 2em 2em 0.5em 2em;
+  margin:1em;
+  color:#fff;
+  background-color: rgba(0,0,0,.5);
+}
+.section-title {
+  display: inline;
+  font-weight: normal;
+}
+.logo-color{
+  color:#f3312d;
+}
+
+header{
+  color:#fff;
+
+}
+
+.ipl-home-link {
+  width: 177px;
+  height: 130px;
+  background: url(http://media.ign.com/ev/esports/ipl-static/shared/images/logos/ipl6_white_text.png) left top no-repeat;
+  display: block;
+  text-indent: -999em;
+  margin: 0 0 0 -89px;
+  position: absolute;
+  left: 50%;
+  top: 5px;
+  background-size: contain;
+}
+
+header ul {
+  list-style: none;
+}
+
+header ul li{
+  float: left;
+  margin: 0 20px;
+  
+}
+
+.game-nav{
+  clear: both;
+  background-color: black;
+  background-color: rgba(0, 0, 0, .8);
+  width: 100%;
+  z-index: 20;
+  height: 150px;
+  position: relative;
+  top: 0;
+}
+
+.game-nav .fixed-container{
+   margin: 0 auto 1em;  
+   height: 100%;
+   position: relative;
+}
+
+.game-nav li{
+  float:left;
+  margin-right: 30px;
+  padding: 0;
+  color:#fff;
+  font-size: 1.35em;
+}
+.left-nav, .right-nav {
+  position: absolute;
+  bottom: 3em;
+}
+.left-nav {
+  left: 0;
+}
+.right-nav {
+  right: 0;
+}
+.right-nav li {
+  float: none;
+}
+.right-nav li:last-child {
+  margin-right: 0;
+}
+
+.game-nav li a{
+  display: inline-block;
+  vertical-align: middle;
+  color:#fff;
+  text-decoration: none;
+  text-indent: -999em;
+  height: 25px;
+}
+.starcraft-2 {
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site//addons/ipl5-minisite/game-pages/img/nav/starcraft-2-white.png) top left no-repeat;
+  width: 152px;
+  text-indent: -999em;
+  height: 25px;
+  display: inline-block;
+}
+.sc2 .starcraft-2, .starcraft-2:hover {
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site//addons/ipl5-minisite/game-pages/img/nav/starcraft-2-red.png) top left no-repeat;
+}
+.league-of-legends {
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/nav/league-of-legends-white.png) top left no-repeat;
+  width: 231px;
+  text-indent: -999em;
+  height: 25px;
+  display: inline-block;
+}
+.lol .league-of-legends, .league-of-legends:hover {
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/nav/league-of-legends-red.png) top left no-repeat;
+}
+.shootmania {
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/nav/shootmania-white.png) top left no-repeat;
+  width: 152px;
+  text-indent: -999em;
+  height: 25px;
+  display: inline-block;
+}
+.sm .shootmania, .shootmania:hover {
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/nav/shootmania-red.png) top left no-repeat;  
+}
+.schedule {
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/nav/schedule-white.png) top left no-repeat;
+  width: 120px;
+}
+.schedule:hover {
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/nav/schedule-red.png) top left no-repeat;
+}
+.region-header {
+  clear: both;
+}
+.teams {
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/nav/teams-white.png) top left no-repeat;
+  width: 80px;
+}
+.teams:hover {
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/nav/teams-red.png) top left no-repeat;
+}
+.players {
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/nav/players-white.png) top left no-repeat;
+  width: 100px;
+}
+.players:hover {
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/nav/players-red.png) top left no-repeat;  
+}
+
+.button-wrapper {
+  float: right;
+  margin: 1em 0 0;
+}
+.game-nav .button {
+  margin: 0 0 0 10px;
+  text-indent: 0;
+  display: inline-block;
+  padding: 2px 10px;
+  text-decoration: none;
+  text-align:center;
+  color:#FFF;
+  font-size:16px;
+  cursor:pointer;
+
+  border-radius:8px;
+  box-shadow:0px 10px 20px #000, 0px 1px 0px #AAA inset;
+  text-shadow:0 -1px 0px #000;
+  background: #999;
+  background: -o-linear-gradient(bottom, #222222 0%, #444444 100%);
+  background: -moz-linear-gradient(bottom, #222222 0%, #444444 100%);
+  background: -webkit-linear-gradient(bottom, #222222 0%, #444444 100%);
+  background: -ms-linear-gradient(bottom, #222222 0%, #444444 100%);
+
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, #222222),
+    color-stop(1, #444444)
+  );
+  background: linear-gradient(bottom, #222222 0%, #444444 100%);
+}
+
+.game-nav .button:hover {
+  background-image: linear-gradient(bottom, #444444 0%, #222222 100%);
+  background-image: -o-linear-gradient(bottom, #444444 0%, #222222 100%);
+  background-image: -moz-linear-gradient(bottom, #444444 0%, #222222 100%);
+  background-image: -webkit-linear-gradient(bottom, #444444 0%, #222222 100%);
+  background-image: -ms-linear-gradient(bottom, #444444 0%, #222222 100%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, #444444),
+    color-stop(1, #222222)
+  );
+}
+
+div.fixed-container{
+  width:970px;
+  margin:auto;
+}
+
+div.grid_3rds{
+  width:270px;
+  margin:0 10px;
+  float: left;
+  padding:0 .25em;
+}
+
+div.grid_23rds{
+  width:569px;
+  margin:0 10px;
+  float: left;
+  padding:0 .25em;
+}
+
+div.grid_3rds p{
+  margin-top: 0;
+}
+
+section.game-page h2{
+  color:#f3312d;
+  text-shadow: 0 2px 0 #000, 0 3px 6px rgba(0,0,0,.4);
+}
+
+article.game-content h2{
+  margin-left: 14px;
+  width:430px;
+}
+
+article.game-content div.grid_23rds h2{
+  margin-left: 0;
+  width:430px;
+}
+
+section.game-landing{
+  background: #121212 url('http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/ipl-5-bg-20.jpg') 50% 0;
+  background-size: 100% auto;
+  padding: 2em 0;
+  color:#fff;
+}
+
+section.game-landing .bracket-float{
+  float:left;
+  padding:.25em;
+  margin:; 0 10px;
+}
+
+.schedule-container{
+  width:100%;
+  padding: 3em 0;
+  /*background-color: #9a9b9d;*/
+  background-color: #000;
+  color:#fff;
+}
+
+.schedule-container h1,h3{
+  color:#f3312d;
+}
+
+.bracket-container{
+  width:100%;
+  background-color: #fff;
+  color:#000;
+}  
+
+section.teams-container{
+  width:100%;
+  
+  background-color: #fff;
+  color:#000;
+} 
+
+div.team-row{
+
+}
+
+div.team-holder{
+  background-color: #fff;
+  color:#333;
+  margin:10px;
+  padding: .25em 1.6em;
+  float:left;
+  width:24.98%;
+  height:100%;
+  text-align: center;
+}
+
+div.team-holder.no-img p{
+  margin-top: 77px;
+}
+
+div.team-holder p{
+  text-align: left;
+  line-height:1.6em;
+}
+
+div.team-holder img{
+  width:64px;
+  height:64px;
+
+}
+
+/* schedule styles */
+h6 {
+  display: inline-block;
+  font-size: 1em;
+  margin: 1em 1em;
+}
+
+h6.selected {
+  color: #D41B00;
+}
+
+h6:hover {
+  cursor: pointer;
+}
+
+.heading {
+  border-radius: 6px 6px 0px 0px;
+  -moz-border-radius: 6px 6px 0px 0px;
+  -webkit-border-radius: 6px 6px 0px 0px;
+  background: rgb(68, 68, 68); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(68, 68, 68, 1) 0%,
+    rgba(34, 34, 34, 1) 100% ); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(68,
+    68, 68, 1) ), color-stop(100%, rgba(34, 34, 34, 1) ) );
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(68, 68, 68, 1) 0%,
+    rgba(34, 34, 34, 1) 100% ); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(68, 68, 68, 1) 0%,
+    rgba(34, 34, 34, 1) 100% ); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(68, 68, 68, 1) 0%,
+    rgba(34, 34, 34, 1) 100% ); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(68, 68, 68, 1) 0%,
+    rgba(34, 34, 34, 1) 100% ); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(    startColorstr='#444444',
+    endColorstr='#222222', GradientType=0 ); /* IE6-9 */
+  -webkit-box-shadow: 0px -1px 1px #AAAAAA;
+  -moz-box-shadow: 0px -1px 1px #AAAAAA;
+  box-shadow: 0px -1px 1px #AAAAAA;
+  position: relative;
+  color: #D41B00;
+}
+
+div.hourly-schedule {
+  color: #aaa;
+  background-color: #111;
+  box-shadow: 0 3px 1px -2px #292929;
+  margin-bottom: 1px;
+  
+  /* fade animation setup */
+  transition: background-color .25s ease-in-out;
+  -moz-transition: background-color .25s ease-in-out;
+  -webkit-transition: background-color .25s ease-in-out;
+  transition: color .25s ease-in-out;
+  -moz-transition: color .25s ease-in-out;
+  -webkit-transition: color .25s ease-in-out;
+}
+
+div.hourly-schedule:hover {
+  background-color: #191919;
+  color: #ffffff;
+}
+
+div.hourly-schedule p.bracket {
+  font-weight: bold;
+}
+
+div.heading ul li {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-shadow: 0px 0px 1px #111;
+  filter: dropshadow(color=#111111, offx=0, offy=0);
+  margin: 0.2em -4px 0.2em 0;
+  padding: 0;
+}
+
+.heading ul,
+.hourly-schedule ul {
+  margin: 0;
+  padding: 0;
+}
+
+.heading ul li,
+.hourly-schedule ul li {
+  font-size: 1em;
+  list-style-type: none;
+  display: inline-block;
+  text-align: center;
+  width: 20%;
+  vertical-align: top;
+  margin: 1em 0;
+}
+
+div#friday ul li {
+  width: 25%;
+}
+
+div#saturday ul li,
+div#sunday ul li {
+  width: 32%;
+}
+
+ul li p {
+  margin: 0.5em;
+  padding: 0;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0 !important;
+  margin:  0 !important;
+}
+
+section#gen-info{
+  background-color: #fff;
+  padding-bottom: 2em;
+}
+
+section#gen-info .grid_3rds:first-child{
+  margin-left: 48px;
+}
+
+@media only screen and (min-width: 35em) {
+  
+
+}
+
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } 
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}

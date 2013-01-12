@@ -12,18 +12,144 @@
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="/addons/ipl6-minisite/ipl6_front/css/style.css">
 
+  <link rel="shortcut icon" type: "image/x-icon" href: "http://media.ignimgs.com/media/ign/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href: "http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ipl-touch-icon-57x57.png" sizes: "57x57" >
+  <link rel="apple-touch-icon-precomposed" href: "http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ipl-touch-icon-72x72.png" sizes: "72x72" >
+  <link rel="apple-touch-icon-precomposed" href: "http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ipl-touch-icon-114x114.png" sizes: "114x114" >
+  <link rel="apple-touch-icon-precomposed" href: "http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ipl-touch-icon-144x144.png" sizes: "144x144" >
+
   <script src="http://media.ign.com/ev/esports/ipl-static/ipl-site/javascripts/modernizr.js"></script>
 </head>
 <body>
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
   <!-- STATIC NAV -->
-  <div class="hero">
-    <div class="logo-container">
-    <img src="/addons/ipl6-minisite/ipl6_front/img/ipl6-crest.png">
+  <div id="fp_nav">
+      <ul class="site_width">
+        <li><a href="http://www.ign.com/ipl">Back to IPL</a></li>
+        <li><a onclick="frontPage.scrollToContent('#full_header')">Top</a></li>
+      </ul>
+  </div>
+
+  <nav class="game-nav clearfix">
+    <div class="fixed-container">
+      <p class="details ir">3.28.13 <br /> The Cosmopolitan of Las Vegas</p>
+      <div class="button-wrapper">
+        <a href="/ipl/all/ipl6/sponsors/" class="full_header_button">Sponsors</a>
+        <!-- <a href="https://resweb.passkey.com/go/IPL" class="full_header_button">Hotel</a>
+        <a href="http://www.cosmopolitanlasvegas.com/ipl6" class="full_header_button">Buy Tickets</a> -->
+      </div>
+      <a href="/ipl/all/ipl6" class="ipl-home-link">IPL6</a>
+      <ul class="right-nav">
+        <li>
+          <a href="/ipl/league-of-legends/ipl6" class="league-of-legends">League of Legends</a>
+        </li>
+        <li> 
+          <a href="/ipl/starcraft-2/ipl6" class="starcraft-2">StarCraft 2</a>
+        </li>
+        <li> 
+          <a href="/ipl/shootmania/ipl6" class="shootmania">ShootMania</a>
+        </li>
+      </ul>
     </div>
-    <h1>03.28.2013 - 03.31.2013</h1>
-    <p>IPL returns to the Cosmopolitan of Las Vegas in March 2013</p>
+  </nav>
+
+  <div class="table" id="full_header">
+      <div class="cell">
+        <div class="site_width">
+          <iframe id="full_header_embed" width="900" height="505" src="http://www.youtube.com/embed/V-qwRnwnNVQ?autoplay=1"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RED ROW -->
+  <div class="red_row" id="js_games">
+    <div class="site_width clearfix">
+      <h1>The best players from around the world competing in three titles.</h1>
+      <a href="/ipl/starcraft-2/ipl6" class="full_game_link" id="full_game_link_sc2">
+        <span class="full_game_link_text">Starcraft 2</span>
+        <span class="full_game_link_overlay"></span>
+        <span class="full_game_link_highlight"></span>
+      </a>
+      <a href="/ipl/league-of-legends/ipl6" class="full_game_link" id="full_game_link_lol">
+        <span class="full_game_link_text">League Of Legends</span>
+        <span class="full_game_link_overlay"></span>
+        <span class="full_game_link_highlight"></span>
+      </a>
+      <a href="/ipl/shootmania/ipl6" class="full_game_link" id="full_game_link_sm">
+        <span class="full_game_link_text">ShootMania</span>
+        <span class="full_game_link_overlay"></span>
+        <span class="full_game_link_highlight"></span>
+      </a>
+    <!--
+      <a href="/ipl/all/ipl6" class="full_game_link" id="full_game_link_fight">
+        <span class="full_game_link_text">Fighters</span>
+        <span class="full_game_link_overlay"></span>
+        <span class="full_game_link_highlight"></span>
+      </a>
+    -->
+      <h3 id="full_gamenav_helper">Choose from a game above for more information...</h3>
+    </div>
+  </div>
+
+  <!-- WHITE ROW -->
+  <div class="white_row" id="js_content">
+    <div class="site_width clearfix">
+      <!-- <h1>Ticket Packages and Promotional Room Rates Now Available!</h1> -->
+      <div class="twothirds">
+        <!-- <h2>Ticket Sales:</h2> -->
+        <div class="textcol">
+          <!-- <p>Tickets are available for purchase here: <a href="http://www.cosmopolitanlasvegas.com/IPL6">http://www.cosmopolitanlasvegas.com/IPL6</a></p> -->
+
+          <h3>VIP Tickets</h3>
+
+          <p>
+            VIP tickets are back for IPL6 and better than ever! Purchasing a VIP tickets gets you reserved seating in the front rows of each game, a special VIP only day on Thursday, March 28th, priority admission to the event. 
+          </p>
+ 
+          <p>
+            If you purchase your VIP tickets by the end of January, the price is only $250 and you receive a free limited edition IPL hoodie! After January, tickets are $250 in advance (with no IPL hoodie) and $300 at the door.
+          </p>
+
+          <h3>General Admission Tickets</h3>
+
+          <p>
+            General Admission tickets grant you access to spectate IPL6 live from Friday, March 29th through Sunday, March 31st. If purchased by the end of January, they are only $15! After January, GA tickets are $30 if purchased in advance of IPL6 or $50 at the door.
+          </p>
+
+        </div>
+      </div>
+      <div class="third">
+        <div id="full_special">
+          <p>
+            IPL6 will be once again held at the beautiful Cosmopolitan of Las Vegas! The tournament starts on Thursday, March 28th with a special VIP only viewing day. Only VIP ticket holders will be able to gain access to the tournament rooms and check out the action in person.
+          </p>
+ 
+          <p>
+            From Friday, March 29th through Sunday, March 31st, live spectating opens for our General Admission ticket holders as well. For those catching IPL6 at home, we’ll have at least 6 HD streams covering the event from beginning to end!
+          </p>
+
+          <p>As always, more information can be had at <a href="http://www.ign.com/ipl">http://ign.com/ipl</a>!</p>
+        </div>
+      </div>
+
+<!--       <div id="venuewrapper">
+        <h2>The Venue</h2>
+        <div class="clearfix"></div>
+        <div class="third">
+          <div id="cosmo"></div>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+
+  <!-- GRAY ROW -->
+  <div class="gray_row" id="js_venue">
+    <div class="site_width clearfix">
+      <h1>More information on the venue can be found <a href="http://www.cosmopolitanlasvegas.com/">here</a>.</h1>
+    </div>
   </div>
 
 
@@ -31,19 +157,13 @@
   <script>window.jQuery || document.write('<script src="http://media.ign.com/ev/esports/ipl-static/ipl-site/javascripts/jquery-1.7.min.js"><\/script>')</script>
 
   <script src="http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl6-minisite/ipl6_front/js/plugins.js"></script>
-  <script src="/addons/ipl6-minisite/ipl6_front/js/ipl6-logo.js"></script>
+  <script src="http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl6-minisite/ipl6_front/js/script.js"></script>
 
   <script>
-
     var _gaq=[['_setAccount','UA-12449618-7'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
-  <script>
-    $(document).ready(function(){
-      new Ipl6($('.logo-container').first())
-    })
   </script>
 </body>
 </html>
