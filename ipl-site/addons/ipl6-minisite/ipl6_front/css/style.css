@@ -159,7 +159,7 @@ h1 a {
 .ipl-home-link {
   width: 177px;
   height: 130px;
-  background: url(http://media.ign.com/ev/esports/ipl-static/shared/images/logos/ipl6_white_text.png) left top no-repeat;
+  background: url(http://media.ign.com/ev/esports/ipl-static/shared/images/logos/ipl6-white-text.png) left top no-repeat;
   display: block;
   text-indent: -999em;
   margin: 0 0 0 -89px;
@@ -177,7 +177,7 @@ h1 a {
 }
 
 #full_header {
-  background:url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/ipl-5-bg-50.jpg) center center no-repeat #000;
+  background:url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/ipl-5-bg-20.jpg) center center no-repeat #000;
   font-weight:bold;
   background-size: 100%;
 }
