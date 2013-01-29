@@ -115,11 +115,11 @@
 		};
 
 	})();
-		
+
 
 
 	//================================== Resize NS
-	var resize = (function() {	
+	var resize = (function() {
 		var savedWidth;
 		var ratioMap = {
 			default: function(width) {
@@ -186,7 +186,7 @@
 					videoURL += "?qs_autoplay=true";
 					var swf = "http://media.ign.com/ev/esports/ipl-static/ipl-site/v2/swfs/ignplayer_ipl.swf";
 					var cachebust = "?version=3.120612.02";
-					
+
 					var flashvars = {
 						cacheBusting: "true",
 						url: videoURL
@@ -255,11 +255,15 @@
 			if(firstImage){
 				firstImageSrc = firstImage[0].match(/src=[\"|\']([\w:\/\/\.-]+)[\"|\']/);
 			}
-			return firstImageSrc[1];
+			var featuredImageUrl = firstImageSrc[1];
+			if(featuredImageUrl == null) {
+				featuredImageUrl = "http://media.ign.com/ev/esports/ipl-static/shared/images/logos/IPL-logo-white-text.png";
+			}
+			return featuredImageUrl;
 		}
 
 		var renderFeaturedArticle = function(articleData) {
-			
+
 			var articleData = articleData[0];
 			var featuredImageUrl = findFeaturedImage(articleData.content[0]);
 			var $heroFeaturedArticle = $(_dom.featured).find(".hero_featured_article_text");
@@ -288,7 +292,7 @@
 					fetchingArticle.done(function(articleData){
 						cb(articleData.data);
 					})
-				} 
+				}
 			});
 		}
 		var updateHeroBottom = function (franchise, title) {
