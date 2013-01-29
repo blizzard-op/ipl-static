@@ -77,16 +77,18 @@
   };
 
   createPaginationList = function(obj, page, per_page, pageLimit) {
-    var pageCounter, pageEnd, pageStart, pages, paginationHTML;
+    var pageCounter, pageEnd, pageStart, pagelimitor, pages, paginationHTML;
     pages = Math.ceil(obj.total / per_page);
     page = parseInt(page, 10);
     paginationHTML = "<nav class='pagination'>";
     if (page !== 1) {
-      paginationHTML += "<span clas='pagination_page first'><a href='/ipl/all/news'>First</a></span><span class='pagination_page prev'><a href='?page=" + (page - 1) + "'>Prev</a></span>";
+      paginationHTML += "<span clas='pagination_page first'><a href='news'>First</a></span><span class='pagination_page prev'><a href='?page=" + (page - 1) + "'>Prev</a></span>";
     }
-    pageStart = page - parseInt(pageLimit / 2) - 1 < 1 ? 1 : page - parseInt(pageLimit / 2) - 1;
+    pagelimitor = +pageLimit / 2;
+    pageStart = page - pagelimitor - 1 < 1 ? 1 : page - pagelimitor - 1;
     pageEnd = pageStart + pageLimit;
     pageCounter = pageEnd <= pages ? pageStart : pages - pageLimit;
+    pageCounter = pageCounter <= 1 ? 1 : void 0;
     pageEnd = pageEnd > pages ? pages : pageEnd;
     while (pageCounter <= pageEnd) {
       if (pageCounter === page) {
