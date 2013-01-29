@@ -75,10 +75,13 @@ createPaginationList = (obj, page, per_page, pageLimit)->
   pages = Math.ceil(obj.total/per_page)
   page = parseInt(page, 10)
   paginationHTML = "<nav class='pagination'>"
-  paginationHTML += "<span clas='pagination_page first'><a href='/ipl/all/news'>First</a></span><span class='pagination_page prev'><a href='?page=" + (page - 1) + "'>Prev</a></span>" unless page is 1
-  pageStart = if page-parseInt(pageLimit/2)-1<1 then 1 else page-parseInt(pageLimit/2)-1
+  paginationHTML += "<span clas='pagination_page first'><a href='news'>First</a></span><span class='pagination_page prev'><a href='?page=" + (page - 1) + "'>Prev</a></span>" unless page is 1
+
+  pagelimitor = +pageLimit / 2
+  pageStart = if page - pagelimitor - 1 < 1 then 1 else page - pagelimitor - 1
   pageEnd = pageStart + pageLimit
   pageCounter = if pageEnd <= pages then pageStart else pages - pageLimit
+  pageCounter = if pageCounter <= 1 then 1
   pageEnd = if pageEnd > pages then pages else pageEnd
 
   while pageCounter <= pageEnd
@@ -118,13 +121,13 @@ setQueryParams = (queryParams)->
         "value":"article"
     ]
   if queryParams.franchise and queryParams.franchise isnt "all"
-    params.rules.push 
-      "field": "tags" 
+    params.rules.push
+      "field": "tags"
       "condition": "containsOne"
       "value": queryParams.franchise
 
   if queryParams.tag?
-    params.rules.push 
+    params.rules.push
       "field": "tags"
       "condition": "containsOne"
       "value": queryParams.tag
@@ -140,13 +143,13 @@ loadAllArticles = (page = 1, per_page = 10, franchise = "all")->
     per_page: per_page
     franchise: franchise
   params = setQueryParams(queryParams)
-  fetchingAllAritcles = $.ajax 
+  fetchingAllAritcles = $.ajax
     url: "http://apis.ign.com/article/v3/articles/search?q=" + params + "&format=js"
     dataType: "jsonp"
     cache: true
     jsonpCallback: "getCachedArticles"
 
-  fetchingAllAritcles.done (articleFeed)-> 
+  fetchingAllAritcles.done (articleFeed)->
     $posts = $("#posts")
     source = $("#article-list").html()
     tmpl = Handlebars.compile source
@@ -160,7 +163,7 @@ fetchArticles = (params, cb)->
     franchise: params.franchiseSlug || "all"
     tag: params.tag || null
   params = setQueryParams(queryParams)
-  return $.ajax 
+  return $.ajax
     url: "http://apis.ign.com/article/v3/articles/search?q=" + params + "&format=js"
     dataType: "jsonp"
     cache: true
@@ -168,7 +171,7 @@ fetchArticles = (params, cb)->
 
 
 loadArticle = (slug) ->
-  fetchingArticle = $.ajax 
+  fetchingArticle = $.ajax
     url: "http://apis.ign.com/article/v3/articles/slug/" + slug + "?format=js"
     dataType: "jsonp"
     cache: true
@@ -180,7 +183,7 @@ loadArticle = (slug) ->
     $("#posts").prepend tmpl(article)
     $("title").html(article.metadata.headline + " | IPL - IGN Pro League")
     if new Date(article.metadata.publishDate) < new Date(2012, 8, 1)
-      gettingOldArticle = $.ajax 
+      gettingOldArticle = $.ajax
         url: "http://esports.ign.com/posts/" + slug + ".json"
         dataType: "jsonp"
         cache: true
@@ -191,7 +194,7 @@ loadArticle = (slug) ->
     disqus.loadComments(articleID, article.metadata.slug)
 
 
-window.articleLoader = 
+window.articleLoader =
   loadAllArticles: loadAllArticles
   loadArticle: loadArticle
   setQueryParams: setQueryParams
