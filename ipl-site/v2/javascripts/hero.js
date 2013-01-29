@@ -36,13 +36,13 @@
 			dataType: "jsonp",
 			cache: true,
 			jsonpCallback: jsonpcallback,
-			data: data || null,
-			success: function(data) {
-				cb(data || []);
-			},
-			error: function() {
-				cb([]);
-			}
+			data: data || null
+		})
+		.done(function(data, textStatus, jqXHR) {
+			cb(data || []);
+		})
+		.fail(function() {
+			cb([]);
 		});
 
 		return req;
@@ -394,7 +394,7 @@
 					title: 				data.title || "",
 					franchise: 			data.franchise && data.franchise.name || "",
 					franchise_slug: 	data.franchise && data.franchise.slug || "",
-					long_title: 	data.metadata && data.metadata.longTitle || "",
+					long_title: 		data.metadata && data.metadata.longTitle || "",
 					type: 				"stream",
 					provider: {
 						name: "ign",
@@ -418,7 +418,7 @@
 				//this.sort();
 				return getHTML(this.data);
 			},
-			start: function() {
+			start: function(notLast) {
 				if(_activeChannel || !this.data.length) return
 
 				//Override default random behavior if franchise is set
@@ -429,6 +429,8 @@
 							return;
 						}
 					}
+					//No live stream was found from that franchise, so if this source is not last, return
+					if(notLast) return;
 				}
 
 				//Choose live stream at random
@@ -461,13 +463,13 @@
 				};
 				req(url, data, "getCachedVideo", function(data) {
 					self.parentVideo = {
-						id:         data.id,
-						thumb: 		data.thumbnails && data.thumbnails[0] && data.thumbnails[0].thumbnail && data.thumbnails[0].thumbnail.url || "",
-						title: 		data.title || "",
-						franchise: 	data.franchise && data.franchise.name || "",
-					franchise_slug: 	data.franchise && data.franchise.slug || "",
-						duration: 	data.duration,
-						date: 		data.publish_at,
+						id:         		data.id,
+						thumb: 				data.thumbnails && data.thumbnails[0] && data.thumbnails[0].thumbnail && data.thumbnails[0].thumbnail.url || "",
+						title: 				data.title || "",
+						franchise: 			data.franchise && data.franchise.name || "",
+						franchise_slug: 	data.franchise && data.franchise.slug || "",
+						duration: 			data.duration,
+						date: 				data.publish_at,
 						provider: 	{
 							name: "youtube",
 							id: data.youtube_id
@@ -570,7 +572,8 @@
 			for(var i = 0, len = sourceObj_arr.length; i < len; i++) {
 				var source = sourceObj_arr[i];
 				pane.appendChild(source.frag());
-				source.start(); //Start video if not already playing
+				var notLast = i < len - 1;
+				source.start(notLast); //Start video if not already playing
 			}
 
 			$(pane).hide();
@@ -679,9 +682,9 @@
 	//================================== OnReady
 	$(function() {
 		_dom = {
-			video: 					gebi("hero_video"),
-			slider_wrapper: gebi("hero_slider_wrapper"),
-			slider: 				gebi("hero_slider"),
+			video: 				gebi("hero_video"),
+			slider_wrapper: 	gebi("hero_slider_wrapper"),
+			slider: 			gebi("hero_slider"),
 			switcher: 			gebi("hero_switcher"),
 			featured: 			gebi("featured")
 		};
