@@ -422,7 +422,7 @@
 				if(_activeChannel || !this.data.length) return
 
 				//Override default random behavior if franchise is set
-				if(window.franchise) {
+				if(window.franchise && window.franchise !== "all") {
 					for(var i = 0, len = this.data.length; i < len; i++) {
 						if(this.data[i].franchise_slug === window.franchise) {
 							$(this.data[i].btn).trigger("click");
