@@ -168,8 +168,11 @@ textarea {
    ========================================================================== */
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */ }
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
   /* Style adjustments for high resolution devices */ }
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
@@ -228,7 +231,8 @@ textarea {
   h2,
   h3 {
     page-break-after: avoid; } }
-/* normalize.css v1.0.2 | MIT License | git.io/normalize */
+
+/*! normalize.css v1.0.2 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -698,18 +702,18 @@ img {
   background: -ms-linear-gradient(top, #404040 0, #151515 100%);
   background: linear-gradient(top, #404040 0, #151515 100%); }
 
-.IGN_topbar_nav {
+#IGN_topbar_nav {
   list-style: none;
   float: right;
   margin: 0;
   padding: 0;
   border-left: 1px solid black;
   font-size: 12px; }
-  .IGN_topbar_nav li {
+  #IGN_topbar_nav li {
     float: left;
     height: 36px;
     border-right: 1px solid black; }
-  .IGN_topbar_nav a {
+  #IGN_topbar_nav a {
     display: block;
     height: 36px;
     line-height: 36px;
@@ -729,7 +733,7 @@ img {
     -ms-user-select: none;
     user-select: none;
     cursor: pointer; }
-  .IGN_topbar_nav a:hover {
+  #IGN_topbar_nav a:hover {
     background: #666666;
     background: -moz-linear-gradient(top, #666666 0, #333333 100%);
     background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#666666), to(#333333));
@@ -1447,10 +1451,11 @@ aside .schedule_calendar, aside .schedule_calendar_number {
   .hero_related_links ul {
     margin: 0;
     padding: 0;
-    list-style: none; }
+    list-style: none;
     @media screen and (max-width: 1279px) {
-      .hero_related_links ul li:nth-last-of-type(1) {
+      li:nth-last-of-type(1) {
         display: none; } }
+ }
   .hero_related_links li + li {
     margin-top: 5px;
     padding-top: 5px;
@@ -1702,6 +1707,7 @@ img.aligncenter {
     background-image: url(http://oystatic.ignimgs.com/src/ignmedia/img/articles/runner.gif);
     background-position: left;
     background-repeat: repeat-y; } }
+
 @media screen and (min-width: 1440px) {
   .site_width {
     width: 1385px; }
@@ -1720,6 +1726,7 @@ img.aligncenter {
 
   .hero_featured_image_wrapper {
     width: 540px; } }
+
 @media screen and (min-width: 1280px) and (max-width: 1439px) {
   .site_width {
     width: 1225px; }
@@ -1741,6 +1748,7 @@ img.aligncenter {
 
   .hero_related_links ul li:nth-of-type(n + 7) {
     display: none; } }
+
 @media screen and (max-width: 1279px) {
   body {
     font-size: 12px; }
@@ -1763,6 +1771,7 @@ img.aligncenter {
 
   .hero_related_links ul li:nth-of-type(n + 5) {
     display: none; } }
+
 body.takeover .site_width,
 body.takeover .leaderboard,
 body.takeover .hero {
