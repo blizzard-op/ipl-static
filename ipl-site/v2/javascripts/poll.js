@@ -276,7 +276,7 @@
   authCheck = function() {
     return $.ajax({
       url: "http://esports.ign.com/auth/v1/users/current/",
-      jsonpCallback: "getCachedAuth"
+      cache: false
     });
   };
 
