@@ -39,7 +39,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
   margin: 1em 0;
   padding: 0; }
 
@@ -168,11 +168,8 @@ textarea {
    ========================================================================== */
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */ }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (min-resolution: 144dpi) {
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   /* Style adjustments for high resolution devices */ }
-
 /* ==========================================================================
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
@@ -180,7 +177,7 @@ textarea {
 @media print {
   * {
     background: transparent !important;
-    color: #000 !important;
+    color: black !important;
     /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important; }
@@ -205,7 +202,7 @@ textarea {
 
   pre,
   blockquote {
-    border: 1px solid #999;
+    border: 1px solid #999999;
     page-break-inside: avoid; }
 
   thead {
@@ -231,8 +228,7 @@ textarea {
   h2,
   h3 {
     page-break-after: avoid; } }
-
-/*! normalize.css v1.0.2 | MIT License | git.io/normalize */
+/* normalize.css v1.0.2 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -404,7 +400,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  _font-family: 'courier new', monospace;
+  _font-family: "courier new", monospace;
   font-size: 1em; }
 
 /*
@@ -523,7 +519,7 @@ form {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid silver;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
@@ -1354,7 +1350,8 @@ aside .schedule_calendar, aside .schedule_calendar_number {
 .hero_video_details {
   width: 35%;
   min-width: 340px;
-  border-bottom: 20px solid #0c0c0c; }
+  border-bottom: 20px solid #0c0c0c;
+  position: relative; }
   .hero_video_details .redstripe {
     position: relative;
     right: 18px;
@@ -1451,11 +1448,10 @@ aside .schedule_calendar, aside .schedule_calendar_number {
   .hero_related_links ul {
     margin: 0;
     padding: 0;
-    list-style: none;
+    list-style: none; }
     @media screen and (max-width: 1279px) {
-      li:nth-last-of-type(1) {
+      .hero_related_links ul li:nth-last-of-type(1) {
         display: none; } }
- }
   .hero_related_links li + li {
     margin-top: 5px;
     padding-top: 5px;
@@ -1698,6 +1694,195 @@ img.aligncenter {
   .sponsors_item:hover {
     background-color: #f1f1f1; }
 
+.description p {
+  margin: 0.5em 0; }
+
+.poll_container {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.poll_results {
+  position: relative;
+  padding: 0 20px;
+  text-align: center;
+  background-color: black; }
+  .poll_results .team-percent {
+    display: block;
+    height: 10px;
+    line-height: 10px;
+    width: 20%;
+    text-align: center; }
+    .poll_results .team-percent.team-2 {
+      float: right; }
+  .poll_results .chart {
+    background-color: #516e9d;
+    position: relative;
+    height: 10px;
+    width: 60%;
+    margin: 0 auto 1em; }
+  .poll_results .percent {
+    height: 10px;
+    -webkit-transition: width 300ms linear;
+    -moz-transition: width 300ms linear;
+    -ms-transition: width 300ms linear;
+    -o-transition: width 300ms linear;
+    transition: width 300ms linear;
+    test-align: center;
+    font-size: 1.5em;
+    text-align: center;
+    position: relative;
+    background-color: #516e9d;
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: 0; }
+    .poll_results .percent:hover:after {
+      background-color: #516e9d; }
+    .poll_results .percent.team-1 {
+      color: white;
+      z-index: 1; }
+    .poll_results .percent.team-2 {
+      right: 0;
+      left: auto;
+      z-index: 2;
+      color: white;
+      background-color: #ba3a32; }
+  .poll_results .team-1 {
+    color: #516e9d;
+    float: left; }
+    .poll_results .team-1 button {
+      color: #516e9d; }
+  .poll_results .team-2 {
+    color: #ba3a32;
+    float: left; }
+    .poll_results .team-2 button {
+      color: #ba3a32; }
+  .poll_results .team {
+    width: 50%; }
+  .poll_results .label {
+    line-height: 1;
+    margin-bottom: 1.5em;
+    position: relative; }
+    .poll_results .label .potential-label {
+      font-family: "helvetica neue", sans-serif;
+      color: white;
+      font-size: 12px;
+      font-weight: bold; }
+      .poll_results .label .potential-label span {
+        float: none;
+        color: white; }
+    .poll_results .label .team-2 {
+      float: right; }
+    .poll_results .label div {
+      width: 45%; }
+    .poll_results .label .separator {
+      width: 10%;
+      padding: 0; }
+    .poll_results .label i {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 3px 5px;
+      border-radius: 0.25em;
+      display: block;
+      font-style: normal;
+      background-color: #616161;
+      text-shadow: 0 1px solid #8fa4c5;
+      background-image: -webkit-linear-gradient(top, #616161, #777777);
+      background-image: -moz-linear-gradient(top, #616161, #777777);
+      background-image: -o-linear-gradient(top, #616161, #777777);
+      background-image: -ms-linear-gradient(top, #616161, #777777);
+      background-image: linear-gradient(top, #616161, #777777); }
+      .poll_results .label i:hover {
+        cursor: pointer;
+        background-image: -webkit-linear-gradient(top, #949494, #aaaaaa);
+        background-image: -moz-linear-gradient(top, #949494, #aaaaaa);
+        background-image: -o-linear-gradient(top, #949494, #aaaaaa);
+        background-image: -ms-linear-gradient(top, #949494, #aaaaaa);
+        background-image: linear-gradient(top, #949494, #aaaaaa); }
+      .poll_results .label i:active:hover, .poll_results .label i.disabled:hover {
+        cursor: default; }
+      .poll_results .label i p {
+        font-weight: normal;
+        font-style: normal;
+        font-size: 1.25em;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: white; }
+    .poll_results .label .team-1 i:active, .poll_results .label .team-1 i.disabled {
+      background-color: #516e9d;
+      background-image: -webkit-linear-gradient(top, #98a4c1, #516e9d);
+      background-image: -moz-linear-gradient(top, #98a4c1, #516e9d);
+      background-image: -o-linear-gradient(top, #98a4c1, #516e9d);
+      background-image: -ms-linear-gradient(top, #98a4c1, #516e9d);
+      background-image: linear-gradient(top, #98a4c1, #516e9d); }
+    .poll_results .label .team-2 i:active, .poll_results .label .team-2 i.disabled {
+      background-color: #ba3a32;
+      background-image: -webkit-linear-gradient(top, #b88981, #ba3a32);
+      background-image: -moz-linear-gradient(top, #b88981, #ba3a32);
+      background-image: -o-linear-gradient(top, #b88981, #ba3a32);
+      background-image: -ms-linear-gradient(top, #b88981, #ba3a32);
+      background-image: linear-gradient(top, #b88981, #ba3a32); }
+    .poll_results .label span {
+      width: 6%;
+      padding: 0 1%;
+      text-align: center;
+      line-height: 1;
+      float: left;
+      margin-top: 2em; }
+    .poll_results .label p {
+      text-align: center;
+      font-size: 0.8em;
+      font-weight: bold; }
+    .poll_results .label .cover {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 100%;
+      width: 100%;
+      background-color: black;
+      background-color: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      line-height: 72px;
+      font-size: 18px;
+      display: none; }
+  .poll_results.isSubmitting .cover {
+    display: block;
+    left: 0;
+    background-image: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/images/ajax-loader.gif);
+    background-position: center center;
+    background-repeat: no-repeat; }
+  .poll_results p {
+    margin: 0 0 0.25em;
+    font-size: 14px; }
+  .poll_results a {
+    color: #b21b00;
+    text-decoration: underline;
+    font-size: 14px; }
+  .poll_results .signin a {
+    display: inline; }
+  .poll_results .payout {
+    clear: both;
+    text-align: center; }
+  .poll_results h4 {
+    margin: 0 0 0.5em;
+    font-size: 1.25em;
+    line-height: 2; }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
 @media screen and (min-width: 1680px) {
   .content,
   .leaderboard,
@@ -1707,7 +1892,6 @@ img.aligncenter {
     background-image: url(http://oystatic.ignimgs.com/src/ignmedia/img/articles/runner.gif);
     background-position: left;
     background-repeat: repeat-y; } }
-
 @media screen and (min-width: 1440px) {
   .site_width {
     width: 1385px; }
@@ -1726,7 +1910,6 @@ img.aligncenter {
 
   .hero_featured_image_wrapper {
     width: 540px; } }
-
 @media screen and (min-width: 1280px) and (max-width: 1439px) {
   .site_width {
     width: 1225px; }
@@ -1748,7 +1931,6 @@ img.aligncenter {
 
   .hero_related_links ul li:nth-of-type(n + 7) {
     display: none; } }
-
 @media screen and (max-width: 1279px) {
   body {
     font-size: 12px; }
@@ -1771,7 +1953,6 @@ img.aligncenter {
 
   .hero_related_links ul li:nth-of-type(n + 5) {
     display: none; } }
-
 body.takeover .site_width,
 body.takeover .leaderboard,
 body.takeover .hero {
