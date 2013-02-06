@@ -304,9 +304,13 @@
 		var udpateNowWatching = function(franchiseName, title) {
 			var videoDetails = $(_dom.featured).find(".hero_video_details")[0],
 					heading = videoDetails.getElementsByTagName("h1")[0],
-					details = videoDetails.getElementsByTagName("p")[0];
-			heading.innerHTML = franchiseName;
-			details.innerHTML = title;
+					details = videoDetails.querySelector("#video_title");
+            if( heading != null ) {
+    			heading.innerHTML = franchiseName;
+            }
+            if( details != null ) {
+    			details.innerHTML = title;
+            }
 		}
 
 		var getHTML = function(data) {
@@ -347,6 +351,7 @@
 						embedFlashPlayer(provider);
 						updateHeroBottom(franchise, title);
 						if(_activeChannel) $(_activeChannel).removeClass("watching");
+                        switchStreams(id);
 						$(this).addClass("watching");
 						_activeChannel = this;
 						_activeChannelID = id;
