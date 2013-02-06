@@ -2,7 +2,7 @@
 (function() {
   var Poll, authCheck, checkForNewPolls, displayName, fetchNewPoll, getPoll, getPolls, getStreams, loadPolls, loadUser, newPollInterval, restrictedCountries, returningVote, updatingVote, userId, _mediaUrl, _url;
 
-  if (document.location.port === "3000" || "2007") {
+  if (document.location.hostname !== "www.ign.com") {
     _url = "localhost:3000";
     _mediaUrl = "localhost:8888/media";
   } else {
