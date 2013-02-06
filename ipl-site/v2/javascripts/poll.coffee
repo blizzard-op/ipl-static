@@ -1,4 +1,4 @@
-if document.location.port is "3000" or "2007"
+if document.location.hostname isnt "www.ign.com"
   #dev
   _url = "localhost:3000"
   _mediaUrl = "localhost:8888/media"
