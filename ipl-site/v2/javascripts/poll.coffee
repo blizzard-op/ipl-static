@@ -152,7 +152,7 @@ class Poll
     chartHTML += "</div>"
 
     pollHTML += percentHTML + chartHTML
-    pollHTML += "<p class='signin'></p>"
+    pollHTML += "<div><span class='signin'></span><a class='rules' href='/ipl/vote/leaderboard'>Rules and Leaderboard</a></div>"
     pollHTML += "</div>"
     $(el).html pollHTML
     @el = document.getElementById poll.id
@@ -222,7 +222,7 @@ loadUser = (poll, userData)->
     else
       userId = userData.profileId
       displayName = userData.displayName
-      poll.$el.find(".signin").html "signed in as #{displayName}"
+      poll.$el.find(".signin").html "Hey, #{displayName}"
       poll.getPayouts userId
 
 loadPolls = (pollData, streamId)->
