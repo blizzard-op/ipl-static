@@ -207,7 +207,7 @@
       pollHTML += '<div class="cover"></div></div>';
       chartHTML += "</div>";
       pollHTML += percentHTML + chartHTML;
-      pollHTML += "<p class='signin'></p>";
+      pollHTML += "<div><span class='signin'></span><a class='rules' href='/ipl/vote/leaderboard'>Rules and Leaderboard</a></div>";
       pollHTML += "</div>";
       $(el).html(pollHTML);
       this.el = document.getElementById(poll.id);
@@ -309,7 +309,7 @@
     } else {
       userId = userData.profileId;
       displayName = userData.displayName;
-      poll.$el.find(".signin").html("signed in as " + displayName);
+      poll.$el.find(".signin").html("Hey, " + displayName);
       return poll.getPayouts(userId);
     }
   };

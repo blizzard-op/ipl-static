@@ -1870,8 +1870,14 @@ img.aligncenter {
     color: #b21b00;
     text-decoration: underline;
     font-size: 14px; }
-  .poll_results .signin a {
-    display: inline; }
+  .poll_results .signin {
+    font-size: 1.2em;
+    float: left; }
+    .poll_results .signin a {
+      display: inline; }
+  .poll_results .rules {
+    float: right;
+    font-size: 0.8em; }
   .poll_results .payout {
     clear: both;
     text-align: center; }
