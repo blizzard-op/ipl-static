@@ -1350,8 +1350,9 @@ aside .schedule_calendar, aside .schedule_calendar_number {
 .hero_video_details {
   width: 35%;
   min-width: 340px;
-  border-bottom: 20px solid #0c0c0c;
-  position: relative; }
+  border-bottom: 20px solid #0c0c0c; }
+  .hero_video_details .video_wrapper {
+    position: relative; }
   .hero_video_details .redstripe {
     position: relative;
     right: 18px;
@@ -1699,7 +1700,7 @@ img.aligncenter {
 
 .poll_container {
   position: absolute;
-  top: 20px;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0; }
