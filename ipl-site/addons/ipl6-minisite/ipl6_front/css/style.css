@@ -135,14 +135,14 @@ h1 a {
   width: 231px;
 }
 .league-of-legends:hover {
-  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/nav/league-of-legends-red.png) top left no-repeat;  
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/nav/league-of-legends-red.png) top left no-repeat;
 }
 .shootmania {
   background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/nav/shootmania-white.png) top left no-repeat;
   width: 152px;
 }
 .shootmania:hover {
-  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/nav/shootmania-red.png) top left no-repeat;  
+  background: url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/game-pages/img/nav/shootmania-red.png) top left no-repeat;
 }
 .game-nav li{
   margin: 0;
@@ -277,7 +277,7 @@ h1 a {
 #full_game_link_sc2 {background-image:url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/ipl5_front/img/game_sc2.jpg);}
 #full_game_link_lol {background-image:url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/ipl5_front/img/game_lol.jpg);}
 #full_game_link_fight {background-image:url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/ipl5_front/img/game_fight.jpg);}
-#full_game_link_sm {background-image:url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl5-minisite/ipl5_front/img/game_sm.jpg);}
+#full_game_link_sm {background-image:url(http://media.ign.com/ev/esports/ipl-static/ipl-site/addons/ipl6-minisite/ipl6_front/img/game_sm.jpg);}
 
 
 .full_game_link_overlay {
@@ -503,7 +503,7 @@ h3 {
 
 
 @media only screen and (min-width: 35em) {
-  
+
 
 }
 
@@ -518,13 +518,13 @@ h3 {
 .clearfix { *zoom: 1; }
 
 @media print {
-  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
   a, a:visited { text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } 
+  thead { display: table-header-group; }
   tr, img { page-break-inside: avoid; }
   img { max-width: 100% !important; }
   @page { margin: 0.5cm; }
