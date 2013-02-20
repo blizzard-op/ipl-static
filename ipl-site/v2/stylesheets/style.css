@@ -1900,55 +1900,68 @@ img.aligncenter {
   background-color: white;
   padding: 1em;
   margin-bottom: 1em; }
-  #vote-leaderboard .leaderboard {
+  #vote-leaderboard .displayName {
+    font-size: 2.5em; }
+  #vote-leaderboard .profile_image {
+    float: left; }
+  #vote-leaderboard .confidence_level {
+    float: right;
+    width: 80%; }
+    #vote-leaderboard .confidence_level h3 {
+      margin: 0.5em 0 0;
+      font-size: 7em;
+      text-align: center;
+      line-height: 0.3; }
+    #vote-leaderboard .confidence_level p {
+      margin: 0;
+      font-size: 2em;
+      line-height: 1.4; }
+    #vote-leaderboard .confidence_level span {
+      font-size: 0.2em; }
+  #vote-leaderboard .competitions {
+    clear: both;
+    padding-top: 0.1em; }
+  #vote-leaderboard .competition {
+    margin-top: 2em;
+    border: 1px dotted #cccccc; }
+  #vote-leaderboard .competition-title {
     float: left;
-    width: 33%;
-    background-color: white; }
-    #vote-leaderboard .leaderboard table {
-      width: 100%; }
-      #vote-leaderboard .leaderboard table td {
-        padding: 0.25em;
-        border: 1px solid black; }
-    #vote-leaderboard .leaderboard thead {
-      background-color: white;
+    width: 48%;
+    text-align: right;
+    font-size: 2em;
+    line-height: 2;
+    margin: 0;
+    overflow: hidden;
+    white-space: no-wrap;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis; }
+  #vote-leaderboard .competition-rank {
+    float: right;
+    width: 50%;
+    text-align: center;
+    border-left: 1px solid #cccccc; }
+    #vote-leaderboard .competition-rank td {
+      padding: 0.25em; }
+      #vote-leaderboard .competition-rank td + td {
+        border-left: 1px solid #cccccc; }
+    #vote-leaderboard .competition-rank thead {
+      background-color: #eeeeee;
       background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
       background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
       background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
       background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
       background-image: linear-gradient(top, #eeeeee, #cccccc); }
-    #vote-leaderboard .leaderboard tbody tr:nth-of-type(odd) {
+    #vote-leaderboard .competition-rank tbody tr:nth-of-type(odd) {
       background-color: white; }
-    #vote-leaderboard .leaderboard tbody tr:nth-of-type(even) {
+    #vote-leaderboard .competition-rank tbody tr:nth-of-type(even) {
       background-color: #e6e6e6; }
-  #vote-leaderboard .rule-container {
-    float: right;
-    width: 66%; }
-    #vote-leaderboard .rule-container .ipl-pc {
-      float: right;
-      border-radius: 1em; }
-    #vote-leaderboard .rule-container .ipl5-logo {
-      margin: 0 auto;
-      display: block; }
-  #vote-leaderboard #user-score table {
-    width: 100%; }
-    #vote-leaderboard #user-score table td {
-      padding: 0.25em;
-      border: 1px solid black; }
-  #vote-leaderboard #user-score thead {
-    background-color: white;
-    background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
-    background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
-    background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
-    background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
-    background-image: linear-gradient(top, #eeeeee, #cccccc); }
-  #vote-leaderboard #user-score tbody tr:nth-of-type(odd) {
-    background-color: white; }
-  #vote-leaderboard #user-score tbody tr:nth-of-type(even) {
-    background-color: #e6e6e6; }
   #vote-leaderboard .rules, #vote-leaderboard .howtoplay, #vote-leaderboard #user-score {
     margin-bottom: 1em; }
   #vote-leaderboard .rules {
     clear: both; }
+
+.howtoplay h2 {
+  margin: 0; }
 
 @media screen and (min-width: 1680px) {
   .content,

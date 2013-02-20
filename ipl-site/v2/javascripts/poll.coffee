@@ -13,8 +13,9 @@ $.ajaxSetup
 
 restrictedCountries = ["United States", "France", "Spain", "Denmark", "Netherlands", "Belgium"]
 
-userId = 21
-displayName = "Anonymous user"
+user =
+  id: 21
+  displayName: "Anonymous user"
 returningVote = false
 updatingVote = false
 fetchNewPoll = 30000
@@ -30,26 +31,26 @@ class Poll
     if isNaN percent then 50 else percent
 
   getVotes: (name)->
-    for player in @poll.options
+    for player in @poll.pollOptions
       if player.name is name
         return player.votes
 
   getPayouts: (userId)->
-    return false unless userId
+    return false unless user.id
     fetchingPayouts = $.ajax
-      url: "http://#{_url}/vote/v1/payouts/#{@poll.id}/#{userId}"
+      url: "http://#{_url}/vote/v2/polls/#{@poll.id}/stats/users/#{user.id}"
       jsonpCallback: "getCachedPayouts"
 
     fetchingPayouts.done (data)=>
-      if userId is 21
+      if user.id is 21
         @poll.payout = 0
         @votedValue = ""
       else
         @poll.payout = data.payout
-        @votedValue = data.name
+        @votedValue = data.votedFor
         @$el.find("i").each (index)->
           $this = $(this)
-          if $this.data("value") is data.name
+          if $this.data("value") is data.votedFor
             $this.addClass "disabled"
             $this.find(".potential-payout").text "Your payout: "
             $this.find(".potential").text data.payout
@@ -59,20 +60,18 @@ class Poll
 
   postVote: ->
     postingVote = $.ajax
-      url: "http://#{_url}/vote/v1/votes/#{@poll.id}"
+      url: "http://#{_url}/vote/v2/votes/#{@poll.id}"
       type: "POST"
       dataType: "json"
       data:
         option:
           name: @votedValue
-        user:
-          id: userId
-          name: displayName
+        user: user
 
     postingVote.done (data)=>
       returningVote = true
       for player, index in data.options
-        if player.selected is true and userId isnt 21
+        if player.selected is true and user.id isnt 21
           @payout = player.payout
           @$el.find(".potential.team-#{index + 1}").html player.payout
 
@@ -109,7 +108,7 @@ class Poll
         gettingPoll = getPoll poll.id
         gettingPoll.done (updatedPoll)->
           poll.total = updatedPoll.total
-          poll.options = updatedPoll.options
+          poll.pollOptions = updatedPoll.pollOptions
           poll.state = updatedPoll.state
           _this.updatePollView()
       , @fetchUpdateInterval
@@ -130,7 +129,7 @@ class Poll
     <div class="label clearfix">
       <h4>Who Will Win Game #{poll.matchup.game.number}?</h4>
   """
-    for player, index in poll.options
+    for player, index in poll.pollOptions
       break if index is 2
       payout = player.payout
       votes = player.votes || 0
@@ -152,7 +151,7 @@ class Poll
     chartHTML += "</div>"
 
     pollHTML += percentHTML + chartHTML
-    pollHTML += "<div><span class='signin'></span><a class='rules' href='/ipl/vote/leaderboard'>Rules and Leaderboard</a></div>"
+    pollHTML += "<p class='signin'></p>"
     pollHTML += "</div>"
     $(el).html pollHTML
     @el = document.getElementById poll.id
@@ -171,7 +170,7 @@ class Poll
           $(this).remove()
       , 5000
     else
-      for player, index in @poll.options
+      for player, index in @poll.pollOptions
         percent = @calculatePercent player.votes
         unless $poll.find(".team-#{index + 1} i").hasClass("disabled")
           $poll.find(".team-#{index + 1}.potential").html player.payout
@@ -187,13 +186,13 @@ class Poll
 # ajax stuff
 getPoll = (pollId)->
   return $.ajax
-    url: "http://#{_url}/vote/v1/polls/#{pollId}"
+    url: "http://#{_url}/vote/v2/polls/#{pollId}"
     jsonpCallback: "getCachedPoll"
 
 getPolls = (streamId)->
   stream = if streamId? then "?stream=#{streamId}" else ""
   return $.ajax
-    url: "http://#{_url}/vote/v1/polls#{stream}"
+    url: "http://#{_url}/vote/v2/polls#{stream}"
     jsonpCallback: "getCachedPolls"
 
 authCheck = ->
@@ -220,14 +219,23 @@ loadUser = (poll, userData)->
     if userData is null
       poll.$el.find(".signin").html "<a href='https://s.ign.com/'>Log in</a> to vote!"
     else
-      userId = userData.profileId
-      displayName = userData.displayName
-      poll.$el.find(".signin").html "Hey, #{displayName}"
-      poll.getPayouts userId
+      user =
+        id: userData.profileId
+        displayName: userData.displayName
+        thumbnailUrl: userData.thumbnailUrl
+
+      if userData.accounts.length
+        for account in userData.accounts
+          if account.AccountType is "TWITTER"
+            user.twitter = account.Key2
+          if account.AccountType is "FACEBOOK"
+            user.facebook = account.Key2
+
+      poll.$el.find(".signin").html "signed in as #{user.displayName}"
+      poll.getPayouts()
 
 loadPolls = (pollData, streamId)->
-  polls = ""
-
+  return unless pollData.length
   for poll in pollData when poll.state is "active"
     poll = new Poll poll
     break
