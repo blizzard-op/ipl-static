@@ -680,7 +680,7 @@ a:active {
 img {
   max-width: 100%; }
 
-.site_width {
+.site_width, .profile-wrapper {
   margin: auto;
   position: relative;
   content: " ";
@@ -741,7 +741,8 @@ img {
 .IGN_btmbar {
   height: 36px;
   background-color: black;
-  font-size: 12px; }
+  font-size: 12px;
+  margin: 0 0 20px; }
   .IGN_btmbar ul {
     list-style: none;
     margin: 0;
@@ -1167,7 +1168,7 @@ aside .schedule_calendar, aside .schedule_calendar_number {
   margin: 10px 0 10px 135px; }
 
 .hero {
-  padding: 0 0 30px 0; }
+  padding: 0 0 20px 0; }
 
 .hero_box {
   background-color: #0c0c0c; }
@@ -1494,7 +1495,7 @@ aside .schedule_calendar, aside .schedule_calendar_number {
 .pagination_page {
   margin: 0 0.5em; }
 
-.article_wrapper, .tournament_show_wrapper, .leaderboard_wrapper, .article_list_wrapper {
+.article_wrapper, .tournament_show_wrapper, .profile-wrapper, .article_list_wrapper {
   padding: 1.5em 1em;
   background-color: white;
   border-top: 10px solid #333333;
@@ -1895,73 +1896,106 @@ img.aligncenter {
 .clearfix:after {
   clear: both; }
 
-/** leaderboard page ** */
-#vote-leaderboard {
+#vote-profile .competition-title, .trophy-title {
+  font-size: 2em;
+  line-height: 2;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis; }
+
+/** profile page ** */
+#vote-profile {
   background-color: white;
   padding: 1em;
   margin-bottom: 1em; }
-  #vote-leaderboard .displayName {
+  #vote-profile .displayName {
     font-size: 2.5em; }
-  #vote-leaderboard .profile_image {
+  #vote-profile .profile-image {
     float: left; }
-  #vote-leaderboard .confidence_level {
+  #vote-profile .confidence-level {
     float: right;
     width: 80%; }
-    #vote-leaderboard .confidence_level h3 {
+    #vote-profile .confidence-level h3 {
       margin: 0.5em 0 0;
       font-size: 7em;
       text-align: center;
       line-height: 0.3; }
-    #vote-leaderboard .confidence_level p {
+    #vote-profile .confidence-level p {
       margin: 0;
       font-size: 2em;
       line-height: 1.4; }
-    #vote-leaderboard .confidence_level span {
+    #vote-profile .confidence-level span {
       font-size: 0.2em; }
-  #vote-leaderboard .competitions {
-    clear: both;
-    padding-top: 0.1em; }
-  #vote-leaderboard .competition {
-    margin-top: 2em;
-    border: 1px dotted #cccccc; }
-  #vote-leaderboard .competition-title {
+  #vote-profile .competitions {
+    clear: both; }
+  #vote-profile .competition {
+    border: 1px dotted #cccccc;
+    margin-top: 2em; }
+  #vote-profile .competition-title {
     float: left;
     width: 48%;
-    text-align: right;
-    font-size: 2em;
-    line-height: 2;
-    margin: 0;
-    overflow: hidden;
-    white-space: no-wrap;
-    -ms-text-overflow: ellipsis;
-    text-overflow: ellipsis; }
-  #vote-leaderboard .competition-rank {
+    text-align: right; }
+  #vote-profile .competition-rank {
     float: right;
     width: 50%;
     text-align: center;
     border-left: 1px solid #cccccc; }
-    #vote-leaderboard .competition-rank td {
+    #vote-profile .competition-rank td {
       padding: 0.25em; }
-      #vote-leaderboard .competition-rank td + td {
+      #vote-profile .competition-rank td + td {
         border-left: 1px solid #cccccc; }
-    #vote-leaderboard .competition-rank thead {
+    #vote-profile .competition-rank thead {
       background-color: #eeeeee;
       background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
       background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
       background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
       background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
       background-image: linear-gradient(top, #eeeeee, #cccccc); }
-    #vote-leaderboard .competition-rank tbody tr:nth-of-type(odd) {
+    #vote-profile .competition-rank tbody tr:nth-of-type(odd) {
       background-color: white; }
-    #vote-leaderboard .competition-rank tbody tr:nth-of-type(even) {
+    #vote-profile .competition-rank tbody tr:nth-of-type(even) {
       background-color: #e6e6e6; }
-  #vote-leaderboard .rules, #vote-leaderboard .howtoplay, #vote-leaderboard #user-score {
+  #vote-profile .rules, #vote-profile .howtoplay, #vote-profile #user-score {
     margin-bottom: 1em; }
-  #vote-leaderboard .rules {
+  #vote-profile .rules {
     clear: both; }
 
 .howtoplay h2 {
   margin: 0; }
+
+.trophies {
+  padding-top: 2em;
+  clear: both; }
+
+.trophy {
+  float: left;
+  margin-right: 2em;
+  position: relative; }
+  .trophy:hover:before {
+    content: attr(title);
+    display: block;
+    position: absolute;
+    padding: 0.5em;
+    bottom: 103%;
+    left: 0;
+    width: 300px;
+    background-color: #eeeeee;
+    background-color: rgba(204, 204, 204, 0.5); }
+
+.trophy-img {
+  border: 0.5em solid #cccccc;
+  -webkit-border-radius: 20em;
+  border-radius: 20em;
+  opacity: 0.2;
+  width: 50px; }
+  .trophy-img.unlocked {
+    opacity: 1; }
+
+.trophy-title {
+  text-align: center;
+  text-transform: capitalize; }
 
 @media screen and (min-width: 1680px) {
   .content,
@@ -1973,7 +2007,7 @@ img.aligncenter {
     background-position: left;
     background-repeat: repeat-y; } }
 @media screen and (min-width: 1440px) {
-  .site_width {
+  .site_width, .profile-wrapper {
     width: 1385px; }
 
   .boxscores_block {
@@ -1991,7 +2025,7 @@ img.aligncenter {
   .hero_featured_image_wrapper {
     width: 540px; } }
 @media screen and (min-width: 1280px) and (max-width: 1439px) {
-  .site_width {
+  .site_width, .profile-wrapper {
     width: 1225px; }
 
   .boxscores_block {
@@ -2015,7 +2049,7 @@ img.aligncenter {
   body {
     font-size: 12px; }
 
-  .site_width {
+  .site_width, .profile-wrapper {
     width: 970px; }
 
   .boxscores_block {
@@ -2033,13 +2067,14 @@ img.aligncenter {
 
   .hero_related_links ul li:nth-of-type(n + 5) {
     display: none; } }
-body.takeover .site_width,
+body.takeover .site_width, body.takeover .profile-wrapper,
 body.takeover .leaderboard,
 body.takeover .hero {
   margin: auto;
   width: 970px; }
 body.takeover .content,
-body.takeover .content > .site_width {
+body.takeover .content > .site_width,
+body.takeover .content > .profile-wrapper {
   width: 950px;
   margin: auto; }
 body.takeover .content {
