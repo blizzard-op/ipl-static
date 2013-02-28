@@ -802,7 +802,7 @@ img {
   margin-top: 30px; }
 
 .ad {
-  margin: 30px 0 0; }
+  margin: 0; }
 
 .leaderboard {
   text-align: center;
@@ -952,10 +952,16 @@ img {
   .col_nextevent .left .spacer {
     padding-right: 20px; }
 .col_nextevent .middle {
-  height: 197px;
+  border-left: 1px dotted #cccccc;
+  border-right: 1px dotted #cccccc;
+  padding: 0 1%;
   overflow: hidden;
+  text-align: center;
   text-overflow: ellipsis;
-  width: 50%; }
+  width: 47%; }
+  .col_nextevent .middle img {
+    display: block;
+    margin: auto; }
 
 .nextevent_game {
   float: left;
@@ -1020,9 +1026,6 @@ img {
   font-weight: 100; }
 
 .nextevent_title {
-  text-transform: uppercase;
-  font-weight: bold;
-  height: 33px;
   font-size: 18px;
   margin: 0; }
 
