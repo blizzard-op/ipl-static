@@ -2000,8 +2000,8 @@ img.aligncenter {
 .sxsw-article {
   overflow: hidden; }
   .sxsw-article .articleLogo {
-    float: left;
-    margin: 0 10px 10px 0; }
+    display: block;
+    margin: 0 auto; }
   .sxsw-article h1 {
     margin-bottom: 20px;
     font-weight: 200;
