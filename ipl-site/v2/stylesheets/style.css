@@ -39,7 +39,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0; }
 
@@ -177,7 +177,7 @@ textarea {
 @media print {
   * {
     background: transparent !important;
-    color: black !important;
+    color: #000 !important;
     /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important; }
@@ -202,7 +202,7 @@ textarea {
 
   pre,
   blockquote {
-    border: 1px solid #999999;
+    border: 1px solid #999;
     page-break-inside: avoid; }
 
   thead {
@@ -400,7 +400,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  _font-family: "courier new", monospace;
+  _font-family: 'courier new', monospace;
   font-size: 1em; }
 
 /*
@@ -519,7 +519,7 @@ form {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
@@ -1996,6 +1996,42 @@ img.aligncenter {
 .trophy-title {
   text-align: center;
   text-transform: capitalize; }
+
+.sxsw-article {
+  overflow: hidden; }
+  .sxsw-article .articleLogo {
+    float: left;
+    margin: 0 10px 10px 0; }
+  .sxsw-article h1 {
+    margin-bottom: 20px;
+    font-weight: 200;
+    font-size: 32px; }
+  .sxsw-article .articleNav {
+    list-style: none;
+    margin: 0 0 20px 0;
+    padding: 0 20px 0 20px;
+    background-color: #eeeeee;
+    overflow: hidden;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px; }
+    .sxsw-article .articleNav li {
+      float: left;
+      line-height: 30px;
+      margin-right: 20px; }
+    .sxsw-article .articleNav li:hover {
+      border-bottom: 3px solid #cccccc; }
+    .sxsw-article .articleNav li.active {
+      border-bottom: 3px solid #db3a22;
+      font-weight: bold; }
+    .sxsw-article .articleNav a {
+      text-decoration: none; }
+  .sxsw-article .articleContent {
+    line-height: 24px;
+    font-size: 16px;
+    margin-bottom: 40px; }
+    .sxsw-article .articleContent img {
+      display: none; }
 
 @media screen and (min-width: 1680px) {
   .content,
